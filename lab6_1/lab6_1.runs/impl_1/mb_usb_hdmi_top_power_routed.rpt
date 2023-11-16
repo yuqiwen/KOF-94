@@ -1,8 +1,8 @@
 Copyright 1986-2022 Xilinx, Inc. All Rights Reserved.
 -------------------------------------------------------------------------------------------------------------------------------------------------------------------
 | Tool Version     : Vivado v.2022.2 (win64) Build 3671981 Fri Oct 14 05:00:03 MDT 2022
-| Date             : Thu Nov 16 00:45:20 2023
-| Host             : ECEB-3070-02 running 64-bit major release  (build 9200)
+| Date             : Thu Nov 16 14:03:54 2023
+| Host             : DESKTOP-D8Q9UV3 running 64-bit major release  (build 9200)
 | Command          : report_power -file mb_usb_hdmi_top_power_routed.rpt -pb mb_usb_hdmi_top_power_summary_routed.pb -rpx mb_usb_hdmi_top_power_routed.rpx
 | Design           : mb_usb_hdmi_top
 | Device           : xc7s50csga324-1
@@ -30,7 +30,7 @@ Table of Contents
 ----------
 
 +--------------------------+--------------+
-| Total On-Chip Power (W)  | 0.462        |
+| Total On-Chip Power (W)  | 0.461        |
 | Design Power Budget (W)  | Unspecified* |
 | Power Budget Margin (W)  | NA           |
 | Dynamic (W)              | 0.385        |
@@ -53,21 +53,21 @@ Table of Contents
 | On-Chip                  | Power (W) | Used     | Available | Utilization (%) |
 +--------------------------+-----------+----------+-----------+-----------------+
 | Clocks                   |     0.014 |       12 |       --- |             --- |
-| Slice Logic              |     0.007 |     8370 |       --- |             --- |
-|   LUT as Logic           |     0.005 |     3346 |     32600 |           10.26 |
+| Slice Logic              |     0.007 |     8350 |       --- |             --- |
+|   LUT as Logic           |     0.006 |     3243 |     32600 |            9.95 |
 |   LUT as Distributed RAM |    <0.001 |      108 |      9600 |            1.13 |
 |   CARRY4                 |    <0.001 |      232 |      8150 |            2.85 |
-|   Register               |    <0.001 |     2869 |     65200 |            4.40 |
+|   Register               |    <0.001 |     2873 |     65200 |            4.41 |
 |   F7/F8 Muxes            |    <0.001 |      114 |     32600 |            0.35 |
 |   LUT as Shift Register  |    <0.001 |       90 |      9600 |            0.94 |
 |   Others                 |     0.000 |      679 |       --- |             --- |
-| Signals                  |     0.008 |     5830 |       --- |             --- |
+| Signals                  |     0.008 |     5853 |       --- |             --- |
 | Block RAM                |     0.006 |       35 |        75 |           46.67 |
 | MMCM                     |     0.212 |        2 |         5 |           40.00 |
 | DSPs                     |    <0.001 |        3 |       120 |            2.50 |
 | I/O                      |     0.138 |       42 |       210 |           20.00 |
 | Static Power             |     0.077 |          |           |                 |
-| Total                    |     0.462 |          |           |                 |
+| Total                    |     0.461 |          |           |                 |
 +--------------------------+-----------+----------+-----------+-----------------+
 
 
@@ -163,8 +163,8 @@ Table of Contents
 |       inst                    |     0.106 |
 |     microblaze_0              |     0.011 |
 |       U0                      |     0.011 |
-|     microblaze_0_axi_intc     |     0.002 |
-|       U0                      |     0.002 |
+|     microblaze_0_axi_intc     |     0.001 |
+|       U0                      |     0.001 |
 |     microblaze_0_axi_periph   |     0.001 |
 |       xbar                    |     0.001 |
 |     microblaze_0_local_memory |     0.001 |

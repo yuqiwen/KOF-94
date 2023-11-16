@@ -1,14 +1,11 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <GenRun Id="char2_rom_synth_1" LaunchPart="xc7s50csga324-1" LaunchTime="1700104223">
   <File Type="PA-TCL" Name="char2_rom.tcl"/>
-  <File Type="RDS-PROPCONSTRS" Name="char2_rom_drc_synth.rpt"/>
   <File Type="REPORTS-TCL" Name="char2_rom_reports.tcl"/>
   <File Type="RDS-RDS" Name="char2_rom.vds"/>
   <File Type="RDS-UTIL" Name="char2_rom_utilization_synth.rpt"/>
   <File Type="RDS-UTIL-PB" Name="char2_rom_utilization_synth.pb"/>
   <File Type="RDS-DCP" Name="char2_rom.dcp"/>
-  <File Type="VDS-TIMINGSUMMARY" Name="char2_rom_timing_summary_synth.rpt"/>
-  <File Type="VDS-TIMING-PB" Name="char2_rom_timing_summary_synth.pb"/>
   <FileSet Name="sources" Type="BlockSrcs" RelSrcDir="$PSRCDIR/char2_rom">
     <File Path="$PSRCDIR/sources_1/ip/char2_rom/char2_rom.xci">
       <FileInfo>
@@ -50,9 +47,7 @@
     </Config>
   </FileSet>
   <Strategy Version="1" Minor="2">
-    <StratHandle Name="Vivado Synthesis Defaults" Flow="Vivado Synthesis 2022">
-      <Desc>Vivado Synthesis Defaults</Desc>
-    </StratHandle>
+    <StratHandle Name="Vivado Synthesis Defaults" Flow="Vivado Synthesis 2022"/>
     <Step Id="synth_design"/>
   </Strategy>
 </GenRun>

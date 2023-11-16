@@ -31,7 +31,7 @@ module  color_mapper ( input  logic [9:0] DrawX, DrawY,
         end
         else begin
             char1_cnt <= char1_cnt + 1'b1;
-            if (char1_cnt == 6'b101111) begin  // Reset counter after 18 (binary 10001)
+            if (char1_cnt == 6'b101001) begin  // Reset counter after 18 (binary 10001)
                 char1_cnt <= 6'b00000;
             end
         end
@@ -39,7 +39,7 @@ module  color_mapper ( input  logic [9:0] DrawX, DrawY,
 
     
     always_comb begin
-        case (char1_cnt / 8)
+        case (char1_cnt / 7)
             3'b000: begin
                 char_r=std1_r;
                 char_g=std1_g;
