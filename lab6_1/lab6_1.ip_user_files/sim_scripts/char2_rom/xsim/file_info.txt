@@ -1,0 +1,3 @@
+char2_rom.v,verilog,xil_defaultlib,../../../../lab6_1.gen/sources_1/ip/char2_rom/sim/char2_rom.v,
+mb_blink.c,c,xil_defaultlib,../../../../lab6_1_provided/mb_blink.c,
+glbl.v,Verilog,xil_defaultlib,glbl.v
