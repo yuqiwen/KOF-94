@@ -8,7 +8,6 @@ def write_example(image_name, image_shape, width, depth):
 		# module header
 		f"""module {image_name} (\n"""
 		f"""\tinput logic vga_clk,\n"""
-		f"""\tinput logic [9:0] DrawX, DrawY,\n"""
 		f"""\tinput logic [{ceil(log2(depth))-1}:0] rom_address,\n"""
 		f"""\tinput logic blank,\n"""
 		f"""\toutput logic [3:0] red, green, blue\n"""
@@ -26,11 +25,6 @@ def write_example(image_name, image_shape, width, depth):
 
 		f"""// read from ROM on negedge, set pixel on posedge\n"""
 		f"""assign negedge_vga_clk = ~vga_clk;\n"""
-		f"""\n"""
-
-		f"""// address into the rom = (x*xDim)/640 + ((y*yDim)/480) * xDim\n"""
-		f"""// this will stretch out the sprite across the entire screen\n"""
-		f"""assign rom_address = ((DrawX * {image_shape[1]}) / 640) + (((DrawY * {image_shape[0]}) / 480) * {image_shape[1]});\n"""
 		f"""\n"""
 
 		# set rgb values synchronously, taking into account the blank signal 
@@ -67,7 +61,7 @@ def write_example(image_name, image_shape, width, depth):
 		f"""endmodule\n"""
 	)
 	# write to file
-	with open(f"""./{image_name}/{image_name}_example.sv""", "w") as f:
+	with open(f"""./{image_name}/{image_name}.sv""", "w") as f:
 		f.write(buildString)
 
 	print("Done")

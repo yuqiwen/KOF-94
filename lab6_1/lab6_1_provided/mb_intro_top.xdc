@@ -5,7 +5,7 @@ set_property -dict {PACKAGE_PIN N15 IOSTANDARD LVCMOS33} [get_ports {clk}]
 # Set Bank 0 voltage
 set_property CFGBVS VCCO [current_design]
 set_property CONFIG_VOLTAGE 3.3 [current_design]
-set_property BITSTREAM.Config.SPI_buswidth 4 [current_design]
+set_property BITSTREAM.CONFIG.SPI_BUSWIDTH 4 [current_design]
 
 # On-board Slide Switches
 set_property -dict {PACKAGE_PIN G1 IOSTANDARD LVCMOS33} [get_ports {sw[0]}]
@@ -96,7 +96,7 @@ set_property -dict { PACKAGE_PIN U16   IOSTANDARD TMDS_33 } [get_ports {hdmi_clk
 set_property -dict { PACKAGE_PIN U18   IOSTANDARD TMDS_33  } [get_ports {hdmi_tx_n[0]}]
 set_property -dict { PACKAGE_PIN R17   IOSTANDARD TMDS_33  } [get_ports {hdmi_tx_n[1]}]
 set_property -dict { PACKAGE_PIN T14   IOSTANDARD TMDS_33  } [get_ports {hdmi_tx_n[2]}]
-                                    
+
 set_property -dict { PACKAGE_PIN U17   IOSTANDARD TMDS_33  } [get_ports {hdmi_tx_p[0]}]
 set_property -dict { PACKAGE_PIN R16   IOSTANDARD TMDS_33  } [get_ports {hdmi_tx_p[1]}]
 set_property -dict { PACKAGE_PIN R14   IOSTANDARD TMDS_33  } [get_ports {hdmi_tx_p[2]}]
@@ -116,3 +116,6 @@ set_property -dict {PACKAGE_PIN L18 IOSTANDARD LVCMOS33} [get_ports {servo0}]
 set_property -dict {PACKAGE_PIN L17 IOSTANDARD LVCMOS33} [get_ports {servo1}]
 set_property -dict {PACKAGE_PIN N14 IOSTANDARD LVCMOS33} [get_ports {servo2}]
 set_property -dict {PACKAGE_PIN M14 IOSTANDARD LVCMOS33} [get_ports {servo3}]
+
+
+set_property MARK_DEBUG false [get_nets mai/forward_i_1_n_0]

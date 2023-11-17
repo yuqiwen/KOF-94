@@ -1,23 +1,13 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<GenRun Id="synth_1" LaunchPart="xc7s50csga324-1" LaunchTime="1700164900" LaunchIncrCheckpoint="$PSRCDIR/utils_1/imports/synth_1/mb_intro_top.dcp">
+<GenRun Id="synth_1" LaunchPart="xc7s50csga324-1" LaunchTime="1700200733" LaunchIncrCheckpoint="$PSRCDIR/utils_1/imports/synth_1/mb_intro_top.dcp">
   <File Type="PA-TCL" Name="mb_usb_hdmi_top.tcl"/>
-  <File Type="RDS-PROPCONSTRS" Name="mb_usb_hdmi_top_drc_synth.rpt"/>
   <File Type="REPORTS-TCL" Name="mb_usb_hdmi_top_reports.tcl"/>
   <File Type="RDS-RDS" Name="mb_usb_hdmi_top.vds"/>
   <File Type="RDS-UTIL" Name="mb_usb_hdmi_top_utilization_synth.rpt"/>
   <File Type="RDS-UTIL-PB" Name="mb_usb_hdmi_top_utilization_synth.pb"/>
   <File Type="RDS-DCP" Name="mb_usb_hdmi_top.dcp"/>
-  <File Type="VDS-TIMINGSUMMARY" Name="mb_usb_hdmi_top_timing_summary_synth.rpt"/>
-  <File Type="VDS-TIMING-PB" Name="mb_usb_hdmi_top_timing_summary_synth.pb"/>
   <FileSet Name="sources" Type="DesignSrcs" RelSrcDir="$PSRCDIR/sources_1" RelGenDir="$PGENDIR/sources_1">
     <Filter Type="Srcs"/>
-    <File Path="$PSRCDIR/sources_1/ip/mai_stand1_rom/mai_stand1_rom.xci">
-      <FileInfo>
-        <Attr Name="UsedIn" Val="synthesis"/>
-        <Attr Name="UsedIn" Val="implementation"/>
-        <Attr Name="UsedIn" Val="simulation"/>
-      </FileInfo>
-    </File>
     <File Path="$PSRCDIR/sources_1/bd/mb_block/mb_block.bd">
       <FileInfo>
         <Attr Name="UsedIn" Val="synthesis"/>
@@ -39,6 +29,13 @@
         <Attr Name="UsedIn" Val="simulation"/>
       </FileInfo>
     </File>
+    <File Path="$PSRCDIR/sources_1/new/char1.sv">
+      <FileInfo>
+        <Attr Name="UsedIn" Val="synthesis"/>
+        <Attr Name="UsedIn" Val="implementation"/>
+        <Attr Name="UsedIn" Val="simulation"/>
+      </FileInfo>
+    </File>
     <File Path="$PPRDIR/lab6.2_provided/design_source/hex.sv">
       <FileInfo>
         <Attr Name="UsedIn" Val="synthesis"/>
@@ -46,109 +43,49 @@
         <Attr Name="UsedIn" Val="simulation"/>
       </FileInfo>
     </File>
-    <File Path="$PSRCDIR/sources_1/imports/mai_stand1/mai_stand1_example.sv">
+    <File Path="$PSRCDIR/sources_1/imports/mai_back/mai_back_example.sv">
       <FileInfo>
-        <Attr Name="ImportPath" Val="$PPRDIR/mai_stand1/mai_stand1_example.sv"/>
-        <Attr Name="ImportTime" Val="1700111319"/>
+        <Attr Name="ImportPath" Val="$PPRDIR/mai_back/mai_back_example.sv"/>
+        <Attr Name="ImportTime" Val="1700180998"/>
         <Attr Name="UsedIn" Val="synthesis"/>
         <Attr Name="UsedIn" Val="implementation"/>
         <Attr Name="UsedIn" Val="simulation"/>
       </FileInfo>
     </File>
-    <File Path="$PSRCDIR/sources_1/imports/mai_stand1/mai_stand1_palette.sv">
+    <File Path="$PPRDIR/mai_back/mai_back_palette.sv">
       <FileInfo>
-        <Attr Name="ImportPath" Val="$PPRDIR/mai_stand1/mai_stand1_palette.sv"/>
-        <Attr Name="ImportTime" Val="1700111319"/>
         <Attr Name="UsedIn" Val="synthesis"/>
         <Attr Name="UsedIn" Val="implementation"/>
         <Attr Name="UsedIn" Val="simulation"/>
       </FileInfo>
     </File>
-    <File Path="$PSRCDIR/sources_1/imports/lab6_1/mai_stand2/mai_stand2_example.sv">
+    <File Path="$PSRCDIR/sources_1/imports/mai_forward/mai_forward_example.sv">
       <FileInfo>
-        <Attr Name="ImportPath" Val="$PPRDIR/mai_stand2/mai_stand2_example.sv"/>
-        <Attr Name="ImportTime" Val="1700111352"/>
+        <Attr Name="ImportPath" Val="$PPRDIR/mai_forward/mai_forward_example.sv"/>
+        <Attr Name="ImportTime" Val="1700180964"/>
         <Attr Name="UsedIn" Val="synthesis"/>
         <Attr Name="UsedIn" Val="implementation"/>
         <Attr Name="UsedIn" Val="simulation"/>
       </FileInfo>
     </File>
-    <File Path="$PSRCDIR/sources_1/imports/lab6_1/mai_stand2/mai_stand2_palette.sv">
+    <File Path="$PPRDIR/mai_forward/mai_forward_palette.sv">
       <FileInfo>
-        <Attr Name="ImportPath" Val="$PPRDIR/mai_stand2/mai_stand2_palette.sv"/>
-        <Attr Name="ImportTime" Val="1700111352"/>
         <Attr Name="UsedIn" Val="synthesis"/>
         <Attr Name="UsedIn" Val="implementation"/>
         <Attr Name="UsedIn" Val="simulation"/>
       </FileInfo>
     </File>
-    <File Path="$PSRCDIR/sources_1/imports/lab6_1/mai_stand3/mai_stand3_example.sv">
+    <File Path="$PSRCDIR/sources_1/imports/mai_stand/mai_stand_example.sv">
       <FileInfo>
-        <Attr Name="ImportPath" Val="$PPRDIR/mai_stand3/mai_stand3_example.sv"/>
-        <Attr Name="ImportTime" Val="1700111388"/>
+        <Attr Name="ImportPath" Val="$PPRDIR/mai_stand/mai_stand_example.sv"/>
+        <Attr Name="ImportTime" Val="1700176316"/>
         <Attr Name="UsedIn" Val="synthesis"/>
         <Attr Name="UsedIn" Val="implementation"/>
         <Attr Name="UsedIn" Val="simulation"/>
       </FileInfo>
     </File>
-    <File Path="$PSRCDIR/sources_1/imports/lab6_1/mai_stand3/mai_stand3_palette.sv">
+    <File Path="$PPRDIR/mai_stand/mai_stand_palette.sv">
       <FileInfo>
-        <Attr Name="ImportPath" Val="$PPRDIR/mai_stand3/mai_stand3_palette.sv"/>
-        <Attr Name="ImportTime" Val="1700111388"/>
-        <Attr Name="UsedIn" Val="synthesis"/>
-        <Attr Name="UsedIn" Val="implementation"/>
-        <Attr Name="UsedIn" Val="simulation"/>
-      </FileInfo>
-    </File>
-    <File Path="$PSRCDIR/sources_1/imports/lab6_1/mai_stand4/mai_stand4_example.sv">
-      <FileInfo>
-        <Attr Name="ImportPath" Val="$PPRDIR/mai_stand4/mai_stand4_example.sv"/>
-        <Attr Name="ImportTime" Val="1700111409"/>
-        <Attr Name="UsedIn" Val="synthesis"/>
-        <Attr Name="UsedIn" Val="implementation"/>
-        <Attr Name="UsedIn" Val="simulation"/>
-      </FileInfo>
-    </File>
-    <File Path="$PSRCDIR/sources_1/imports/lab6_1/mai_stand4/mai_stand4_palette.sv">
-      <FileInfo>
-        <Attr Name="ImportPath" Val="$PPRDIR/mai_stand4/mai_stand4_palette.sv"/>
-        <Attr Name="ImportTime" Val="1700111409"/>
-        <Attr Name="UsedIn" Val="synthesis"/>
-        <Attr Name="UsedIn" Val="implementation"/>
-        <Attr Name="UsedIn" Val="simulation"/>
-      </FileInfo>
-    </File>
-    <File Path="$PSRCDIR/sources_1/imports/lab6_1/mai_stand5/mai_stand5_example.sv">
-      <FileInfo>
-        <Attr Name="ImportPath" Val="$PPRDIR/mai_stand5/mai_stand5_example.sv"/>
-        <Attr Name="ImportTime" Val="1700111427"/>
-        <Attr Name="UsedIn" Val="synthesis"/>
-        <Attr Name="UsedIn" Val="implementation"/>
-        <Attr Name="UsedIn" Val="simulation"/>
-      </FileInfo>
-    </File>
-    <File Path="$PSRCDIR/sources_1/imports/lab6_1/mai_stand5/mai_stand5_palette.sv">
-      <FileInfo>
-        <Attr Name="ImportPath" Val="$PPRDIR/mai_stand5/mai_stand5_palette.sv"/>
-        <Attr Name="ImportTime" Val="1700111427"/>
-        <Attr Name="UsedIn" Val="synthesis"/>
-        <Attr Name="UsedIn" Val="implementation"/>
-        <Attr Name="UsedIn" Val="simulation"/>
-      </FileInfo>
-    </File>
-    <File Path="$PSRCDIR/sources_1/imports/lab6_1/mai_stand6/mai_stand6_example.sv">
-      <FileInfo>
-        <Attr Name="ImportPath" Val="$PPRDIR/mai_stand6/mai_stand6_example.sv"/>
-        <Attr Name="ImportTime" Val="1700111452"/>
-        <Attr Name="UsedIn" Val="synthesis"/>
-        <Attr Name="UsedIn" Val="implementation"/>
-        <Attr Name="UsedIn" Val="simulation"/>
-      </FileInfo>
-    </File>
-    <File Path="$PSRCDIR/sources_1/imports/lab6_1/mai_stand6/mai_stand6_palette.sv">
-      <FileInfo>
-        <Attr Name="ImportPath" Val="$PPRDIR/mai_stand6/mai_stand6_palette.sv"/>
-        <Attr Name="ImportTime" Val="1700111452"/>
         <Attr Name="UsedIn" Val="synthesis"/>
         <Attr Name="UsedIn" Val="implementation"/>
         <Attr Name="UsedIn" Val="simulation"/>
@@ -179,99 +116,7 @@
         <Attr Name="UsedIn" Val="simulation"/>
       </FileInfo>
     </File>
-    <File Path="$PSRCDIR/sources_1/ip/char1_rom/char1_rom.xci">
-      <FileInfo>
-        <Attr Name="AutoDisabled" Val="1"/>
-        <Attr Name="UsedIn" Val="synthesis"/>
-        <Attr Name="UsedIn" Val="implementation"/>
-        <Attr Name="UsedIn" Val="simulation"/>
-      </FileInfo>
-    </File>
-    <File Path="$PSRCDIR/sources_1/imports/char1/char1_example.sv">
-      <FileInfo>
-        <Attr Name="AutoDisabled" Val="1"/>
-        <Attr Name="ImportPath" Val="$PPRDIR/char1/char1_example.sv"/>
-        <Attr Name="ImportTime" Val="1700095800"/>
-        <Attr Name="UsedIn" Val="synthesis"/>
-        <Attr Name="UsedIn" Val="implementation"/>
-        <Attr Name="UsedIn" Val="simulation"/>
-      </FileInfo>
-    </File>
-    <File Path="$PSRCDIR/sources_1/imports/char1/char1_palette.sv">
-      <FileInfo>
-        <Attr Name="AutoDisabled" Val="1"/>
-        <Attr Name="ImportPath" Val="$PPRDIR/char1/char1_palette.sv"/>
-        <Attr Name="ImportTime" Val="1700095800"/>
-        <Attr Name="UsedIn" Val="synthesis"/>
-        <Attr Name="UsedIn" Val="implementation"/>
-        <Attr Name="UsedIn" Val="simulation"/>
-      </FileInfo>
-    </File>
-    <File Path="$PSRCDIR/sources_1/new/char2_example.sv">
-      <FileInfo>
-        <Attr Name="AutoDisabled" Val="1"/>
-        <Attr Name="UsedIn" Val="synthesis"/>
-        <Attr Name="UsedIn" Val="implementation"/>
-        <Attr Name="UsedIn" Val="simulation"/>
-      </FileInfo>
-    </File>
-    <File Path="$PSRCDIR/sources_1/imports/bg1/bg1_example.sv">
-      <FileInfo>
-        <Attr Name="AutoDisabled" Val="1"/>
-        <Attr Name="ImportPath" Val="$PPRDIR/bg1/bg1_example.sv"/>
-        <Attr Name="ImportTime" Val="1700090702"/>
-        <Attr Name="UsedIn" Val="synthesis"/>
-        <Attr Name="UsedIn" Val="implementation"/>
-        <Attr Name="UsedIn" Val="simulation"/>
-      </FileInfo>
-    </File>
-    <File Path="$PSRCDIR/sources_1/imports/bg1/bg1_palette.sv">
-      <FileInfo>
-        <Attr Name="AutoDisabled" Val="1"/>
-        <Attr Name="ImportPath" Val="$PPRDIR/bg1/bg1_palette.sv"/>
-        <Attr Name="ImportTime" Val="1700090702"/>
-        <Attr Name="UsedIn" Val="synthesis"/>
-        <Attr Name="UsedIn" Val="implementation"/>
-        <Attr Name="UsedIn" Val="simulation"/>
-      </FileInfo>
-    </File>
-    <File Path="$PSRCDIR/sources_1/imports/bg2/bg2_example.sv">
-      <FileInfo>
-        <Attr Name="AutoDisabled" Val="1"/>
-        <Attr Name="ImportPath" Val="$PPRDIR/bg2/bg2_example.sv"/>
-        <Attr Name="ImportTime" Val="1700090730"/>
-        <Attr Name="UsedIn" Val="synthesis"/>
-        <Attr Name="UsedIn" Val="implementation"/>
-        <Attr Name="UsedIn" Val="simulation"/>
-      </FileInfo>
-    </File>
-    <File Path="$PSRCDIR/sources_1/imports/bg2/bg2_palette.sv">
-      <FileInfo>
-        <Attr Name="AutoDisabled" Val="1"/>
-        <Attr Name="ImportPath" Val="$PPRDIR/bg2/bg2_palette.sv"/>
-        <Attr Name="ImportTime" Val="1700090730"/>
-        <Attr Name="UsedIn" Val="synthesis"/>
-        <Attr Name="UsedIn" Val="implementation"/>
-        <Attr Name="UsedIn" Val="simulation"/>
-      </FileInfo>
-    </File>
     <File Path="$PPRDIR/lab6.2_provided/design_source/ball.sv">
-      <FileInfo>
-        <Attr Name="AutoDisabled" Val="1"/>
-        <Attr Name="UsedIn" Val="synthesis"/>
-        <Attr Name="UsedIn" Val="implementation"/>
-        <Attr Name="UsedIn" Val="simulation"/>
-      </FileInfo>
-    </File>
-    <File Path="$PPRDIR/Mai/Mai_example.sv">
-      <FileInfo>
-        <Attr Name="UserDisabled" Val="1"/>
-        <Attr Name="UsedIn" Val="synthesis"/>
-        <Attr Name="UsedIn" Val="implementation"/>
-        <Attr Name="UsedIn" Val="simulation"/>
-      </FileInfo>
-    </File>
-    <File Path="$PPRDIR/Mai/Mai_palette.sv">
       <FileInfo>
         <Attr Name="AutoDisabled" Val="1"/>
         <Attr Name="UsedIn" Val="synthesis"/>
@@ -300,81 +145,25 @@
         <Attr Name="UsedIn" Val="simulation"/>
       </FileInfo>
     </File>
-    <File Path="$PPRDIR/Mai/Mai_rom.sv">
-      <FileInfo>
-        <Attr Name="AutoDisabled" Val="1"/>
-        <Attr Name="UsedIn" Val="synthesis"/>
-        <Attr Name="UsedIn" Val="implementation"/>
-        <Attr Name="UsedIn" Val="simulation"/>
-      </FileInfo>
-    </File>
-    <File Path="$PPRDIR/Mai/Mai.COE">
-      <FileInfo>
-        <Attr Name="UsedIn" Val="synthesis"/>
-        <Attr Name="UsedIn" Val="simulation"/>
-      </FileInfo>
-    </File>
-    <File Path="$PPRDIR/bg1/bg1.COE">
-      <FileInfo>
-        <Attr Name="UsedIn" Val="synthesis"/>
-        <Attr Name="UsedIn" Val="simulation"/>
-      </FileInfo>
-    </File>
-    <File Path="$PPRDIR/bg2/bg2.COE">
-      <FileInfo>
-        <Attr Name="UsedIn" Val="synthesis"/>
-        <Attr Name="UsedIn" Val="simulation"/>
-      </FileInfo>
-    </File>
     <File Path="$PPRDIR/scene/scene.COE">
       <FileInfo>
         <Attr Name="UsedIn" Val="synthesis"/>
         <Attr Name="UsedIn" Val="simulation"/>
       </FileInfo>
     </File>
-    <File Path="$PPRDIR/char1/char1.COE">
+    <File Path="$PPRDIR/mai_stand/mai_stand.COE">
       <FileInfo>
         <Attr Name="UsedIn" Val="synthesis"/>
         <Attr Name="UsedIn" Val="simulation"/>
       </FileInfo>
     </File>
-    <File Path="$PPRDIR/char2.coe">
+    <File Path="$PPRDIR/mai_forward/mai_forward.COE">
       <FileInfo>
         <Attr Name="UsedIn" Val="synthesis"/>
         <Attr Name="UsedIn" Val="simulation"/>
       </FileInfo>
     </File>
-    <File Path="$PPRDIR/mai_stand1/mai_stand1.COE">
-      <FileInfo>
-        <Attr Name="UsedIn" Val="synthesis"/>
-        <Attr Name="UsedIn" Val="simulation"/>
-      </FileInfo>
-    </File>
-    <File Path="$PPRDIR/mai_stand2/mai_stand2.COE">
-      <FileInfo>
-        <Attr Name="UsedIn" Val="synthesis"/>
-        <Attr Name="UsedIn" Val="simulation"/>
-      </FileInfo>
-    </File>
-    <File Path="$PPRDIR/mai_stand3/mai_stand3.COE">
-      <FileInfo>
-        <Attr Name="UsedIn" Val="synthesis"/>
-        <Attr Name="UsedIn" Val="simulation"/>
-      </FileInfo>
-    </File>
-    <File Path="$PPRDIR/mai_stand4/mai_stand4.COE">
-      <FileInfo>
-        <Attr Name="UsedIn" Val="synthesis"/>
-        <Attr Name="UsedIn" Val="simulation"/>
-      </FileInfo>
-    </File>
-    <File Path="$PPRDIR/mai_stand5/mai_stand5.COE">
-      <FileInfo>
-        <Attr Name="UsedIn" Val="synthesis"/>
-        <Attr Name="UsedIn" Val="simulation"/>
-      </FileInfo>
-    </File>
-    <File Path="$PPRDIR/mai_stand6/mai_stand6.COE">
+    <File Path="$PPRDIR/mai_back/mai_back.COE">
       <FileInfo>
         <Attr Name="UsedIn" Val="synthesis"/>
         <Attr Name="UsedIn" Val="simulation"/>
@@ -422,28 +211,26 @@
     <StratHandle Name="Vivado Synthesis Defaults" Flow="Vivado Synthesis 2022"/>
     <Step Id="synth_design"/>
   </Strategy>
-  <BlockFileSet Type="BlockSrcs" Name="mb_block_xbar_0"/>
   <BlockFileSet Type="BlockSrcs" Name="mb_block_dlmb_v10_0"/>
-  <BlockFileSet Type="BlockSrcs" Name="mb_block_ilmb_v10_0"/>
-  <BlockFileSet Type="BlockSrcs" Name="mai_stand6_rom"/>
+  <BlockFileSet Type="BlockSrcs" Name="mb_block_xbar_0"/>
   <BlockFileSet Type="BlockSrcs" Name="mb_block_dlmb_bram_if_cntlr_0"/>
+  <BlockFileSet Type="BlockSrcs" Name="mb_block_ilmb_v10_0"/>
   <BlockFileSet Type="BlockSrcs" Name="mb_block_ilmb_bram_if_cntlr_0"/>
-  <BlockFileSet Type="BlockSrcs" Name="mb_block_lmb_bram_0"/>
   <BlockFileSet Type="BlockSrcs" Name="mb_block_axi_uartlite_0_0"/>
-  <BlockFileSet Type="BlockSrcs" Name="scene_rom"/>
+  <BlockFileSet Type="BlockSrcs" Name="mb_block_lmb_bram_0"/>
   <BlockFileSet Type="BlockSrcs" Name="mb_block_mdm_1_0"/>
+  <BlockFileSet Type="BlockSrcs" Name="mai_stand_rom"/>
+  <BlockFileSet Type="BlockSrcs" Name="scene_rom"/>
   <BlockFileSet Type="BlockSrcs" Name="mb_block_clk_wiz_1_0"/>
   <BlockFileSet Type="BlockSrcs" Name="mb_block_microblaze_0_axi_intc_0"/>
   <BlockFileSet Type="BlockSrcs" Name="mb_block_rst_clk_wiz_1_100M_0"/>
-  <BlockFileSet Type="BlockSrcs" Name="mb_block_axi_gpio_0_2"/>
-  <BlockFileSet Type="BlockSrcs" Name="clk_wiz_0"/>
   <BlockFileSet Type="BlockSrcs" Name="mb_block_microblaze_0_0"/>
+  <BlockFileSet Type="BlockSrcs" Name="clk_wiz_0"/>
+  <BlockFileSet Type="BlockSrcs" Name="mb_block_axi_gpio_0_2"/>
   <BlockFileSet Type="BlockSrcs" Name="hdmi_tx_0"/>
   <BlockFileSet Type="BlockSrcs" Name="mb_block_axi_gpio_0_3"/>
   <BlockFileSet Type="BlockSrcs" Name="mb_block_axi_timer_0_0"/>
   <BlockFileSet Type="BlockSrcs" Name="mb_block_axi_quad_spi_0_0"/>
-  <BlockFileSet Type="BlockSrcs" Name="mai_stand2_rom"/>
-  <BlockFileSet Type="BlockSrcs" Name="mai_stand3_rom"/>
-  <BlockFileSet Type="BlockSrcs" Name="mai_stand4_rom"/>
-  <BlockFileSet Type="BlockSrcs" Name="mai_stand5_rom"/>
+  <BlockFileSet Type="BlockSrcs" Name="mai_forward_rom"/>
+  <BlockFileSet Type="BlockSrcs" Name="mai_back_rom"/>
 </GenRun>

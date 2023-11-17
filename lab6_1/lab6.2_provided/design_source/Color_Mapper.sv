@@ -17,16 +17,32 @@
 module  color_mapper ( input  logic [9:0] DrawX, DrawY,
 
                        input logic clk_25MHz, blank,reset,vsync,
-                       
+                       input logic [9:0]  charX, charY,
+                       input logic forward,back,
                        output logic [3:0]  Red, Green, Blue );
-    logic [17:0] bg_rom_address, char1_rom_address;
-    logic [3:0]  bg1_r, bg1_g, bg1_b, bg2_r, bg2_g, bg2_b, char_r, char_g, char_b;
-    logic [3:0] std1_r,std1_g,std1_b,std2_r,std2_g,std2_b,std3_r,std3_g,std3_b,std4_r,std4_g,std4_b,std5_r,std5_g,std5_b,std6_r,std6_g,std6_b;
-    logic char1_on;
+    parameter [9:0] forward_x_size=96;
+    parameter [9:0] back_x_size=80;
+    parameter [9:0] stand_x_size=80;
+    parameter [9:0] height=112;
+    logic [17:0] bg_rom_address, char1_rom_address,char_stand_addr,char_fwd_addr,char_back_addr;
+    logic [9:0] pos_x;
+    logic [3:0]  bg1_r, bg1_g, bg1_b, bg2_r, bg2_g, bg2_b,char_r,char_g,char_b, char_stand_r, char_stand_g, char_stand_b,char_fwd_r,char_fwd_g,char_fwd_b,char_back_r,char_back_g,char_back_b;
+    logic char1_on,stand;
     logic [5:0] char1_cnt;  // 5-bit counter to handle 18 states
+    logic [5:0] char1_fwd_cnt,char1_back_cnt;
+    always_comb begin
+        if(charX>=392)pos_x=charX-392;
+        else pos_x=0;
+        if(forward||back)begin
+            stand=0;
+        end
+        else begin
+            stand=1;
+        end
+    end
     
     always_ff @(posedge vsync or posedge reset) begin
-        if (reset) begin
+        if (reset||forward||back) begin
             char1_cnt <= 6'b00000;
         end
         else begin
@@ -36,51 +52,104 @@ module  color_mapper ( input  logic [9:0] DrawX, DrawY,
             end
         end
     end
+    
+     always_ff @(posedge vsync) begin
+        if (~forward) begin
+            char1_fwd_cnt <= 6'b00000;
+        end
+        else begin
+            char1_fwd_cnt <= char1_fwd_cnt + 1'b1;
+            if (char1_fwd_cnt == 6'b11011) begin  // Reset counter after 18 (binary 10001)
+                char1_fwd_cnt <= 6'b00000;
+            end
+        end
+    end
+    always_ff @(posedge vsync) begin
+        if (~back) begin
+            char1_back_cnt <= 6'b00000;
+        end
+        else begin
+            char1_back_cnt <= char1_back_cnt + 1'b1;
+            if (char1_back_cnt == 6'b11011) begin  // Reset counter after 18 (binary 10001)
+                char1_back_cnt <= 6'b00000;
+            end
+        end
+    end
 
     
     always_comb begin
-        case (char1_cnt / 7)
-            3'b000: begin
-                char_r=std1_r;
-                char_g=std1_g;
-                char_b=std1_b;
-            end
-            3'b001: begin
-                char_r=std2_r;
-                char_g=std2_g;
-                char_b=std2_b;
-            end
-            3'b010:begin
-                char_r=std3_r;
-                char_g=std3_g;
-                char_b=std3_b;
-            end
-            3'b011: begin
-                char_r=std4_r;
-                char_g=std4_g;
-                char_b=std4_b;
-            end
-            3'b100: begin
-                char_r=std5_r;
-                char_g=std5_g;
-                char_b=std5_b;
-            end
-            3'b101: begin
-                char_r=std6_r;
-                char_g=std6_g;
-                char_b=std6_b;
-            end
-            default: begin
-                char_r=4'b0;
-                char_g=4'b0;
-                char_b=4'b0;
-            end // Define a default value or handle it as an error
-        endcase
+        if(forward)begin
+            case (char1_fwd_cnt / 7)
+                    3'b000: begin
+                        char_fwd_addr=forward_x_size * ((DrawY - charY) /2) + ((DrawX - pos_x) /2);
+                    end
+                    3'b001: begin
+                        char_fwd_addr=forward_x_size * ((DrawY - charY) /2) + ((DrawX - pos_x) /2)+1*forward_x_size*height;
+                    end
+                    3'b010:begin
+                        char_fwd_addr=forward_x_size * ((DrawY - charY) /2) + ((DrawX - pos_x) /2)+2*forward_x_size*height;
+                    end
+                    3'b011: begin
+                        char_fwd_addr=forward_x_size * ((DrawY - charY) /2) + ((DrawX - pos_x) /2)+3*forward_x_size*height;
+                    end
+                    default: begin
+                        char_fwd_addr=0;
+                    end // Define a default value or handle it as an error
+                endcase
+        end
+        else if(back)begin
+            case (char1_back_cnt / 7)
+                    3'b000: begin
+                        char_back_addr=back_x_size * ((DrawY - charY) /2) + ((DrawX - pos_x) /2);
+                    end
+                    3'b001: begin
+                        char_back_addr=back_x_size * ((DrawY - charY) /2) + ((DrawX - pos_x) /2)+1*back_x_size*height;
+                    end
+                    3'b010:begin
+                        char_back_addr=back_x_size * ((DrawY - charY) /2) + ((DrawX - pos_x) /2)+2*back_x_size*height;
+                    end
+                    3'b011: begin
+                        char_back_addr=back_x_size * ((DrawY - charY) /2) + ((DrawX - pos_x) /2)+3*back_x_size*height;
+                    end
+                    default: begin
+                        char_back_addr=0;
+                    end // Define a default value or handle it as an error
+                endcase
+        end
+        else begin
+            case (char1_cnt / 7)
+                3'b000: begin
+                    char_stand_addr=stand_x_size * ((DrawY - charY) /2) + ((DrawX - pos_x) /2);
+                end
+                3'b001: begin
+                    char_stand_addr=stand_x_size * ((DrawY - charY) /2) + ((DrawX - pos_x) /2)+1*stand_x_size *height;
+                end
+                3'b010:begin
+                    char_stand_addr=stand_x_size * ((DrawY - charY) /2) + ((DrawX - pos_x) /2)+2*stand_x_size *height;
+                end
+                3'b011: begin
+                    char_stand_addr=stand_x_size * ((DrawY - charY) /2) + ((DrawX - pos_x) /2)+3*stand_x_size *height;
+                end
+                3'b100: begin
+                    char_stand_addr=stand_x_size * ((DrawY - charY) /2) + ((DrawX - pos_x) /2)+4*stand_x_size *height;
+                end
+                3'b101: begin
+                    char_stand_addr=stand_x_size * ((DrawY - charY) /2) + ((DrawX - pos_x) /2)+5*stand_x_size *height;
+                end
+                default: begin
+                    char_stand_addr=0;
+                end // Define a default value or handle it as an error
+            endcase
+        end
     end
     
 	always_comb begin
-	   if(DrawX >= 70 && DrawX < 255 && DrawY >= 200 && DrawY < 460)
-	       char1_rom_address = 74 * (((DrawY - 200) * 10) / 25) + (((DrawX - 70) * 10) / 25);
+	   if(stand && DrawX >= pos_x && DrawX < pos_x+2*stand_x_size && DrawY >= charY && DrawY < charY+height*2)
+	       char1_rom_address = char_stand_addr;
+	   else if(forward && DrawX >= pos_x && DrawX < pos_x+2*forward_x_size && DrawY >= charY && DrawY < charY+height*2)
+	       char1_rom_address = char_fwd_addr;
+       else if(back && DrawX >= pos_x && DrawX < pos_x+2*back_x_size && DrawY >= charY && DrawY < charY+height*2)
+	       char1_rom_address = char_back_addr;
 	   else
 	       char1_rom_address = 0;
 	end
@@ -89,17 +158,7 @@ assign bg_rom_address = (DrawY/2) * 712 + (DrawX/2) + 196;
 	
     always_comb
     begin:RGB_Display
-//        if (DrawX < 320) begin 
-//            Red = bg1_r;
-//            Green = bg1_g;
-//            Blue = bg1_b;
-//        end       
-//        else begin 
-//            Red = bg2_r; 
-//            Green = bg2_g;
-//            Blue = bg2_b;
-//        end   
-          if(char1_on && DrawX >= 70 && DrawX < 255 && DrawY >= 200 && DrawY < 460) begin
+          if(char1_on) begin
                Red = char_r; 
                Green = char_g;
                Blue = char_b;
@@ -112,29 +171,38 @@ assign bg_rom_address = (DrawY/2) * 712 + (DrawX/2) + 196;
     end 
     
     always_comb begin
-        if(char_r == 4'hF && char_g == 4'h0 && char_b == 4'hF)
+       if(stand && DrawX >= pos_x && DrawX < pos_x+2*stand_x_size && DrawY >= charY && DrawY < charY+height*2)begin
+	       if(char_stand_r != 4'hF || char_stand_g != 4'h0 || char_stand_b != 4'hF)begin
+                char1_on = 1;
+                char_r=char_stand_r;
+                char_g=char_stand_g;
+                char_b=char_stand_b;
+           end
+       end
+	   else if(forward && DrawX >= pos_x && DrawX < pos_x+2*forward_x_size && DrawY >= charY && DrawY < charY+height*2)begin
+            if(char_fwd_r != 4'hF || char_fwd_g != 4'h0 || char_fwd_b != 4'hF)begin
+                char1_on = 1;
+                char_r=char_fwd_r;
+                char_g=char_fwd_g;
+                char_b=char_fwd_b;
+            end
+        end
+        else if(back && DrawX >= pos_x && DrawX < pos_x+2*back_x_size && DrawY >= charY && DrawY < charY+height*2)begin
+            if(char_back_r != 4'hF || char_back_g != 4'h0 || char_back_b != 4'hF)begin
+                char1_on = 1;
+                char_r=char_back_r;
+                char_g=char_back_g;
+                char_b=char_back_b;
+            end
+        end
+        else begin
             char1_on = 0;
-        else
-            char1_on = 1;
+            char_r=0;
+            char_g=0;
+            char_b=0;
+        end
     end
     
-//    bg1_example bg1(
-//        .vga_clk(clk_25MHz),
-//        .rom_address,
-//        .blank(blank),
-//        .red(bg1_r), 
-//        .green(bg1_g), 
-//        .blue(bg1_b)
-//    );
-    
-//    bg2_example bg2(
-//        .vga_clk(clk_25MHz),
-//        .rom_address,
-//        .blank(blank),
-//        .red(bg2_r), 
-//        .green(bg2_g), 
-//        .blue(bg2_b)
-//    );
     
     scene_example scene(
         .vga_clk(clk_25MHz),
@@ -144,70 +212,31 @@ assign bg_rom_address = (DrawY/2) * 712 + (DrawX/2) + 196;
         .green(bg2_g), 
         .blue(bg2_b)
     );
-    
-//    char1_example char1(
-//        .vga_clk(clk_25MHz),
-//        .rom_address(char1_rom_address),
-//        .blank(blank),
-//        .red(char_r), 
-//        .green(char_g), 
-//        .blue(char_b)
-//    );
-    mai_stand1 st1(
+
+    mai_stand st(
         .vga_clk(clk_25MHz),
         .rom_address(char1_rom_address),
         .blank(blank),
-        .red(std1_r), 
-        .green(std1_g), 
-        .blue(std1_b)
+        .red(char_stand_r), 
+        .green(char_stand_g), 
+        .blue(char_stand_b)
     );
-    mai_stand2 st2(
+    mai_forward st1(
         .vga_clk(clk_25MHz),
         .rom_address(char1_rom_address),
         .blank(blank),
-        .red(std2_r), 
-        .green(std2_g), 
-        .blue(std2_b)
+        .red(char_fwd_r), 
+        .green(char_fwd_g), 
+        .blue(char_fwd_b)
     );
-    mai_stand3 st3(
+    mai_back st2(
         .vga_clk(clk_25MHz),
         .rom_address(char1_rom_address),
         .blank(blank),
-        .red(std3_r), 
-        .green(std3_g), 
-        .blue(std3_b)
+        .red(char_back_r), 
+        .green(char_back_g), 
+        .blue(char_back_b)
     );
-    mai_stand4 st4(
-        .vga_clk(clk_25MHz),
-        .rom_address(char1_rom_address),
-        .blank(blank),
-        .red(std4_r), 
-        .green(std4_g), 
-        .blue(std4_b)
-    );
-    mai_stand5 st5(
-        .vga_clk(clk_25MHz),
-        .rom_address(char1_rom_address),
-        .blank(blank),
-        .red(std5_r), 
-        .green(std5_g), 
-        .blue(std5_b)
-    );
-    mai_stand6 st6(
-        .vga_clk(clk_25MHz),
-        .rom_address(char1_rom_address),
-        .blank(blank),
-        .red(std6_r), 
-        .green(std6_g), 
-        .blue(std6_b)
-    );
-//char2_example char2(
-//        .vga_clk(clk_25MHz),
-//        .rom_address(char1_rom_address),
-//        .blank(blank),
-//        .red(char_r), 
-//        .green(char_g), 
-//        .blue(char_b)
-//    );
+
     
 endmodule

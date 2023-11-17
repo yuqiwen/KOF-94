@@ -1,0 +1,13 @@
+#-----------------------------------------------------------
+# Vivado v2022.2 (64-bit)
+# SW Build 3671981 on Fri Oct 14 05:00:03 MDT 2022
+# IP Build 3669848 on Fri Oct 14 08:30:02 MDT 2022
+# Start of session at: Thu Nov 16 23:34:39 2023
+# Process ID: 12228
+# Current directory: C:/Users/yunxuan5/KOF-94/lab6_1/lab6_1.runs/mai_stand_rom_synth_1
+# Command line: vivado.exe -log mai_stand_rom.vds -product Vivado -mode batch -messageDb vivado.pb -notrace -source mai_stand_rom.tcl
+# Log file: C:/Users/yunxuan5/KOF-94/lab6_1/lab6_1.runs/mai_stand_rom_synth_1/mai_stand_rom.vds
+# Journal file: C:/Users/yunxuan5/KOF-94/lab6_1/lab6_1.runs/mai_stand_rom_synth_1\vivado.jou
+# Running On: ECEB-3070-02, OS: Windows, CPU Frequency: 3312 MHz, CPU Physical cores: 6, Host memory: 16865 MB
+#-----------------------------------------------------------
+source mai_stand_rom.tcl -notrace
