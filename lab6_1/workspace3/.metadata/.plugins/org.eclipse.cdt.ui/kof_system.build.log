@@ -1,6 +1,6 @@
-23:47:29 **** Incremental Build of configuration Debug for project kof_system ****
+19:56:09 **** Incremental Build of configuration Debug for project kof_system ****
 make all 
 Skipping SD card image generation. Reason: "The system project only has applications for microblaze processors."
 
-23:47:29 Build Finished (took 187ms)
+19:56:09 Build Finished (took 203ms)
 

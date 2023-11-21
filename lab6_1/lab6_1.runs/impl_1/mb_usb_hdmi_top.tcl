@@ -126,6 +126,7 @@ set rc [catch {
   create_msg_db init_design.pb
   set_param checkpoint.writeSynthRtdsInDcp 1
   set_param chipscope.maxJobs 3
+  set_param synth.incrementalSynthesisCache C:/Users/yunxuan5/AppData/Roaming/Xilinx/Vivado/.Xil/Vivado-10324-ECEB-3070-02/incrSyn
   set_param xicom.use_bs_reader 1
 OPTRACE "create in-memory project" START { }
   create_project -in_memory -part xc7s50csga324-1
@@ -149,9 +150,9 @@ OPTRACE "add files" START { }
   read_ip -quiet C:/Users/yunxuan5/KOF-94/lab6_1/lab6_1.srcs/sources_1/ip/hdmi_tx_0/hdmi_tx_0.xci
   read_ip -quiet C:/Users/yunxuan5/KOF-94/lab6_1/lab6_1.srcs/sources_1/ip/clk_wiz_0/clk_wiz_0.xci
   read_ip -quiet C:/Users/yunxuan5/KOF-94/lab6_1/lab6_1.srcs/sources_1/ip/scene_rom/scene_rom.xci
-  read_ip -quiet c:/Users/yunxuan5/KOF-94/lab6_1/lab6_1.srcs/sources_1/ip/mai_stand_rom/mai_stand_rom.xci
-  read_ip -quiet c:/Users/yunxuan5/KOF-94/lab6_1/lab6_1.srcs/sources_1/ip/mai_forward_rom/mai_forward_rom.xci
-  read_ip -quiet c:/Users/yunxuan5/KOF-94/lab6_1/lab6_1.srcs/sources_1/ip/mai_back_rom/mai_back_rom.xci
+  read_ip -quiet C:/Users/yunxuan5/KOF-94/lab6_1/lab6_1.srcs/sources_1/ip/mai_stand_rom/mai_stand_rom.xci
+  read_ip -quiet C:/Users/yunxuan5/KOF-94/lab6_1/lab6_1.srcs/sources_1/ip/mai_forward_rom/mai_forward_rom.xci
+  read_ip -quiet C:/Users/yunxuan5/KOF-94/lab6_1/lab6_1.srcs/sources_1/ip/mai_back_rom/mai_back_rom.xci
   set_param project.isImplRun false
 OPTRACE "read constraints: implementation" START { }
   read_xdc C:/Users/yunxuan5/KOF-94/lab6_1/lab6_1_provided/mb_intro_top.xdc

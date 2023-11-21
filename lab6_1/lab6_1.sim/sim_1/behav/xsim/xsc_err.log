@@ -1,0 +1,4 @@
+../../../../lab6_1_provided/mb_blink.c:12:25: fatal error: xparameters.h: No such file or directory
+ #include <xparameters.h>
+                         ^
+compilation terminated.

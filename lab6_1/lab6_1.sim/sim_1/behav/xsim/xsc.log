@@ -1,0 +1,4 @@
+Multi-threading is on. Using 10 slave threads.
+Running compilation flowC:\Xilinx\Vivado\2022.2\data\..\tps\mingw\6.2.0\win64.o\nt\bin\gcc.exe  -fPIC -c -Wa,-W -IC:/Xilinx/Vivado/2022.2/tps/boost_1_72_0    -I"C:\Xilinx\Vivado\2022.2\data/xsim/include" -I"C:\Xilinx\Vivado\2022.2\data/xsim/systemc" "../../../../lab6_1_provided/mb_blink.c" -o "xsim.dir/xil_defaultlib\xsc\mb_blink.win64.obj" -DXILINX_SIMULATOR -Wno-deprecated-declarations 
+ERROR: [XSIM 43-3410] Failed to compile one of the generated C files.
+Please recompile with "-mt off -v 1" switch to identify which design unit failed.

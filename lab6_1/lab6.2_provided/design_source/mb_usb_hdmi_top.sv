@@ -53,7 +53,8 @@ module mb_usb_hdmi_top(
     logic [31:0] keycode0_gpio, keycode1_gpio;
     logic clk_25MHz, clk_125MHz, clk, clk_100MHz;
     logic locked,forward,back;
-    logic [9:0] drawX, drawY, charX, charY;
+    logic [9:0]drawX, drawY;
+    logic [12:0] charX, charY,backX;
 
     logic hsync, vsync, vde;
     logic [3:0] red, green, blue;
@@ -154,7 +155,8 @@ module mb_usb_hdmi_top(
         .charX,
         .charY,
         .forward,
-        .back
+        .back,
+        .backX 
     );
     
     //Color Mapper Module   
@@ -165,6 +167,7 @@ module mb_usb_hdmi_top(
         .DrawY(drawY),
         .charX,
         .charY,
+        .backX,
         .forward,
         .back,
         .clk_25MHz,

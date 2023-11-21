@@ -1,7 +1,7 @@
 Copyright 1986-2022 Xilinx, Inc. All Rights Reserved.
 -------------------------------------------------------------------------------------------------------------------------------------------------------------------
 | Tool Version     : Vivado v.2022.2 (win64) Build 3671981 Fri Oct 14 05:00:03 MDT 2022
-| Date             : Thu Nov 16 23:45:30 2023
+| Date             : Mon Nov 20 19:55:21 2023
 | Host             : ECEB-3070-02 running 64-bit major release  (build 9200)
 | Command          : report_power -file mb_usb_hdmi_top_power_routed.rpt -pb mb_usb_hdmi_top_power_summary_routed.pb -rpx mb_usb_hdmi_top_power_routed.rpx
 | Design           : mb_usb_hdmi_top
@@ -30,10 +30,10 @@ Table of Contents
 ----------
 
 +--------------------------+--------------+
-| Total On-Chip Power (W)  | 0.469        |
+| Total On-Chip Power (W)  | 0.467        |
 | Design Power Budget (W)  | Unspecified* |
 | Power Budget Margin (W)  | NA           |
-| Dynamic (W)              | 0.391        |
+| Dynamic (W)              | 0.390        |
 | Device Static (W)        | 0.077        |
 | Effective TJA (C/W)      | 4.9          |
 | Max Ambient (C)          | 82.7         |
@@ -52,23 +52,23 @@ Table of Contents
 +--------------------------+-----------+----------+-----------+-----------------+
 | On-Chip                  | Power (W) | Used     | Available | Utilization (%) |
 +--------------------------+-----------+----------+-----------+-----------------+
-| Clocks                   |     0.016 |       13 |       --- |             --- |
-| Slice Logic              |     0.007 |    10819 |       --- |             --- |
-|   LUT as Logic           |     0.006 |     3697 |     32600 |           11.34 |
-|   LUT as Distributed RAM |    <0.001 |      132 |      9600 |            1.38 |
-|   Register               |    <0.001 |     4654 |     65200 |            7.14 |
+| Clocks                   |     0.015 |       12 |       --- |             --- |
+| Slice Logic              |     0.006 |     7717 |       --- |             --- |
+|   LUT as Logic           |     0.005 |     2804 |     32600 |            8.60 |
+|   LUT as Distributed RAM |    <0.001 |      108 |      9600 |            1.13 |
+|   Register               |    <0.001 |     2944 |     65200 |            4.52 |
 |   CARRY4                 |    <0.001 |      154 |      8150 |            1.89 |
-|   F7/F8 Muxes            |    <0.001 |      117 |     32600 |            0.36 |
-|   LUT as Shift Register  |    <0.001 |      151 |      9600 |            1.57 |
+|   F7/F8 Muxes            |    <0.001 |      114 |     32600 |            0.35 |
+|   LUT as Shift Register  |    <0.001 |       90 |      9600 |            0.94 |
 |   BUFG                   |    <0.001 |        1 |        32 |            3.13 |
-|   Others                 |     0.000 |      912 |       --- |             --- |
-| Signals                  |     0.009 |     7690 |       --- |             --- |
-| Block RAM                |     0.009 |     46.5 |        75 |           62.00 |
+|   Others                 |     0.000 |      709 |       --- |             --- |
+| Signals                  |     0.008 |     5330 |       --- |             --- |
+| Block RAM                |     0.008 |       46 |        75 |           61.33 |
 | MMCM                     |     0.212 |        2 |         5 |           40.00 |
-| DSPs                     |    <0.001 |        4 |       120 |            3.33 |
-| I/O                      |     0.138 |       42 |       210 |           20.00 |
+| DSPs                     |    <0.001 |        3 |       120 |            2.50 |
+| I/O                      |     0.139 |       42 |       210 |           20.00 |
 | Static Power             |     0.077 |          |           |                 |
-| Total                    |     0.469 |          |           |                 |
+| Total                    |     0.467 |          |           |                 |
 +--------------------------+-----------+----------+-----------+-----------------+
 
 
@@ -78,10 +78,10 @@ Table of Contents
 +-----------+-------------+-----------+-------------+------------+-------------+-------------+------------+
 | Source    | Voltage (V) | Total (A) | Dynamic (A) | Static (A) | Powerup (A) | Budget (A)  | Margin (A) |
 +-----------+-------------+-----------+-------------+------------+-------------+-------------+------------+
-| Vccint    |       1.000 |     0.053 |       0.042 |      0.011 |       NA    | Unspecified | NA         |
+| Vccint    |       1.000 |     0.051 |       0.039 |      0.011 |       NA    | Unspecified | NA         |
 | Vccaux    |       1.800 |     0.130 |       0.118 |      0.013 |       NA    | Unspecified | NA         |
 | Vcco33    |       3.300 |     0.041 |       0.040 |      0.001 |       NA    | Unspecified | NA         |
-| Vcco25    |       2.500 |     0.002 |       0.001 |      0.001 |       NA    | Unspecified | NA         |
+| Vcco25    |       2.500 |     0.003 |       0.002 |      0.001 |       NA    | Unspecified | NA         |
 | Vcco18    |       1.800 |     0.000 |       0.000 |      0.000 |       NA    | Unspecified | NA         |
 | Vcco15    |       1.500 |     0.000 |       0.000 |      0.000 |       NA    | Unspecified | NA         |
 | Vcco135   |       1.350 |     0.000 |       0.000 |      0.000 |       NA    | Unspecified | NA         |
@@ -129,20 +129,19 @@ Table of Contents
 2.2 Clock Constraints
 ---------------------
 
-+--------------------------------------------------------------------------------------------+-------------------------------------------------------------------+-----------------+
-| Clock                                                                                      | Domain                                                            | Constraint (ns) |
-+--------------------------------------------------------------------------------------------+-------------------------------------------------------------------+-----------------+
-| clk_100                                                                                    | Clk                                                               |            10.0 |
-| clk_100                                                                                    | Clk_IBUF_BUFG                                                     |            10.0 |
-| clk_out1_clk_wiz_0                                                                         | clk_wiz/inst/clk_out1_clk_wiz_0                                   |            40.0 |
-| clk_out1_mb_block_clk_wiz_1_0                                                              | mb_block_i/clk_wiz_1/inst/clk_out1_mb_block_clk_wiz_1_0           |            10.0 |
-| clk_out2_clk_wiz_0                                                                         | clk_wiz/inst/clk_out2_clk_wiz_0                                   |             8.0 |
-| clkfbout_clk_wiz_0                                                                         | clk_wiz/inst/clkfbout_clk_wiz_0                                   |            10.0 |
-| clkfbout_mb_block_clk_wiz_1_0                                                              | mb_block_i/clk_wiz_1/inst/clkfbout_mb_block_clk_wiz_1_0           |            10.0 |
-| dbg_hub/inst/BSCANID.u_xsdbm_id/SWITCH_N_EXT_BSCAN.bscan_inst/SERIES7_BSCAN.bscan_inst/TCK | dbg_hub/inst/BSCANID.u_xsdbm_id/SWITCH_N_EXT_BSCAN.bscan_inst/TCK |            33.0 |
-| mb_block_i/mdm_1/U0/Use_E2.BSCAN_I/Use_E2.BSCANE2_I/DRCK                                   | mb_block_i/mdm_1/U0/Use_E2.BSCAN_I/DRCK                           |            33.3 |
-| mb_block_i/mdm_1/U0/Use_E2.BSCAN_I/Use_E2.BSCANE2_I/UPDATE                                 | mb_block_i/mdm_1/U0/Use_E2.BSCAN_I/Dbg_Update_0                   |            33.3 |
-+--------------------------------------------------------------------------------------------+-------------------------------------------------------------------+-----------------+
++------------------------------------------------------------+---------------------------------------------------------+-----------------+
+| Clock                                                      | Domain                                                  | Constraint (ns) |
++------------------------------------------------------------+---------------------------------------------------------+-----------------+
+| clk_100                                                    | Clk                                                     |            10.0 |
+| clk_100                                                    | Clk_IBUF_BUFG                                           |            10.0 |
+| clk_out1_clk_wiz_0                                         | clk_wiz/inst/clk_out1_clk_wiz_0                         |            40.0 |
+| clk_out1_mb_block_clk_wiz_1_0                              | mb_block_i/clk_wiz_1/inst/clk_out1_mb_block_clk_wiz_1_0 |            10.0 |
+| clk_out2_clk_wiz_0                                         | clk_wiz/inst/clk_out2_clk_wiz_0                         |             8.0 |
+| clkfbout_clk_wiz_0                                         | clk_wiz/inst/clkfbout_clk_wiz_0                         |            10.0 |
+| clkfbout_mb_block_clk_wiz_1_0                              | mb_block_i/clk_wiz_1/inst/clkfbout_mb_block_clk_wiz_1_0 |            10.0 |
+| mb_block_i/mdm_1/U0/Use_E2.BSCAN_I/Use_E2.BSCANE2_I/DRCK   | mb_block_i/mdm_1/U0/Use_E2.BSCAN_I/DRCK                 |            33.3 |
+| mb_block_i/mdm_1/U0/Use_E2.BSCAN_I/Use_E2.BSCANE2_I/UPDATE | mb_block_i/mdm_1/U0/Use_E2.BSCAN_I/Dbg_Update_0         |            33.3 |
++------------------------------------------------------------+---------------------------------------------------------+-----------------+
 
 
 3. Detailed Reports
@@ -154,10 +153,10 @@ Table of Contents
 +-------------------------------+-----------+
 | Name                          | Power (W) |
 +-------------------------------+-----------+
-| mb_usb_hdmi_top               |     0.391 |
+| mb_usb_hdmi_top               |     0.390 |
 |   clk_wiz                     |     0.106 |
 |     inst                      |     0.106 |
-|   color_instance              |     0.009 |
+|   color_instance              |     0.010 |
 |     scene                     |     0.002 |
 |       scene_rom               |     0.002 |
 |     st                        |     0.002 |
@@ -166,14 +165,13 @@ Table of Contents
 |       mai_forward_rom         |     0.002 |
 |     st2                       |     0.002 |
 |       mai_back_rom            |     0.002 |
-|   dbg_hub                     |     0.002 |
-|     inst                      |     0.002 |
-|       BSCANID.u_xsdbm_id      |     0.002 |
-|   mb_block_i                  |     0.130 |
+|   mb_block_i                  |     0.131 |
 |     clk_wiz_1                 |     0.106 |
 |       inst                    |     0.106 |
-|     microblaze_0              |     0.011 |
-|       U0                      |     0.011 |
+|     gpio_usb_keycode          |     0.001 |
+|       U0                      |     0.001 |
+|     microblaze_0              |     0.012 |
+|       U0                      |     0.012 |
 |     microblaze_0_axi_intc     |     0.002 |
 |       U0                      |     0.002 |
 |     microblaze_0_axi_periph   |     0.001 |
@@ -184,9 +182,6 @@ Table of Contents
 |       U0                      |     0.004 |
 |     timer_usb_axi             |     0.002 |
 |       U0                      |     0.002 |
-|   u_ila_0                     |     0.002 |
-|     inst                      |     0.002 |
-|       ila_core_inst           |     0.002 |
 |   vga_to_hdmi                 |     0.133 |
 |     inst                      |     0.133 |
 +-------------------------------+-----------+

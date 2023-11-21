@@ -72,6 +72,7 @@ proc create_report { reportName command } {
 OPTRACE "synth_1" START { ROLLUP_AUTO }
 set_param checkpoint.writeSynthRtdsInDcp 1
 set_param chipscope.maxJobs 3
+set_param synth.incrementalSynthesisCache C:/Users/yunxuan5/AppData/Roaming/Xilinx/Vivado/.Xil/Vivado-10324-ECEB-3070-02/incrSyn
 set_param xicom.use_bs_reader 1
 set_msg_config -id {Synth 8-256} -limit 10000
 set_msg_config -id {Synth 8-638} -limit 10000
@@ -164,13 +165,13 @@ set_property used_in_implementation false [get_files -all c:/Users/yunxuan5/KOF-
 read_ip -quiet C:/Users/yunxuan5/KOF-94/lab6_1/lab6_1.srcs/sources_1/ip/scene_rom/scene_rom.xci
 set_property used_in_implementation false [get_files -all c:/Users/yunxuan5/KOF-94/lab6_1/lab6_1.gen/sources_1/ip/scene_rom/scene_rom_ooc.xdc]
 
-read_ip -quiet c:/Users/yunxuan5/KOF-94/lab6_1/lab6_1.srcs/sources_1/ip/mai_stand_rom/mai_stand_rom.xci
+read_ip -quiet C:/Users/yunxuan5/KOF-94/lab6_1/lab6_1.srcs/sources_1/ip/mai_stand_rom/mai_stand_rom.xci
 set_property used_in_implementation false [get_files -all c:/Users/yunxuan5/KOF-94/lab6_1/lab6_1.gen/sources_1/ip/mai_stand_rom/mai_stand_rom_ooc.xdc]
 
-read_ip -quiet c:/Users/yunxuan5/KOF-94/lab6_1/lab6_1.srcs/sources_1/ip/mai_forward_rom/mai_forward_rom.xci
+read_ip -quiet C:/Users/yunxuan5/KOF-94/lab6_1/lab6_1.srcs/sources_1/ip/mai_forward_rom/mai_forward_rom.xci
 set_property used_in_implementation false [get_files -all c:/Users/yunxuan5/KOF-94/lab6_1/lab6_1.gen/sources_1/ip/mai_forward_rom/mai_forward_rom_ooc.xdc]
 
-read_ip -quiet c:/Users/yunxuan5/KOF-94/lab6_1/lab6_1.srcs/sources_1/ip/mai_back_rom/mai_back_rom.xci
+read_ip -quiet C:/Users/yunxuan5/KOF-94/lab6_1/lab6_1.srcs/sources_1/ip/mai_back_rom/mai_back_rom.xci
 set_property used_in_implementation false [get_files -all c:/Users/yunxuan5/KOF-94/lab6_1/lab6_1.gen/sources_1/ip/mai_back_rom/mai_back_rom_ooc.xdc]
 
 OPTRACE "Adding files" END { }
