@@ -52,15 +52,13 @@ module mb_usb_hdmi_top(
     
     logic [31:0] keycode0_gpio, keycode1_gpio;
     logic clk_25MHz, clk_125MHz, clk, clk_100MHz;
-    logic locked,forward,back;
+    logic locked,forward,back,punch,squat,kick;
     logic [9:0]drawX, drawY;
     logic [12:0] charX, charY,backX;
 
     logic hsync, vsync, vde;
     logic [3:0] red, green, blue;
     logic reset_ah;
-    logic vga_clk;
-    assign vga_clk = (clk_25MHz/25000000) *60;
     
     assign reset_ah = reset_rtl_0;
     
@@ -156,6 +154,9 @@ module mb_usb_hdmi_top(
         .charY,
         .forward,
         .back,
+        .punch,
+        .squat,
+        .kick,
         .backX 
     );
     
@@ -170,6 +171,9 @@ module mb_usb_hdmi_top(
         .backX,
         .forward,
         .back,
+        .punch,
+        .squat,
+        .kick,
         .clk_25MHz,
         .blank(vde),
         .Red(red),

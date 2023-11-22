@@ -1,7 +1,7 @@
 Copyright 1986-2022 Xilinx, Inc. All Rights Reserved.
 ---------------------------------------------------------------------------------------------------------------------------------------
 | Tool Version : Vivado v.2022.2 (win64) Build 3671981 Fri Oct 14 05:00:03 MDT 2022
-| Date         : Mon Nov 20 19:55:16 2023
+| Date         : Tue Nov 21 18:21:51 2023
 | Host         : ECEB-3070-02 running 64-bit major release  (build 9200)
 | Command      : report_drc -file mb_usb_hdmi_top_drc_routed.rpt -pb mb_usb_hdmi_top_drc_routed.pb -rpx mb_usb_hdmi_top_drc_routed.rpx
 | Design       : mb_usb_hdmi_top
@@ -24,13 +24,13 @@ Table of Contents
       Design limits: <entire design considered>
            Ruledeck: default
              Max violations: <unlimited>
-             Violations found: 51
+             Violations found: 57
 +-----------+----------+----------------------------+------------+
 | Rule      | Severity | Description                | Violations |
 +-----------+----------+----------------------------+------------+
 | CHECK-3   | Warning  | Report rule limit reached  | 2          |
-| DPIP-1    | Warning  | Input pipelining           | 6          |
-| PDRC-153  | Warning  | Gated clock check          | 3          |
+| DPIP-1    | Warning  | Input pipelining           | 10         |
+| PDRC-153  | Warning  | Gated clock check          | 5          |
 | REQP-1839 | Warning  | RAMB36 async control check | 20         |
 | REQP-1840 | Warning  | RAMB18 async control check | 20         |
 +-----------+----------+----------------------------+------------+
@@ -49,47 +49,77 @@ Related violations: <none>
 
 DPIP-1#1 Warning
 Input pipelining  
-DSP color_instance/bg_rom_address input color_instance/bg_rom_address/A[29:0] is not pipelined. Pipelining DSP48 input will improve performance.
+DSP color_instance/char1_kick_addr0 input color_instance/char1_kick_addr0/A[29:0] is not pipelined. Pipelining DSP48 input will improve performance.
 Related violations: <none>
 
 DPIP-1#2 Warning
 Input pipelining  
-DSP color_instance/bg_rom_address input color_instance/bg_rom_address/C[47:0] is not pipelined. Pipelining DSP48 input will improve performance.
+DSP color_instance/char1_kick_addr0 input color_instance/char1_kick_addr0/C[47:0] is not pipelined. Pipelining DSP48 input will improve performance.
 Related violations: <none>
 
 DPIP-1#3 Warning
 Input pipelining  
-DSP color_instance/char_back_addr0 input color_instance/char_back_addr0/A[29:0] is not pipelined. Pipelining DSP48 input will improve performance.
+DSP color_instance/char1_rom_address0 input color_instance/char1_rom_address0/A[29:0] is not pipelined. Pipelining DSP48 input will improve performance.
 Related violations: <none>
 
 DPIP-1#4 Warning
 Input pipelining  
-DSP color_instance/char_back_addr0 input color_instance/char_back_addr0/C[47:0] is not pipelined. Pipelining DSP48 input will improve performance.
+DSP color_instance/char1_rom_address0 input color_instance/char1_rom_address0/C[47:0] is not pipelined. Pipelining DSP48 input will improve performance.
 Related violations: <none>
 
 DPIP-1#5 Warning
 Input pipelining  
-DSP color_instance/char_fwd_addr0 input color_instance/char_fwd_addr0/A[29:0] is not pipelined. Pipelining DSP48 input will improve performance.
+DSP color_instance/char_back_addr0 input color_instance/char_back_addr0/A[29:0] is not pipelined. Pipelining DSP48 input will improve performance.
 Related violations: <none>
 
 DPIP-1#6 Warning
 Input pipelining  
+DSP color_instance/char_back_addr0 input color_instance/char_back_addr0/C[47:0] is not pipelined. Pipelining DSP48 input will improve performance.
+Related violations: <none>
+
+DPIP-1#7 Warning
+Input pipelining  
+DSP color_instance/char_fwd_addr0 input color_instance/char_fwd_addr0/A[29:0] is not pipelined. Pipelining DSP48 input will improve performance.
+Related violations: <none>
+
+DPIP-1#8 Warning
+Input pipelining  
 DSP color_instance/char_fwd_addr0 input color_instance/char_fwd_addr0/C[47:0] is not pipelined. Pipelining DSP48 input will improve performance.
+Related violations: <none>
+
+DPIP-1#9 Warning
+Input pipelining  
+DSP color_instance/rom_address0 input color_instance/rom_address0/A[29:0] is not pipelined. Pipelining DSP48 input will improve performance.
+Related violations: <none>
+
+DPIP-1#10 Warning
+Input pipelining  
+DSP color_instance/rom_address0 input color_instance/rom_address0/C[47:0] is not pipelined. Pipelining DSP48 input will improve performance.
 Related violations: <none>
 
 PDRC-153#1 Warning
 Gated clock check  
-Net color_instance/st1/E[0] is a gated clock net sourced by a combinational pin color_instance/st1/char1_on_reg_i_1/O, cell color_instance/st1/char1_on_reg_i_1. This is not good design practice and will likely impact performance. For SLICE registers, for example, use the CE pin to control the loading of data.
+Net color_instance/char1_on_reg_i_1_n_0 is a gated clock net sourced by a combinational pin color_instance/char1_on_reg_i_1/O, cell color_instance/char1_on_reg_i_1. This is not good design practice and will likely impact performance. For SLICE registers, for example, use the CE pin to control the loading of data.
 Related violations: <none>
 
 PDRC-153#2 Warning
 Gated clock check  
-Net mai/E[0] is a gated clock net sourced by a combinational pin mai/char_back_addr_reg[15]_i_2/O, cell mai/char_back_addr_reg[15]_i_2. This is not good design practice and will likely impact performance. For SLICE registers, for example, use the CE pin to control the loading of data.
+Net mai/E[0] is a gated clock net sourced by a combinational pin mai/char_stand_addr_reg[15]_i_2/O, cell mai/char_stand_addr_reg[15]_i_2. This is not good design practice and will likely impact performance. For SLICE registers, for example, use the CE pin to control the loading of data.
 Related violations: <none>
 
 PDRC-153#3 Warning
 Gated clock check  
-Net mai/forward_reg_0[0] is a gated clock net sourced by a combinational pin mai/char_stand_addr_reg[15]_i_2/O, cell mai/char_stand_addr_reg[15]_i_2. This is not good design practice and will likely impact performance. For SLICE registers, for example, use the CE pin to control the loading of data.
+Net mai/back_reg_0[0] is a gated clock net sourced by a combinational pin mai/char_back_addr_reg[15]_i_2/O, cell mai/char_back_addr_reg[15]_i_2. This is not good design practice and will likely impact performance. For SLICE registers, for example, use the CE pin to control the loading of data.
+Related violations: <none>
+
+PDRC-153#4 Warning
+Gated clock check  
+Net mai/kick_reg_0[0] is a gated clock net sourced by a combinational pin mai/char1_kick_addr_reg[15]_i_2/O, cell mai/char1_kick_addr_reg[15]_i_2. This is not good design practice and will likely impact performance. For SLICE registers, for example, use the CE pin to control the loading of data.
+Related violations: <none>
+
+PDRC-153#5 Warning
+Gated clock check  
+Net mai/punch_reg_0[0] is a gated clock net sourced by a combinational pin mai/char1_punch_addr_reg[15]_i_2/O, cell mai/char1_punch_addr_reg[15]_i_2. This is not good design practice and will likely impact performance. For SLICE registers, for example, use the CE pin to control the loading of data.
 Related violations: <none>
 
 REQP-1839#1 Warning

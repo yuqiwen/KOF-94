@@ -1,7 +1,7 @@
 Copyright 1986-2022 Xilinx, Inc. All Rights Reserved.
 -----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
 | Tool Version : Vivado v.2022.2 (win64) Build 3671981 Fri Oct 14 05:00:03 MDT 2022
-| Date         : Mon Nov 20 19:55:19 2023
+| Date         : Tue Nov 21 18:21:54 2023
 | Host         : ECEB-3070-02 running 64-bit major release  (build 9200)
 | Command      : report_methodology -file mb_usb_hdmi_top_methodology_drc_routed.rpt -pb mb_usb_hdmi_top_methodology_drc_routed.pb -rpx mb_usb_hdmi_top_methodology_drc_routed.rpx
 | Design       : mb_usb_hdmi_top
@@ -23,20 +23,21 @@ Table of Contents
           Floorplan: design_1
       Design limits: <entire design considered>
              Max violations: <unlimited>
-             Violations found: 159
-+-----------+------------------+----------------------------------------------------+------------+
-| Rule      | Severity         | Description                                        | Violations |
-+-----------+------------------+----------------------------------------------------+------------+
-| TIMING-4  | Critical Warning | Invalid primary clock redefinition on a clock tree | 2          |
-| TIMING-17 | Critical Warning | Non-clocked sequential cell                        | 47         |
-| TIMING-27 | Critical Warning | Invalid primary clock on hierarchical pin          | 2          |
-| DPIR-1    | Warning          | Asynchronous driver check                          | 9          |
-| LUTAR-1   | Warning          | LUT drives async reset alert                       | 3          |
-| TIMING-9  | Warning          | Unknown CDC Logic                                  | 1          |
-| TIMING-18 | Warning          | Missing input or output delay                      | 33         |
-| TIMING-20 | Warning          | Non-clocked latch                                  | 61         |
-| LATCH-1   | Advisory         | Existing latches in the design                     | 1          |
-+-----------+------------------+----------------------------------------------------+------------+
+             Violations found: 208
++-----------+------------------+------------------------------------------------------------------+------------+
+| Rule      | Severity         | Description                                                      | Violations |
++-----------+------------------+------------------------------------------------------------------+------------+
+| TIMING-4  | Critical Warning | Invalid primary clock redefinition on a clock tree               | 2          |
+| TIMING-17 | Critical Warning | Non-clocked sequential cell                                      | 63         |
+| TIMING-27 | Critical Warning | Invalid primary clock on hierarchical pin                        | 2          |
+| CKLD-2    | Warning          | Clock Net has IO Driver, not a Clock Buf, and/or non-Clock loads | 1          |
+| DPIR-1    | Warning          | Asynchronous driver check                                        | 9          |
+| LUTAR-1   | Warning          | LUT drives async reset alert                                     | 3          |
+| TIMING-9  | Warning          | Unknown CDC Logic                                                | 1          |
+| TIMING-18 | Warning          | Missing input or output delay                                    | 33         |
+| TIMING-20 | Warning          | Non-clocked latch                                                | 93         |
+| LATCH-1   | Advisory         | Existing latches in the design                                   | 1          |
++-----------+------------------+------------------------------------------------------------------+------------+
 
 2. REPORT DETAILS
 -----------------
@@ -142,147 +143,227 @@ Related violations: <none>
 
 TIMING-17#19 Critical Warning
 Non-clocked sequential cell  
-The clock pin mai/backX_reg[0]/C is not reached by a timing clock
+The clock pin color_instance/char1_kick_cnt_reg[0]/C is not reached by a timing clock
 Related violations: <none>
 
 TIMING-17#20 Critical Warning
 Non-clocked sequential cell  
-The clock pin mai/backX_reg[10]/C is not reached by a timing clock
+The clock pin color_instance/char1_kick_cnt_reg[1]/C is not reached by a timing clock
 Related violations: <none>
 
 TIMING-17#21 Critical Warning
 Non-clocked sequential cell  
-The clock pin mai/backX_reg[11]/C is not reached by a timing clock
+The clock pin color_instance/char1_kick_cnt_reg[2]/C is not reached by a timing clock
 Related violations: <none>
 
 TIMING-17#22 Critical Warning
 Non-clocked sequential cell  
-The clock pin mai/backX_reg[12]/C is not reached by a timing clock
+The clock pin color_instance/char1_kick_cnt_reg[3]/C is not reached by a timing clock
 Related violations: <none>
 
 TIMING-17#23 Critical Warning
 Non-clocked sequential cell  
-The clock pin mai/backX_reg[1]/C is not reached by a timing clock
+The clock pin color_instance/char1_kick_cnt_reg[4]/C is not reached by a timing clock
 Related violations: <none>
 
 TIMING-17#24 Critical Warning
 Non-clocked sequential cell  
-The clock pin mai/backX_reg[2]/C is not reached by a timing clock
+The clock pin color_instance/char1_kick_cnt_reg[5]/C is not reached by a timing clock
 Related violations: <none>
 
 TIMING-17#25 Critical Warning
 Non-clocked sequential cell  
-The clock pin mai/backX_reg[3]/C is not reached by a timing clock
+The clock pin color_instance/char1_punch_cnt_reg[0]/C is not reached by a timing clock
 Related violations: <none>
 
 TIMING-17#26 Critical Warning
 Non-clocked sequential cell  
-The clock pin mai/backX_reg[4]/C is not reached by a timing clock
+The clock pin color_instance/char1_punch_cnt_reg[1]/C is not reached by a timing clock
 Related violations: <none>
 
 TIMING-17#27 Critical Warning
 Non-clocked sequential cell  
-The clock pin mai/backX_reg[5]/C is not reached by a timing clock
+The clock pin color_instance/char1_punch_cnt_reg[2]/C is not reached by a timing clock
 Related violations: <none>
 
 TIMING-17#28 Critical Warning
 Non-clocked sequential cell  
-The clock pin mai/backX_reg[6]/C is not reached by a timing clock
+The clock pin color_instance/char1_punch_cnt_reg[3]/C is not reached by a timing clock
 Related violations: <none>
 
 TIMING-17#29 Critical Warning
 Non-clocked sequential cell  
-The clock pin mai/backX_reg[7]/C is not reached by a timing clock
+The clock pin color_instance/char1_punch_cnt_reg[4]/C is not reached by a timing clock
 Related violations: <none>
 
 TIMING-17#30 Critical Warning
 Non-clocked sequential cell  
-The clock pin mai/backX_reg[8]/C is not reached by a timing clock
+The clock pin color_instance/char1_punch_cnt_reg[5]/C is not reached by a timing clock
 Related violations: <none>
 
 TIMING-17#31 Critical Warning
 Non-clocked sequential cell  
-The clock pin mai/backX_reg[9]/C is not reached by a timing clock
+The clock pin mai/backX_reg[0]/C is not reached by a timing clock
 Related violations: <none>
 
 TIMING-17#32 Critical Warning
 Non-clocked sequential cell  
-The clock pin mai/back_reg/C is not reached by a timing clock
+The clock pin mai/backX_reg[10]/C is not reached by a timing clock
 Related violations: <none>
 
 TIMING-17#33 Critical Warning
 Non-clocked sequential cell  
-The clock pin mai/charX_reg[0]/C is not reached by a timing clock
+The clock pin mai/backX_reg[11]/C is not reached by a timing clock
 Related violations: <none>
 
 TIMING-17#34 Critical Warning
 Non-clocked sequential cell  
-The clock pin mai/charX_reg[10]/C is not reached by a timing clock
+The clock pin mai/backX_reg[12]/C is not reached by a timing clock
 Related violations: <none>
 
 TIMING-17#35 Critical Warning
 Non-clocked sequential cell  
-The clock pin mai/charX_reg[11]/C is not reached by a timing clock
+The clock pin mai/backX_reg[1]/C is not reached by a timing clock
 Related violations: <none>
 
 TIMING-17#36 Critical Warning
 Non-clocked sequential cell  
-The clock pin mai/charX_reg[12]/C is not reached by a timing clock
+The clock pin mai/backX_reg[2]/C is not reached by a timing clock
 Related violations: <none>
 
 TIMING-17#37 Critical Warning
 Non-clocked sequential cell  
-The clock pin mai/charX_reg[1]/C is not reached by a timing clock
+The clock pin mai/backX_reg[3]/C is not reached by a timing clock
 Related violations: <none>
 
 TIMING-17#38 Critical Warning
 Non-clocked sequential cell  
-The clock pin mai/charX_reg[2]/C is not reached by a timing clock
+The clock pin mai/backX_reg[4]/C is not reached by a timing clock
 Related violations: <none>
 
 TIMING-17#39 Critical Warning
 Non-clocked sequential cell  
-The clock pin mai/charX_reg[3]/C is not reached by a timing clock
+The clock pin mai/backX_reg[5]/C is not reached by a timing clock
 Related violations: <none>
 
 TIMING-17#40 Critical Warning
 Non-clocked sequential cell  
-The clock pin mai/charX_reg[4]/C is not reached by a timing clock
+The clock pin mai/backX_reg[6]/C is not reached by a timing clock
 Related violations: <none>
 
 TIMING-17#41 Critical Warning
 Non-clocked sequential cell  
-The clock pin mai/charX_reg[5]/C is not reached by a timing clock
+The clock pin mai/backX_reg[7]/C is not reached by a timing clock
 Related violations: <none>
 
 TIMING-17#42 Critical Warning
 Non-clocked sequential cell  
-The clock pin mai/charX_reg[6]/C is not reached by a timing clock
+The clock pin mai/backX_reg[8]/C is not reached by a timing clock
 Related violations: <none>
 
 TIMING-17#43 Critical Warning
 Non-clocked sequential cell  
-The clock pin mai/charX_reg[7]/C is not reached by a timing clock
+The clock pin mai/backX_reg[9]/C is not reached by a timing clock
 Related violations: <none>
 
 TIMING-17#44 Critical Warning
 Non-clocked sequential cell  
-The clock pin mai/charX_reg[8]/C is not reached by a timing clock
+The clock pin mai/back_reg/C is not reached by a timing clock
 Related violations: <none>
 
 TIMING-17#45 Critical Warning
 Non-clocked sequential cell  
-The clock pin mai/charX_reg[9]/C is not reached by a timing clock
+The clock pin mai/charX_reg[0]/C is not reached by a timing clock
 Related violations: <none>
 
 TIMING-17#46 Critical Warning
 Non-clocked sequential cell  
-The clock pin mai/char_X_Motion_reg[0]/C is not reached by a timing clock
+The clock pin mai/charX_reg[10]/C is not reached by a timing clock
 Related violations: <none>
 
 TIMING-17#47 Critical Warning
 Non-clocked sequential cell  
+The clock pin mai/charX_reg[11]/C is not reached by a timing clock
+Related violations: <none>
+
+TIMING-17#48 Critical Warning
+Non-clocked sequential cell  
+The clock pin mai/charX_reg[12]/C is not reached by a timing clock
+Related violations: <none>
+
+TIMING-17#49 Critical Warning
+Non-clocked sequential cell  
+The clock pin mai/charX_reg[1]/C is not reached by a timing clock
+Related violations: <none>
+
+TIMING-17#50 Critical Warning
+Non-clocked sequential cell  
+The clock pin mai/charX_reg[2]/C is not reached by a timing clock
+Related violations: <none>
+
+TIMING-17#51 Critical Warning
+Non-clocked sequential cell  
+The clock pin mai/charX_reg[3]/C is not reached by a timing clock
+Related violations: <none>
+
+TIMING-17#52 Critical Warning
+Non-clocked sequential cell  
+The clock pin mai/charX_reg[4]/C is not reached by a timing clock
+Related violations: <none>
+
+TIMING-17#53 Critical Warning
+Non-clocked sequential cell  
+The clock pin mai/charX_reg[5]/C is not reached by a timing clock
+Related violations: <none>
+
+TIMING-17#54 Critical Warning
+Non-clocked sequential cell  
+The clock pin mai/charX_reg[6]/C is not reached by a timing clock
+Related violations: <none>
+
+TIMING-17#55 Critical Warning
+Non-clocked sequential cell  
+The clock pin mai/charX_reg[7]/C is not reached by a timing clock
+Related violations: <none>
+
+TIMING-17#56 Critical Warning
+Non-clocked sequential cell  
+The clock pin mai/charX_reg[8]/C is not reached by a timing clock
+Related violations: <none>
+
+TIMING-17#57 Critical Warning
+Non-clocked sequential cell  
+The clock pin mai/charX_reg[9]/C is not reached by a timing clock
+Related violations: <none>
+
+TIMING-17#58 Critical Warning
+Non-clocked sequential cell  
+The clock pin mai/char_X_Motion_reg[0]/C is not reached by a timing clock
+Related violations: <none>
+
+TIMING-17#59 Critical Warning
+Non-clocked sequential cell  
+The clock pin mai/char_X_Motion_reg[1]/C is not reached by a timing clock
+Related violations: <none>
+
+TIMING-17#60 Critical Warning
+Non-clocked sequential cell  
 The clock pin mai/forward_reg/C is not reached by a timing clock
+Related violations: <none>
+
+TIMING-17#61 Critical Warning
+Non-clocked sequential cell  
+The clock pin mai/kick_reg/C is not reached by a timing clock
+Related violations: <none>
+
+TIMING-17#62 Critical Warning
+Non-clocked sequential cell  
+The clock pin mai/punch_reg/C is not reached by a timing clock
+Related violations: <none>
+
+TIMING-17#63 Critical Warning
+Non-clocked sequential cell  
+The clock pin mai/squat_reg/C is not reached by a timing clock
 Related violations: <none>
 
 TIMING-27#1 Critical Warning
@@ -295,49 +376,54 @@ Invalid primary clock on hierarchical pin
 A primary clock mb_block_i/clk_wiz_1/inst/clk_in1 is created on an inappropriate internal pin mb_block_i/clk_wiz_1/inst/clk_in1. It is not recommended to create a primary clock on a hierarchical pin when its driver pin has a fanout connected to multiple clock pins
 Related violations: <none>
 
+CKLD-2#1 Warning
+Clock Net has IO Driver, not a Clock Buf, and/or non-Clock loads  
+Clock net Clk_IBUF is directly driven by an IO rather than a Clock Buffer or may be an IO driving a mix of Clock Buffer and non-Clock loads. This connectivity should be reviewed and corrected as appropriate. Driver(s): Clk_IBUF_inst/O, HexA/Clk, clk_wiz/clk_in1, mb_block_i/clk_100MHz
+Related violations: <none>
+
 DPIR-1#1 Warning
 Asynchronous driver check  
-DSP color_instance/bg_rom_address input pin color_instance/bg_rom_address/A[0] is connected to registers with an asynchronous reset. This is preventing the possibility of merging these registers in to the DSP Block since the DSP block registers only possess synchronous reset capability.  It is suggested to recode or change these registers to remove the reset or use a synchronous reset to get the best optimization for performance, power and area.
+DSP color_instance/rom_address0 input pin color_instance/rom_address0/A[0] is connected to registers with an asynchronous reset. This is preventing the possibility of merging these registers in to the DSP Block since the DSP block registers only possess synchronous reset capability.  It is suggested to recode or change these registers to remove the reset or use a synchronous reset to get the best optimization for performance, power and area.
 Related violations: <none>
 
 DPIR-1#2 Warning
 Asynchronous driver check  
-DSP color_instance/bg_rom_address input pin color_instance/bg_rom_address/A[1] is connected to registers with an asynchronous reset. This is preventing the possibility of merging these registers in to the DSP Block since the DSP block registers only possess synchronous reset capability.  It is suggested to recode or change these registers to remove the reset or use a synchronous reset to get the best optimization for performance, power and area.
+DSP color_instance/rom_address0 input pin color_instance/rom_address0/A[1] is connected to registers with an asynchronous reset. This is preventing the possibility of merging these registers in to the DSP Block since the DSP block registers only possess synchronous reset capability.  It is suggested to recode or change these registers to remove the reset or use a synchronous reset to get the best optimization for performance, power and area.
 Related violations: <none>
 
 DPIR-1#3 Warning
 Asynchronous driver check  
-DSP color_instance/bg_rom_address input pin color_instance/bg_rom_address/A[2] is connected to registers with an asynchronous reset. This is preventing the possibility of merging these registers in to the DSP Block since the DSP block registers only possess synchronous reset capability.  It is suggested to recode or change these registers to remove the reset or use a synchronous reset to get the best optimization for performance, power and area.
+DSP color_instance/rom_address0 input pin color_instance/rom_address0/A[2] is connected to registers with an asynchronous reset. This is preventing the possibility of merging these registers in to the DSP Block since the DSP block registers only possess synchronous reset capability.  It is suggested to recode or change these registers to remove the reset or use a synchronous reset to get the best optimization for performance, power and area.
 Related violations: <none>
 
 DPIR-1#4 Warning
 Asynchronous driver check  
-DSP color_instance/bg_rom_address input pin color_instance/bg_rom_address/A[3] is connected to registers with an asynchronous reset. This is preventing the possibility of merging these registers in to the DSP Block since the DSP block registers only possess synchronous reset capability.  It is suggested to recode or change these registers to remove the reset or use a synchronous reset to get the best optimization for performance, power and area.
+DSP color_instance/rom_address0 input pin color_instance/rom_address0/A[3] is connected to registers with an asynchronous reset. This is preventing the possibility of merging these registers in to the DSP Block since the DSP block registers only possess synchronous reset capability.  It is suggested to recode or change these registers to remove the reset or use a synchronous reset to get the best optimization for performance, power and area.
 Related violations: <none>
 
 DPIR-1#5 Warning
 Asynchronous driver check  
-DSP color_instance/bg_rom_address input pin color_instance/bg_rom_address/A[4] is connected to registers with an asynchronous reset. This is preventing the possibility of merging these registers in to the DSP Block since the DSP block registers only possess synchronous reset capability.  It is suggested to recode or change these registers to remove the reset or use a synchronous reset to get the best optimization for performance, power and area.
+DSP color_instance/rom_address0 input pin color_instance/rom_address0/A[4] is connected to registers with an asynchronous reset. This is preventing the possibility of merging these registers in to the DSP Block since the DSP block registers only possess synchronous reset capability.  It is suggested to recode or change these registers to remove the reset or use a synchronous reset to get the best optimization for performance, power and area.
 Related violations: <none>
 
 DPIR-1#6 Warning
 Asynchronous driver check  
-DSP color_instance/bg_rom_address input pin color_instance/bg_rom_address/A[5] is connected to registers with an asynchronous reset. This is preventing the possibility of merging these registers in to the DSP Block since the DSP block registers only possess synchronous reset capability.  It is suggested to recode or change these registers to remove the reset or use a synchronous reset to get the best optimization for performance, power and area.
+DSP color_instance/rom_address0 input pin color_instance/rom_address0/A[5] is connected to registers with an asynchronous reset. This is preventing the possibility of merging these registers in to the DSP Block since the DSP block registers only possess synchronous reset capability.  It is suggested to recode or change these registers to remove the reset or use a synchronous reset to get the best optimization for performance, power and area.
 Related violations: <none>
 
 DPIR-1#7 Warning
 Asynchronous driver check  
-DSP color_instance/bg_rom_address input pin color_instance/bg_rom_address/A[6] is connected to registers with an asynchronous reset. This is preventing the possibility of merging these registers in to the DSP Block since the DSP block registers only possess synchronous reset capability.  It is suggested to recode or change these registers to remove the reset or use a synchronous reset to get the best optimization for performance, power and area.
+DSP color_instance/rom_address0 input pin color_instance/rom_address0/A[6] is connected to registers with an asynchronous reset. This is preventing the possibility of merging these registers in to the DSP Block since the DSP block registers only possess synchronous reset capability.  It is suggested to recode or change these registers to remove the reset or use a synchronous reset to get the best optimization for performance, power and area.
 Related violations: <none>
 
 DPIR-1#8 Warning
 Asynchronous driver check  
-DSP color_instance/bg_rom_address input pin color_instance/bg_rom_address/A[7] is connected to registers with an asynchronous reset. This is preventing the possibility of merging these registers in to the DSP Block since the DSP block registers only possess synchronous reset capability.  It is suggested to recode or change these registers to remove the reset or use a synchronous reset to get the best optimization for performance, power and area.
+DSP color_instance/rom_address0 input pin color_instance/rom_address0/A[7] is connected to registers with an asynchronous reset. This is preventing the possibility of merging these registers in to the DSP Block since the DSP block registers only possess synchronous reset capability.  It is suggested to recode or change these registers to remove the reset or use a synchronous reset to get the best optimization for performance, power and area.
 Related violations: <none>
 
 DPIR-1#9 Warning
 Asynchronous driver check  
-DSP color_instance/bg_rom_address input pin color_instance/bg_rom_address/A[8] is connected to registers with an asynchronous reset. This is preventing the possibility of merging these registers in to the DSP Block since the DSP block registers only possess synchronous reset capability.  It is suggested to recode or change these registers to remove the reset or use a synchronous reset to get the best optimization for performance, power and area.
+DSP color_instance/rom_address0 input pin color_instance/rom_address0/A[8] is connected to registers with an asynchronous reset. This is preventing the possibility of merging these registers in to the DSP Block since the DSP block registers only possess synchronous reset capability.  It is suggested to recode or change these registers to remove the reset or use a synchronous reset to get the best optimization for performance, power and area.
 Related violations: <none>
 
 LUTAR-1#1 Warning
@@ -545,312 +631,472 @@ Related violations: <none>
 
 TIMING-20#1 Warning
 Non-clocked latch  
-The latch color_instance/char1_on_reg cannot be properly analyzed as its control pin color_instance/char1_on_reg/G is not reached by a timing clock
+The latch color_instance/char1_kick_addr_reg[0] cannot be properly analyzed as its control pin color_instance/char1_kick_addr_reg[0]/G is not reached by a timing clock
 Related violations: <none>
 
 TIMING-20#2 Warning
 Non-clocked latch  
-The latch color_instance/char_b_reg[0] cannot be properly analyzed as its control pin color_instance/char_b_reg[0]/G is not reached by a timing clock
+The latch color_instance/char1_kick_addr_reg[10] cannot be properly analyzed as its control pin color_instance/char1_kick_addr_reg[10]/G is not reached by a timing clock
 Related violations: <none>
 
 TIMING-20#3 Warning
 Non-clocked latch  
-The latch color_instance/char_b_reg[1] cannot be properly analyzed as its control pin color_instance/char_b_reg[1]/G is not reached by a timing clock
+The latch color_instance/char1_kick_addr_reg[11] cannot be properly analyzed as its control pin color_instance/char1_kick_addr_reg[11]/G is not reached by a timing clock
 Related violations: <none>
 
 TIMING-20#4 Warning
 Non-clocked latch  
-The latch color_instance/char_b_reg[2] cannot be properly analyzed as its control pin color_instance/char_b_reg[2]/G is not reached by a timing clock
+The latch color_instance/char1_kick_addr_reg[12] cannot be properly analyzed as its control pin color_instance/char1_kick_addr_reg[12]/G is not reached by a timing clock
 Related violations: <none>
 
 TIMING-20#5 Warning
 Non-clocked latch  
-The latch color_instance/char_b_reg[3] cannot be properly analyzed as its control pin color_instance/char_b_reg[3]/G is not reached by a timing clock
+The latch color_instance/char1_kick_addr_reg[13] cannot be properly analyzed as its control pin color_instance/char1_kick_addr_reg[13]/G is not reached by a timing clock
 Related violations: <none>
 
 TIMING-20#6 Warning
 Non-clocked latch  
-The latch color_instance/char_back_addr_reg[0] cannot be properly analyzed as its control pin color_instance/char_back_addr_reg[0]/G is not reached by a timing clock
+The latch color_instance/char1_kick_addr_reg[14] cannot be properly analyzed as its control pin color_instance/char1_kick_addr_reg[14]/G is not reached by a timing clock
 Related violations: <none>
 
 TIMING-20#7 Warning
 Non-clocked latch  
-The latch color_instance/char_back_addr_reg[10] cannot be properly analyzed as its control pin color_instance/char_back_addr_reg[10]/G is not reached by a timing clock
+The latch color_instance/char1_kick_addr_reg[15] cannot be properly analyzed as its control pin color_instance/char1_kick_addr_reg[15]/G is not reached by a timing clock
 Related violations: <none>
 
 TIMING-20#8 Warning
 Non-clocked latch  
-The latch color_instance/char_back_addr_reg[11] cannot be properly analyzed as its control pin color_instance/char_back_addr_reg[11]/G is not reached by a timing clock
+The latch color_instance/char1_kick_addr_reg[1] cannot be properly analyzed as its control pin color_instance/char1_kick_addr_reg[1]/G is not reached by a timing clock
 Related violations: <none>
 
 TIMING-20#9 Warning
 Non-clocked latch  
-The latch color_instance/char_back_addr_reg[12] cannot be properly analyzed as its control pin color_instance/char_back_addr_reg[12]/G is not reached by a timing clock
+The latch color_instance/char1_kick_addr_reg[2] cannot be properly analyzed as its control pin color_instance/char1_kick_addr_reg[2]/G is not reached by a timing clock
 Related violations: <none>
 
 TIMING-20#10 Warning
 Non-clocked latch  
-The latch color_instance/char_back_addr_reg[13] cannot be properly analyzed as its control pin color_instance/char_back_addr_reg[13]/G is not reached by a timing clock
+The latch color_instance/char1_kick_addr_reg[3] cannot be properly analyzed as its control pin color_instance/char1_kick_addr_reg[3]/G is not reached by a timing clock
 Related violations: <none>
 
 TIMING-20#11 Warning
 Non-clocked latch  
-The latch color_instance/char_back_addr_reg[14] cannot be properly analyzed as its control pin color_instance/char_back_addr_reg[14]/G is not reached by a timing clock
+The latch color_instance/char1_kick_addr_reg[4] cannot be properly analyzed as its control pin color_instance/char1_kick_addr_reg[4]/G is not reached by a timing clock
 Related violations: <none>
 
 TIMING-20#12 Warning
 Non-clocked latch  
-The latch color_instance/char_back_addr_reg[15] cannot be properly analyzed as its control pin color_instance/char_back_addr_reg[15]/G is not reached by a timing clock
+The latch color_instance/char1_kick_addr_reg[5] cannot be properly analyzed as its control pin color_instance/char1_kick_addr_reg[5]/G is not reached by a timing clock
 Related violations: <none>
 
 TIMING-20#13 Warning
 Non-clocked latch  
-The latch color_instance/char_back_addr_reg[1] cannot be properly analyzed as its control pin color_instance/char_back_addr_reg[1]/G is not reached by a timing clock
+The latch color_instance/char1_kick_addr_reg[6] cannot be properly analyzed as its control pin color_instance/char1_kick_addr_reg[6]/G is not reached by a timing clock
 Related violations: <none>
 
 TIMING-20#14 Warning
 Non-clocked latch  
-The latch color_instance/char_back_addr_reg[2] cannot be properly analyzed as its control pin color_instance/char_back_addr_reg[2]/G is not reached by a timing clock
+The latch color_instance/char1_kick_addr_reg[7] cannot be properly analyzed as its control pin color_instance/char1_kick_addr_reg[7]/G is not reached by a timing clock
 Related violations: <none>
 
 TIMING-20#15 Warning
 Non-clocked latch  
-The latch color_instance/char_back_addr_reg[3] cannot be properly analyzed as its control pin color_instance/char_back_addr_reg[3]/G is not reached by a timing clock
+The latch color_instance/char1_kick_addr_reg[8] cannot be properly analyzed as its control pin color_instance/char1_kick_addr_reg[8]/G is not reached by a timing clock
 Related violations: <none>
 
 TIMING-20#16 Warning
 Non-clocked latch  
-The latch color_instance/char_back_addr_reg[4] cannot be properly analyzed as its control pin color_instance/char_back_addr_reg[4]/G is not reached by a timing clock
+The latch color_instance/char1_kick_addr_reg[9] cannot be properly analyzed as its control pin color_instance/char1_kick_addr_reg[9]/G is not reached by a timing clock
 Related violations: <none>
 
 TIMING-20#17 Warning
 Non-clocked latch  
-The latch color_instance/char_back_addr_reg[5] cannot be properly analyzed as its control pin color_instance/char_back_addr_reg[5]/G is not reached by a timing clock
+The latch color_instance/char1_on_reg cannot be properly analyzed as its control pin color_instance/char1_on_reg/G is not reached by a timing clock
 Related violations: <none>
 
 TIMING-20#18 Warning
 Non-clocked latch  
-The latch color_instance/char_back_addr_reg[6] cannot be properly analyzed as its control pin color_instance/char_back_addr_reg[6]/G is not reached by a timing clock
+The latch color_instance/char1_punch_addr_reg[0] cannot be properly analyzed as its control pin color_instance/char1_punch_addr_reg[0]/G is not reached by a timing clock
 Related violations: <none>
 
 TIMING-20#19 Warning
 Non-clocked latch  
-The latch color_instance/char_back_addr_reg[7] cannot be properly analyzed as its control pin color_instance/char_back_addr_reg[7]/G is not reached by a timing clock
+The latch color_instance/char1_punch_addr_reg[10] cannot be properly analyzed as its control pin color_instance/char1_punch_addr_reg[10]/G is not reached by a timing clock
 Related violations: <none>
 
 TIMING-20#20 Warning
 Non-clocked latch  
-The latch color_instance/char_back_addr_reg[8] cannot be properly analyzed as its control pin color_instance/char_back_addr_reg[8]/G is not reached by a timing clock
+The latch color_instance/char1_punch_addr_reg[11] cannot be properly analyzed as its control pin color_instance/char1_punch_addr_reg[11]/G is not reached by a timing clock
 Related violations: <none>
 
 TIMING-20#21 Warning
 Non-clocked latch  
-The latch color_instance/char_back_addr_reg[9] cannot be properly analyzed as its control pin color_instance/char_back_addr_reg[9]/G is not reached by a timing clock
+The latch color_instance/char1_punch_addr_reg[12] cannot be properly analyzed as its control pin color_instance/char1_punch_addr_reg[12]/G is not reached by a timing clock
 Related violations: <none>
 
 TIMING-20#22 Warning
 Non-clocked latch  
-The latch color_instance/char_fwd_addr_reg[0] cannot be properly analyzed as its control pin color_instance/char_fwd_addr_reg[0]/G is not reached by a timing clock
+The latch color_instance/char1_punch_addr_reg[13] cannot be properly analyzed as its control pin color_instance/char1_punch_addr_reg[13]/G is not reached by a timing clock
 Related violations: <none>
 
 TIMING-20#23 Warning
 Non-clocked latch  
-The latch color_instance/char_fwd_addr_reg[10] cannot be properly analyzed as its control pin color_instance/char_fwd_addr_reg[10]/G is not reached by a timing clock
+The latch color_instance/char1_punch_addr_reg[14] cannot be properly analyzed as its control pin color_instance/char1_punch_addr_reg[14]/G is not reached by a timing clock
 Related violations: <none>
 
 TIMING-20#24 Warning
 Non-clocked latch  
-The latch color_instance/char_fwd_addr_reg[11] cannot be properly analyzed as its control pin color_instance/char_fwd_addr_reg[11]/G is not reached by a timing clock
+The latch color_instance/char1_punch_addr_reg[15] cannot be properly analyzed as its control pin color_instance/char1_punch_addr_reg[15]/G is not reached by a timing clock
 Related violations: <none>
 
 TIMING-20#25 Warning
 Non-clocked latch  
-The latch color_instance/char_fwd_addr_reg[12] cannot be properly analyzed as its control pin color_instance/char_fwd_addr_reg[12]/G is not reached by a timing clock
+The latch color_instance/char1_punch_addr_reg[1] cannot be properly analyzed as its control pin color_instance/char1_punch_addr_reg[1]/G is not reached by a timing clock
 Related violations: <none>
 
 TIMING-20#26 Warning
 Non-clocked latch  
-The latch color_instance/char_fwd_addr_reg[13] cannot be properly analyzed as its control pin color_instance/char_fwd_addr_reg[13]/G is not reached by a timing clock
+The latch color_instance/char1_punch_addr_reg[2] cannot be properly analyzed as its control pin color_instance/char1_punch_addr_reg[2]/G is not reached by a timing clock
 Related violations: <none>
 
 TIMING-20#27 Warning
 Non-clocked latch  
-The latch color_instance/char_fwd_addr_reg[14] cannot be properly analyzed as its control pin color_instance/char_fwd_addr_reg[14]/G is not reached by a timing clock
+The latch color_instance/char1_punch_addr_reg[3] cannot be properly analyzed as its control pin color_instance/char1_punch_addr_reg[3]/G is not reached by a timing clock
 Related violations: <none>
 
 TIMING-20#28 Warning
 Non-clocked latch  
-The latch color_instance/char_fwd_addr_reg[15] cannot be properly analyzed as its control pin color_instance/char_fwd_addr_reg[15]/G is not reached by a timing clock
+The latch color_instance/char1_punch_addr_reg[4] cannot be properly analyzed as its control pin color_instance/char1_punch_addr_reg[4]/G is not reached by a timing clock
 Related violations: <none>
 
 TIMING-20#29 Warning
 Non-clocked latch  
-The latch color_instance/char_fwd_addr_reg[1] cannot be properly analyzed as its control pin color_instance/char_fwd_addr_reg[1]/G is not reached by a timing clock
+The latch color_instance/char1_punch_addr_reg[5] cannot be properly analyzed as its control pin color_instance/char1_punch_addr_reg[5]/G is not reached by a timing clock
 Related violations: <none>
 
 TIMING-20#30 Warning
 Non-clocked latch  
-The latch color_instance/char_fwd_addr_reg[2] cannot be properly analyzed as its control pin color_instance/char_fwd_addr_reg[2]/G is not reached by a timing clock
+The latch color_instance/char1_punch_addr_reg[6] cannot be properly analyzed as its control pin color_instance/char1_punch_addr_reg[6]/G is not reached by a timing clock
 Related violations: <none>
 
 TIMING-20#31 Warning
 Non-clocked latch  
-The latch color_instance/char_fwd_addr_reg[3] cannot be properly analyzed as its control pin color_instance/char_fwd_addr_reg[3]/G is not reached by a timing clock
+The latch color_instance/char1_punch_addr_reg[7] cannot be properly analyzed as its control pin color_instance/char1_punch_addr_reg[7]/G is not reached by a timing clock
 Related violations: <none>
 
 TIMING-20#32 Warning
 Non-clocked latch  
-The latch color_instance/char_fwd_addr_reg[4] cannot be properly analyzed as its control pin color_instance/char_fwd_addr_reg[4]/G is not reached by a timing clock
+The latch color_instance/char1_punch_addr_reg[8] cannot be properly analyzed as its control pin color_instance/char1_punch_addr_reg[8]/G is not reached by a timing clock
 Related violations: <none>
 
 TIMING-20#33 Warning
 Non-clocked latch  
-The latch color_instance/char_fwd_addr_reg[5] cannot be properly analyzed as its control pin color_instance/char_fwd_addr_reg[5]/G is not reached by a timing clock
+The latch color_instance/char1_punch_addr_reg[9] cannot be properly analyzed as its control pin color_instance/char1_punch_addr_reg[9]/G is not reached by a timing clock
 Related violations: <none>
 
 TIMING-20#34 Warning
 Non-clocked latch  
-The latch color_instance/char_fwd_addr_reg[6] cannot be properly analyzed as its control pin color_instance/char_fwd_addr_reg[6]/G is not reached by a timing clock
+The latch color_instance/char_b_reg[0] cannot be properly analyzed as its control pin color_instance/char_b_reg[0]/G is not reached by a timing clock
 Related violations: <none>
 
 TIMING-20#35 Warning
 Non-clocked latch  
-The latch color_instance/char_fwd_addr_reg[7] cannot be properly analyzed as its control pin color_instance/char_fwd_addr_reg[7]/G is not reached by a timing clock
+The latch color_instance/char_b_reg[1] cannot be properly analyzed as its control pin color_instance/char_b_reg[1]/G is not reached by a timing clock
 Related violations: <none>
 
 TIMING-20#36 Warning
 Non-clocked latch  
-The latch color_instance/char_fwd_addr_reg[8] cannot be properly analyzed as its control pin color_instance/char_fwd_addr_reg[8]/G is not reached by a timing clock
+The latch color_instance/char_b_reg[2] cannot be properly analyzed as its control pin color_instance/char_b_reg[2]/G is not reached by a timing clock
 Related violations: <none>
 
 TIMING-20#37 Warning
 Non-clocked latch  
-The latch color_instance/char_fwd_addr_reg[9] cannot be properly analyzed as its control pin color_instance/char_fwd_addr_reg[9]/G is not reached by a timing clock
+The latch color_instance/char_b_reg[3] cannot be properly analyzed as its control pin color_instance/char_b_reg[3]/G is not reached by a timing clock
 Related violations: <none>
 
 TIMING-20#38 Warning
 Non-clocked latch  
-The latch color_instance/char_g_reg[0] cannot be properly analyzed as its control pin color_instance/char_g_reg[0]/G is not reached by a timing clock
+The latch color_instance/char_back_addr_reg[0] cannot be properly analyzed as its control pin color_instance/char_back_addr_reg[0]/G is not reached by a timing clock
 Related violations: <none>
 
 TIMING-20#39 Warning
 Non-clocked latch  
-The latch color_instance/char_g_reg[1] cannot be properly analyzed as its control pin color_instance/char_g_reg[1]/G is not reached by a timing clock
+The latch color_instance/char_back_addr_reg[10] cannot be properly analyzed as its control pin color_instance/char_back_addr_reg[10]/G is not reached by a timing clock
 Related violations: <none>
 
 TIMING-20#40 Warning
 Non-clocked latch  
-The latch color_instance/char_g_reg[2] cannot be properly analyzed as its control pin color_instance/char_g_reg[2]/G is not reached by a timing clock
+The latch color_instance/char_back_addr_reg[11] cannot be properly analyzed as its control pin color_instance/char_back_addr_reg[11]/G is not reached by a timing clock
 Related violations: <none>
 
 TIMING-20#41 Warning
 Non-clocked latch  
-The latch color_instance/char_g_reg[3] cannot be properly analyzed as its control pin color_instance/char_g_reg[3]/G is not reached by a timing clock
+The latch color_instance/char_back_addr_reg[12] cannot be properly analyzed as its control pin color_instance/char_back_addr_reg[12]/G is not reached by a timing clock
 Related violations: <none>
 
 TIMING-20#42 Warning
 Non-clocked latch  
-The latch color_instance/char_r_reg[0] cannot be properly analyzed as its control pin color_instance/char_r_reg[0]/G is not reached by a timing clock
+The latch color_instance/char_back_addr_reg[13] cannot be properly analyzed as its control pin color_instance/char_back_addr_reg[13]/G is not reached by a timing clock
 Related violations: <none>
 
 TIMING-20#43 Warning
 Non-clocked latch  
-The latch color_instance/char_r_reg[1] cannot be properly analyzed as its control pin color_instance/char_r_reg[1]/G is not reached by a timing clock
+The latch color_instance/char_back_addr_reg[14] cannot be properly analyzed as its control pin color_instance/char_back_addr_reg[14]/G is not reached by a timing clock
 Related violations: <none>
 
 TIMING-20#44 Warning
 Non-clocked latch  
-The latch color_instance/char_r_reg[2] cannot be properly analyzed as its control pin color_instance/char_r_reg[2]/G is not reached by a timing clock
+The latch color_instance/char_back_addr_reg[15] cannot be properly analyzed as its control pin color_instance/char_back_addr_reg[15]/G is not reached by a timing clock
 Related violations: <none>
 
 TIMING-20#45 Warning
 Non-clocked latch  
-The latch color_instance/char_r_reg[3] cannot be properly analyzed as its control pin color_instance/char_r_reg[3]/G is not reached by a timing clock
+The latch color_instance/char_back_addr_reg[1] cannot be properly analyzed as its control pin color_instance/char_back_addr_reg[1]/G is not reached by a timing clock
 Related violations: <none>
 
 TIMING-20#46 Warning
 Non-clocked latch  
-The latch color_instance/char_stand_addr_reg[0] cannot be properly analyzed as its control pin color_instance/char_stand_addr_reg[0]/G is not reached by a timing clock
+The latch color_instance/char_back_addr_reg[2] cannot be properly analyzed as its control pin color_instance/char_back_addr_reg[2]/G is not reached by a timing clock
 Related violations: <none>
 
 TIMING-20#47 Warning
 Non-clocked latch  
-The latch color_instance/char_stand_addr_reg[10] cannot be properly analyzed as its control pin color_instance/char_stand_addr_reg[10]/G is not reached by a timing clock
+The latch color_instance/char_back_addr_reg[3] cannot be properly analyzed as its control pin color_instance/char_back_addr_reg[3]/G is not reached by a timing clock
 Related violations: <none>
 
 TIMING-20#48 Warning
 Non-clocked latch  
-The latch color_instance/char_stand_addr_reg[11] cannot be properly analyzed as its control pin color_instance/char_stand_addr_reg[11]/G is not reached by a timing clock
+The latch color_instance/char_back_addr_reg[4] cannot be properly analyzed as its control pin color_instance/char_back_addr_reg[4]/G is not reached by a timing clock
 Related violations: <none>
 
 TIMING-20#49 Warning
 Non-clocked latch  
-The latch color_instance/char_stand_addr_reg[12] cannot be properly analyzed as its control pin color_instance/char_stand_addr_reg[12]/G is not reached by a timing clock
+The latch color_instance/char_back_addr_reg[5] cannot be properly analyzed as its control pin color_instance/char_back_addr_reg[5]/G is not reached by a timing clock
 Related violations: <none>
 
 TIMING-20#50 Warning
 Non-clocked latch  
-The latch color_instance/char_stand_addr_reg[13] cannot be properly analyzed as its control pin color_instance/char_stand_addr_reg[13]/G is not reached by a timing clock
+The latch color_instance/char_back_addr_reg[6] cannot be properly analyzed as its control pin color_instance/char_back_addr_reg[6]/G is not reached by a timing clock
 Related violations: <none>
 
 TIMING-20#51 Warning
 Non-clocked latch  
-The latch color_instance/char_stand_addr_reg[14] cannot be properly analyzed as its control pin color_instance/char_stand_addr_reg[14]/G is not reached by a timing clock
+The latch color_instance/char_back_addr_reg[7] cannot be properly analyzed as its control pin color_instance/char_back_addr_reg[7]/G is not reached by a timing clock
 Related violations: <none>
 
 TIMING-20#52 Warning
 Non-clocked latch  
-The latch color_instance/char_stand_addr_reg[15] cannot be properly analyzed as its control pin color_instance/char_stand_addr_reg[15]/G is not reached by a timing clock
+The latch color_instance/char_back_addr_reg[8] cannot be properly analyzed as its control pin color_instance/char_back_addr_reg[8]/G is not reached by a timing clock
 Related violations: <none>
 
 TIMING-20#53 Warning
 Non-clocked latch  
-The latch color_instance/char_stand_addr_reg[1] cannot be properly analyzed as its control pin color_instance/char_stand_addr_reg[1]/G is not reached by a timing clock
+The latch color_instance/char_back_addr_reg[9] cannot be properly analyzed as its control pin color_instance/char_back_addr_reg[9]/G is not reached by a timing clock
 Related violations: <none>
 
 TIMING-20#54 Warning
 Non-clocked latch  
-The latch color_instance/char_stand_addr_reg[2] cannot be properly analyzed as its control pin color_instance/char_stand_addr_reg[2]/G is not reached by a timing clock
+The latch color_instance/char_fwd_addr_reg[0] cannot be properly analyzed as its control pin color_instance/char_fwd_addr_reg[0]/G is not reached by a timing clock
 Related violations: <none>
 
 TIMING-20#55 Warning
 Non-clocked latch  
-The latch color_instance/char_stand_addr_reg[3] cannot be properly analyzed as its control pin color_instance/char_stand_addr_reg[3]/G is not reached by a timing clock
+The latch color_instance/char_fwd_addr_reg[10] cannot be properly analyzed as its control pin color_instance/char_fwd_addr_reg[10]/G is not reached by a timing clock
 Related violations: <none>
 
 TIMING-20#56 Warning
 Non-clocked latch  
-The latch color_instance/char_stand_addr_reg[4] cannot be properly analyzed as its control pin color_instance/char_stand_addr_reg[4]/G is not reached by a timing clock
+The latch color_instance/char_fwd_addr_reg[11] cannot be properly analyzed as its control pin color_instance/char_fwd_addr_reg[11]/G is not reached by a timing clock
 Related violations: <none>
 
 TIMING-20#57 Warning
 Non-clocked latch  
-The latch color_instance/char_stand_addr_reg[5] cannot be properly analyzed as its control pin color_instance/char_stand_addr_reg[5]/G is not reached by a timing clock
+The latch color_instance/char_fwd_addr_reg[12] cannot be properly analyzed as its control pin color_instance/char_fwd_addr_reg[12]/G is not reached by a timing clock
 Related violations: <none>
 
 TIMING-20#58 Warning
 Non-clocked latch  
-The latch color_instance/char_stand_addr_reg[6] cannot be properly analyzed as its control pin color_instance/char_stand_addr_reg[6]/G is not reached by a timing clock
+The latch color_instance/char_fwd_addr_reg[13] cannot be properly analyzed as its control pin color_instance/char_fwd_addr_reg[13]/G is not reached by a timing clock
 Related violations: <none>
 
 TIMING-20#59 Warning
 Non-clocked latch  
-The latch color_instance/char_stand_addr_reg[7] cannot be properly analyzed as its control pin color_instance/char_stand_addr_reg[7]/G is not reached by a timing clock
+The latch color_instance/char_fwd_addr_reg[14] cannot be properly analyzed as its control pin color_instance/char_fwd_addr_reg[14]/G is not reached by a timing clock
 Related violations: <none>
 
 TIMING-20#60 Warning
 Non-clocked latch  
-The latch color_instance/char_stand_addr_reg[8] cannot be properly analyzed as its control pin color_instance/char_stand_addr_reg[8]/G is not reached by a timing clock
+The latch color_instance/char_fwd_addr_reg[15] cannot be properly analyzed as its control pin color_instance/char_fwd_addr_reg[15]/G is not reached by a timing clock
 Related violations: <none>
 
 TIMING-20#61 Warning
+Non-clocked latch  
+The latch color_instance/char_fwd_addr_reg[1] cannot be properly analyzed as its control pin color_instance/char_fwd_addr_reg[1]/G is not reached by a timing clock
+Related violations: <none>
+
+TIMING-20#62 Warning
+Non-clocked latch  
+The latch color_instance/char_fwd_addr_reg[2] cannot be properly analyzed as its control pin color_instance/char_fwd_addr_reg[2]/G is not reached by a timing clock
+Related violations: <none>
+
+TIMING-20#63 Warning
+Non-clocked latch  
+The latch color_instance/char_fwd_addr_reg[3] cannot be properly analyzed as its control pin color_instance/char_fwd_addr_reg[3]/G is not reached by a timing clock
+Related violations: <none>
+
+TIMING-20#64 Warning
+Non-clocked latch  
+The latch color_instance/char_fwd_addr_reg[4] cannot be properly analyzed as its control pin color_instance/char_fwd_addr_reg[4]/G is not reached by a timing clock
+Related violations: <none>
+
+TIMING-20#65 Warning
+Non-clocked latch  
+The latch color_instance/char_fwd_addr_reg[5] cannot be properly analyzed as its control pin color_instance/char_fwd_addr_reg[5]/G is not reached by a timing clock
+Related violations: <none>
+
+TIMING-20#66 Warning
+Non-clocked latch  
+The latch color_instance/char_fwd_addr_reg[6] cannot be properly analyzed as its control pin color_instance/char_fwd_addr_reg[6]/G is not reached by a timing clock
+Related violations: <none>
+
+TIMING-20#67 Warning
+Non-clocked latch  
+The latch color_instance/char_fwd_addr_reg[7] cannot be properly analyzed as its control pin color_instance/char_fwd_addr_reg[7]/G is not reached by a timing clock
+Related violations: <none>
+
+TIMING-20#68 Warning
+Non-clocked latch  
+The latch color_instance/char_fwd_addr_reg[8] cannot be properly analyzed as its control pin color_instance/char_fwd_addr_reg[8]/G is not reached by a timing clock
+Related violations: <none>
+
+TIMING-20#69 Warning
+Non-clocked latch  
+The latch color_instance/char_fwd_addr_reg[9] cannot be properly analyzed as its control pin color_instance/char_fwd_addr_reg[9]/G is not reached by a timing clock
+Related violations: <none>
+
+TIMING-20#70 Warning
+Non-clocked latch  
+The latch color_instance/char_g_reg[0] cannot be properly analyzed as its control pin color_instance/char_g_reg[0]/G is not reached by a timing clock
+Related violations: <none>
+
+TIMING-20#71 Warning
+Non-clocked latch  
+The latch color_instance/char_g_reg[1] cannot be properly analyzed as its control pin color_instance/char_g_reg[1]/G is not reached by a timing clock
+Related violations: <none>
+
+TIMING-20#72 Warning
+Non-clocked latch  
+The latch color_instance/char_g_reg[2] cannot be properly analyzed as its control pin color_instance/char_g_reg[2]/G is not reached by a timing clock
+Related violations: <none>
+
+TIMING-20#73 Warning
+Non-clocked latch  
+The latch color_instance/char_g_reg[3] cannot be properly analyzed as its control pin color_instance/char_g_reg[3]/G is not reached by a timing clock
+Related violations: <none>
+
+TIMING-20#74 Warning
+Non-clocked latch  
+The latch color_instance/char_r_reg[0] cannot be properly analyzed as its control pin color_instance/char_r_reg[0]/G is not reached by a timing clock
+Related violations: <none>
+
+TIMING-20#75 Warning
+Non-clocked latch  
+The latch color_instance/char_r_reg[1] cannot be properly analyzed as its control pin color_instance/char_r_reg[1]/G is not reached by a timing clock
+Related violations: <none>
+
+TIMING-20#76 Warning
+Non-clocked latch  
+The latch color_instance/char_r_reg[2] cannot be properly analyzed as its control pin color_instance/char_r_reg[2]/G is not reached by a timing clock
+Related violations: <none>
+
+TIMING-20#77 Warning
+Non-clocked latch  
+The latch color_instance/char_r_reg[3] cannot be properly analyzed as its control pin color_instance/char_r_reg[3]/G is not reached by a timing clock
+Related violations: <none>
+
+TIMING-20#78 Warning
+Non-clocked latch  
+The latch color_instance/char_stand_addr_reg[0] cannot be properly analyzed as its control pin color_instance/char_stand_addr_reg[0]/G is not reached by a timing clock
+Related violations: <none>
+
+TIMING-20#79 Warning
+Non-clocked latch  
+The latch color_instance/char_stand_addr_reg[10] cannot be properly analyzed as its control pin color_instance/char_stand_addr_reg[10]/G is not reached by a timing clock
+Related violations: <none>
+
+TIMING-20#80 Warning
+Non-clocked latch  
+The latch color_instance/char_stand_addr_reg[11] cannot be properly analyzed as its control pin color_instance/char_stand_addr_reg[11]/G is not reached by a timing clock
+Related violations: <none>
+
+TIMING-20#81 Warning
+Non-clocked latch  
+The latch color_instance/char_stand_addr_reg[12] cannot be properly analyzed as its control pin color_instance/char_stand_addr_reg[12]/G is not reached by a timing clock
+Related violations: <none>
+
+TIMING-20#82 Warning
+Non-clocked latch  
+The latch color_instance/char_stand_addr_reg[13] cannot be properly analyzed as its control pin color_instance/char_stand_addr_reg[13]/G is not reached by a timing clock
+Related violations: <none>
+
+TIMING-20#83 Warning
+Non-clocked latch  
+The latch color_instance/char_stand_addr_reg[14] cannot be properly analyzed as its control pin color_instance/char_stand_addr_reg[14]/G is not reached by a timing clock
+Related violations: <none>
+
+TIMING-20#84 Warning
+Non-clocked latch  
+The latch color_instance/char_stand_addr_reg[15] cannot be properly analyzed as its control pin color_instance/char_stand_addr_reg[15]/G is not reached by a timing clock
+Related violations: <none>
+
+TIMING-20#85 Warning
+Non-clocked latch  
+The latch color_instance/char_stand_addr_reg[1] cannot be properly analyzed as its control pin color_instance/char_stand_addr_reg[1]/G is not reached by a timing clock
+Related violations: <none>
+
+TIMING-20#86 Warning
+Non-clocked latch  
+The latch color_instance/char_stand_addr_reg[2] cannot be properly analyzed as its control pin color_instance/char_stand_addr_reg[2]/G is not reached by a timing clock
+Related violations: <none>
+
+TIMING-20#87 Warning
+Non-clocked latch  
+The latch color_instance/char_stand_addr_reg[3] cannot be properly analyzed as its control pin color_instance/char_stand_addr_reg[3]/G is not reached by a timing clock
+Related violations: <none>
+
+TIMING-20#88 Warning
+Non-clocked latch  
+The latch color_instance/char_stand_addr_reg[4] cannot be properly analyzed as its control pin color_instance/char_stand_addr_reg[4]/G is not reached by a timing clock
+Related violations: <none>
+
+TIMING-20#89 Warning
+Non-clocked latch  
+The latch color_instance/char_stand_addr_reg[5] cannot be properly analyzed as its control pin color_instance/char_stand_addr_reg[5]/G is not reached by a timing clock
+Related violations: <none>
+
+TIMING-20#90 Warning
+Non-clocked latch  
+The latch color_instance/char_stand_addr_reg[6] cannot be properly analyzed as its control pin color_instance/char_stand_addr_reg[6]/G is not reached by a timing clock
+Related violations: <none>
+
+TIMING-20#91 Warning
+Non-clocked latch  
+The latch color_instance/char_stand_addr_reg[7] cannot be properly analyzed as its control pin color_instance/char_stand_addr_reg[7]/G is not reached by a timing clock
+Related violations: <none>
+
+TIMING-20#92 Warning
+Non-clocked latch  
+The latch color_instance/char_stand_addr_reg[8] cannot be properly analyzed as its control pin color_instance/char_stand_addr_reg[8]/G is not reached by a timing clock
+Related violations: <none>
+
+TIMING-20#93 Warning
 Non-clocked latch  
 The latch color_instance/char_stand_addr_reg[9] cannot be properly analyzed as its control pin color_instance/char_stand_addr_reg[9]/G is not reached by a timing clock
 Related violations: <none>
 
 LATCH-1#1 Advisory
 Existing latches in the design  
-There are 61 latches found in the design. Inferred latches are often the result of HDL coding mistakes, such as incomplete if or case statements.
+There are 93 latches found in the design. Inferred latches are often the result of HDL coding mistakes, such as incomplete if or case statements.
 Related violations: <none>
 
 

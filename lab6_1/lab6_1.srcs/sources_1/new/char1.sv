@@ -24,14 +24,14 @@ module char_mai(
         input logic Reset, frame_clk,
         input logic [7:0] keycode,
         output logic [12:0]  charX, charY,backX,
-        output logic forward,back
+        output logic forward,back,punch,squat,kick
     );
 
     
     logic signed [12:0] char_X_Motion, char_Y_Motion;
-    logic signed [12:0]tempX;
+//    logic signed [12:0]tempX;
     logic flag;
-	 
+    logic [7:0] prev_keycode;
     parameter [12:0] char_X_start=392+70;  // Center position on the X axis
     parameter [12:0] char_Y_start=250;  // Center position on the Y axis
     parameter [9:0] Back_X_start=392;
@@ -68,6 +68,9 @@ module char_mai(
                      char_Y_Motion <= 10'd0;
                      forward<=1'b0;
                      back<=1'b1;
+                     punch<=1'b0;
+                     squat<=1'b0;
+                     kick<=1'b0;
                  end
                  
                  else if (keycode == 8'h07) begin
@@ -75,23 +78,55 @@ module char_mai(
                      char_Y_Motion <= 10'd0;
                      forward<=1'b1;
                      back<=1'b0;
+                     punch<=1'b0;
+                     squat<=1'b0;
+                     kick<=1'b0;
+                 end
+                 else if (keycode == 8'h16) begin
+                     char_X_Motion <= 10'd0;
+                     char_Y_Motion <= 10'd0;
+                     forward<=1'b0;
+                     back<=1'b0;
+                     punch<=1'b0;
+                     squat<=1'b1;
+                     kick<=1'b0;
+                 end
+                 else if (keycode == 8'h0E) begin
+                     char_X_Motion <= 10'd0;
+                     char_Y_Motion <= 10'd0;
+                     forward<=1'b0;
+                     back<=1'b0;
+                     punch<=1'b1;
+                     squat<=1'b0;
+                     kick<=1'b0;
+                 end
+                 else if (keycode == 8'h0D) begin
+                     char_X_Motion <= 10'd0;
+                     char_Y_Motion <= 10'd0;
+                     forward<=1'b0;
+                     back<=1'b0;
+                     punch<=1'b0;
+                     squat<=1'b0;
+                     kick<=1'b1;
                  end
                  else begin
                      char_X_Motion <= 10'd0;
                      char_Y_Motion <= 10'd0;
                      forward<=1'b0;
                      back<=1'b0;
+                     punch<=1'b0;
+                     squat<=1'b0;
+                     kick<=1'b0;
                  end
                  charY <= (charY + char_Y_Motion);  
-                 tempX=charX;
-				 if(((tempX + char_X_Motion)>=Back_X_Min)&&((tempX + char_X_Motion+char_size)<=Back_X_Max))begin
+				 if(($signed(charX + char_X_Motion)>=5)&&($signed(charX + char_X_Motion+char_size)<=Back_X_Max))begin
 				    charX <= (charX + char_X_Motion); 
 				 end
 				 else begin
 				    charX<=charX;
 				 end
 				 
-				 if((((tempX + char_X_Motion)>=Back_X_Min)&&((tempX + char_X_Motion)<backX)) ||(((charX + char_X_Motion+char_size)>(backX+vga_size))&&((charX + char_X_Motion+char_size)<=Back_X_Max)))begin
+				 if((($signed(backX + char_X_Motion)>=Back_X_Min)&&($signed(charX + char_X_Motion)<backX))||(($signed(charX + char_X_Motion+char_size)>(backX+vga_size))&&($signed(charX + char_X_Motion+char_size)<=Back_X_Max)))begin
 				        backX <= (backX + char_X_Motion);
 				 end
 				 else begin
