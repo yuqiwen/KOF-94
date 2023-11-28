@@ -118,4 +118,4 @@ set_property -dict {PACKAGE_PIN N14 IOSTANDARD LVCMOS33} [get_ports {servo2}]
 set_property -dict {PACKAGE_PIN M14 IOSTANDARD LVCMOS33} [get_ports {servo3}]
 
 
-set_property MARK_DEBUG false [get_nets mai/forward_i_1_n_0]
+

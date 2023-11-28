@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<GenRun Id="impl_1" LaunchPart="xc7s50csga324-1" LaunchTime="1700612326">
+<GenRun Id="impl_1" LaunchPart="xc7s50csga324-1" LaunchTime="1701137920">
   <File Type="ROUTE-PWR" Name="mb_usb_hdmi_top_power_routed.rpt"/>
   <File Type="PA-TCL" Name="mb_usb_hdmi_top.tcl"/>
   <File Type="BITSTR-MMI" Name="mb_usb_hdmi_top.mmi"/>
@@ -110,6 +110,20 @@
       </FileInfo>
     </File>
     <File Path="$PPRDIR/lab6.2_provided/design_source/hex.sv">
+      <FileInfo>
+        <Attr Name="UsedIn" Val="synthesis"/>
+        <Attr Name="UsedIn" Val="implementation"/>
+        <Attr Name="UsedIn" Val="simulation"/>
+      </FileInfo>
+    </File>
+    <File Path="$PPRDIR/kyo_stand/kyo_stand.sv">
+      <FileInfo>
+        <Attr Name="UsedIn" Val="synthesis"/>
+        <Attr Name="UsedIn" Val="implementation"/>
+        <Attr Name="UsedIn" Val="simulation"/>
+      </FileInfo>
+    </File>
+    <File Path="$PPRDIR/kyo_stand/kyo_stand_palette.sv">
       <FileInfo>
         <Attr Name="UsedIn" Val="synthesis"/>
         <Attr Name="UsedIn" Val="implementation"/>
@@ -302,6 +316,12 @@
         <Attr Name="UsedIn" Val="simulation"/>
       </FileInfo>
     </File>
+    <File Path="$PPRDIR/kyo_stand/kyo_stand.COE">
+      <FileInfo>
+        <Attr Name="UsedIn" Val="synthesis"/>
+        <Attr Name="UsedIn" Val="simulation"/>
+      </FileInfo>
+    </File>
     <Config>
       <Option Name="DesignMode" Val="RTL"/>
       <Option Name="TopModule" Val="mb_usb_hdmi_top"/>
@@ -377,4 +397,5 @@
   <BlockFileSet Type="BlockSrcs" Name="mai_punch_rom"/>
   <BlockFileSet Type="BlockSrcs" Name="mai_squat_rom"/>
   <BlockFileSet Type="BlockSrcs" Name="mai_kick_rom"/>
+  <BlockFileSet Type="BlockSrcs" Name="kyo_stand_rom"/>
 </GenRun>

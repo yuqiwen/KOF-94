@@ -52,9 +52,9 @@ module mb_usb_hdmi_top(
     
     logic [31:0] keycode0_gpio, keycode1_gpio;
     logic clk_25MHz, clk_125MHz, clk, clk_100MHz;
-    logic locked,forward,back,punch,squat,kick;
+    logic locked,forward_1,back_1,punch_1,squat_1,kick_1,jump_1,forward_2,back_2,punch_2,squat_2,kick_2,jump_2;
     logic [9:0]drawX, drawY;
-    logic [12:0] charX, charY,backX;
+    logic [12:0] char1X, char1Y,char2X, char2Y,backX;
 
     logic hsync, vsync, vde;
     logic [3:0] red, green, blue;
@@ -149,31 +149,22 @@ module mb_usb_hdmi_top(
     char_mai mai(
         .Reset(reset_ah),
         .frame_clk(vsync),                    //Figure out what this should be so that the ball will move
-        .keycode(keycode0_gpio[7:0]),    //Notice: only one keycode connected to ball by default
-        .charX,
-        .charY,
-        .forward,
-        .back,
-        .punch,
-        .squat,
-        .kick,
-        .backX 
+        .keycode1(keycode0_gpio[7:0]),    //Notice: only one keycode connected to ball by default
+        .keycode2(keycode0_gpio[15:8]),
+        .keycode3(keycode0_gpio[23:16]),
+        .keycode4(keycode0_gpio[31:24]),
+        .keycode5(keycode1_gpio[7:0]),
+        .keycode6(keycode1_gpio[15:8]),
+        .*
     );
     
     //Color Mapper Module   
     color_mapper color_instance(
+        .*,
         .reset(reset_ah),
         .vsync,
         .DrawX(drawX),
         .DrawY(drawY),
-        .charX,
-        .charY,
-        .backX,
-        .forward,
-        .back,
-        .punch,
-        .squat,
-        .kick,
         .clk_25MHz,
         .blank(vde),
         .Red(red),
@@ -181,20 +172,5 @@ module mb_usb_hdmi_top(
         .Blue(blue)
     );
 
-//Mai_example Mai(
-//	.vga_clk(clk_25MHz),
-//	.DrawX(drawX), 
-//	.DrawY(drawY),
-//	.blank(vde),
-//	.red, .green, .blue
-//);
-
-//bg1_example bg1(
-//	.vga_clk(clk_25MHz),
-//	.DrawX(drawX), 
-//	.DrawY(drawY),
-//	.blank(vde),
-//	.red, .green, .blue
-//);
     
 endmodule

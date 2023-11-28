@@ -71,6 +71,7 @@ proc create_report { reportName command } {
 }
 OPTRACE "synth_1" START { ROLLUP_AUTO }
 set_param chipscope.maxJobs 3
+set_param xicom.use_bs_reader 1
 OPTRACE "Creating in-memory project" START { }
 create_project -in_memory -part xc7s50csga324-1
 
@@ -93,14 +94,17 @@ add_files C:/Users/yunxuan5/KOF-94/lab6_1/scene/scene.COE
 add_files C:/Users/yunxuan5/KOF-94/lab6_1/mai_stand/mai_stand.COE
 add_files C:/Users/yunxuan5/KOF-94/lab6_1/mai_forward/mai_forward.COE
 add_files C:/Users/yunxuan5/KOF-94/lab6_1/mai_back/mai_back.COE
-add_files c:/Users/yunxuan5/KOF-94/lab6_1/mai_punch/mai_punch.COE
-add_files c:/Users/yunxuan5/KOF-94/lab6_1/mai_squat/mai_squat.COE
-add_files c:/Users/yunxuan5/KOF-94/lab6_1/mai_kick/mai_kick.COE
+add_files C:/Users/yunxuan5/KOF-94/lab6_1/mai_punch/mai_punch.COE
+add_files C:/Users/yunxuan5/KOF-94/lab6_1/mai_squat/mai_squat.COE
+add_files C:/Users/yunxuan5/KOF-94/lab6_1/mai_kick/mai_kick.COE
+add_files c:/Users/yunxuan5/KOF-94/lab6_1/kyo_stand/kyo_stand.COE
 read_verilog -library xil_defaultlib -sv {
   C:/Users/yunxuan5/KOF-94/lab6_1/lab6.2_provided/design_source/Color_Mapper.sv
   C:/Users/yunxuan5/KOF-94/lab6_1/lab6.2_provided/design_source/VGA_controller.sv
   C:/Users/yunxuan5/KOF-94/lab6_1/lab6_1.srcs/sources_1/new/char1.sv
   C:/Users/yunxuan5/KOF-94/lab6_1/lab6.2_provided/design_source/hex.sv
+  C:/Users/yunxuan5/KOF-94/lab6_1/kyo_stand/kyo_stand.sv
+  C:/Users/yunxuan5/KOF-94/lab6_1/kyo_stand/kyo_stand_palette.sv
   C:/Users/yunxuan5/KOF-94/lab6_1/lab6_1.srcs/sources_1/imports/mai_back/mai_back_example.sv
   C:/Users/yunxuan5/KOF-94/lab6_1/mai_back/mai_back_palette.sv
   C:/Users/yunxuan5/KOF-94/lab6_1/lab6_1.srcs/sources_1/imports/mai_forward/mai_forward_example.sv
@@ -178,14 +182,17 @@ set_property used_in_implementation false [get_files -all c:/Users/yunxuan5/KOF-
 read_ip -quiet C:/Users/yunxuan5/KOF-94/lab6_1/lab6_1.srcs/sources_1/ip/mai_back_rom/mai_back_rom.xci
 set_property used_in_implementation false [get_files -all c:/Users/yunxuan5/KOF-94/lab6_1/lab6_1.gen/sources_1/ip/mai_back_rom/mai_back_rom_ooc.xdc]
 
-read_ip -quiet c:/Users/yunxuan5/KOF-94/lab6_1/lab6_1.srcs/sources_1/ip/mai_punch_rom/mai_punch_rom.xci
+read_ip -quiet C:/Users/yunxuan5/KOF-94/lab6_1/lab6_1.srcs/sources_1/ip/mai_punch_rom/mai_punch_rom.xci
 set_property used_in_implementation false [get_files -all c:/Users/yunxuan5/KOF-94/lab6_1/lab6_1.gen/sources_1/ip/mai_punch_rom/mai_punch_rom_ooc.xdc]
 
-read_ip -quiet c:/Users/yunxuan5/KOF-94/lab6_1/lab6_1.srcs/sources_1/ip/mai_squat_rom/mai_squat_rom.xci
+read_ip -quiet C:/Users/yunxuan5/KOF-94/lab6_1/lab6_1.srcs/sources_1/ip/mai_squat_rom/mai_squat_rom.xci
 set_property used_in_implementation false [get_files -all c:/Users/yunxuan5/KOF-94/lab6_1/lab6_1.gen/sources_1/ip/mai_squat_rom/mai_squat_rom_ooc.xdc]
 
-read_ip -quiet c:/Users/yunxuan5/KOF-94/lab6_1/lab6_1.srcs/sources_1/ip/mai_kick_rom/mai_kick_rom.xci
+read_ip -quiet C:/Users/yunxuan5/KOF-94/lab6_1/lab6_1.srcs/sources_1/ip/mai_kick_rom/mai_kick_rom.xci
 set_property used_in_implementation false [get_files -all c:/Users/yunxuan5/KOF-94/lab6_1/lab6_1.gen/sources_1/ip/mai_kick_rom/mai_kick_rom_ooc.xdc]
+
+read_ip -quiet c:/Users/yunxuan5/KOF-94/lab6_1/lab6_1.srcs/sources_1/ip/kyo_stand_rom/kyo_stand_rom.xci
+set_property used_in_implementation false [get_files -all c:/Users/yunxuan5/KOF-94/lab6_1/lab6_1.gen/sources_1/ip/kyo_stand_rom/kyo_stand_rom_ooc.xdc]
 
 OPTRACE "Adding files" END { }
 # Mark all dcp files as not used in implementation to prevent them from being

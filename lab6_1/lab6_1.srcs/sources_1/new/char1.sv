@@ -22,21 +22,22 @@
 
 module char_mai(
         input logic Reset, frame_clk,
-        input logic [7:0] keycode,
-        output logic [12:0]  charX, charY,backX,
-        output logic forward,back,punch,squat,kick
+        input logic [7:0] keycode1,keycode2,keycode3,keycode4,keycode5,keycode6,
+        output logic [12:0]  char1X, char1Y,char2X, char2Y,backX,
+        output logic forward_1,back_1,punch_1,squat_1,kick_1,jump_1,forward_2,back_2,punch_2,squat_2,kick_2,jump_2
     );
 
     
-    logic signed [12:0] char_X_Motion, char_Y_Motion;
+    logic signed [12:0] char1_X_Motion, char1_Y_Motion,char2_X_Motion, char2_Y_Motion,back_Motion;
 //    logic signed [12:0]tempX;
-    logic flag;
-    logic [7:0] prev_keycode;
-    parameter [12:0] char_X_start=392+70;  // Center position on the X axis
-    parameter [12:0] char_Y_start=250;  // Center position on the Y axis
+    logic c1_for,c1_bac,c1_squ,c1_jmp,c1_pun,c1_kic,c2_for,c2_bac,c2_squ,c2_jmp,c2_pun,c2_kic;
+    parameter [12:0] char1_X_start=392+70;  // Center position on the X axis
+    parameter [12:0] char1_Y_start=250;  // Center position on the Y axis
+    parameter [12:0] char2_X_start=392+640-70-160;  // Center position on the X axis
+    parameter [12:0] char2_Y_start=250;
     parameter [9:0] Back_X_start=392;
     parameter [9:0] char_X_Min=0;       
-    parameter [9:0] char_size=200;
+    parameter [9:0] char_size=160;
     parameter [12:0] Back_X_size=1424;
     parameter [9:0] Back_Y_size=480;
     parameter [9:0] vga_size=640;
@@ -48,90 +49,258 @@ module char_mai(
 //    parameter [9:0] Ball_Y_Step=1;      // Step size on the Y axis
 
 //    assign flag = 0;
+    always_comb begin
+        c1_for=0;
+        c1_bac=0;
+        c1_squ=0;
+        c1_jmp=0;
+        c1_pun=0;
+        c1_kic=0;
+        c2_for=0;
+        c2_bac=0;
+        c2_squ=0;
+        c2_jmp=0;
+        c2_pun=0;
+        c2_kic=0;
+        if(keycode1==8'h0E||keycode2==8'h0E||keycode3==8'h0E||keycode4==8'h0E||keycode5==8'h0E||keycode6==8'h0E)
+            c1_pun=1;
+        else if(keycode1==8'h0D||keycode2==8'h0D||keycode3==8'h0D||keycode4==8'h0D||keycode5==8'h0D||keycode6==8'h0D)
+            c1_kic=1;
+        else if(keycode1==8'h16||keycode2==8'h16||keycode3==8'h16||keycode4==8'h16||keycode5==8'h16||keycode6==8'h16)
+            c1_squ=1;
+        else if(keycode1==8'h1A||keycode2==8'h1A||keycode3==8'h1A||keycode4==8'h1A||keycode5==8'h1A||keycode6==8'h1A)
+            c1_jmp=1;
+        else if(keycode1==8'h07||keycode2==8'h07||keycode3==8'h07||keycode4==8'h07||keycode5==8'h07||keycode6==8'h07)
+            c1_for=1;   
+        else if(keycode1==8'h04||keycode2==8'h04||keycode3==8'h04||keycode4==8'h04||keycode5==8'h04||keycode6==8'h04)
+            c1_bac=1; 
+        else begin
+            c1_for=0;
+            c1_bac=0;
+            c1_squ=0;
+            c1_jmp=0;
+            c1_pun=0;
+            c1_kic=0;
+        end
+            
+        if(keycode1==8'h5A||keycode2==8'h5A||keycode3==8'h5A||keycode4==8'h5A||keycode5==8'h5A||keycode6==8'h5A)
+            c2_pun=1;
+        else if(keycode1==8'h59||keycode2==8'h59||keycode3==8'h59||keycode4==8'h59||keycode5==8'h59||keycode6==8'h59)
+            c2_kic=1;
+        else if(keycode1==8'h51||keycode2==8'h51||keycode3==8'h51||keycode4==8'h51||keycode5==8'h51||keycode6==8'h51)
+            c2_squ=1;
+        else if(keycode1==8'h52||keycode2==8'h52||keycode3==8'h52||keycode4==8'h52||keycode5==8'h52||keycode6==8'h52)
+            c2_jmp=1;
+        else if(keycode1==8'h50||keycode2==8'h50||keycode3==8'h50||keycode4==8'h50||keycode5==8'h50||keycode6==8'h50)
+            c2_for=1;   
+        else if(keycode1==8'h4F||keycode2==8'h4F||keycode3==8'h4F||keycode4==8'h4F||keycode5==8'h4F||keycode6==8'h4F)
+            c2_bac=1; 
+        else begin
+            c2_for=0;
+            c2_bac=0;
+            c2_squ=0;
+            c2_jmp=0;
+            c2_pun=0;
+            c2_kic=0;
+        end
+    end
     always_ff @ (posedge frame_clk or posedge Reset) //make sure the frame clock is instantiated correctly
     begin: Move_char
         if (Reset)  // asynchronous Reset
         begin 
-            char_Y_Motion <= 10'd0; //Ball_Y_Step;
-			char_X_Motion <= 10'd0; //Ball_X_Step;
-			charY <= char_Y_start;
-			charX <= char_X_start;
+            char1_Y_Motion <= 10'd0; 
+			char1_X_Motion <= 10'd0; 
+            char2_Y_Motion <= 10'd0; 
+			char2_X_Motion <= 10'd0; 
+			char1Y <= char1_Y_start;
+			char1X <= char1_X_start;
+            char2Y <= char2_Y_start;
+			char2X <= char2_X_start;
 			backX<=Back_X_start;
-            forward<=1'b0;
-            back<=1'b0;
+             forward_1<=1'b0;
+             back_1<=1'b0;
+             punch_1<=1'b0;
+             squat_1<=1'b0;
+             kick_1<=1'b0;
+             jump_1<=1'b0;
+             forward_2<=1'b0;
+             back_2<=1'b0;
+             punch_2<=1'b0;
+             squat_2<=1'b0;
+             kick_2<=1'b0;
+             jump_2<=1'b0;
         end
            
         else 
         begin 
-                 if (keycode == 8'h04) begin
-                     char_X_Motion <= -10'd3;
-                     char_Y_Motion <= 10'd0;
-                     forward<=1'b0;
-                     back<=1'b1;
-                     punch<=1'b0;
-                     squat<=1'b0;
-                     kick<=1'b0;
+                 if (c1_bac) begin
+                     char1_X_Motion <= -10'd3;
+                     char1_Y_Motion <= 10'd0;
+                     forward_1<=1'b0;
+                     back_1<=1'b1;
+                     punch_1<=1'b0;
+                     squat_1<=1'b0;
+                     kick_1<=1'b0;
+                     jump_1<=1'b0;
                  end
                  
-                 else if (keycode == 8'h07) begin
-                     char_X_Motion <= 10'd3;
-                     char_Y_Motion <= 10'd0;
-                     forward<=1'b1;
-                     back<=1'b0;
-                     punch<=1'b0;
-                     squat<=1'b0;
-                     kick<=1'b0;
+                 else if (c1_for) begin
+                     char1_X_Motion <= 10'd3;
+                     char1_Y_Motion <= 10'd0;
+                     forward_1<=1'b1;
+                     back_1<=1'b0;
+                     punch_1<=1'b0;
+                     squat_1<=1'b0;
+                     kick_1<=1'b0;
+                     jump_1<=1'b0;
                  end
-                 else if (keycode == 8'h16) begin
-                     char_X_Motion <= 10'd0;
-                     char_Y_Motion <= 10'd0;
-                     forward<=1'b0;
-                     back<=1'b0;
-                     punch<=1'b0;
-                     squat<=1'b1;
-                     kick<=1'b0;
+                 else if (c1_squ) begin
+                     char1_X_Motion <= 10'd0;
+                     char1_Y_Motion <= 10'd0;
+                     forward_1<=1'b0;
+                     back_1<=1'b0;
+                     punch_1<=1'b0;
+                     squat_1<=1'b1;
+                     kick_1<=1'b0;
+                     jump_1<=1'b0;
                  end
-                 else if (keycode == 8'h0E) begin
-                     char_X_Motion <= 10'd0;
-                     char_Y_Motion <= 10'd0;
-                     forward<=1'b0;
-                     back<=1'b0;
-                     punch<=1'b1;
-                     squat<=1'b0;
-                     kick<=1'b0;
+                 else if (c1_pun) begin
+                     char1_X_Motion <= 10'd0;
+                     char1_Y_Motion <= 10'd0;
+                     forward_1<=1'b0;
+                     back_1<=1'b0;
+                     punch_1<=1'b1;
+                     squat_1<=1'b0;
+                     kick_1<=1'b0;
+                     jump_1<=1'b0;
                  end
-                 else if (keycode == 8'h0D) begin
-                     char_X_Motion <= 10'd0;
-                     char_Y_Motion <= 10'd0;
-                     forward<=1'b0;
-                     back<=1'b0;
-                     punch<=1'b0;
-                     squat<=1'b0;
-                     kick<=1'b1;
+                 else if (c1_kic) begin
+                     char1_X_Motion <= 10'd0;
+                     char1_Y_Motion <= 10'd0;
+                     forward_1<=1'b0;
+                     back_1<=1'b0;
+                     punch_1<=1'b0;
+                     squat_1<=1'b0;
+                     kick_1<=1'b1;
+                     jump_1<=1'b0;
+                 end
+                 else if (c1_jmp) begin
+                     char1_X_Motion <= 10'd0;
+                     char1_Y_Motion <= 10'd0;
+                     forward_1<=1'b0;
+                     back_1<=1'b0;
+                     punch_1<=1'b0;
+                     squat_1<=1'b0;
+                     kick_1<=1'b0;
+                     jump_1<=1'b1;
                  end
                  else begin
-                     char_X_Motion <= 10'd0;
-                     char_Y_Motion <= 10'd0;
-                     forward<=1'b0;
-                     back<=1'b0;
-                     punch<=1'b0;
-                     squat<=1'b0;
-                     kick<=1'b0;
+                     char1_X_Motion <= 10'd0;
+                     char1_Y_Motion <= 10'd0;
+                     forward_1<=1'b0;
+                     back_1<=1'b0;
+                     punch_1<=1'b0;
+                     squat_1<=1'b0;
+                     kick_1<=1'b0;
+                     jump_1<=1'b0;
                  end
-                 charY <= (charY + char_Y_Motion);  
-				 if(($signed(charX + char_X_Motion)>=5)&&($signed(charX + char_X_Motion+char_size)<=Back_X_Max))begin
-				    charX <= (charX + char_X_Motion); 
+                 
+                  if (c2_bac) begin
+                     char2_X_Motion <= 10'd3;
+                     char2_Y_Motion <= 10'd0;
+                     forward_2<=1'b0;
+                     back_2<=1'b1;
+                     punch_2<=1'b0;
+                     squat_2<=1'b0;
+                     kick_2<=1'b0;
+                     jump_2<=1'b0;
+                 end
+                 
+                 else if (c2_for) begin
+                     char2_X_Motion <= -10'd3;
+                     char2_Y_Motion <= 10'd0;
+                     forward_2<=1'b1;
+                     back_2<=1'b0;
+                     punch_2<=1'b0;
+                     squat_2<=1'b0;
+                     kick_2<=1'b0;
+                     jump_2<=1'b0;
+                 end
+                 else if (c2_squ) begin
+                     char2_X_Motion <= 10'd0;
+                     char2_Y_Motion <= 10'd0;
+                     forward_2<=1'b0;
+                     back_2<=1'b0;
+                     punch_2<=1'b0;
+                     squat_2<=1'b1;
+                     kick_2<=1'b0;
+                     jump_2<=1'b0;
+                 end
+                 else if (c2_pun) begin
+                     char2_X_Motion <= 10'd0;
+                     char2_Y_Motion <= 10'd0;
+                     forward_2<=1'b0;
+                     back_2<=1'b0;
+                     punch_2<=1'b1;
+                     squat_2<=1'b0;
+                     kick_2<=1'b0;
+                     jump_2<=1'b0;
+                 end
+                 else if (c2_kic) begin
+                     char2_X_Motion <= 10'd0;
+                     char2_Y_Motion <= 10'd0;
+                     forward_2<=1'b0;
+                     back_2<=1'b0;
+                     punch_2<=1'b0;
+                     squat_2<=1'b0;
+                     kick_2<=1'b1;
+                     jump_2<=1'b0;
+                 end
+                 else if (c2_jmp) begin
+                     char2_X_Motion <= 10'd0;
+                     char2_Y_Motion <= 10'd0;
+                     forward_2<=1'b0;
+                     back_2<=1'b0;
+                     punch_2<=1'b0;
+                     squat_2<=1'b0;
+                     kick_2<=1'b0;
+                     jump_2<=1'b1;
+                 end
+                 else begin
+                     char2_X_Motion <= 10'd0;
+                     char2_Y_Motion <= 10'd0;
+                     forward_2<=1'b0;
+                     back_2<=1'b0;
+                     punch_2<=1'b0;
+                     squat_2<=1'b0;
+                     kick_2<=1'b0;
+                     jump_2<=1'b0;
+                 end
+                 
+                 
+                 char1Y <= (char1Y + char1_Y_Motion);  
+                 char2Y <= (char2Y + char2_Y_Motion);  
+				 if($signed(char1X + char1_X_Motion+char_size)<$signed(char2X+char2_X_Motion))begin
+				    if($signed(char1X + char1_X_Motion)>=392)
+				        char1X <= (char1X + char1_X_Motion);
+				    else
+				         char1X<=char1X;
+				    if($signed(char2X + char2_X_Motion+char_size)<392+640)
+                        char2X <= (char2X + char2_X_Motion);
+				    else
+				         char2X<=char2X;
 				 end
 				 else begin
-				    charX<=charX;
+				    char1X<=char1X;
+				    char2X<=char2X;
 				 end
-				 
-				 if((($signed(backX + char_X_Motion)>=Back_X_Min)&&($signed(charX + char_X_Motion)<backX))||(($signed(charX + char_X_Motion+char_size)>(backX+vga_size))&&($signed(charX + char_X_Motion+char_size)<=Back_X_Max)))begin
-				        backX <= (backX + char_X_Motion);
-				 end
-				 else begin
-				    backX<=backX;
-				 end
+//				 back_Motion=char1_X_Motion+char2_X_Motion;
+//				 if(($signed(backX + back_Motion)>=Back_X_Min)&&($signed(backX + back_Motion)<=Back_X_Max))begin
+//				        backX <= (backX + back_Motion);
+//				 end
+//				 else begin
+//				    backX<=backX;
+//				 end
 			
 		end  
     end

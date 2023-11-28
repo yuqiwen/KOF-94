@@ -2208,3 +2208,657 @@ con
 ----------------End of Script----------------
 
 18:23:37 INFO  : Disconnected from the channel tcfchan#32.
+17:50:06 DEBUG : Logs will be stored at 'C:/Users/yunxuan5/KOF-94/lab6_1/workspace3/IDE.log'.
+17:50:06 INFO  : Launching XSCT server: xsct.bat -n  -interactive C:\Users\yunxuan5\KOF-94\lab6_1\workspace3\temp_xsdb_launch_script.tcl
+17:50:09 INFO  : XSCT server has started successfully.
+17:50:09 INFO  : Successfully done setting XSCT server connection channel  
+17:50:10 INFO  : plnx-install-location is set to ''
+17:50:10 INFO  : Registering command handlers for Vitis TCF services
+17:50:10 INFO  : Successfully done setting workspace for the tool. 
+17:50:10 INFO  : Successfully done query RDI_DATADIR 
+17:50:10 INFO  : Platform repository initialization has completed.
+17:50:17 INFO  : Hardware specification for platform project 'mb_usb_hdmi_top' is updated.
+17:50:59 INFO  : Result from executing command 'getProjects': mb_usb_hdmi_top
+17:50:59 INFO  : Result from executing command 'getPlatforms': mb_usb_hdmi_top|C:/Users/yunxuan5/KOF-94/lab6_1/workspace3/mb_usb_hdmi_top/export/mb_usb_hdmi_top/mb_usb_hdmi_top.xpfm;xilinx_vck190_base_202220_1|C:/Xilinx/Vitis/2022.2/base_platforms/xilinx_vck190_base_202220_1/xilinx_vck190_base_202220_1.xpfm;xilinx_vck190_base_dfx_202220_1|C:/Xilinx/Vitis/2022.2/base_platforms/xilinx_vck190_base_dfx_202220_1/xilinx_vck190_base_dfx_202220_1.xpfm;xilinx_vmk180_base_202220_1|C:/Xilinx/Vitis/2022.2/base_platforms/xilinx_vmk180_base_202220_1/xilinx_vmk180_base_202220_1.xpfm;xilinx_zcu102_base_202220_1|C:/Xilinx/Vitis/2022.2/base_platforms/xilinx_zcu102_base_202220_1/xilinx_zcu102_base_202220_1.xpfm;xilinx_zcu102_base_dfx_202220_1|C:/Xilinx/Vitis/2022.2/base_platforms/xilinx_zcu102_base_dfx_202220_1/xilinx_zcu102_base_dfx_202220_1.xpfm;xilinx_zcu104_base_202220_1|C:/Xilinx/Vitis/2022.2/base_platforms/xilinx_zcu104_base_202220_1/xilinx_zcu104_base_202220_1.xpfm
+17:51:00 INFO  : Checking for BSP changes to sync application flags for project 'kof'...
+17:51:02 INFO  : The hardware specification used by project 'kof' is out of sync with the platform. Resource files extracted from the hardware specification will be updated.
+17:51:02 INFO  : The file 'C:\Users\yunxuan5\KOF-94\lab6_1\workspace3\kof\_ide\bitstream\mb_usb_hdmi_top.bit' stored in project is removed.
+17:51:02 INFO  : The file 'C:\Users\yunxuan5\KOF-94\lab6_1\workspace3\kof\_ide\bitstream\mb_usb_hdmi_top.mmi' stored in project is removed.
+17:51:03 INFO  : The updated bitstream files are copied from platform to folder 'C:\Users\yunxuan5\KOF-94\lab6_1\workspace3\kof\_ide\bitstream' in project 'kof'.
+17:51:05 INFO  : Connected to target on host '127.0.0.1' and port '3121'.
+17:51:06 INFO  : Jtag cable 'RealDigital Boo 8874292302C1A' is selected.
+17:51:06 INFO  : 'jtag frequency' command is executed.
+17:51:06 INFO  : 'targets -set -filter {jtag_cable_name =~ "RealDigital Boo 8874292302C1A" && level==0 && jtag_device_ctx=="jsn1-0362f093-0"}' command is executed.
+17:51:07 INFO  : Device configured successfully with "C:/Users/yunxuan5/KOF-94/lab6_1/workspace3/kof/_ide/bitstream/mb_usb_hdmi_top.bit"
+17:51:07 INFO  : Context for processor 'microblaze_0' is selected.
+17:51:07 INFO  : Hardware design and registers information is loaded from 'C:/Users/yunxuan5/KOF-94/lab6_1/workspace3/mb_usb_hdmi_top/export/mb_usb_hdmi_top/hw/mb_usb_hdmi_top.xsa'.
+17:51:07 INFO  : 'configparams mdm-detect-bscan-mask 2' command is executed.
+17:51:07 INFO  : Context for processor 'microblaze_0' is selected.
+17:51:07 INFO  : System reset is completed.
+17:51:10 INFO  : 'after 3000' command is executed.
+17:51:10 INFO  : Context for processor 'microblaze_0' is selected.
+17:51:10 INFO  : The application 'C:/Users/yunxuan5/KOF-94/lab6_1/workspace3/kof/Debug/kof.elf' is downloaded to processor 'microblaze_0'.
+17:51:10 INFO  : ----------------XSDB Script----------------
+connect -url tcp:127.0.0.1:3121
+targets -set -filter {jtag_cable_name =~ "RealDigital Boo 8874292302C1A" && level==0 && jtag_device_ctx=="jsn1-0362f093-0"}
+fpga -file C:/Users/yunxuan5/KOF-94/lab6_1/workspace3/kof/_ide/bitstream/mb_usb_hdmi_top.bit
+targets -set -nocase -filter {name =~ "*microblaze*#0" && bscan=="USER2" }
+loadhw -hw C:/Users/yunxuan5/KOF-94/lab6_1/workspace3/mb_usb_hdmi_top/export/mb_usb_hdmi_top/hw/mb_usb_hdmi_top.xsa -regs
+configparams mdm-detect-bscan-mask 2
+targets -set -nocase -filter {name =~ "*microblaze*#0" && bscan=="USER2" }
+rst -system
+after 3000
+targets -set -nocase -filter {name =~ "*microblaze*#0" && bscan=="USER2" }
+dow C:/Users/yunxuan5/KOF-94/lab6_1/workspace3/kof/Debug/kof.elf
+----------------End of Script----------------
+
+17:51:10 INFO  : Context for processor 'microblaze_0' is selected.
+17:51:10 INFO  : 'con' command is executed.
+17:51:10 INFO  : ----------------XSDB Script (After Launch)----------------
+targets -set -nocase -filter {name =~ "*microblaze*#0" && bscan=="USER2" }
+con
+----------------End of Script----------------
+
+17:51:10 INFO  : Disconnected from the channel tcfchan#2.
+18:03:47 INFO  : Hardware specification for platform project 'mb_usb_hdmi_top' is updated.
+18:04:00 INFO  : Result from executing command 'getProjects': mb_usb_hdmi_top
+18:04:00 INFO  : Result from executing command 'getPlatforms': mb_usb_hdmi_top|C:/Users/yunxuan5/KOF-94/lab6_1/workspace3/mb_usb_hdmi_top/export/mb_usb_hdmi_top/mb_usb_hdmi_top.xpfm;xilinx_vck190_base_202220_1|C:/Xilinx/Vitis/2022.2/base_platforms/xilinx_vck190_base_202220_1/xilinx_vck190_base_202220_1.xpfm;xilinx_vck190_base_dfx_202220_1|C:/Xilinx/Vitis/2022.2/base_platforms/xilinx_vck190_base_dfx_202220_1/xilinx_vck190_base_dfx_202220_1.xpfm;xilinx_vmk180_base_202220_1|C:/Xilinx/Vitis/2022.2/base_platforms/xilinx_vmk180_base_202220_1/xilinx_vmk180_base_202220_1.xpfm;xilinx_zcu102_base_202220_1|C:/Xilinx/Vitis/2022.2/base_platforms/xilinx_zcu102_base_202220_1/xilinx_zcu102_base_202220_1.xpfm;xilinx_zcu102_base_dfx_202220_1|C:/Xilinx/Vitis/2022.2/base_platforms/xilinx_zcu102_base_dfx_202220_1/xilinx_zcu102_base_dfx_202220_1.xpfm;xilinx_zcu104_base_202220_1|C:/Xilinx/Vitis/2022.2/base_platforms/xilinx_zcu104_base_202220_1/xilinx_zcu104_base_202220_1.xpfm
+18:04:01 INFO  : Checking for BSP changes to sync application flags for project 'kof'...
+18:04:03 INFO  : The hardware specification used by project 'kof' is out of sync with the platform. Resource files extracted from the hardware specification will be updated.
+18:04:03 INFO  : The file 'C:\Users\yunxuan5\KOF-94\lab6_1\workspace3\kof\_ide\bitstream\mb_usb_hdmi_top.bit' stored in project is removed.
+18:04:03 INFO  : The file 'C:\Users\yunxuan5\KOF-94\lab6_1\workspace3\kof\_ide\bitstream\mb_usb_hdmi_top.mmi' stored in project is removed.
+18:04:03 INFO  : The updated bitstream files are copied from platform to folder 'C:\Users\yunxuan5\KOF-94\lab6_1\workspace3\kof\_ide\bitstream' in project 'kof'.
+18:04:07 INFO  : Connected to target on host '127.0.0.1' and port '3121'.
+18:04:07 INFO  : Jtag cable 'RealDigital Boo 8874292302C1A' is selected.
+18:04:07 INFO  : 'jtag frequency' command is executed.
+18:04:08 INFO  : 'targets -set -filter {jtag_cable_name =~ "RealDigital Boo 8874292302C1A" && level==0 && jtag_device_ctx=="jsn1-0362f093-0"}' command is executed.
+18:04:09 INFO  : Device configured successfully with "C:/Users/yunxuan5/KOF-94/lab6_1/workspace3/kof/_ide/bitstream/mb_usb_hdmi_top.bit"
+18:04:09 INFO  : Context for processor 'microblaze_0' is selected.
+18:04:09 INFO  : Hardware design and registers information is loaded from 'C:/Users/yunxuan5/KOF-94/lab6_1/workspace3/mb_usb_hdmi_top/export/mb_usb_hdmi_top/hw/mb_usb_hdmi_top.xsa'.
+18:04:09 INFO  : 'configparams mdm-detect-bscan-mask 2' command is executed.
+18:04:09 INFO  : Context for processor 'microblaze_0' is selected.
+18:04:09 INFO  : System reset is completed.
+18:04:12 INFO  : 'after 3000' command is executed.
+18:04:12 INFO  : Context for processor 'microblaze_0' is selected.
+18:04:12 INFO  : The application 'C:/Users/yunxuan5/KOF-94/lab6_1/workspace3/kof/Debug/kof.elf' is downloaded to processor 'microblaze_0'.
+18:04:12 INFO  : ----------------XSDB Script----------------
+connect -url tcp:127.0.0.1:3121
+targets -set -filter {jtag_cable_name =~ "RealDigital Boo 8874292302C1A" && level==0 && jtag_device_ctx=="jsn1-0362f093-0"}
+fpga -file C:/Users/yunxuan5/KOF-94/lab6_1/workspace3/kof/_ide/bitstream/mb_usb_hdmi_top.bit
+targets -set -nocase -filter {name =~ "*microblaze*#0" && bscan=="USER2" }
+loadhw -hw C:/Users/yunxuan5/KOF-94/lab6_1/workspace3/mb_usb_hdmi_top/export/mb_usb_hdmi_top/hw/mb_usb_hdmi_top.xsa -regs
+configparams mdm-detect-bscan-mask 2
+targets -set -nocase -filter {name =~ "*microblaze*#0" && bscan=="USER2" }
+rst -system
+after 3000
+targets -set -nocase -filter {name =~ "*microblaze*#0" && bscan=="USER2" }
+dow C:/Users/yunxuan5/KOF-94/lab6_1/workspace3/kof/Debug/kof.elf
+----------------End of Script----------------
+
+18:04:12 INFO  : Context for processor 'microblaze_0' is selected.
+18:04:12 INFO  : 'con' command is executed.
+18:04:12 INFO  : ----------------XSDB Script (After Launch)----------------
+targets -set -nocase -filter {name =~ "*microblaze*#0" && bscan=="USER2" }
+con
+----------------End of Script----------------
+
+18:04:12 INFO  : Disconnected from the channel tcfchan#4.
+18:12:29 INFO  : Hardware specification for platform project 'mb_usb_hdmi_top' is updated.
+18:12:39 INFO  : Result from executing command 'getProjects': mb_usb_hdmi_top
+18:12:39 INFO  : Result from executing command 'getPlatforms': mb_usb_hdmi_top|C:/Users/yunxuan5/KOF-94/lab6_1/workspace3/mb_usb_hdmi_top/export/mb_usb_hdmi_top/mb_usb_hdmi_top.xpfm;xilinx_vck190_base_202220_1|C:/Xilinx/Vitis/2022.2/base_platforms/xilinx_vck190_base_202220_1/xilinx_vck190_base_202220_1.xpfm;xilinx_vck190_base_dfx_202220_1|C:/Xilinx/Vitis/2022.2/base_platforms/xilinx_vck190_base_dfx_202220_1/xilinx_vck190_base_dfx_202220_1.xpfm;xilinx_vmk180_base_202220_1|C:/Xilinx/Vitis/2022.2/base_platforms/xilinx_vmk180_base_202220_1/xilinx_vmk180_base_202220_1.xpfm;xilinx_zcu102_base_202220_1|C:/Xilinx/Vitis/2022.2/base_platforms/xilinx_zcu102_base_202220_1/xilinx_zcu102_base_202220_1.xpfm;xilinx_zcu102_base_dfx_202220_1|C:/Xilinx/Vitis/2022.2/base_platforms/xilinx_zcu102_base_dfx_202220_1/xilinx_zcu102_base_dfx_202220_1.xpfm;xilinx_zcu104_base_202220_1|C:/Xilinx/Vitis/2022.2/base_platforms/xilinx_zcu104_base_202220_1/xilinx_zcu104_base_202220_1.xpfm
+18:12:40 INFO  : Checking for BSP changes to sync application flags for project 'kof'...
+18:12:42 INFO  : The hardware specification used by project 'kof' is out of sync with the platform. Resource files extracted from the hardware specification will be updated.
+18:12:42 INFO  : The file 'C:\Users\yunxuan5\KOF-94\lab6_1\workspace3\kof\_ide\bitstream\mb_usb_hdmi_top.bit' stored in project is removed.
+18:12:42 INFO  : The file 'C:\Users\yunxuan5\KOF-94\lab6_1\workspace3\kof\_ide\bitstream\mb_usb_hdmi_top.mmi' stored in project is removed.
+18:12:42 INFO  : The updated bitstream files are copied from platform to folder 'C:\Users\yunxuan5\KOF-94\lab6_1\workspace3\kof\_ide\bitstream' in project 'kof'.
+18:12:48 INFO  : Connected to target on host '127.0.0.1' and port '3121'.
+18:12:48 INFO  : Jtag cable 'RealDigital Boo 8874292302C1A' is selected.
+18:12:48 INFO  : 'jtag frequency' command is executed.
+18:12:48 INFO  : 'targets -set -filter {jtag_cable_name =~ "RealDigital Boo 8874292302C1A" && level==0 && jtag_device_ctx=="jsn1-0362f093-0"}' command is executed.
+18:12:49 INFO  : Device configured successfully with "C:/Users/yunxuan5/KOF-94/lab6_1/workspace3/kof/_ide/bitstream/mb_usb_hdmi_top.bit"
+18:12:49 INFO  : Context for processor 'microblaze_0' is selected.
+18:12:49 INFO  : Hardware design and registers information is loaded from 'C:/Users/yunxuan5/KOF-94/lab6_1/workspace3/mb_usb_hdmi_top/export/mb_usb_hdmi_top/hw/mb_usb_hdmi_top.xsa'.
+18:12:49 INFO  : 'configparams mdm-detect-bscan-mask 2' command is executed.
+18:12:49 INFO  : Context for processor 'microblaze_0' is selected.
+18:12:49 INFO  : System reset is completed.
+18:12:52 INFO  : 'after 3000' command is executed.
+18:12:52 INFO  : Context for processor 'microblaze_0' is selected.
+18:12:52 INFO  : The application 'C:/Users/yunxuan5/KOF-94/lab6_1/workspace3/kof/Debug/kof.elf' is downloaded to processor 'microblaze_0'.
+18:12:52 INFO  : ----------------XSDB Script----------------
+connect -url tcp:127.0.0.1:3121
+targets -set -filter {jtag_cable_name =~ "RealDigital Boo 8874292302C1A" && level==0 && jtag_device_ctx=="jsn1-0362f093-0"}
+fpga -file C:/Users/yunxuan5/KOF-94/lab6_1/workspace3/kof/_ide/bitstream/mb_usb_hdmi_top.bit
+targets -set -nocase -filter {name =~ "*microblaze*#0" && bscan=="USER2" }
+loadhw -hw C:/Users/yunxuan5/KOF-94/lab6_1/workspace3/mb_usb_hdmi_top/export/mb_usb_hdmi_top/hw/mb_usb_hdmi_top.xsa -regs
+configparams mdm-detect-bscan-mask 2
+targets -set -nocase -filter {name =~ "*microblaze*#0" && bscan=="USER2" }
+rst -system
+after 3000
+targets -set -nocase -filter {name =~ "*microblaze*#0" && bscan=="USER2" }
+dow C:/Users/yunxuan5/KOF-94/lab6_1/workspace3/kof/Debug/kof.elf
+----------------End of Script----------------
+
+18:12:53 INFO  : Context for processor 'microblaze_0' is selected.
+18:12:53 INFO  : 'con' command is executed.
+18:12:53 INFO  : ----------------XSDB Script (After Launch)----------------
+targets -set -nocase -filter {name =~ "*microblaze*#0" && bscan=="USER2" }
+con
+----------------End of Script----------------
+
+18:12:53 INFO  : Disconnected from the channel tcfchan#6.
+18:37:13 INFO  : Hardware specification for platform project 'mb_usb_hdmi_top' is updated.
+18:37:24 INFO  : Result from executing command 'getProjects': mb_usb_hdmi_top
+18:37:24 INFO  : Result from executing command 'getPlatforms': mb_usb_hdmi_top|C:/Users/yunxuan5/KOF-94/lab6_1/workspace3/mb_usb_hdmi_top/export/mb_usb_hdmi_top/mb_usb_hdmi_top.xpfm;xilinx_vck190_base_202220_1|C:/Xilinx/Vitis/2022.2/base_platforms/xilinx_vck190_base_202220_1/xilinx_vck190_base_202220_1.xpfm;xilinx_vck190_base_dfx_202220_1|C:/Xilinx/Vitis/2022.2/base_platforms/xilinx_vck190_base_dfx_202220_1/xilinx_vck190_base_dfx_202220_1.xpfm;xilinx_vmk180_base_202220_1|C:/Xilinx/Vitis/2022.2/base_platforms/xilinx_vmk180_base_202220_1/xilinx_vmk180_base_202220_1.xpfm;xilinx_zcu102_base_202220_1|C:/Xilinx/Vitis/2022.2/base_platforms/xilinx_zcu102_base_202220_1/xilinx_zcu102_base_202220_1.xpfm;xilinx_zcu102_base_dfx_202220_1|C:/Xilinx/Vitis/2022.2/base_platforms/xilinx_zcu102_base_dfx_202220_1/xilinx_zcu102_base_dfx_202220_1.xpfm;xilinx_zcu104_base_202220_1|C:/Xilinx/Vitis/2022.2/base_platforms/xilinx_zcu104_base_202220_1/xilinx_zcu104_base_202220_1.xpfm
+18:37:25 INFO  : Checking for BSP changes to sync application flags for project 'kof'...
+18:37:28 INFO  : The hardware specification used by project 'kof' is out of sync with the platform. Resource files extracted from the hardware specification will be updated.
+18:37:28 INFO  : The file 'C:\Users\yunxuan5\KOF-94\lab6_1\workspace3\kof\_ide\bitstream\mb_usb_hdmi_top.bit' stored in project is removed.
+18:37:28 INFO  : The file 'C:\Users\yunxuan5\KOF-94\lab6_1\workspace3\kof\_ide\bitstream\mb_usb_hdmi_top.mmi' stored in project is removed.
+18:37:28 INFO  : The updated bitstream files are copied from platform to folder 'C:\Users\yunxuan5\KOF-94\lab6_1\workspace3\kof\_ide\bitstream' in project 'kof'.
+18:37:40 INFO  : Connected to target on host '127.0.0.1' and port '3121'.
+18:37:40 INFO  : Jtag cable 'RealDigital Boo 8874292302C1A' is selected.
+18:37:40 INFO  : 'jtag frequency' command is executed.
+18:37:40 INFO  : 'targets -set -filter {jtag_cable_name =~ "RealDigital Boo 8874292302C1A" && level==0 && jtag_device_ctx=="jsn1-0362f093-0"}' command is executed.
+18:37:41 INFO  : Device configured successfully with "C:/Users/yunxuan5/KOF-94/lab6_1/workspace3/kof/_ide/bitstream/mb_usb_hdmi_top.bit"
+18:37:41 INFO  : Context for processor 'microblaze_0' is selected.
+18:37:41 INFO  : Hardware design and registers information is loaded from 'C:/Users/yunxuan5/KOF-94/lab6_1/workspace3/mb_usb_hdmi_top/export/mb_usb_hdmi_top/hw/mb_usb_hdmi_top.xsa'.
+18:37:41 INFO  : 'configparams mdm-detect-bscan-mask 2' command is executed.
+18:37:41 INFO  : Context for processor 'microblaze_0' is selected.
+18:37:41 INFO  : System reset is completed.
+18:37:44 INFO  : 'after 3000' command is executed.
+18:37:44 INFO  : Context for processor 'microblaze_0' is selected.
+18:37:44 INFO  : The application 'C:/Users/yunxuan5/KOF-94/lab6_1/workspace3/kof/Debug/kof.elf' is downloaded to processor 'microblaze_0'.
+18:37:44 INFO  : ----------------XSDB Script----------------
+connect -url tcp:127.0.0.1:3121
+targets -set -filter {jtag_cable_name =~ "RealDigital Boo 8874292302C1A" && level==0 && jtag_device_ctx=="jsn1-0362f093-0"}
+fpga -file C:/Users/yunxuan5/KOF-94/lab6_1/workspace3/kof/_ide/bitstream/mb_usb_hdmi_top.bit
+targets -set -nocase -filter {name =~ "*microblaze*#0" && bscan=="USER2" }
+loadhw -hw C:/Users/yunxuan5/KOF-94/lab6_1/workspace3/mb_usb_hdmi_top/export/mb_usb_hdmi_top/hw/mb_usb_hdmi_top.xsa -regs
+configparams mdm-detect-bscan-mask 2
+targets -set -nocase -filter {name =~ "*microblaze*#0" && bscan=="USER2" }
+rst -system
+after 3000
+targets -set -nocase -filter {name =~ "*microblaze*#0" && bscan=="USER2" }
+dow C:/Users/yunxuan5/KOF-94/lab6_1/workspace3/kof/Debug/kof.elf
+----------------End of Script----------------
+
+18:37:44 INFO  : Context for processor 'microblaze_0' is selected.
+18:37:44 INFO  : 'con' command is executed.
+18:37:44 INFO  : ----------------XSDB Script (After Launch)----------------
+targets -set -nocase -filter {name =~ "*microblaze*#0" && bscan=="USER2" }
+con
+----------------End of Script----------------
+
+18:37:45 INFO  : Disconnected from the channel tcfchan#8.
+18:46:44 INFO  : Hardware specification for platform project 'mb_usb_hdmi_top' is updated.
+18:46:55 INFO  : Result from executing command 'getProjects': mb_usb_hdmi_top
+18:46:55 INFO  : Result from executing command 'getPlatforms': mb_usb_hdmi_top|C:/Users/yunxuan5/KOF-94/lab6_1/workspace3/mb_usb_hdmi_top/export/mb_usb_hdmi_top/mb_usb_hdmi_top.xpfm;xilinx_vck190_base_202220_1|C:/Xilinx/Vitis/2022.2/base_platforms/xilinx_vck190_base_202220_1/xilinx_vck190_base_202220_1.xpfm;xilinx_vck190_base_dfx_202220_1|C:/Xilinx/Vitis/2022.2/base_platforms/xilinx_vck190_base_dfx_202220_1/xilinx_vck190_base_dfx_202220_1.xpfm;xilinx_vmk180_base_202220_1|C:/Xilinx/Vitis/2022.2/base_platforms/xilinx_vmk180_base_202220_1/xilinx_vmk180_base_202220_1.xpfm;xilinx_zcu102_base_202220_1|C:/Xilinx/Vitis/2022.2/base_platforms/xilinx_zcu102_base_202220_1/xilinx_zcu102_base_202220_1.xpfm;xilinx_zcu102_base_dfx_202220_1|C:/Xilinx/Vitis/2022.2/base_platforms/xilinx_zcu102_base_dfx_202220_1/xilinx_zcu102_base_dfx_202220_1.xpfm;xilinx_zcu104_base_202220_1|C:/Xilinx/Vitis/2022.2/base_platforms/xilinx_zcu104_base_202220_1/xilinx_zcu104_base_202220_1.xpfm
+18:46:56 INFO  : Checking for BSP changes to sync application flags for project 'kof'...
+18:46:59 INFO  : The hardware specification used by project 'kof' is out of sync with the platform. Resource files extracted from the hardware specification will be updated.
+18:46:59 INFO  : The file 'C:\Users\yunxuan5\KOF-94\lab6_1\workspace3\kof\_ide\bitstream\mb_usb_hdmi_top.bit' stored in project is removed.
+18:46:59 INFO  : The file 'C:\Users\yunxuan5\KOF-94\lab6_1\workspace3\kof\_ide\bitstream\mb_usb_hdmi_top.mmi' stored in project is removed.
+18:46:59 INFO  : The updated bitstream files are copied from platform to folder 'C:\Users\yunxuan5\KOF-94\lab6_1\workspace3\kof\_ide\bitstream' in project 'kof'.
+18:47:04 INFO  : Connected to target on host '127.0.0.1' and port '3121'.
+18:47:04 INFO  : Jtag cable 'RealDigital Boo 8874292302C1A' is selected.
+18:47:04 INFO  : 'jtag frequency' command is executed.
+18:47:04 INFO  : 'targets -set -filter {jtag_cable_name =~ "RealDigital Boo 8874292302C1A" && level==0 && jtag_device_ctx=="jsn1-0362f093-0"}' command is executed.
+18:47:05 INFO  : Device configured successfully with "C:/Users/yunxuan5/KOF-94/lab6_1/workspace3/kof/_ide/bitstream/mb_usb_hdmi_top.bit"
+18:47:06 INFO  : Context for processor 'microblaze_0' is selected.
+18:47:06 INFO  : Hardware design and registers information is loaded from 'C:/Users/yunxuan5/KOF-94/lab6_1/workspace3/mb_usb_hdmi_top/export/mb_usb_hdmi_top/hw/mb_usb_hdmi_top.xsa'.
+18:47:06 INFO  : 'configparams mdm-detect-bscan-mask 2' command is executed.
+18:47:06 INFO  : Context for processor 'microblaze_0' is selected.
+18:47:06 INFO  : System reset is completed.
+18:47:09 INFO  : 'after 3000' command is executed.
+18:47:09 INFO  : Context for processor 'microblaze_0' is selected.
+18:47:09 INFO  : The application 'C:/Users/yunxuan5/KOF-94/lab6_1/workspace3/kof/Debug/kof.elf' is downloaded to processor 'microblaze_0'.
+18:47:09 INFO  : ----------------XSDB Script----------------
+connect -url tcp:127.0.0.1:3121
+targets -set -filter {jtag_cable_name =~ "RealDigital Boo 8874292302C1A" && level==0 && jtag_device_ctx=="jsn1-0362f093-0"}
+fpga -file C:/Users/yunxuan5/KOF-94/lab6_1/workspace3/kof/_ide/bitstream/mb_usb_hdmi_top.bit
+targets -set -nocase -filter {name =~ "*microblaze*#0" && bscan=="USER2" }
+loadhw -hw C:/Users/yunxuan5/KOF-94/lab6_1/workspace3/mb_usb_hdmi_top/export/mb_usb_hdmi_top/hw/mb_usb_hdmi_top.xsa -regs
+configparams mdm-detect-bscan-mask 2
+targets -set -nocase -filter {name =~ "*microblaze*#0" && bscan=="USER2" }
+rst -system
+after 3000
+targets -set -nocase -filter {name =~ "*microblaze*#0" && bscan=="USER2" }
+dow C:/Users/yunxuan5/KOF-94/lab6_1/workspace3/kof/Debug/kof.elf
+----------------End of Script----------------
+
+18:47:09 INFO  : Context for processor 'microblaze_0' is selected.
+18:47:09 INFO  : 'con' command is executed.
+18:47:09 INFO  : ----------------XSDB Script (After Launch)----------------
+targets -set -nocase -filter {name =~ "*microblaze*#0" && bscan=="USER2" }
+con
+----------------End of Script----------------
+
+18:47:09 INFO  : Disconnected from the channel tcfchan#10.
+18:58:03 INFO  : Hardware specification for platform project 'mb_usb_hdmi_top' is updated.
+18:58:16 INFO  : Result from executing command 'getProjects': mb_usb_hdmi_top
+18:58:16 INFO  : Result from executing command 'getPlatforms': mb_usb_hdmi_top|C:/Users/yunxuan5/KOF-94/lab6_1/workspace3/mb_usb_hdmi_top/export/mb_usb_hdmi_top/mb_usb_hdmi_top.xpfm;xilinx_vck190_base_202220_1|C:/Xilinx/Vitis/2022.2/base_platforms/xilinx_vck190_base_202220_1/xilinx_vck190_base_202220_1.xpfm;xilinx_vck190_base_dfx_202220_1|C:/Xilinx/Vitis/2022.2/base_platforms/xilinx_vck190_base_dfx_202220_1/xilinx_vck190_base_dfx_202220_1.xpfm;xilinx_vmk180_base_202220_1|C:/Xilinx/Vitis/2022.2/base_platforms/xilinx_vmk180_base_202220_1/xilinx_vmk180_base_202220_1.xpfm;xilinx_zcu102_base_202220_1|C:/Xilinx/Vitis/2022.2/base_platforms/xilinx_zcu102_base_202220_1/xilinx_zcu102_base_202220_1.xpfm;xilinx_zcu102_base_dfx_202220_1|C:/Xilinx/Vitis/2022.2/base_platforms/xilinx_zcu102_base_dfx_202220_1/xilinx_zcu102_base_dfx_202220_1.xpfm;xilinx_zcu104_base_202220_1|C:/Xilinx/Vitis/2022.2/base_platforms/xilinx_zcu104_base_202220_1/xilinx_zcu104_base_202220_1.xpfm
+18:58:17 INFO  : Checking for BSP changes to sync application flags for project 'kof'...
+18:58:20 INFO  : The hardware specification used by project 'kof' is out of sync with the platform. Resource files extracted from the hardware specification will be updated.
+18:58:20 INFO  : The file 'C:\Users\yunxuan5\KOF-94\lab6_1\workspace3\kof\_ide\bitstream\mb_usb_hdmi_top.bit' stored in project is removed.
+18:58:20 INFO  : The file 'C:\Users\yunxuan5\KOF-94\lab6_1\workspace3\kof\_ide\bitstream\mb_usb_hdmi_top.mmi' stored in project is removed.
+18:58:20 INFO  : The updated bitstream files are copied from platform to folder 'C:\Users\yunxuan5\KOF-94\lab6_1\workspace3\kof\_ide\bitstream' in project 'kof'.
+18:58:27 INFO  : Connected to target on host '127.0.0.1' and port '3121'.
+18:58:27 INFO  : Jtag cable 'RealDigital Boo 8874292302C1A' is selected.
+18:58:27 INFO  : 'jtag frequency' command is executed.
+18:58:27 INFO  : 'targets -set -filter {jtag_cable_name =~ "RealDigital Boo 8874292302C1A" && level==0 && jtag_device_ctx=="jsn1-0362f093-0"}' command is executed.
+18:58:28 INFO  : Device configured successfully with "C:/Users/yunxuan5/KOF-94/lab6_1/workspace3/kof/_ide/bitstream/mb_usb_hdmi_top.bit"
+18:58:29 INFO  : Context for processor 'microblaze_0' is selected.
+18:58:29 INFO  : Hardware design and registers information is loaded from 'C:/Users/yunxuan5/KOF-94/lab6_1/workspace3/mb_usb_hdmi_top/export/mb_usb_hdmi_top/hw/mb_usb_hdmi_top.xsa'.
+18:58:29 INFO  : 'configparams mdm-detect-bscan-mask 2' command is executed.
+18:58:29 INFO  : Context for processor 'microblaze_0' is selected.
+18:58:29 INFO  : System reset is completed.
+18:58:32 INFO  : 'after 3000' command is executed.
+18:58:32 INFO  : Context for processor 'microblaze_0' is selected.
+18:58:32 INFO  : The application 'C:/Users/yunxuan5/KOF-94/lab6_1/workspace3/kof/Debug/kof.elf' is downloaded to processor 'microblaze_0'.
+18:58:32 INFO  : ----------------XSDB Script----------------
+connect -url tcp:127.0.0.1:3121
+targets -set -filter {jtag_cable_name =~ "RealDigital Boo 8874292302C1A" && level==0 && jtag_device_ctx=="jsn1-0362f093-0"}
+fpga -file C:/Users/yunxuan5/KOF-94/lab6_1/workspace3/kof/_ide/bitstream/mb_usb_hdmi_top.bit
+targets -set -nocase -filter {name =~ "*microblaze*#0" && bscan=="USER2" }
+loadhw -hw C:/Users/yunxuan5/KOF-94/lab6_1/workspace3/mb_usb_hdmi_top/export/mb_usb_hdmi_top/hw/mb_usb_hdmi_top.xsa -regs
+configparams mdm-detect-bscan-mask 2
+targets -set -nocase -filter {name =~ "*microblaze*#0" && bscan=="USER2" }
+rst -system
+after 3000
+targets -set -nocase -filter {name =~ "*microblaze*#0" && bscan=="USER2" }
+dow C:/Users/yunxuan5/KOF-94/lab6_1/workspace3/kof/Debug/kof.elf
+----------------End of Script----------------
+
+18:58:32 INFO  : Context for processor 'microblaze_0' is selected.
+18:58:32 INFO  : 'con' command is executed.
+18:58:32 INFO  : ----------------XSDB Script (After Launch)----------------
+targets -set -nocase -filter {name =~ "*microblaze*#0" && bscan=="USER2" }
+con
+----------------End of Script----------------
+
+18:58:32 INFO  : Disconnected from the channel tcfchan#12.
+19:04:23 INFO  : Hardware specification for platform project 'mb_usb_hdmi_top' is updated.
+19:04:33 INFO  : Result from executing command 'getProjects': mb_usb_hdmi_top
+19:04:33 INFO  : Result from executing command 'getPlatforms': mb_usb_hdmi_top|C:/Users/yunxuan5/KOF-94/lab6_1/workspace3/mb_usb_hdmi_top/export/mb_usb_hdmi_top/mb_usb_hdmi_top.xpfm;xilinx_vck190_base_202220_1|C:/Xilinx/Vitis/2022.2/base_platforms/xilinx_vck190_base_202220_1/xilinx_vck190_base_202220_1.xpfm;xilinx_vck190_base_dfx_202220_1|C:/Xilinx/Vitis/2022.2/base_platforms/xilinx_vck190_base_dfx_202220_1/xilinx_vck190_base_dfx_202220_1.xpfm;xilinx_vmk180_base_202220_1|C:/Xilinx/Vitis/2022.2/base_platforms/xilinx_vmk180_base_202220_1/xilinx_vmk180_base_202220_1.xpfm;xilinx_zcu102_base_202220_1|C:/Xilinx/Vitis/2022.2/base_platforms/xilinx_zcu102_base_202220_1/xilinx_zcu102_base_202220_1.xpfm;xilinx_zcu102_base_dfx_202220_1|C:/Xilinx/Vitis/2022.2/base_platforms/xilinx_zcu102_base_dfx_202220_1/xilinx_zcu102_base_dfx_202220_1.xpfm;xilinx_zcu104_base_202220_1|C:/Xilinx/Vitis/2022.2/base_platforms/xilinx_zcu104_base_202220_1/xilinx_zcu104_base_202220_1.xpfm
+19:04:34 INFO  : Checking for BSP changes to sync application flags for project 'kof'...
+19:04:37 INFO  : The hardware specification used by project 'kof' is out of sync with the platform. Resource files extracted from the hardware specification will be updated.
+19:04:37 INFO  : The file 'C:\Users\yunxuan5\KOF-94\lab6_1\workspace3\kof\_ide\bitstream\mb_usb_hdmi_top.bit' stored in project is removed.
+19:04:37 INFO  : The file 'C:\Users\yunxuan5\KOF-94\lab6_1\workspace3\kof\_ide\bitstream\mb_usb_hdmi_top.mmi' stored in project is removed.
+19:04:37 INFO  : The updated bitstream files are copied from platform to folder 'C:\Users\yunxuan5\KOF-94\lab6_1\workspace3\kof\_ide\bitstream' in project 'kof'.
+19:04:41 INFO  : Connected to target on host '127.0.0.1' and port '3121'.
+19:04:42 INFO  : Jtag cable 'RealDigital Boo 8874292302C1A' is selected.
+19:04:42 INFO  : 'jtag frequency' command is executed.
+19:04:42 INFO  : 'targets -set -filter {jtag_cable_name =~ "RealDigital Boo 8874292302C1A" && level==0 && jtag_device_ctx=="jsn1-0362f093-0"}' command is executed.
+19:04:43 INFO  : Device configured successfully with "C:/Users/yunxuan5/KOF-94/lab6_1/workspace3/kof/_ide/bitstream/mb_usb_hdmi_top.bit"
+19:04:43 INFO  : Context for processor 'microblaze_0' is selected.
+19:04:43 INFO  : Hardware design and registers information is loaded from 'C:/Users/yunxuan5/KOF-94/lab6_1/workspace3/mb_usb_hdmi_top/export/mb_usb_hdmi_top/hw/mb_usb_hdmi_top.xsa'.
+19:04:43 INFO  : 'configparams mdm-detect-bscan-mask 2' command is executed.
+19:04:43 INFO  : Context for processor 'microblaze_0' is selected.
+19:04:43 INFO  : System reset is completed.
+19:04:46 INFO  : 'after 3000' command is executed.
+19:04:46 INFO  : Context for processor 'microblaze_0' is selected.
+19:04:46 INFO  : The application 'C:/Users/yunxuan5/KOF-94/lab6_1/workspace3/kof/Debug/kof.elf' is downloaded to processor 'microblaze_0'.
+19:04:46 INFO  : ----------------XSDB Script----------------
+connect -url tcp:127.0.0.1:3121
+targets -set -filter {jtag_cable_name =~ "RealDigital Boo 8874292302C1A" && level==0 && jtag_device_ctx=="jsn1-0362f093-0"}
+fpga -file C:/Users/yunxuan5/KOF-94/lab6_1/workspace3/kof/_ide/bitstream/mb_usb_hdmi_top.bit
+targets -set -nocase -filter {name =~ "*microblaze*#0" && bscan=="USER2" }
+loadhw -hw C:/Users/yunxuan5/KOF-94/lab6_1/workspace3/mb_usb_hdmi_top/export/mb_usb_hdmi_top/hw/mb_usb_hdmi_top.xsa -regs
+configparams mdm-detect-bscan-mask 2
+targets -set -nocase -filter {name =~ "*microblaze*#0" && bscan=="USER2" }
+rst -system
+after 3000
+targets -set -nocase -filter {name =~ "*microblaze*#0" && bscan=="USER2" }
+dow C:/Users/yunxuan5/KOF-94/lab6_1/workspace3/kof/Debug/kof.elf
+----------------End of Script----------------
+
+19:04:46 INFO  : Context for processor 'microblaze_0' is selected.
+19:04:46 INFO  : 'con' command is executed.
+19:04:46 INFO  : ----------------XSDB Script (After Launch)----------------
+targets -set -nocase -filter {name =~ "*microblaze*#0" && bscan=="USER2" }
+con
+----------------End of Script----------------
+
+19:04:46 INFO  : Disconnected from the channel tcfchan#14.
+19:09:48 INFO  : Hardware specification for platform project 'mb_usb_hdmi_top' is updated.
+19:09:58 INFO  : Result from executing command 'getProjects': mb_usb_hdmi_top
+19:09:58 INFO  : Result from executing command 'getPlatforms': mb_usb_hdmi_top|C:/Users/yunxuan5/KOF-94/lab6_1/workspace3/mb_usb_hdmi_top/export/mb_usb_hdmi_top/mb_usb_hdmi_top.xpfm;xilinx_vck190_base_202220_1|C:/Xilinx/Vitis/2022.2/base_platforms/xilinx_vck190_base_202220_1/xilinx_vck190_base_202220_1.xpfm;xilinx_vck190_base_dfx_202220_1|C:/Xilinx/Vitis/2022.2/base_platforms/xilinx_vck190_base_dfx_202220_1/xilinx_vck190_base_dfx_202220_1.xpfm;xilinx_vmk180_base_202220_1|C:/Xilinx/Vitis/2022.2/base_platforms/xilinx_vmk180_base_202220_1/xilinx_vmk180_base_202220_1.xpfm;xilinx_zcu102_base_202220_1|C:/Xilinx/Vitis/2022.2/base_platforms/xilinx_zcu102_base_202220_1/xilinx_zcu102_base_202220_1.xpfm;xilinx_zcu102_base_dfx_202220_1|C:/Xilinx/Vitis/2022.2/base_platforms/xilinx_zcu102_base_dfx_202220_1/xilinx_zcu102_base_dfx_202220_1.xpfm;xilinx_zcu104_base_202220_1|C:/Xilinx/Vitis/2022.2/base_platforms/xilinx_zcu104_base_202220_1/xilinx_zcu104_base_202220_1.xpfm
+19:09:59 INFO  : Checking for BSP changes to sync application flags for project 'kof'...
+19:10:02 INFO  : The hardware specification used by project 'kof' is out of sync with the platform. Resource files extracted from the hardware specification will be updated.
+19:10:02 INFO  : The file 'C:\Users\yunxuan5\KOF-94\lab6_1\workspace3\kof\_ide\bitstream\mb_usb_hdmi_top.bit' stored in project is removed.
+19:10:02 INFO  : The file 'C:\Users\yunxuan5\KOF-94\lab6_1\workspace3\kof\_ide\bitstream\mb_usb_hdmi_top.mmi' stored in project is removed.
+19:10:02 INFO  : The updated bitstream files are copied from platform to folder 'C:\Users\yunxuan5\KOF-94\lab6_1\workspace3\kof\_ide\bitstream' in project 'kof'.
+19:10:07 INFO  : Connected to target on host '127.0.0.1' and port '3121'.
+19:10:07 INFO  : Jtag cable 'RealDigital Boo 8874292302C1A' is selected.
+19:10:07 INFO  : 'jtag frequency' command is executed.
+19:10:07 INFO  : 'targets -set -filter {jtag_cable_name =~ "RealDigital Boo 8874292302C1A" && level==0 && jtag_device_ctx=="jsn1-0362f093-0"}' command is executed.
+19:10:08 INFO  : Device configured successfully with "C:/Users/yunxuan5/KOF-94/lab6_1/workspace3/kof/_ide/bitstream/mb_usb_hdmi_top.bit"
+19:10:08 INFO  : Context for processor 'microblaze_0' is selected.
+19:10:08 INFO  : Hardware design and registers information is loaded from 'C:/Users/yunxuan5/KOF-94/lab6_1/workspace3/mb_usb_hdmi_top/export/mb_usb_hdmi_top/hw/mb_usb_hdmi_top.xsa'.
+19:10:08 INFO  : 'configparams mdm-detect-bscan-mask 2' command is executed.
+19:10:08 INFO  : Context for processor 'microblaze_0' is selected.
+19:10:08 INFO  : System reset is completed.
+19:10:11 INFO  : 'after 3000' command is executed.
+19:10:11 INFO  : Context for processor 'microblaze_0' is selected.
+19:10:11 INFO  : The application 'C:/Users/yunxuan5/KOF-94/lab6_1/workspace3/kof/Debug/kof.elf' is downloaded to processor 'microblaze_0'.
+19:10:11 INFO  : ----------------XSDB Script----------------
+connect -url tcp:127.0.0.1:3121
+targets -set -filter {jtag_cable_name =~ "RealDigital Boo 8874292302C1A" && level==0 && jtag_device_ctx=="jsn1-0362f093-0"}
+fpga -file C:/Users/yunxuan5/KOF-94/lab6_1/workspace3/kof/_ide/bitstream/mb_usb_hdmi_top.bit
+targets -set -nocase -filter {name =~ "*microblaze*#0" && bscan=="USER2" }
+loadhw -hw C:/Users/yunxuan5/KOF-94/lab6_1/workspace3/mb_usb_hdmi_top/export/mb_usb_hdmi_top/hw/mb_usb_hdmi_top.xsa -regs
+configparams mdm-detect-bscan-mask 2
+targets -set -nocase -filter {name =~ "*microblaze*#0" && bscan=="USER2" }
+rst -system
+after 3000
+targets -set -nocase -filter {name =~ "*microblaze*#0" && bscan=="USER2" }
+dow C:/Users/yunxuan5/KOF-94/lab6_1/workspace3/kof/Debug/kof.elf
+----------------End of Script----------------
+
+19:10:12 INFO  : Context for processor 'microblaze_0' is selected.
+19:10:12 INFO  : 'con' command is executed.
+19:10:12 INFO  : ----------------XSDB Script (After Launch)----------------
+targets -set -nocase -filter {name =~ "*microblaze*#0" && bscan=="USER2" }
+con
+----------------End of Script----------------
+
+19:10:12 INFO  : Disconnected from the channel tcfchan#16.
+19:19:55 INFO  : Hardware specification for platform project 'mb_usb_hdmi_top' is updated.
+19:20:05 INFO  : Result from executing command 'getProjects': mb_usb_hdmi_top
+19:20:05 INFO  : Result from executing command 'getPlatforms': mb_usb_hdmi_top|C:/Users/yunxuan5/KOF-94/lab6_1/workspace3/mb_usb_hdmi_top/export/mb_usb_hdmi_top/mb_usb_hdmi_top.xpfm;xilinx_vck190_base_202220_1|C:/Xilinx/Vitis/2022.2/base_platforms/xilinx_vck190_base_202220_1/xilinx_vck190_base_202220_1.xpfm;xilinx_vck190_base_dfx_202220_1|C:/Xilinx/Vitis/2022.2/base_platforms/xilinx_vck190_base_dfx_202220_1/xilinx_vck190_base_dfx_202220_1.xpfm;xilinx_vmk180_base_202220_1|C:/Xilinx/Vitis/2022.2/base_platforms/xilinx_vmk180_base_202220_1/xilinx_vmk180_base_202220_1.xpfm;xilinx_zcu102_base_202220_1|C:/Xilinx/Vitis/2022.2/base_platforms/xilinx_zcu102_base_202220_1/xilinx_zcu102_base_202220_1.xpfm;xilinx_zcu102_base_dfx_202220_1|C:/Xilinx/Vitis/2022.2/base_platforms/xilinx_zcu102_base_dfx_202220_1/xilinx_zcu102_base_dfx_202220_1.xpfm;xilinx_zcu104_base_202220_1|C:/Xilinx/Vitis/2022.2/base_platforms/xilinx_zcu104_base_202220_1/xilinx_zcu104_base_202220_1.xpfm
+19:20:06 INFO  : Checking for BSP changes to sync application flags for project 'kof'...
+19:20:09 INFO  : The hardware specification used by project 'kof' is out of sync with the platform. Resource files extracted from the hardware specification will be updated.
+19:20:09 INFO  : The file 'C:\Users\yunxuan5\KOF-94\lab6_1\workspace3\kof\_ide\bitstream\mb_usb_hdmi_top.bit' stored in project is removed.
+19:20:09 INFO  : The file 'C:\Users\yunxuan5\KOF-94\lab6_1\workspace3\kof\_ide\bitstream\mb_usb_hdmi_top.mmi' stored in project is removed.
+19:20:09 INFO  : The updated bitstream files are copied from platform to folder 'C:\Users\yunxuan5\KOF-94\lab6_1\workspace3\kof\_ide\bitstream' in project 'kof'.
+19:20:14 INFO  : Connected to target on host '127.0.0.1' and port '3121'.
+19:20:14 INFO  : Jtag cable 'RealDigital Boo 8874292302C1A' is selected.
+19:20:14 INFO  : 'jtag frequency' command is executed.
+19:20:14 INFO  : 'targets -set -filter {jtag_cable_name =~ "RealDigital Boo 8874292302C1A" && level==0 && jtag_device_ctx=="jsn1-0362f093-0"}' command is executed.
+19:20:15 INFO  : Device configured successfully with "C:/Users/yunxuan5/KOF-94/lab6_1/workspace3/kof/_ide/bitstream/mb_usb_hdmi_top.bit"
+19:20:15 INFO  : Context for processor 'microblaze_0' is selected.
+19:20:15 INFO  : Hardware design and registers information is loaded from 'C:/Users/yunxuan5/KOF-94/lab6_1/workspace3/mb_usb_hdmi_top/export/mb_usb_hdmi_top/hw/mb_usb_hdmi_top.xsa'.
+19:20:15 INFO  : 'configparams mdm-detect-bscan-mask 2' command is executed.
+19:20:15 INFO  : Context for processor 'microblaze_0' is selected.
+19:20:15 INFO  : System reset is completed.
+19:20:18 INFO  : 'after 3000' command is executed.
+19:20:18 INFO  : Context for processor 'microblaze_0' is selected.
+19:20:18 INFO  : The application 'C:/Users/yunxuan5/KOF-94/lab6_1/workspace3/kof/Debug/kof.elf' is downloaded to processor 'microblaze_0'.
+19:20:18 INFO  : ----------------XSDB Script----------------
+connect -url tcp:127.0.0.1:3121
+targets -set -filter {jtag_cable_name =~ "RealDigital Boo 8874292302C1A" && level==0 && jtag_device_ctx=="jsn1-0362f093-0"}
+fpga -file C:/Users/yunxuan5/KOF-94/lab6_1/workspace3/kof/_ide/bitstream/mb_usb_hdmi_top.bit
+targets -set -nocase -filter {name =~ "*microblaze*#0" && bscan=="USER2" }
+loadhw -hw C:/Users/yunxuan5/KOF-94/lab6_1/workspace3/mb_usb_hdmi_top/export/mb_usb_hdmi_top/hw/mb_usb_hdmi_top.xsa -regs
+configparams mdm-detect-bscan-mask 2
+targets -set -nocase -filter {name =~ "*microblaze*#0" && bscan=="USER2" }
+rst -system
+after 3000
+targets -set -nocase -filter {name =~ "*microblaze*#0" && bscan=="USER2" }
+dow C:/Users/yunxuan5/KOF-94/lab6_1/workspace3/kof/Debug/kof.elf
+----------------End of Script----------------
+
+19:20:18 INFO  : Context for processor 'microblaze_0' is selected.
+19:20:18 INFO  : 'con' command is executed.
+19:20:18 INFO  : ----------------XSDB Script (After Launch)----------------
+targets -set -nocase -filter {name =~ "*microblaze*#0" && bscan=="USER2" }
+con
+----------------End of Script----------------
+
+19:20:19 INFO  : Disconnected from the channel tcfchan#18.
+19:28:33 INFO  : Hardware specification for platform project 'mb_usb_hdmi_top' is updated.
+19:28:46 INFO  : Result from executing command 'getProjects': mb_usb_hdmi_top
+19:28:46 INFO  : Result from executing command 'getPlatforms': mb_usb_hdmi_top|C:/Users/yunxuan5/KOF-94/lab6_1/workspace3/mb_usb_hdmi_top/export/mb_usb_hdmi_top/mb_usb_hdmi_top.xpfm;xilinx_vck190_base_202220_1|C:/Xilinx/Vitis/2022.2/base_platforms/xilinx_vck190_base_202220_1/xilinx_vck190_base_202220_1.xpfm;xilinx_vck190_base_dfx_202220_1|C:/Xilinx/Vitis/2022.2/base_platforms/xilinx_vck190_base_dfx_202220_1/xilinx_vck190_base_dfx_202220_1.xpfm;xilinx_vmk180_base_202220_1|C:/Xilinx/Vitis/2022.2/base_platforms/xilinx_vmk180_base_202220_1/xilinx_vmk180_base_202220_1.xpfm;xilinx_zcu102_base_202220_1|C:/Xilinx/Vitis/2022.2/base_platforms/xilinx_zcu102_base_202220_1/xilinx_zcu102_base_202220_1.xpfm;xilinx_zcu102_base_dfx_202220_1|C:/Xilinx/Vitis/2022.2/base_platforms/xilinx_zcu102_base_dfx_202220_1/xilinx_zcu102_base_dfx_202220_1.xpfm;xilinx_zcu104_base_202220_1|C:/Xilinx/Vitis/2022.2/base_platforms/xilinx_zcu104_base_202220_1/xilinx_zcu104_base_202220_1.xpfm
+19:28:47 INFO  : Checking for BSP changes to sync application flags for project 'kof'...
+19:28:50 INFO  : The hardware specification used by project 'kof' is out of sync with the platform. Resource files extracted from the hardware specification will be updated.
+19:28:50 INFO  : The file 'C:\Users\yunxuan5\KOF-94\lab6_1\workspace3\kof\_ide\bitstream\mb_usb_hdmi_top.bit' stored in project is removed.
+19:28:50 INFO  : The file 'C:\Users\yunxuan5\KOF-94\lab6_1\workspace3\kof\_ide\bitstream\mb_usb_hdmi_top.mmi' stored in project is removed.
+19:28:50 INFO  : The updated bitstream files are copied from platform to folder 'C:\Users\yunxuan5\KOF-94\lab6_1\workspace3\kof\_ide\bitstream' in project 'kof'.
+19:29:02 INFO  : Connected to target on host '127.0.0.1' and port '3121'.
+19:29:02 INFO  : Jtag cable 'RealDigital Boo 8874292302C1A' is selected.
+19:29:02 INFO  : 'jtag frequency' command is executed.
+19:29:02 INFO  : 'targets -set -filter {jtag_cable_name =~ "RealDigital Boo 8874292302C1A" && level==0 && jtag_device_ctx=="jsn1-0362f093-0"}' command is executed.
+19:29:03 INFO  : Device configured successfully with "C:/Users/yunxuan5/KOF-94/lab6_1/workspace3/kof/_ide/bitstream/mb_usb_hdmi_top.bit"
+19:29:04 INFO  : Context for processor 'microblaze_0' is selected.
+19:29:04 INFO  : Hardware design and registers information is loaded from 'C:/Users/yunxuan5/KOF-94/lab6_1/workspace3/mb_usb_hdmi_top/export/mb_usb_hdmi_top/hw/mb_usb_hdmi_top.xsa'.
+19:29:04 INFO  : 'configparams mdm-detect-bscan-mask 2' command is executed.
+19:29:04 INFO  : Context for processor 'microblaze_0' is selected.
+19:29:04 INFO  : System reset is completed.
+19:29:07 INFO  : 'after 3000' command is executed.
+19:29:07 INFO  : Context for processor 'microblaze_0' is selected.
+19:29:07 INFO  : The application 'C:/Users/yunxuan5/KOF-94/lab6_1/workspace3/kof/Debug/kof.elf' is downloaded to processor 'microblaze_0'.
+19:29:07 INFO  : ----------------XSDB Script----------------
+connect -url tcp:127.0.0.1:3121
+targets -set -filter {jtag_cable_name =~ "RealDigital Boo 8874292302C1A" && level==0 && jtag_device_ctx=="jsn1-0362f093-0"}
+fpga -file C:/Users/yunxuan5/KOF-94/lab6_1/workspace3/kof/_ide/bitstream/mb_usb_hdmi_top.bit
+targets -set -nocase -filter {name =~ "*microblaze*#0" && bscan=="USER2" }
+loadhw -hw C:/Users/yunxuan5/KOF-94/lab6_1/workspace3/mb_usb_hdmi_top/export/mb_usb_hdmi_top/hw/mb_usb_hdmi_top.xsa -regs
+configparams mdm-detect-bscan-mask 2
+targets -set -nocase -filter {name =~ "*microblaze*#0" && bscan=="USER2" }
+rst -system
+after 3000
+targets -set -nocase -filter {name =~ "*microblaze*#0" && bscan=="USER2" }
+dow C:/Users/yunxuan5/KOF-94/lab6_1/workspace3/kof/Debug/kof.elf
+----------------End of Script----------------
+
+19:29:07 INFO  : Context for processor 'microblaze_0' is selected.
+19:29:07 INFO  : 'con' command is executed.
+19:29:07 INFO  : ----------------XSDB Script (After Launch)----------------
+targets -set -nocase -filter {name =~ "*microblaze*#0" && bscan=="USER2" }
+con
+----------------End of Script----------------
+
+19:29:07 INFO  : Disconnected from the channel tcfchan#20.
+19:44:37 INFO  : Hardware specification for platform project 'mb_usb_hdmi_top' is updated.
+19:44:48 INFO  : Result from executing command 'getProjects': mb_usb_hdmi_top
+19:44:48 INFO  : Result from executing command 'getPlatforms': mb_usb_hdmi_top|C:/Users/yunxuan5/KOF-94/lab6_1/workspace3/mb_usb_hdmi_top/export/mb_usb_hdmi_top/mb_usb_hdmi_top.xpfm;xilinx_vck190_base_202220_1|C:/Xilinx/Vitis/2022.2/base_platforms/xilinx_vck190_base_202220_1/xilinx_vck190_base_202220_1.xpfm;xilinx_vck190_base_dfx_202220_1|C:/Xilinx/Vitis/2022.2/base_platforms/xilinx_vck190_base_dfx_202220_1/xilinx_vck190_base_dfx_202220_1.xpfm;xilinx_vmk180_base_202220_1|C:/Xilinx/Vitis/2022.2/base_platforms/xilinx_vmk180_base_202220_1/xilinx_vmk180_base_202220_1.xpfm;xilinx_zcu102_base_202220_1|C:/Xilinx/Vitis/2022.2/base_platforms/xilinx_zcu102_base_202220_1/xilinx_zcu102_base_202220_1.xpfm;xilinx_zcu102_base_dfx_202220_1|C:/Xilinx/Vitis/2022.2/base_platforms/xilinx_zcu102_base_dfx_202220_1/xilinx_zcu102_base_dfx_202220_1.xpfm;xilinx_zcu104_base_202220_1|C:/Xilinx/Vitis/2022.2/base_platforms/xilinx_zcu104_base_202220_1/xilinx_zcu104_base_202220_1.xpfm
+19:44:49 INFO  : Checking for BSP changes to sync application flags for project 'kof'...
+19:44:51 INFO  : The hardware specification used by project 'kof' is out of sync with the platform. Resource files extracted from the hardware specification will be updated.
+19:44:51 INFO  : The file 'C:\Users\yunxuan5\KOF-94\lab6_1\workspace3\kof\_ide\bitstream\mb_usb_hdmi_top.bit' stored in project is removed.
+19:44:51 INFO  : The file 'C:\Users\yunxuan5\KOF-94\lab6_1\workspace3\kof\_ide\bitstream\mb_usb_hdmi_top.mmi' stored in project is removed.
+19:44:51 INFO  : The updated bitstream files are copied from platform to folder 'C:\Users\yunxuan5\KOF-94\lab6_1\workspace3\kof\_ide\bitstream' in project 'kof'.
+19:44:55 INFO  : Connected to target on host '127.0.0.1' and port '3121'.
+19:44:55 INFO  : Jtag cable 'RealDigital Boo 8874292302C1A' is selected.
+19:44:55 INFO  : 'jtag frequency' command is executed.
+19:44:56 INFO  : 'targets -set -filter {jtag_cable_name =~ "RealDigital Boo 8874292302C1A" && level==0 && jtag_device_ctx=="jsn1-0362f093-0"}' command is executed.
+19:44:57 INFO  : Device configured successfully with "C:/Users/yunxuan5/KOF-94/lab6_1/workspace3/kof/_ide/bitstream/mb_usb_hdmi_top.bit"
+19:44:57 INFO  : Context for processor 'microblaze_0' is selected.
+19:44:57 INFO  : Hardware design and registers information is loaded from 'C:/Users/yunxuan5/KOF-94/lab6_1/workspace3/mb_usb_hdmi_top/export/mb_usb_hdmi_top/hw/mb_usb_hdmi_top.xsa'.
+19:44:57 INFO  : 'configparams mdm-detect-bscan-mask 2' command is executed.
+19:44:57 INFO  : Context for processor 'microblaze_0' is selected.
+19:44:57 INFO  : System reset is completed.
+19:45:00 INFO  : 'after 3000' command is executed.
+19:45:00 INFO  : Context for processor 'microblaze_0' is selected.
+19:45:00 INFO  : The application 'C:/Users/yunxuan5/KOF-94/lab6_1/workspace3/kof/Debug/kof.elf' is downloaded to processor 'microblaze_0'.
+19:45:00 INFO  : ----------------XSDB Script----------------
+connect -url tcp:127.0.0.1:3121
+targets -set -filter {jtag_cable_name =~ "RealDigital Boo 8874292302C1A" && level==0 && jtag_device_ctx=="jsn1-0362f093-0"}
+fpga -file C:/Users/yunxuan5/KOF-94/lab6_1/workspace3/kof/_ide/bitstream/mb_usb_hdmi_top.bit
+targets -set -nocase -filter {name =~ "*microblaze*#0" && bscan=="USER2" }
+loadhw -hw C:/Users/yunxuan5/KOF-94/lab6_1/workspace3/mb_usb_hdmi_top/export/mb_usb_hdmi_top/hw/mb_usb_hdmi_top.xsa -regs
+configparams mdm-detect-bscan-mask 2
+targets -set -nocase -filter {name =~ "*microblaze*#0" && bscan=="USER2" }
+rst -system
+after 3000
+targets -set -nocase -filter {name =~ "*microblaze*#0" && bscan=="USER2" }
+dow C:/Users/yunxuan5/KOF-94/lab6_1/workspace3/kof/Debug/kof.elf
+----------------End of Script----------------
+
+19:45:00 INFO  : Context for processor 'microblaze_0' is selected.
+19:45:00 INFO  : 'con' command is executed.
+19:45:00 INFO  : ----------------XSDB Script (After Launch)----------------
+targets -set -nocase -filter {name =~ "*microblaze*#0" && bscan=="USER2" }
+con
+----------------End of Script----------------
+
+19:45:00 INFO  : Disconnected from the channel tcfchan#22.
+19:54:23 INFO  : Hardware specification for platform project 'mb_usb_hdmi_top' is updated.
+19:54:33 INFO  : Result from executing command 'getProjects': mb_usb_hdmi_top
+19:54:33 INFO  : Result from executing command 'getPlatforms': mb_usb_hdmi_top|C:/Users/yunxuan5/KOF-94/lab6_1/workspace3/mb_usb_hdmi_top/export/mb_usb_hdmi_top/mb_usb_hdmi_top.xpfm;xilinx_vck190_base_202220_1|C:/Xilinx/Vitis/2022.2/base_platforms/xilinx_vck190_base_202220_1/xilinx_vck190_base_202220_1.xpfm;xilinx_vck190_base_dfx_202220_1|C:/Xilinx/Vitis/2022.2/base_platforms/xilinx_vck190_base_dfx_202220_1/xilinx_vck190_base_dfx_202220_1.xpfm;xilinx_vmk180_base_202220_1|C:/Xilinx/Vitis/2022.2/base_platforms/xilinx_vmk180_base_202220_1/xilinx_vmk180_base_202220_1.xpfm;xilinx_zcu102_base_202220_1|C:/Xilinx/Vitis/2022.2/base_platforms/xilinx_zcu102_base_202220_1/xilinx_zcu102_base_202220_1.xpfm;xilinx_zcu102_base_dfx_202220_1|C:/Xilinx/Vitis/2022.2/base_platforms/xilinx_zcu102_base_dfx_202220_1/xilinx_zcu102_base_dfx_202220_1.xpfm;xilinx_zcu104_base_202220_1|C:/Xilinx/Vitis/2022.2/base_platforms/xilinx_zcu104_base_202220_1/xilinx_zcu104_base_202220_1.xpfm
+19:54:34 INFO  : Checking for BSP changes to sync application flags for project 'kof'...
+19:54:37 INFO  : The hardware specification used by project 'kof' is out of sync with the platform. Resource files extracted from the hardware specification will be updated.
+19:54:37 INFO  : The file 'C:\Users\yunxuan5\KOF-94\lab6_1\workspace3\kof\_ide\bitstream\mb_usb_hdmi_top.bit' stored in project is removed.
+19:54:37 INFO  : The file 'C:\Users\yunxuan5\KOF-94\lab6_1\workspace3\kof\_ide\bitstream\mb_usb_hdmi_top.mmi' stored in project is removed.
+19:54:37 INFO  : The updated bitstream files are copied from platform to folder 'C:\Users\yunxuan5\KOF-94\lab6_1\workspace3\kof\_ide\bitstream' in project 'kof'.
+19:54:44 INFO  : Connected to target on host '127.0.0.1' and port '3121'.
+19:54:44 INFO  : Jtag cable 'RealDigital Boo 8874292302C1A' is selected.
+19:54:44 INFO  : 'jtag frequency' command is executed.
+19:54:45 INFO  : 'targets -set -filter {jtag_cable_name =~ "RealDigital Boo 8874292302C1A" && level==0 && jtag_device_ctx=="jsn1-0362f093-0"}' command is executed.
+19:54:46 INFO  : Device configured successfully with "C:/Users/yunxuan5/KOF-94/lab6_1/workspace3/kof/_ide/bitstream/mb_usb_hdmi_top.bit"
+19:54:46 INFO  : Context for processor 'microblaze_0' is selected.
+19:54:46 INFO  : Hardware design and registers information is loaded from 'C:/Users/yunxuan5/KOF-94/lab6_1/workspace3/mb_usb_hdmi_top/export/mb_usb_hdmi_top/hw/mb_usb_hdmi_top.xsa'.
+19:54:46 INFO  : 'configparams mdm-detect-bscan-mask 2' command is executed.
+19:54:46 INFO  : Context for processor 'microblaze_0' is selected.
+19:54:46 INFO  : System reset is completed.
+19:54:49 INFO  : 'after 3000' command is executed.
+19:54:49 INFO  : Context for processor 'microblaze_0' is selected.
+19:54:49 INFO  : The application 'C:/Users/yunxuan5/KOF-94/lab6_1/workspace3/kof/Debug/kof.elf' is downloaded to processor 'microblaze_0'.
+19:54:49 INFO  : ----------------XSDB Script----------------
+connect -url tcp:127.0.0.1:3121
+targets -set -filter {jtag_cable_name =~ "RealDigital Boo 8874292302C1A" && level==0 && jtag_device_ctx=="jsn1-0362f093-0"}
+fpga -file C:/Users/yunxuan5/KOF-94/lab6_1/workspace3/kof/_ide/bitstream/mb_usb_hdmi_top.bit
+targets -set -nocase -filter {name =~ "*microblaze*#0" && bscan=="USER2" }
+loadhw -hw C:/Users/yunxuan5/KOF-94/lab6_1/workspace3/mb_usb_hdmi_top/export/mb_usb_hdmi_top/hw/mb_usb_hdmi_top.xsa -regs
+configparams mdm-detect-bscan-mask 2
+targets -set -nocase -filter {name =~ "*microblaze*#0" && bscan=="USER2" }
+rst -system
+after 3000
+targets -set -nocase -filter {name =~ "*microblaze*#0" && bscan=="USER2" }
+dow C:/Users/yunxuan5/KOF-94/lab6_1/workspace3/kof/Debug/kof.elf
+----------------End of Script----------------
+
+19:54:49 INFO  : Context for processor 'microblaze_0' is selected.
+19:54:49 INFO  : 'con' command is executed.
+19:54:49 INFO  : ----------------XSDB Script (After Launch)----------------
+targets -set -nocase -filter {name =~ "*microblaze*#0" && bscan=="USER2" }
+con
+----------------End of Script----------------
+
+19:54:49 INFO  : Disconnected from the channel tcfchan#24.
+20:05:30 INFO  : Hardware specification for platform project 'mb_usb_hdmi_top' is updated.
+20:05:40 INFO  : Result from executing command 'getProjects': mb_usb_hdmi_top
+20:05:40 INFO  : Result from executing command 'getPlatforms': mb_usb_hdmi_top|C:/Users/yunxuan5/KOF-94/lab6_1/workspace3/mb_usb_hdmi_top/export/mb_usb_hdmi_top/mb_usb_hdmi_top.xpfm;xilinx_vck190_base_202220_1|C:/Xilinx/Vitis/2022.2/base_platforms/xilinx_vck190_base_202220_1/xilinx_vck190_base_202220_1.xpfm;xilinx_vck190_base_dfx_202220_1|C:/Xilinx/Vitis/2022.2/base_platforms/xilinx_vck190_base_dfx_202220_1/xilinx_vck190_base_dfx_202220_1.xpfm;xilinx_vmk180_base_202220_1|C:/Xilinx/Vitis/2022.2/base_platforms/xilinx_vmk180_base_202220_1/xilinx_vmk180_base_202220_1.xpfm;xilinx_zcu102_base_202220_1|C:/Xilinx/Vitis/2022.2/base_platforms/xilinx_zcu102_base_202220_1/xilinx_zcu102_base_202220_1.xpfm;xilinx_zcu102_base_dfx_202220_1|C:/Xilinx/Vitis/2022.2/base_platforms/xilinx_zcu102_base_dfx_202220_1/xilinx_zcu102_base_dfx_202220_1.xpfm;xilinx_zcu104_base_202220_1|C:/Xilinx/Vitis/2022.2/base_platforms/xilinx_zcu104_base_202220_1/xilinx_zcu104_base_202220_1.xpfm
+20:05:41 INFO  : Checking for BSP changes to sync application flags for project 'kof'...
+20:05:44 INFO  : The hardware specification used by project 'kof' is out of sync with the platform. Resource files extracted from the hardware specification will be updated.
+20:05:44 INFO  : The file 'C:\Users\yunxuan5\KOF-94\lab6_1\workspace3\kof\_ide\bitstream\mb_usb_hdmi_top.bit' stored in project is removed.
+20:05:44 INFO  : The file 'C:\Users\yunxuan5\KOF-94\lab6_1\workspace3\kof\_ide\bitstream\mb_usb_hdmi_top.mmi' stored in project is removed.
+20:05:44 INFO  : The updated bitstream files are copied from platform to folder 'C:\Users\yunxuan5\KOF-94\lab6_1\workspace3\kof\_ide\bitstream' in project 'kof'.
+20:05:49 INFO  : Connected to target on host '127.0.0.1' and port '3121'.
+20:05:49 INFO  : Jtag cable 'RealDigital Boo 8874292302C1A' is selected.
+20:05:49 INFO  : 'jtag frequency' command is executed.
+20:05:49 INFO  : 'targets -set -filter {jtag_cable_name =~ "RealDigital Boo 8874292302C1A" && level==0 && jtag_device_ctx=="jsn1-0362f093-0"}' command is executed.
+20:05:51 INFO  : Device configured successfully with "C:/Users/yunxuan5/KOF-94/lab6_1/workspace3/kof/_ide/bitstream/mb_usb_hdmi_top.bit"
+20:05:51 INFO  : Context for processor 'microblaze_0' is selected.
+20:05:51 INFO  : Hardware design and registers information is loaded from 'C:/Users/yunxuan5/KOF-94/lab6_1/workspace3/mb_usb_hdmi_top/export/mb_usb_hdmi_top/hw/mb_usb_hdmi_top.xsa'.
+20:05:51 INFO  : 'configparams mdm-detect-bscan-mask 2' command is executed.
+20:05:51 INFO  : Context for processor 'microblaze_0' is selected.
+20:05:51 INFO  : System reset is completed.
+20:05:54 INFO  : 'after 3000' command is executed.
+20:05:54 INFO  : Context for processor 'microblaze_0' is selected.
+20:05:54 INFO  : The application 'C:/Users/yunxuan5/KOF-94/lab6_1/workspace3/kof/Debug/kof.elf' is downloaded to processor 'microblaze_0'.
+20:05:54 INFO  : ----------------XSDB Script----------------
+connect -url tcp:127.0.0.1:3121
+targets -set -filter {jtag_cable_name =~ "RealDigital Boo 8874292302C1A" && level==0 && jtag_device_ctx=="jsn1-0362f093-0"}
+fpga -file C:/Users/yunxuan5/KOF-94/lab6_1/workspace3/kof/_ide/bitstream/mb_usb_hdmi_top.bit
+targets -set -nocase -filter {name =~ "*microblaze*#0" && bscan=="USER2" }
+loadhw -hw C:/Users/yunxuan5/KOF-94/lab6_1/workspace3/mb_usb_hdmi_top/export/mb_usb_hdmi_top/hw/mb_usb_hdmi_top.xsa -regs
+configparams mdm-detect-bscan-mask 2
+targets -set -nocase -filter {name =~ "*microblaze*#0" && bscan=="USER2" }
+rst -system
+after 3000
+targets -set -nocase -filter {name =~ "*microblaze*#0" && bscan=="USER2" }
+dow C:/Users/yunxuan5/KOF-94/lab6_1/workspace3/kof/Debug/kof.elf
+----------------End of Script----------------
+
+20:05:54 INFO  : Context for processor 'microblaze_0' is selected.
+20:05:54 INFO  : 'con' command is executed.
+20:05:54 INFO  : ----------------XSDB Script (After Launch)----------------
+targets -set -nocase -filter {name =~ "*microblaze*#0" && bscan=="USER2" }
+con
+----------------End of Script----------------
+
+20:05:54 INFO  : Disconnected from the channel tcfchan#26.
+20:14:43 INFO  : Hardware specification for platform project 'mb_usb_hdmi_top' is updated.
+20:14:53 INFO  : Result from executing command 'getProjects': mb_usb_hdmi_top
+20:14:53 INFO  : Result from executing command 'getPlatforms': mb_usb_hdmi_top|C:/Users/yunxuan5/KOF-94/lab6_1/workspace3/mb_usb_hdmi_top/export/mb_usb_hdmi_top/mb_usb_hdmi_top.xpfm;xilinx_vck190_base_202220_1|C:/Xilinx/Vitis/2022.2/base_platforms/xilinx_vck190_base_202220_1/xilinx_vck190_base_202220_1.xpfm;xilinx_vck190_base_dfx_202220_1|C:/Xilinx/Vitis/2022.2/base_platforms/xilinx_vck190_base_dfx_202220_1/xilinx_vck190_base_dfx_202220_1.xpfm;xilinx_vmk180_base_202220_1|C:/Xilinx/Vitis/2022.2/base_platforms/xilinx_vmk180_base_202220_1/xilinx_vmk180_base_202220_1.xpfm;xilinx_zcu102_base_202220_1|C:/Xilinx/Vitis/2022.2/base_platforms/xilinx_zcu102_base_202220_1/xilinx_zcu102_base_202220_1.xpfm;xilinx_zcu102_base_dfx_202220_1|C:/Xilinx/Vitis/2022.2/base_platforms/xilinx_zcu102_base_dfx_202220_1/xilinx_zcu102_base_dfx_202220_1.xpfm;xilinx_zcu104_base_202220_1|C:/Xilinx/Vitis/2022.2/base_platforms/xilinx_zcu104_base_202220_1/xilinx_zcu104_base_202220_1.xpfm
+20:14:54 INFO  : Checking for BSP changes to sync application flags for project 'kof'...
+20:14:57 INFO  : The hardware specification used by project 'kof' is out of sync with the platform. Resource files extracted from the hardware specification will be updated.
+20:14:57 INFO  : The file 'C:\Users\yunxuan5\KOF-94\lab6_1\workspace3\kof\_ide\bitstream\mb_usb_hdmi_top.bit' stored in project is removed.
+20:14:57 INFO  : The file 'C:\Users\yunxuan5\KOF-94\lab6_1\workspace3\kof\_ide\bitstream\mb_usb_hdmi_top.mmi' stored in project is removed.
+20:14:57 INFO  : The updated bitstream files are copied from platform to folder 'C:\Users\yunxuan5\KOF-94\lab6_1\workspace3\kof\_ide\bitstream' in project 'kof'.
+20:15:03 INFO  : Connected to target on host '127.0.0.1' and port '3121'.
+20:15:03 INFO  : Jtag cable 'RealDigital Boo 8874292302C1A' is selected.
+20:15:03 INFO  : 'jtag frequency' command is executed.
+20:15:03 INFO  : 'targets -set -filter {jtag_cable_name =~ "RealDigital Boo 8874292302C1A" && level==0 && jtag_device_ctx=="jsn1-0362f093-0"}' command is executed.
+20:15:04 INFO  : Device configured successfully with "C:/Users/yunxuan5/KOF-94/lab6_1/workspace3/kof/_ide/bitstream/mb_usb_hdmi_top.bit"
+20:15:05 INFO  : Context for processor 'microblaze_0' is selected.
+20:15:05 INFO  : Hardware design and registers information is loaded from 'C:/Users/yunxuan5/KOF-94/lab6_1/workspace3/mb_usb_hdmi_top/export/mb_usb_hdmi_top/hw/mb_usb_hdmi_top.xsa'.
+20:15:05 INFO  : 'configparams mdm-detect-bscan-mask 2' command is executed.
+20:15:05 INFO  : Context for processor 'microblaze_0' is selected.
+20:15:05 INFO  : System reset is completed.
+20:15:08 INFO  : 'after 3000' command is executed.
+20:15:08 INFO  : Context for processor 'microblaze_0' is selected.
+20:15:08 INFO  : The application 'C:/Users/yunxuan5/KOF-94/lab6_1/workspace3/kof/Debug/kof.elf' is downloaded to processor 'microblaze_0'.
+20:15:08 INFO  : ----------------XSDB Script----------------
+connect -url tcp:127.0.0.1:3121
+targets -set -filter {jtag_cable_name =~ "RealDigital Boo 8874292302C1A" && level==0 && jtag_device_ctx=="jsn1-0362f093-0"}
+fpga -file C:/Users/yunxuan5/KOF-94/lab6_1/workspace3/kof/_ide/bitstream/mb_usb_hdmi_top.bit
+targets -set -nocase -filter {name =~ "*microblaze*#0" && bscan=="USER2" }
+loadhw -hw C:/Users/yunxuan5/KOF-94/lab6_1/workspace3/mb_usb_hdmi_top/export/mb_usb_hdmi_top/hw/mb_usb_hdmi_top.xsa -regs
+configparams mdm-detect-bscan-mask 2
+targets -set -nocase -filter {name =~ "*microblaze*#0" && bscan=="USER2" }
+rst -system
+after 3000
+targets -set -nocase -filter {name =~ "*microblaze*#0" && bscan=="USER2" }
+dow C:/Users/yunxuan5/KOF-94/lab6_1/workspace3/kof/Debug/kof.elf
+----------------End of Script----------------
+
+20:15:08 INFO  : Context for processor 'microblaze_0' is selected.
+20:15:08 INFO  : 'con' command is executed.
+20:15:08 INFO  : ----------------XSDB Script (After Launch)----------------
+targets -set -nocase -filter {name =~ "*microblaze*#0" && bscan=="USER2" }
+con
+----------------End of Script----------------
+
+20:15:08 INFO  : Disconnected from the channel tcfchan#28.
+20:22:16 INFO  : Hardware specification for platform project 'mb_usb_hdmi_top' is updated.
+20:22:30 INFO  : Result from executing command 'getProjects': mb_usb_hdmi_top
+20:22:30 INFO  : Result from executing command 'getPlatforms': mb_usb_hdmi_top|C:/Users/yunxuan5/KOF-94/lab6_1/workspace3/mb_usb_hdmi_top/export/mb_usb_hdmi_top/mb_usb_hdmi_top.xpfm;xilinx_vck190_base_202220_1|C:/Xilinx/Vitis/2022.2/base_platforms/xilinx_vck190_base_202220_1/xilinx_vck190_base_202220_1.xpfm;xilinx_vck190_base_dfx_202220_1|C:/Xilinx/Vitis/2022.2/base_platforms/xilinx_vck190_base_dfx_202220_1/xilinx_vck190_base_dfx_202220_1.xpfm;xilinx_vmk180_base_202220_1|C:/Xilinx/Vitis/2022.2/base_platforms/xilinx_vmk180_base_202220_1/xilinx_vmk180_base_202220_1.xpfm;xilinx_zcu102_base_202220_1|C:/Xilinx/Vitis/2022.2/base_platforms/xilinx_zcu102_base_202220_1/xilinx_zcu102_base_202220_1.xpfm;xilinx_zcu102_base_dfx_202220_1|C:/Xilinx/Vitis/2022.2/base_platforms/xilinx_zcu102_base_dfx_202220_1/xilinx_zcu102_base_dfx_202220_1.xpfm;xilinx_zcu104_base_202220_1|C:/Xilinx/Vitis/2022.2/base_platforms/xilinx_zcu104_base_202220_1/xilinx_zcu104_base_202220_1.xpfm
+20:22:31 INFO  : Checking for BSP changes to sync application flags for project 'kof'...
+20:22:34 INFO  : The hardware specification used by project 'kof' is out of sync with the platform. Resource files extracted from the hardware specification will be updated.
+20:22:34 INFO  : The file 'C:\Users\yunxuan5\KOF-94\lab6_1\workspace3\kof\_ide\bitstream\mb_usb_hdmi_top.bit' stored in project is removed.
+20:22:34 INFO  : The file 'C:\Users\yunxuan5\KOF-94\lab6_1\workspace3\kof\_ide\bitstream\mb_usb_hdmi_top.mmi' stored in project is removed.
+20:22:34 INFO  : The updated bitstream files are copied from platform to folder 'C:\Users\yunxuan5\KOF-94\lab6_1\workspace3\kof\_ide\bitstream' in project 'kof'.
+20:22:42 INFO  : Connected to target on host '127.0.0.1' and port '3121'.
+20:22:42 INFO  : Jtag cable 'RealDigital Boo 8874292302C1A' is selected.
+20:22:42 INFO  : 'jtag frequency' command is executed.
+20:22:42 INFO  : 'targets -set -filter {jtag_cable_name =~ "RealDigital Boo 8874292302C1A" && level==0 && jtag_device_ctx=="jsn1-0362f093-0"}' command is executed.
+20:22:43 INFO  : Device configured successfully with "C:/Users/yunxuan5/KOF-94/lab6_1/workspace3/kof/_ide/bitstream/mb_usb_hdmi_top.bit"
+20:22:43 INFO  : Context for processor 'microblaze_0' is selected.
+20:22:44 INFO  : Hardware design and registers information is loaded from 'C:/Users/yunxuan5/KOF-94/lab6_1/workspace3/mb_usb_hdmi_top/export/mb_usb_hdmi_top/hw/mb_usb_hdmi_top.xsa'.
+20:22:44 INFO  : 'configparams mdm-detect-bscan-mask 2' command is executed.
+20:22:44 INFO  : Context for processor 'microblaze_0' is selected.
+20:22:44 INFO  : System reset is completed.
+20:22:47 INFO  : 'after 3000' command is executed.
+20:22:47 INFO  : Context for processor 'microblaze_0' is selected.
+20:22:47 INFO  : The application 'C:/Users/yunxuan5/KOF-94/lab6_1/workspace3/kof/Debug/kof.elf' is downloaded to processor 'microblaze_0'.
+20:22:47 INFO  : ----------------XSDB Script----------------
+connect -url tcp:127.0.0.1:3121
+targets -set -filter {jtag_cable_name =~ "RealDigital Boo 8874292302C1A" && level==0 && jtag_device_ctx=="jsn1-0362f093-0"}
+fpga -file C:/Users/yunxuan5/KOF-94/lab6_1/workspace3/kof/_ide/bitstream/mb_usb_hdmi_top.bit
+targets -set -nocase -filter {name =~ "*microblaze*#0" && bscan=="USER2" }
+loadhw -hw C:/Users/yunxuan5/KOF-94/lab6_1/workspace3/mb_usb_hdmi_top/export/mb_usb_hdmi_top/hw/mb_usb_hdmi_top.xsa -regs
+configparams mdm-detect-bscan-mask 2
+targets -set -nocase -filter {name =~ "*microblaze*#0" && bscan=="USER2" }
+rst -system
+after 3000
+targets -set -nocase -filter {name =~ "*microblaze*#0" && bscan=="USER2" }
+dow C:/Users/yunxuan5/KOF-94/lab6_1/workspace3/kof/Debug/kof.elf
+----------------End of Script----------------
+
+20:22:47 INFO  : Context for processor 'microblaze_0' is selected.
+20:22:47 INFO  : 'con' command is executed.
+20:22:47 INFO  : ----------------XSDB Script (After Launch)----------------
+targets -set -nocase -filter {name =~ "*microblaze*#0" && bscan=="USER2" }
+con
+----------------End of Script----------------
+
+20:22:47 INFO  : Disconnected from the channel tcfchan#30.
