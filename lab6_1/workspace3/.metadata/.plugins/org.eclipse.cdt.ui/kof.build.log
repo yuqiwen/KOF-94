@@ -1,4 +1,4 @@
-20:22:31 **** Incremental Build of configuration Debug for project kof ****
+18:13:30 **** Incremental Build of configuration Debug for project kof ****
 make all 
 'Building file: ../src/lw_usb/MAX3421E.c'
 'Invoking: MicroBlaze gcc compiler'
@@ -74,5 +74,5 @@ mb-size kof.elf  |tee "kof.elf.size"
 'Finished building: kof.elf.size'
 ' '
 
-20:22:33 Build Finished (took 1s.891ms)
+18:13:31 Build Finished (took 1s.828ms)
 

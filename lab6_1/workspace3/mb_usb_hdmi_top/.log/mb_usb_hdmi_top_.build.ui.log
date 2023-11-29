@@ -1,6 +1,6 @@
-2023-11-27T20:22:23.011829800255-20:22:23 **** Incremental Build of project mb_usb_hdmi_top ****
-000-buildplatform.bat 55409 mb_usb_hdmi_top no_domain_build 
-000-xsct% XSDB Server Channel: tcfchan#29
+2023-11-28T18:13:21.60339900255-18:13:21 **** Incremental Build of project mb_usb_hdmi_top ****
+000-buildplatform.bat 54236 mb_usb_hdmi_top no_domain_build 
+000-xsct% XSDB Server Channel: tcfchan#23
 000-C:/Xilinx/Vitis/2022.2/gnu/microblaze/nt
 000-Building the BSP Library for domain  - standalone_microblaze_0 on processor microblaze_0
 000-make --no-print-directory seq_libs
@@ -35,11 +35,11 @@
 000-ER_FLAGS=  -O2 -c -mcpu=v11.0 -mlittle-endian -mxl-soft-mul" "EXTRA_COMPILER_FLAGS=-g -ffunction-sections -fdata-sections -Wall
 000- -Wextra -fno-tree-loop-distribute-patterns"
 000-
+000-"Running Make include in microblaze_0/libsrc/standalone_v8_0/src"
+000-
 000-make -C microblaze_0/libsrc/spi_v4_9/src -s include  "SHELL=CMD" "COMPILER=mb-gcc" "ASSEMBLER=mb-as" "ARCHIVER=mb-ar" "COMPILER
 000-_FLAGS=  -O2 -c -mcpu=v11.0 -mlittle-endian -mxl-soft-mul" "EXTRA_COMPILER_FLAGS=-g -ffunction-sections -fdata-sections -Wall -
 000-Wextra -fno-tree-loop-distribute-patterns"
-000-
-000-"Running Make include in microblaze_0/libsrc/standalone_v8_0/src"
 000-
 000-make -C microblaze_0/libsrc/standalone_v8_0/src -s include  "SHELL=CMD" "COMPILER=mb-gcc" "ASSEMBLER=mb-as" "ARCHIVER=mb-ar" "C
 000-OMPILER_FLAGS=  -O2 -c -mcpu=v11.0 -mlittle-endian -mxl-soft-mul" "EXTRA_COMPILER_FLAGS=-g -ffunction-sections -fdata-sections 
@@ -77,17 +77,17 @@
 000-LAGS=  -O2 -c -mcpu=v11.0 -mlittle-endian -mxl-soft-mul" "EXTRA_COMPILER_FLAGS=-g -ffunction-sections -fdata-sections -Wall -We
 000-xtra -fno-tree-loop-distribute-patterns"
 000-
-000-"Running Make libs in microblaze_0/libsrc/spi_v4_9/src"
-000-
 000-make -C microblaze_0/libsrc/intc_v3_15/src -s libs  "SHELL=CMD" "COMPILER=mb-gcc" "ASSEMBLER=mb-as" "ARCHIVER=mb-ar" "COMPILER_
 000-FLAGS=  -O2 -c -mcpu=v11.0 -mlittle-endian -mxl-soft-mul" "EXTRA_COMPILER_FLAGS=-g -ffunction-sections -fdata-sections -Wall -W
 000-extra -fno-tree-loop-distribute-patterns"
 000-
-000-"Running Make libs in microblaze_0/libsrc/standalone_v8_0/src"
+000-"Running Make libs in microblaze_0/libsrc/spi_v4_9/src"
 000-
 000-make -C microblaze_0/libsrc/spi_v4_9/src -s libs  "SHELL=CMD" "COMPILER=mb-gcc" "ASSEMBLER=mb-as" "ARCHIVER=mb-ar" "COMPILER_FL
 000-AGS=  -O2 -c -mcpu=v11.0 -mlittle-endian -mxl-soft-mul" "EXTRA_COMPILER_FLAGS=-g -ffunction-sections -fdata-sections -Wall -Wex
 000-tra -fno-tree-loop-distribute-patterns"
+000-
+000-"Running Make libs in microblaze_0/libsrc/standalone_v8_0/src"
 000-
 000-make -C microblaze_0/libsrc/standalone_v8_0/src -s libs  "SHELL=CMD" "COMPILER=mb-gcc" "ASSEMBLER=mb-as" "ARCHIVER=mb-ar" "COMP
 000-ILER_FLAGS=  -O2 -c -mcpu=v11.0 -mlittle-endian -mxl-soft-mul" "EXTRA_COMPILER_FLAGS=-g -ffunction-sections -fdata-sections -Wa
@@ -145,5 +145,5 @@
 000-'Finished building libraries'
 000-
 00255-
-20:22:31 Build Finished (took 8s.400ms)
+18:13:29 Build Finished (took 8s.191ms)
 

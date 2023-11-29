@@ -21,7 +21,7 @@ vlog -work blk_mem_gen_v8_4_5  -v2k5 \
 "../../../ipstatic/simulation/blk_mem_gen_v8_4.v" \
 
 vlog -work xil_defaultlib  -v2k5 \
-"../../../../lab6_1.gen/sources_1/ip/scene_rom/sim/scene_rom.v" \
+"../../../../lab6_1.gen/sources_1/ip/scene_rom_1/sim/scene_rom.v" \
 
 vlog -work xil_defaultlib \
 "glbl.v"

@@ -29,19 +29,23 @@ module  color_mapper ( input  logic [9:0] DrawX, DrawY,
     parameter [9:0] char1_squat_width=80;
     parameter [9:0] char1_kick_height=112;
     parameter [9:0] char1_kick_width=112;
+    parameter [9:0] bg1_height=128;
+    parameter [9:0] bg1_width=130;
+    parameter [9:0] bg1_Xstart=382;
+    parameter [9:0] bg1_Ystart=100;
     parameter [9:0] height=112;
-    parameter [10:0] Back_X_size=1424;
+    parameter [10:0] Back_X_size=1024;
     parameter [9:0] Back_Y_size=480;
     parameter [9:0] vga_size=640;
-    logic [17:0] bg_rom_address, char1_rom_address,char1_stand_addr,char1_fwd_addr,char1_back_addr,char1_punch_addr,char1_squat_addr,char1_kick_addr;
+    logic [17:0] bg_rom_address,bg1_rom_address, char1_rom_address,char1_stand_addr,char1_fwd_addr,char1_back_addr,char1_punch_addr,char1_squat_addr,char1_kick_addr;
     logic [17:0] char2_rom_address,char2_stand_addr,char2_fwd_addr,char2_back_addr,char2_punch_addr,char2_squat_addr,char2_kick_addr;
     logic [9:0] pos_x,pos2_x;
-    logic [3:0]  bg1_r, bg1_g, bg1_b, bg2_r, bg2_g, bg2_b,char1_r,char1_g,char1_b, char1_stand_r, char1_stand_g, char1_stand_b;
+    logic [3:0]  bg_r, bg_g, bg_b,bg1_r, bg1_g, bg1_b,bg2_r, bg2_g, bg2_b, char1_r,char1_g,char1_b, char1_stand_r, char1_stand_g, char1_stand_b;
     logic [3:0] char1_fwd_r,char1_fwd_g,char1_fwd_b,char1_back_r,char1_back_g,char1_back_b,char1_punch_r,char1_punch_g,char1_punch_b;
     logic [3:0] char1_squat_r,char1_squat_g,char1_squat_b,char1_kick_r,char1_kick_g,char1_kick_b;
     logic [3:0] char2_r,char2_g,char2_b, char2_stand_r, char2_stand_g, char2_stand_b;
     logic char1_on,char2_on,stand_1,stand_2;
-    logic [5:0] char1_cnt,char2_cnt;  // 5-bit counter to handle 18 states
+    logic [5:0] char1_cnt,char2_cnt,bg_cnt;  // 5-bit counter to handle 18 states
     logic [5:0] char1_fwd_cnt,char1_back_cnt,char1_punch_cnt,char1_kick_cnt;
     always_comb begin
         pos_x=char1X-backX;
@@ -59,6 +63,19 @@ module  color_mapper ( input  logic [9:0] DrawX, DrawY,
             stand_2=1;
         end
     end
+    
+    always_ff @(posedge vsync) begin
+        if (reset) begin
+            bg_cnt <= 6'b00000;
+        end
+        else begin
+            bg_cnt <= bg_cnt + 1'b1;
+            if (bg_cnt == 6'b100010) begin  // Reset counter after 18 (binary 10001)
+                bg_cnt <= 6'b00000;
+            end
+        end
+    end
+    
     
     always_ff @(posedge vsync or posedge reset) begin
         if (reset||forward_1||back_1||punch_1||squat_1||kick_1||jump_1) begin
@@ -80,7 +97,7 @@ module  color_mapper ( input  logic [9:0] DrawX, DrawY,
             end
         end
     end
-    
+
      always_ff @(posedge vsync) begin
         if (~forward_1) begin
             char1_fwd_cnt <= 6'b00000;
@@ -256,7 +273,27 @@ module  color_mapper ( input  logic [9:0] DrawX, DrawY,
                     char2_stand_addr=0;
                 end // Define a default value or handle it as an error
             endcase
-        bg_rom_address = (DrawY/2) * 712 + ((DrawX+backX)/2);
+        bg_rom_address = (DrawY/2) * 512 + ((DrawX+backX)/2);
+        case (bg_cnt / 7)
+                    3'b000: begin
+                        bg1_rom_address=bg1_width * ((DrawY - bg1_Ystart) /2) + ((DrawX+backX - bg1_Xstart) /2);
+                    end
+                    3'b001: begin
+                        bg1_rom_address=bg1_width * ((DrawY - bg1_Ystart) /2) + ((DrawX+backX - bg1_Xstart) /2)+1*bg1_width*bg1_height;
+                    end
+                    3'b010:begin
+                        bg1_rom_address=bg1_width * ((DrawY - bg1_Ystart) /2) + ((DrawX+backX - bg1_Xstart) /2)+2*bg1_width*bg1_height;
+                    end
+                    3'b011: begin
+                        bg1_rom_address=bg1_width * ((DrawY - bg1_Ystart) /2) + ((DrawX+backX - bg1_Xstart) /2)+3*bg1_width*bg1_height;
+                    end
+                    3'b100: begin
+                        bg1_rom_address=bg1_width * ((DrawY - bg1_Ystart) /2) + ((DrawX+backX - bg1_Xstart) /2)+4*bg1_width*bg1_height;
+                    end
+                    default: begin
+                        bg1_rom_address=0;
+                    end // Define a default value or handle it as an error
+                endcase
         char1_squat_addr=char1_squat_width * ((DrawY - (char1Y+(height-char1_squat_height)*2)) /2) + ((DrawX - pos_x) /2);
         
     end
@@ -298,13 +335,23 @@ module  color_mapper ( input  logic [9:0] DrawX, DrawY,
                Blue = char2_b;
           end
           else begin
-               Red = bg2_r; 
-               Green = bg2_g;
-               Blue = bg2_b;
+               Red = bg_r; 
+               Green = bg_g;
+               Blue = bg_b;
           end
     end 
     
     always_comb begin
+       if(DrawX+backX>=bg1_Xstart&&DrawX+backX<bg1_Xstart+bg1_width*2&&DrawY >= bg1_Ystart && DrawY < bg1_Ystart+bg1_height*2)begin
+            bg_r=bg1_r;
+            bg_g=bg1_g;
+            bg_b=bg1_b;
+       end
+       else begin
+            bg_r=bg2_r;
+            bg_g=bg2_g;
+            bg_b=bg2_b;
+       end
        if(stand_1 && DrawX >= pos_x && DrawX < pos_x+2*stand_x_size && DrawY >= char1Y && DrawY < char1Y+height*2)begin
 	       if(char1_stand_r != 4'hF || char1_stand_g != 4'h0 || char1_stand_b != 4'hF)begin
                 char1_on = 1;
@@ -376,13 +423,21 @@ module  color_mapper ( input  logic [9:0] DrawX, DrawY,
     end
     
     
-    scene_example scene(
+    scene scene(
         .vga_clk(clk_25MHz),
         .rom_address(bg_rom_address),
         .blank(blank),
         .red(bg2_r), 
         .green(bg2_g), 
         .blue(bg2_b)
+    );
+    scene1 scene1(
+        .vga_clk(clk_25MHz),
+        .rom_address(bg1_rom_address),
+        .blank(blank),
+        .red(bg1_r), 
+        .green(bg1_g), 
+        .blue(bg1_b)
     );
 
     mai_stand st(

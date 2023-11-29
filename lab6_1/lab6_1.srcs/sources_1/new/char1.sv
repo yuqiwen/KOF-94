@@ -31,17 +31,17 @@ module char_mai(
     logic signed [12:0] char1_X_Motion, char1_Y_Motion,char2_X_Motion, char2_Y_Motion,back_Motion;
 //    logic signed [12:0]tempX;
     logic c1_for,c1_bac,c1_squ,c1_jmp,c1_pun,c1_kic,c2_for,c2_bac,c2_squ,c2_jmp,c2_pun,c2_kic;
-    parameter [12:0] char1_X_start=392+70;  // Center position on the X axis
+    parameter [12:0] char1_X_start=192+70;  // Center position on the X axis
     parameter [12:0] char1_Y_start=250;  // Center position on the Y axis
-    parameter [12:0] char2_X_start=392+640-70-160;  // Center position on the X axis
-    parameter [12:0] char2_Y_start=250;
-    parameter [9:0] Back_X_start=392;
+    parameter [12:0] char2_X_start=192+640-70-160;  // Center position on the X axis
+    parameter [12:0] char2_Y_start=240;
+    parameter [9:0] Back_X_start=192;
     parameter [9:0] char_X_Min=0;       
-    parameter [9:0] char_size=160;
-    parameter [12:0] Back_X_size=1424;
+    parameter [12:0] char_size=160;
+    parameter [12:0] Back_X_size=1024;
     parameter [9:0] Back_Y_size=480;
-    parameter [9:0] vga_size=640;
-    parameter [12:0] Back_X_Max=1423;     // Rightmost point on the X axis
+    parameter [12:0] vga_size=640;
+    parameter [12:0] Back_X_Max=1023;     // Rightmost point on the X axis
     parameter [9:0] Back_X_Min=0;       // Leftmost point on the X axis
     parameter [9:0] Back_Y_Min=0;       // Topmost point on the X axis
     parameter [9:0] Back_Y_Max=479;     // Bottommost point on the Y axis
@@ -280,12 +280,12 @@ module char_mai(
                  
                  char1Y <= (char1Y + char1_Y_Motion);  
                  char2Y <= (char2Y + char2_Y_Motion);  
-				 if($signed(char1X + char1_X_Motion+char_size)<$signed(char2X+char2_X_Motion))begin
-				    if($signed(char1X + char1_X_Motion)>=392)
+				 if($signed(char1X + char1_X_Motion+char_size)<$signed(char2X+char2_X_Motion)&&$signed(char2X+char2_X_Motion-char1X-char1_X_Motion)<480)begin
+				    if($signed(char1X + char1_X_Motion)>=5)
 				        char1X <= (char1X + char1_X_Motion);
 				    else
 				         char1X<=char1X;
-				    if($signed(char2X + char2_X_Motion+char_size)<392+640)
+				    if($signed(char2X + char2_X_Motion+char_size)<Back_X_Max)
                         char2X <= (char2X + char2_X_Motion);
 				    else
 				         char2X<=char2X;
@@ -295,12 +295,12 @@ module char_mai(
 				    char2X<=char2X;
 				 end
 //				 back_Motion=char1_X_Motion+char2_X_Motion;
-//				 if(($signed(backX + back_Motion)>=Back_X_Min)&&($signed(backX + back_Motion)<=Back_X_Max))begin
-//				        backX <= (backX + back_Motion);
-//				 end
-//				 else begin
-//				    backX<=backX;
-//				 end
+				 if($signed(char2X+char2_X_Motion+char1X+char1_X_Motion+char_size)>=640&&$signed(char2X+char2_X_Motion+char1X+char1_X_Motion+char_size)<1408)begin
+				        backX <= ($signed(char2X) + char2_X_Motion + $signed(char1X) + char1_X_Motion + $signed(char_size) - $signed(vga_size)) / 2;
+				 end
+				 else begin
+				    backX<=backX;
+				 end
 			
 		end  
     end
