@@ -95,53 +95,53 @@
           <Attr Name="UsedIn" Val="implementation"/>
           <Attr Name="UsedIn" Val="simulation"/>
         </FileInfo>
-        <CompFileExtendedInfo CompFileName="mb_block.bd" FileRelPathName="ip/mb_block_rst_clk_wiz_1_100M_0/mb_block_rst_clk_wiz_1_100M_0.xci">
-          <Proxy FileSetName="mb_block_rst_clk_wiz_1_100M_0"/>
-        </CompFileExtendedInfo>
-        <CompFileExtendedInfo CompFileName="mb_block.bd" FileRelPathName="ip/mb_block_axi_uartlite_0_0/mb_block_axi_uartlite_0_0.xci">
-          <Proxy FileSetName="mb_block_axi_uartlite_0_0"/>
-        </CompFileExtendedInfo>
-        <CompFileExtendedInfo CompFileName="mb_block.bd" FileRelPathName="ip/mb_block_axi_gpio_0_3/mb_block_axi_gpio_0_3.xci">
-          <Proxy FileSetName="mb_block_axi_gpio_0_3"/>
-        </CompFileExtendedInfo>
-        <CompFileExtendedInfo CompFileName="mb_block.bd" FileRelPathName="ip/mb_block_axi_gpio_0_2/mb_block_axi_gpio_0_2.xci">
-          <Proxy FileSetName="mb_block_axi_gpio_0_2"/>
-        </CompFileExtendedInfo>
-        <CompFileExtendedInfo CompFileName="mb_block.bd" FileRelPathName="ip/mb_block_axi_quad_spi_0_0/mb_block_axi_quad_spi_0_0.xci">
-          <Proxy FileSetName="mb_block_axi_quad_spi_0_0"/>
-        </CompFileExtendedInfo>
-        <CompFileExtendedInfo CompFileName="mb_block.bd" FileRelPathName="ip/mb_block_axi_timer_0_0/mb_block_axi_timer_0_0.xci">
-          <Proxy FileSetName="mb_block_axi_timer_0_0"/>
-        </CompFileExtendedInfo>
-        <CompFileExtendedInfo CompFileName="mb_block.bd" FileRelPathName="ip/mb_block_xbar_0/mb_block_xbar_0.xci">
-          <Proxy FileSetName="mb_block_xbar_0"/>
-        </CompFileExtendedInfo>
-        <CompFileExtendedInfo CompFileName="mb_block.bd" FileRelPathName="ip/mb_block_dlmb_v10_0/mb_block_dlmb_v10_0.xci">
-          <Proxy FileSetName="mb_block_dlmb_v10_0"/>
-        </CompFileExtendedInfo>
-        <CompFileExtendedInfo CompFileName="mb_block.bd" FileRelPathName="ip/mb_block_clk_wiz_1_0/mb_block_clk_wiz_1_0.xci">
-          <Proxy FileSetName="mb_block_clk_wiz_1_0"/>
+        <CompFileExtendedInfo CompFileName="mb_block.bd" FileRelPathName="ip/mb_block_mdm_1_0/mb_block_mdm_1_0.xci">
+          <Proxy FileSetName="mb_block_mdm_1_0"/>
         </CompFileExtendedInfo>
         <CompFileExtendedInfo CompFileName="mb_block.bd" FileRelPathName="ip/mb_block_microblaze_0_0/mb_block_microblaze_0_0.xci">
           <Proxy FileSetName="mb_block_microblaze_0_0"/>
         </CompFileExtendedInfo>
-        <CompFileExtendedInfo CompFileName="mb_block.bd" FileRelPathName="ip/mb_block_dlmb_bram_if_cntlr_0/mb_block_dlmb_bram_if_cntlr_0.xci">
-          <Proxy FileSetName="mb_block_dlmb_bram_if_cntlr_0"/>
+        <CompFileExtendedInfo CompFileName="mb_block.bd" FileRelPathName="ip/mb_block_axi_quad_spi_0_0/mb_block_axi_quad_spi_0_0.xci">
+          <Proxy FileSetName="mb_block_axi_quad_spi_0_0"/>
         </CompFileExtendedInfo>
-        <CompFileExtendedInfo CompFileName="mb_block.bd" FileRelPathName="ip/mb_block_lmb_bram_0/mb_block_lmb_bram_0.xci">
-          <Proxy FileSetName="mb_block_lmb_bram_0"/>
+        <CompFileExtendedInfo CompFileName="mb_block.bd" FileRelPathName="ip/mb_block_axi_uartlite_0_0/mb_block_axi_uartlite_0_0.xci">
+          <Proxy FileSetName="mb_block_axi_uartlite_0_0"/>
         </CompFileExtendedInfo>
-        <CompFileExtendedInfo CompFileName="mb_block.bd" FileRelPathName="ip/mb_block_mdm_1_0/mb_block_mdm_1_0.xci">
-          <Proxy FileSetName="mb_block_mdm_1_0"/>
+        <CompFileExtendedInfo CompFileName="mb_block.bd" FileRelPathName="ip/mb_block_clk_wiz_1_0/mb_block_clk_wiz_1_0.xci">
+          <Proxy FileSetName="mb_block_clk_wiz_1_0"/>
         </CompFileExtendedInfo>
-        <CompFileExtendedInfo CompFileName="mb_block.bd" FileRelPathName="ip/mb_block_ilmb_v10_0/mb_block_ilmb_v10_0.xci">
-          <Proxy FileSetName="mb_block_ilmb_v10_0"/>
+        <CompFileExtendedInfo CompFileName="mb_block.bd" FileRelPathName="ip/mb_block_ilmb_bram_if_cntlr_0/mb_block_ilmb_bram_if_cntlr_0.xci">
+          <Proxy FileSetName="mb_block_ilmb_bram_if_cntlr_0"/>
+        </CompFileExtendedInfo>
+        <CompFileExtendedInfo CompFileName="mb_block.bd" FileRelPathName="ip/mb_block_axi_timer_0_0/mb_block_axi_timer_0_0.xci">
+          <Proxy FileSetName="mb_block_axi_timer_0_0"/>
+        </CompFileExtendedInfo>
+        <CompFileExtendedInfo CompFileName="mb_block.bd" FileRelPathName="ip/mb_block_axi_gpio_0_3/mb_block_axi_gpio_0_3.xci">
+          <Proxy FileSetName="mb_block_axi_gpio_0_3"/>
         </CompFileExtendedInfo>
         <CompFileExtendedInfo CompFileName="mb_block.bd" FileRelPathName="ip/mb_block_microblaze_0_axi_intc_0/mb_block_microblaze_0_axi_intc_0.xci">
           <Proxy FileSetName="mb_block_microblaze_0_axi_intc_0"/>
         </CompFileExtendedInfo>
-        <CompFileExtendedInfo CompFileName="mb_block.bd" FileRelPathName="ip/mb_block_ilmb_bram_if_cntlr_0/mb_block_ilmb_bram_if_cntlr_0.xci">
-          <Proxy FileSetName="mb_block_ilmb_bram_if_cntlr_0"/>
+        <CompFileExtendedInfo CompFileName="mb_block.bd" FileRelPathName="ip/mb_block_dlmb_v10_0/mb_block_dlmb_v10_0.xci">
+          <Proxy FileSetName="mb_block_dlmb_v10_0"/>
+        </CompFileExtendedInfo>
+        <CompFileExtendedInfo CompFileName="mb_block.bd" FileRelPathName="ip/mb_block_dlmb_bram_if_cntlr_0/mb_block_dlmb_bram_if_cntlr_0.xci">
+          <Proxy FileSetName="mb_block_dlmb_bram_if_cntlr_0"/>
+        </CompFileExtendedInfo>
+        <CompFileExtendedInfo CompFileName="mb_block.bd" FileRelPathName="ip/mb_block_rst_clk_wiz_1_100M_0/mb_block_rst_clk_wiz_1_100M_0.xci">
+          <Proxy FileSetName="mb_block_rst_clk_wiz_1_100M_0"/>
+        </CompFileExtendedInfo>
+        <CompFileExtendedInfo CompFileName="mb_block.bd" FileRelPathName="ip/mb_block_axi_gpio_0_2/mb_block_axi_gpio_0_2.xci">
+          <Proxy FileSetName="mb_block_axi_gpio_0_2"/>
+        </CompFileExtendedInfo>
+        <CompFileExtendedInfo CompFileName="mb_block.bd" FileRelPathName="ip/mb_block_lmb_bram_0/mb_block_lmb_bram_0.xci">
+          <Proxy FileSetName="mb_block_lmb_bram_0"/>
+        </CompFileExtendedInfo>
+        <CompFileExtendedInfo CompFileName="mb_block.bd" FileRelPathName="ip/mb_block_ilmb_v10_0/mb_block_ilmb_v10_0.xci">
+          <Proxy FileSetName="mb_block_ilmb_v10_0"/>
+        </CompFileExtendedInfo>
+        <CompFileExtendedInfo CompFileName="mb_block.bd" FileRelPathName="ip/mb_block_xbar_0/mb_block_xbar_0.xci">
+          <Proxy FileSetName="mb_block_xbar_0"/>
         </CompFileExtendedInfo>
       </File>
       <File Path="$PPRDIR/lab6.2_provided/design_source/Color_Mapper.sv">
@@ -391,6 +391,30 @@
       <File Path="$PPRDIR/scene1/scene1.COE">
         <FileInfo>
           <Attr Name="UsedIn" Val="synthesis"/>
+          <Attr Name="UsedIn" Val="simulation"/>
+        </FileInfo>
+      </File>
+      <File Path="$PSRCDIR/sources_1/new/timer.sv">
+        <FileInfo>
+          <Attr Name="AutoDisabled" Val="1"/>
+          <Attr Name="UsedIn" Val="synthesis"/>
+          <Attr Name="UsedIn" Val="implementation"/>
+          <Attr Name="UsedIn" Val="simulation"/>
+        </FileInfo>
+      </File>
+      <File Path="$PPRDIR/font_rom.sv">
+        <FileInfo>
+          <Attr Name="AutoDisabled" Val="1"/>
+          <Attr Name="UsedIn" Val="synthesis"/>
+          <Attr Name="UsedIn" Val="implementation"/>
+          <Attr Name="UsedIn" Val="simulation"/>
+        </FileInfo>
+      </File>
+      <File Path="$PSRCDIR/sources_1/new/hp_sys.sv">
+        <FileInfo>
+          <Attr Name="AutoDisabled" Val="1"/>
+          <Attr Name="UsedIn" Val="synthesis"/>
+          <Attr Name="UsedIn" Val="implementation"/>
           <Attr Name="UsedIn" Val="simulation"/>
         </FileInfo>
       </File>
@@ -985,9 +1009,7 @@
     </Run>
     <Run Id="scene_rom_synth_1" Type="Ft3:Synth" SrcSet="scene_rom" Part="xc7s50csga324-1" ConstrsSet="scene_rom" Description="Vivado Synthesis Defaults" AutoIncrementalCheckpoint="false" WriteIncrSynthDcp="false" Dir="$PRUNDIR/scene_rom_synth_1" IncludeInArchive="true" IsChild="false" AutoIncrementalDir="$PSRCDIR/utils_1/imports/scene_rom_synth_1" AutoRQSDir="$PSRCDIR/utils_1/imports/scene_rom_synth_1">
       <Strategy Version="1" Minor="2">
-        <StratHandle Name="Vivado Synthesis Defaults" Flow="Vivado Synthesis 2022">
-          <Desc>Vivado Synthesis Defaults</Desc>
-        </StratHandle>
+        <StratHandle Name="Vivado Synthesis Defaults" Flow="Vivado Synthesis 2022"/>
         <Step Id="synth_design"/>
       </Strategy>
       <GeneratedRun Dir="$PRUNDIR" File="gen_run.xml"/>
@@ -997,9 +1019,7 @@
     </Run>
     <Run Id="scene1_rom_synth_1" Type="Ft3:Synth" SrcSet="scene1_rom" Part="xc7s50csga324-1" ConstrsSet="scene1_rom" Description="Vivado Synthesis Defaults" AutoIncrementalCheckpoint="false" WriteIncrSynthDcp="false" Dir="$PRUNDIR/scene1_rom_synth_1" IncludeInArchive="true" IsChild="false" AutoIncrementalDir="$PSRCDIR/utils_1/imports/scene1_rom_synth_1" AutoRQSDir="$PSRCDIR/utils_1/imports/scene1_rom_synth_1">
       <Strategy Version="1" Minor="2">
-        <StratHandle Name="Vivado Synthesis Defaults" Flow="Vivado Synthesis 2022">
-          <Desc>Vivado Synthesis Defaults</Desc>
-        </StratHandle>
+        <StratHandle Name="Vivado Synthesis Defaults" Flow="Vivado Synthesis 2022"/>
         <Step Id="synth_design"/>
       </Strategy>
       <GeneratedRun Dir="$PRUNDIR" File="gen_run.xml"/>
@@ -1452,9 +1472,7 @@
     </Run>
     <Run Id="scene_rom_impl_1" Type="Ft2:EntireDesign" Part="xc7s50csga324-1" ConstrsSet="scene_rom" Description="Default settings for Implementation." AutoIncrementalCheckpoint="false" WriteIncrSynthDcp="false" SynthRun="scene_rom_synth_1" IncludeInArchive="false" IsChild="false" GenFullBitstream="true" AutoIncrementalDir="$PSRCDIR/utils_1/imports/scene_rom_impl_1" AutoRQSDir="$PSRCDIR/utils_1/imports/scene_rom_impl_1">
       <Strategy Version="1" Minor="2">
-        <StratHandle Name="Vivado Implementation Defaults" Flow="Vivado Implementation 2022">
-          <Desc>Default settings for Implementation.</Desc>
-        </StratHandle>
+        <StratHandle Name="Vivado Implementation Defaults" Flow="Vivado Implementation 2022"/>
         <Step Id="init_design"/>
         <Step Id="opt_design"/>
         <Step Id="power_opt_design"/>
@@ -1471,9 +1489,7 @@
     </Run>
     <Run Id="scene1_rom_impl_1" Type="Ft2:EntireDesign" Part="xc7s50csga324-1" ConstrsSet="scene1_rom" Description="Default settings for Implementation." AutoIncrementalCheckpoint="false" WriteIncrSynthDcp="false" SynthRun="scene1_rom_synth_1" IncludeInArchive="false" IsChild="false" GenFullBitstream="true" AutoIncrementalDir="$PSRCDIR/utils_1/imports/scene1_rom_impl_1" AutoRQSDir="$PSRCDIR/utils_1/imports/scene1_rom_impl_1">
       <Strategy Version="1" Minor="2">
-        <StratHandle Name="Vivado Implementation Defaults" Flow="Vivado Implementation 2022">
-          <Desc>Default settings for Implementation.</Desc>
-        </StratHandle>
+        <StratHandle Name="Vivado Implementation Defaults" Flow="Vivado Implementation 2022"/>
         <Step Id="init_design"/>
         <Step Id="opt_design"/>
         <Step Id="power_opt_design"/>
