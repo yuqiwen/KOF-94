@@ -1,10 +1,10 @@
 -- Copyright 1986-2022 Xilinx, Inc. All Rights Reserved.
 -- --------------------------------------------------------------------------------
 -- Tool Version: Vivado v.2022.2 (win64) Build 3671981 Fri Oct 14 05:00:03 MDT 2022
--- Date        : Thu Nov 30 18:36:47 2023
+-- Date        : Thu Nov 30 18:36:46 2023
 -- Host        : ECEB-3070-02 running 64-bit major release  (build 9200)
--- Command     : write_vhdl -force -mode synth_stub
---               c:/Users/yunxuan5/KOF-94/lab6_1/lab6_1.gen/sources_1/ip/kyo_stand_rom/kyo_stand_rom_stub.vhdl
+-- Command     : write_vhdl -force -mode synth_stub -rename_top kyo_stand_rom -prefix
+--               kyo_stand_rom_ kyo_stand_rom_stub.vhdl
 -- Design      : kyo_stand_rom
 -- Purpose     : Stub declaration of top-level module interface
 -- Device      : xc7s50csga324-1
