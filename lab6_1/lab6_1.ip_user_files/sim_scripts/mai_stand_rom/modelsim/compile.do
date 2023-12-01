@@ -21,7 +21,7 @@ vlog -work blk_mem_gen_v8_4_5  -incr -mfcu  \
 "../../../ipstatic/simulation/blk_mem_gen_v8_4.v" \
 
 vlog -work xil_defaultlib  -incr -mfcu  \
-"../../../../lab6_1.gen/sources_1/ip/mai_stand_rom/sim/mai_stand_rom.v" \
+"../../../../lab6_1.gen/sources_1/ip/mai_stand_rom_1/sim/mai_stand_rom.v" \
 
 vlog -work xil_defaultlib \
 "glbl.v"

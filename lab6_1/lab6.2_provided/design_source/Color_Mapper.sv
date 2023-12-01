@@ -18,7 +18,8 @@ module  color_mapper ( input  logic [9:0] DrawX, DrawY,
 
                        input logic clk_25MHz, blank,reset,vsync,
                        input logic [12:0]  char1X, char1Y,char2X, char2Y,backX,
-                       input logic forward_1,back_1,punch_1,squat_1,kick_1,jump_1,forward_2,back_2,punch_2,squat_2,kick_2,jump_2,
+                       input logic [5:0] seconds,
+                       input logic forward_1,back_1,punch_1,squat_1,kick_1,jump_1,forward_2,back_2,punch_2,squat_2,kick_2,jump_2,stop,
                        output logic [3:0]  Red, Green, Blue );
     parameter [9:0] forward_x_size=96;
     parameter [9:0] back_x_size=80;
@@ -67,20 +68,45 @@ module  color_mapper ( input  logic [9:0] DrawX, DrawY,
     logic [3:0] char1_squat_r,char1_squat_g,char1_squat_b,char1_kick_r,char1_kick_g,char1_kick_b;
     logic [3:0] char2_r,char2_g,char2_b, char2_stand_r, char2_stand_g, char2_stand_b,char2_fwd_r,char2_fwd_g,char2_fwd_b;
     logic [3:0] char2_back_r,char2_back_g,char2_back_b,char2_punch_r,char2_punch_g,char2_punch_b, char2_squat_r,char2_squat_g,char2_squat_b,char2_kick_r,char2_kick_g,char2_kick_b;
-    logic char1_on,char2_on,stand_1,stand_2;
+    logic char1_on,char2_on,stand_1,stand_2,s_on;
     logic [5:0] char1_cnt,char2_cnt,bg_cnt;  // 5-bit counter to handle 18 states
     logic [5:0] char1_fwd_cnt,char1_back_cnt,char1_punch_cnt,char1_kick_cnt;
     logic [5:0] char2_fwd_cnt,char2_back_cnt,char2_punch_cnt,char2_kick_cnt;
+    
+    //timer
+    logic [7:0]first_ascii,second_ascii;
+    logic [10:0]sprite_addr;
+    logic [7:0] sprite_data;
+    
+    always_comb begin
+        first_ascii=(seconds/10)+8'h30;
+        second_ascii=(seconds%10)+8'h30;
+        if(DrawX>=304&&DrawX<320&&DrawY>=20&&DrawY<52)
+            sprite_addr=first_ascii*16 + ((DrawY-20)/2)%16;
+        else if(DrawX>=320&&DrawX<336&&DrawY>=20&&DrawY<52)
+            sprite_addr=second_ascii*16 + ((DrawY-20)/2)%16;
+        else sprite_addr=0;
+        s_on=sprite_data[7-DrawX[3:1]]; 
+    end
+    
+     font_rom fr(.addr(sprite_addr), .data(sprite_data));
+    
+    
+    
+    
+    
     always_comb begin
         pos_x=char1X-backX;
         pos2_x=char2X-backX;
-        if(forward_1||back_1||punch_1||squat_1||kick_1||jump_1)begin
+        if(stop)stand_1=1;
+        else if(forward_1||back_1||punch_1||squat_1||kick_1||jump_1)begin
             stand_1=0;
         end
         else begin
             stand_1=1;
         end
-        if(forward_2||back_2||punch_2||squat_2||kick_2||jump_2)begin
+        if(stop)stand_2=1;
+        else if(forward_2||back_2||punch_2||squat_2||kick_2||jump_2)begin
             stand_2=0;
         end
         else begin
@@ -102,7 +128,7 @@ module  color_mapper ( input  logic [9:0] DrawX, DrawY,
     
     
     always_ff @(posedge vsync or posedge reset) begin
-        if (reset||forward_1||back_1||punch_1||squat_1||kick_1||jump_1) begin
+        if (!stop&&(reset||forward_1||back_1||punch_1||squat_1||kick_1||jump_1)) begin
             char1_cnt <= 6'b00000;
         end
         else begin
@@ -111,7 +137,7 @@ module  color_mapper ( input  logic [9:0] DrawX, DrawY,
                 char1_cnt <= 6'b00000;
             end
         end
-        if (reset||forward_2||back_2||punch_2||squat_2||kick_2||jump_2) begin
+        if (!stop&&(reset||forward_2||back_2||punch_2||squat_2||kick_2||jump_2)) begin
             char2_cnt <= 6'b00000;
         end
         else begin
@@ -292,31 +318,30 @@ module  color_mapper ( input  logic [9:0] DrawX, DrawY,
                     end // Define a default value or handle it as an error
                 endcase
         end
-        else begin
-            case (char1_cnt / 7)
-                3'b000: begin
-                    char1_stand_addr=stand_x_size * ((DrawY - char1Y) /2) + ((DrawX - pos_x) /2);
-                end
-                3'b001: begin
-                    char1_stand_addr=stand_x_size * ((DrawY - char1Y) /2) + ((DrawX - pos_x) /2)+1*stand_x_size *height;
-                end
-                3'b010:begin
-                    char1_stand_addr=stand_x_size * ((DrawY - char1Y) /2) + ((DrawX - pos_x) /2)+2*stand_x_size *height;
-                end
-                3'b011: begin
-                    char1_stand_addr=stand_x_size * ((DrawY - char1Y) /2) + ((DrawX - pos_x) /2)+3*stand_x_size *height;
-                end
-                3'b100: begin
-                    char1_stand_addr=stand_x_size * ((DrawY - char1Y) /2) + ((DrawX - pos_x) /2)+4*stand_x_size *height;
-                end
-                3'b101: begin
-                    char1_stand_addr=stand_x_size * ((DrawY - char1Y) /2) + ((DrawX - pos_x) /2)+5*stand_x_size *height;
-                end
-                default: begin
-                    char1_stand_addr=0;
-                end // Define a default value or handle it as an error
-            endcase
-        end
+        case (char1_cnt / 7)
+            3'b000: begin
+                char1_stand_addr=stand_x_size * ((DrawY - char1Y) /2) + ((DrawX - pos_x) /2);
+            end
+            3'b001: begin
+                char1_stand_addr=stand_x_size * ((DrawY - char1Y) /2) + ((DrawX - pos_x) /2)+1*stand_x_size *height;
+            end
+            3'b010:begin
+                char1_stand_addr=stand_x_size * ((DrawY - char1Y) /2) + ((DrawX - pos_x) /2)+2*stand_x_size *height;
+            end
+            3'b011: begin
+                char1_stand_addr=stand_x_size * ((DrawY - char1Y) /2) + ((DrawX - pos_x) /2)+3*stand_x_size *height;
+            end
+            3'b100: begin
+                char1_stand_addr=stand_x_size * ((DrawY - char1Y) /2) + ((DrawX - pos_x) /2)+4*stand_x_size *height;
+            end
+            3'b101: begin
+                char1_stand_addr=stand_x_size * ((DrawY - char1Y) /2) + ((DrawX - pos_x) /2)+5*stand_x_size *height;
+            end
+            default: begin
+                char1_stand_addr=0;
+            end // Define a default value or handle it as an error
+        endcase
+
         char1_squat_addr=char1_squat_width * ((DrawY - (char1Y+(height-char1_squat_height)*2)) /2) + ((DrawX - pos_x) /2);
         
         //char2
@@ -386,31 +411,29 @@ module  color_mapper ( input  logic [9:0] DrawX, DrawY,
                     end // Define a default value or handle it as an error
                 endcase
         end
-        else begin
-            case (char2_cnt / 7)
-                    3'b000: begin
-                        char2_stand_addr=stand_x_size * ((DrawY - char2Y) /2) + ((DrawX - pos2_x) /2);
-                    end
-                    3'b001: begin
-                        char2_stand_addr=stand_x_size * ((DrawY - char2Y) /2) + ((DrawX - pos2_x) /2)+1*stand_x_size *height;
-                    end
-                    3'b010:begin
-                        char2_stand_addr=stand_x_size * ((DrawY - char2Y) /2) + ((DrawX - pos2_x) /2)+2*stand_x_size *height;
-                    end
-                    3'b011: begin
-                        char2_stand_addr=stand_x_size * ((DrawY - char2Y) /2) + ((DrawX - pos2_x) /2)+3*stand_x_size *height;
-                    end
-                    3'b100: begin
-                        char2_stand_addr=stand_x_size * ((DrawY - char2Y) /2) + ((DrawX - pos2_x) /2)+4*stand_x_size *height;
-                    end
-                    3'b101: begin
-                        char2_stand_addr=stand_x_size * ((DrawY - char2Y) /2) + ((DrawX - pos2_x) /2)+5*stand_x_size *height;
-                    end
-                    default: begin
-                        char2_stand_addr=0;
-                    end // Define a default value or handle it as an error
-                endcase
-        end
+        case (char2_cnt / 7)
+                3'b000: begin
+                    char2_stand_addr=stand_x_size * ((DrawY - char2Y) /2) + ((DrawX - pos2_x) /2);
+                end
+                3'b001: begin
+                    char2_stand_addr=stand_x_size * ((DrawY - char2Y) /2) + ((DrawX - pos2_x) /2)+1*stand_x_size *height;
+                end
+                3'b010:begin
+                    char2_stand_addr=stand_x_size * ((DrawY - char2Y) /2) + ((DrawX - pos2_x) /2)+2*stand_x_size *height;
+                end
+                3'b011: begin
+                    char2_stand_addr=stand_x_size * ((DrawY - char2Y) /2) + ((DrawX - pos2_x) /2)+3*stand_x_size *height;
+                end
+                3'b100: begin
+                    char2_stand_addr=stand_x_size * ((DrawY - char2Y) /2) + ((DrawX - pos2_x) /2)+4*stand_x_size *height;
+                end
+                3'b101: begin
+                    char2_stand_addr=stand_x_size * ((DrawY - char2Y) /2) + ((DrawX - pos2_x) /2)+5*stand_x_size *height;
+                end
+                default: begin
+                    char2_stand_addr=0;
+                end // Define a default value or handle it as an error
+            endcase
         char2_squat_addr=char2_squat_width * ((DrawY - (char2Y+(height-char2_squat_height)*2)) /2) + ((DrawX - pos2_x) /2);
         
         if(DrawX+backX>=bg5_Xstart*2&&DrawX+backX<bg5_Xstart*2+bg2_width*2&&DrawY >= bg2_Ystart*2 && DrawY < bg2_Ystart*2+bg2_height*2)
@@ -481,7 +504,12 @@ module  color_mapper ( input  logic [9:0] DrawX, DrawY,
 	
     always_comb
     begin:RGB_Display
-          if(char1_on) begin
+          if(s_on&&DrawX>=304&&DrawX<336&&DrawY>=20&&DrawY<52)begin
+               Red = 4'hD; 
+               Green = 4'hD;
+               Blue = 4'h0;
+          end    
+          else if(char1_on) begin
                Red = char1_r; 
                Green = char1_g;
                Blue = char1_b;

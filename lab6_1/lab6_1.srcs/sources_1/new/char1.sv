@@ -38,6 +38,7 @@ module char_mai(
     parameter [9:0] Back_X_start=192;
     parameter [9:0] char_X_Min=0;       
     parameter [12:0] char_size=160;
+    parameter [12:0] char_dis=140;
     parameter [12:0] Back_X_size=1024;
     parameter [9:0] Back_Y_size=480;
     parameter [12:0] vga_size=640;
@@ -280,7 +281,7 @@ module char_mai(
                  
                  char1Y <= (char1Y + char1_Y_Motion);  
                  char2Y <= (char2Y + char2_Y_Motion);  
-				 if($signed(char1X + char1_X_Motion+char_size)<$signed(char2X+char2_X_Motion)&&$signed(char2X+char2_X_Motion-char1X-char1_X_Motion)<480)begin
+				 if($signed(char1X + char1_X_Motion+char_dis)<$signed(char2X+char2_X_Motion)&&$signed(char2X+char2_X_Motion-char1X-char1_X_Motion)<480)begin
 				    if($signed(char1X + char1_X_Motion)>=5)
 				        char1X <= (char1X + char1_X_Motion);
 				    else

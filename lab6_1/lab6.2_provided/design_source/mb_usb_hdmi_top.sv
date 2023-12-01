@@ -53,6 +53,10 @@ module mb_usb_hdmi_top(
     logic [31:0] keycode0_gpio, keycode1_gpio;
     logic clk_25MHz, clk_125MHz, clk, clk_100MHz;
     logic locked,forward_1,back_1,punch_1,squat_1,kick_1,jump_1,forward_2,back_2,punch_2,squat_2,kick_2,jump_2;
+    
+    logic stop;
+    logic [5:0] seconds;
+    
     logic [9:0]drawX, drawY;
     logic [12:0] char1X, char1Y,char2X, char2Y,backX;
 
@@ -170,6 +174,11 @@ module mb_usb_hdmi_top(
         .Red(red),
         .Green(green),
         .Blue(blue)
+    );
+    
+    timer t(
+        .*,
+        .reset(reset_ah)
     );
 
     

@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<GenRun Id="synth_1" LaunchPart="xc7s50csga324-1" LaunchTime="1701410159" LaunchIncrCheckpoint="$PSRCDIR/utils_1/imports/synth_1/mb_intro_top.dcp">
+<GenRun Id="synth_1" LaunchPart="xc7s50csga324-1" LaunchTime="1701472399" LaunchIncrCheckpoint="$PSRCDIR/utils_1/imports/synth_1/mb_intro_top.dcp">
   <File Type="PA-TCL" Name="mb_usb_hdmi_top.tcl"/>
   <File Type="RDS-PROPCONSTRS" Name="mb_usb_hdmi_top_drc_synth.rpt"/>
   <File Type="REPORTS-TCL" Name="mb_usb_hdmi_top_reports.tcl"/>
@@ -75,6 +75,13 @@
       </FileInfo>
     </File>
     <File Path="$PSRCDIR/sources_1/new/char1.sv">
+      <FileInfo>
+        <Attr Name="UsedIn" Val="synthesis"/>
+        <Attr Name="UsedIn" Val="implementation"/>
+        <Attr Name="UsedIn" Val="simulation"/>
+      </FileInfo>
+    </File>
+    <File Path="$PPRDIR/font_rom.sv">
       <FileInfo>
         <Attr Name="UsedIn" Val="synthesis"/>
         <Attr Name="UsedIn" Val="implementation"/>
@@ -242,6 +249,13 @@
         <Attr Name="UsedIn" Val="simulation"/>
       </FileInfo>
     </File>
+    <File Path="$PSRCDIR/sources_1/new/timer.sv">
+      <FileInfo>
+        <Attr Name="UsedIn" Val="synthesis"/>
+        <Attr Name="UsedIn" Val="implementation"/>
+        <Attr Name="UsedIn" Val="simulation"/>
+      </FileInfo>
+    </File>
     <File Path="$PPRDIR/lab6.2_provided/design_source/mb_usb_hdmi_top.sv">
       <FileInfo>
         <Attr Name="UsedIn" Val="synthesis"/>
@@ -345,22 +359,6 @@
     <File Path="$PPRDIR/scene1/scene1.COE">
       <FileInfo>
         <Attr Name="UsedIn" Val="synthesis"/>
-        <Attr Name="UsedIn" Val="simulation"/>
-      </FileInfo>
-    </File>
-    <File Path="$PSRCDIR/sources_1/new/timer.sv">
-      <FileInfo>
-        <Attr Name="AutoDisabled" Val="1"/>
-        <Attr Name="UsedIn" Val="synthesis"/>
-        <Attr Name="UsedIn" Val="implementation"/>
-        <Attr Name="UsedIn" Val="simulation"/>
-      </FileInfo>
-    </File>
-    <File Path="$PPRDIR/font_rom.sv">
-      <FileInfo>
-        <Attr Name="AutoDisabled" Val="1"/>
-        <Attr Name="UsedIn" Val="synthesis"/>
-        <Attr Name="UsedIn" Val="implementation"/>
         <Attr Name="UsedIn" Val="simulation"/>
       </FileInfo>
     </File>
@@ -480,12 +478,12 @@
   <BlockFileSet Type="BlockSrcs" Name="mb_block_axi_timer_0_0"/>
   <BlockFileSet Type="BlockSrcs" Name="mb_block_axi_quad_spi_0_0"/>
   <BlockFileSet Type="BlockSrcs" Name="bg3_rom"/>
+  <BlockFileSet Type="BlockSrcs" Name="kyo_stand_rom"/>
+  <BlockFileSet Type="BlockSrcs" Name="kyo_forward_rom"/>
+  <BlockFileSet Type="BlockSrcs" Name="mai_kick_rom"/>
+  <BlockFileSet Type="BlockSrcs" Name="kyo_punch_rom"/>
   <BlockFileSet Type="BlockSrcs" Name="mai_forward_rom"/>
   <BlockFileSet Type="BlockSrcs" Name="mai_back_rom"/>
   <BlockFileSet Type="BlockSrcs" Name="mai_punch_rom"/>
   <BlockFileSet Type="BlockSrcs" Name="mai_squat_rom"/>
-  <BlockFileSet Type="BlockSrcs" Name="kyo_punch_rom"/>
-  <BlockFileSet Type="BlockSrcs" Name="mai_kick_rom"/>
-  <BlockFileSet Type="BlockSrcs" Name="kyo_stand_rom"/>
-  <BlockFileSet Type="BlockSrcs" Name="kyo_forward_rom"/>
 </GenRun>

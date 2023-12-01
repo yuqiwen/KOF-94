@@ -39,8 +39,10 @@ always_ff @(posedge Clk) begin
      if (counter == 100000000) begin
         counter <= 0;
         seconds<=seconds-1'b1;
-        if(seconds==0)
+        if(seconds==0)begin
             stop <= 1'b1; // Set done to 1 when 60 seconds have elapsed
+            seconds<=0;
+        end
     end
   end
 end

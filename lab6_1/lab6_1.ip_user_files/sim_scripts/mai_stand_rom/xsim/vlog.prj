@@ -1,5 +1,5 @@
 verilog xil_defaultlib  \
-"../../../../lab6_1.gen/sources_1/ip/mai_stand_rom/sim/mai_stand_rom.v" \
+"../../../../lab6_1.gen/sources_1/ip/mai_stand_rom_1/sim/mai_stand_rom.v" \
 
 verilog xil_defaultlib "glbl.v"
 

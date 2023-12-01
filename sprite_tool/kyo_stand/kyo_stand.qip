@@ -1,0 +1,3 @@
+set_global_assignment -name SYSTEMVERILOG_FILE [file join $::quartus(qip_path) "kyo_stand_rom.sv"]
+set_global_assignment -name SYSTEMVERILOG_FILE [file join $::quartus(qip_path) "kyo_stand_palette.sv"]
+set_global_assignment -name SYSTEMVERILOG_FILE [file join $::quartus(qip_path) "kyo_stand_example.sv"]

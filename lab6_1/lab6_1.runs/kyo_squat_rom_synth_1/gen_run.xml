@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<GenRun Id="kyo_squat_rom_synth_1" LaunchPart="xc7s50csga324-1" LaunchTime="1701410006">
+<GenRun Id="kyo_squat_rom_synth_1" LaunchPart="xc7s50csga324-1" LaunchTime="1701468316">
   <File Type="PA-TCL" Name="kyo_squat_rom.tcl"/>
   <File Type="RDS-PROPCONSTRS" Name="kyo_squat_rom_drc_synth.rpt"/>
   <File Type="REPORTS-TCL" Name="kyo_squat_rom_reports.tcl"/>
