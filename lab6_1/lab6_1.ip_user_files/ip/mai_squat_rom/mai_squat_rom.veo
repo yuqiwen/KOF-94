@@ -57,7 +57,7 @@
 mai_squat_rom your_instance_name (
   .clka(clka),    // input wire clka
   .addra(addra),  // input wire [12 : 0] addra
-  .douta(douta)  // output wire [3 : 0] douta
+  .douta(douta)  // output wire [2 : 0] douta
 );
 // INST_TAG_END ------ End INSTANTIATION Template ---------
 

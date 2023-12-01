@@ -1,7 +1,7 @@
 Copyright 1986-2022 Xilinx, Inc. All Rights Reserved.
 -------------------------------------------------------------------------------------------------------------------
 | Tool Version : Vivado v.2022.2 (win64) Build 3671981 Fri Oct 14 05:00:03 MDT 2022
-| Date         : Thu Nov 16 23:41:37 2023
+| Date         : Thu Nov 30 16:17:02 2023
 | Host         : ECEB-3070-02 running 64-bit major release  (build 9200)
 | Command      : report_utilization -file mai_back_rom_utilization_synth.rpt -pb mai_back_rom_utilization_synth.pb
 | Design       : mai_back_rom
@@ -34,8 +34,8 @@ Table of Contents
 | Slice LUTs*             |    6 |     0 |          0 |     32600 |  0.02 |
 |   LUT as Logic          |    6 |     0 |          0 |     32600 |  0.02 |
 |   LUT as Memory         |    0 |     0 |          0 |      9600 |  0.00 |
-| Slice Registers         |    4 |     0 |          0 |     65200 | <0.01 |
-|   Register as Flip Flop |    4 |     0 |          0 |     65200 | <0.01 |
+| Slice Registers         |    3 |     0 |          0 |     65200 | <0.01 |
+|   Register as Flip Flop |    3 |     0 |          0 |     65200 | <0.01 |
 |   Register as Latch     |    0 |     0 |          0 |     65200 |  0.00 |
 | F7 Muxes                |    0 |     0 |          0 |     16300 |  0.00 |
 | F8 Muxes                |    0 |     0 |          0 |      8150 |  0.00 |
@@ -59,7 +59,7 @@ Warning! LUT value is adjusted to account for LUT combining.
 | 0     |          Yes |           - |          Set |
 | 0     |          Yes |           - |        Reset |
 | 0     |          Yes |         Set |            - |
-| 4     |          Yes |       Reset |            - |
+| 3     |          Yes |       Reset |            - |
 +-------+--------------+-------------+--------------+
 
 
@@ -69,11 +69,11 @@ Warning! LUT value is adjusted to account for LUT combining.
 +-------------------+------+-------+------------+-----------+-------+
 |     Site Type     | Used | Fixed | Prohibited | Available | Util% |
 +-------------------+------+-------+------------+-----------+-------+
-| Block RAM Tile    |  4.5 |     0 |          0 |        75 |  6.00 |
-|   RAMB36/FIFO*    |    4 |     0 |          0 |        75 |  5.33 |
-|     RAMB36E1 only |    4 |       |            |           |       |
-|   RAMB18          |    1 |     0 |          0 |       150 |  0.67 |
-|     RAMB18E1 only |    1 |       |            |           |       |
+| Block RAM Tile    |    4 |     0 |          0 |        75 |  5.33 |
+|   RAMB36/FIFO*    |    3 |     0 |          0 |        75 |  4.00 |
+|     RAMB36E1 only |    3 |       |            |           |       |
+|   RAMB18          |    2 |     0 |          0 |       150 |  1.33 |
+|     RAMB18E1 only |    2 |       |            |           |       |
 +-------------------+------+-------+------------+-----------+-------+
 * Note: Each Block RAM Tile only has one FIFO logic available and therefore can accommodate only one FIFO36E1 or one FIFO18E1. However, if a FIFO18E1 occupies a Block RAM Tile, that tile can still accommodate a RAMB18E1
 
@@ -149,11 +149,13 @@ Warning! LUT value is adjusted to account for LUT combining.
 +----------+------+---------------------+
 | Ref Name | Used | Functional Category |
 +----------+------+---------------------+
-| RAMB36E1 |    4 |        Block Memory |
-| LUT6     |    4 |                 LUT |
-| FDRE     |    4 |        Flop & Latch |
-| RAMB18E1 |    1 |        Block Memory |
+| RAMB36E1 |    3 |        Block Memory |
+| FDRE     |    3 |        Flop & Latch |
+| RAMB18E1 |    2 |        Block Memory |
+| LUT5     |    2 |                 LUT |
 | LUT4     |    1 |                 LUT |
+| LUT3     |    1 |                 LUT |
+| LUT2     |    1 |                 LUT |
 | LUT1     |    1 |                 LUT |
 +----------+------+---------------------+
 

@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<GenRun Id="impl_1" LaunchPart="xc7s50csga324-1" LaunchTime="1701216582">
+<GenRun Id="impl_1" LaunchPart="xc7s50csga324-1" LaunchTime="1701392457">
   <File Type="ROUTE-PWR" Name="mb_usb_hdmi_top_power_routed.rpt"/>
   <File Type="PA-TCL" Name="mb_usb_hdmi_top.tcl"/>
   <File Type="BITSTR-MMI" Name="mb_usb_hdmi_top.mmi"/>
@@ -102,6 +102,48 @@
         <Attr Name="UsedIn" Val="simulation"/>
       </FileInfo>
     </File>
+    <File Path="$PPRDIR/bg1/bg1.sv">
+      <FileInfo>
+        <Attr Name="UsedIn" Val="synthesis"/>
+        <Attr Name="UsedIn" Val="implementation"/>
+        <Attr Name="UsedIn" Val="simulation"/>
+      </FileInfo>
+    </File>
+    <File Path="$PPRDIR/bg1/bg1_palette.sv">
+      <FileInfo>
+        <Attr Name="UsedIn" Val="synthesis"/>
+        <Attr Name="UsedIn" Val="implementation"/>
+        <Attr Name="UsedIn" Val="simulation"/>
+      </FileInfo>
+    </File>
+    <File Path="$PPRDIR/bg2/bg2.sv">
+      <FileInfo>
+        <Attr Name="UsedIn" Val="synthesis"/>
+        <Attr Name="UsedIn" Val="implementation"/>
+        <Attr Name="UsedIn" Val="simulation"/>
+      </FileInfo>
+    </File>
+    <File Path="$PPRDIR/bg2/bg2_palette.sv">
+      <FileInfo>
+        <Attr Name="UsedIn" Val="synthesis"/>
+        <Attr Name="UsedIn" Val="implementation"/>
+        <Attr Name="UsedIn" Val="simulation"/>
+      </FileInfo>
+    </File>
+    <File Path="$PPRDIR/bg3/bg3.sv">
+      <FileInfo>
+        <Attr Name="UsedIn" Val="synthesis"/>
+        <Attr Name="UsedIn" Val="implementation"/>
+        <Attr Name="UsedIn" Val="simulation"/>
+      </FileInfo>
+    </File>
+    <File Path="$PPRDIR/bg3/bg3_palette.sv">
+      <FileInfo>
+        <Attr Name="UsedIn" Val="synthesis"/>
+        <Attr Name="UsedIn" Val="implementation"/>
+        <Attr Name="UsedIn" Val="simulation"/>
+      </FileInfo>
+    </File>
     <File Path="$PSRCDIR/sources_1/new/char1.sv">
       <FileInfo>
         <Attr Name="UsedIn" Val="synthesis"/>
@@ -110,6 +152,48 @@
       </FileInfo>
     </File>
     <File Path="$PPRDIR/lab6.2_provided/design_source/hex.sv">
+      <FileInfo>
+        <Attr Name="UsedIn" Val="synthesis"/>
+        <Attr Name="UsedIn" Val="implementation"/>
+        <Attr Name="UsedIn" Val="simulation"/>
+      </FileInfo>
+    </File>
+    <File Path="$PPRDIR/kyo_forward/kyo_forward.sv">
+      <FileInfo>
+        <Attr Name="UsedIn" Val="synthesis"/>
+        <Attr Name="UsedIn" Val="implementation"/>
+        <Attr Name="UsedIn" Val="simulation"/>
+      </FileInfo>
+    </File>
+    <File Path="$PPRDIR/kyo_forward/kyo_forward_palette.sv">
+      <FileInfo>
+        <Attr Name="UsedIn" Val="synthesis"/>
+        <Attr Name="UsedIn" Val="implementation"/>
+        <Attr Name="UsedIn" Val="simulation"/>
+      </FileInfo>
+    </File>
+    <File Path="$PPRDIR/kyo_punch/kyo_punch.sv">
+      <FileInfo>
+        <Attr Name="UsedIn" Val="synthesis"/>
+        <Attr Name="UsedIn" Val="implementation"/>
+        <Attr Name="UsedIn" Val="simulation"/>
+      </FileInfo>
+    </File>
+    <File Path="$PPRDIR/kyo_punch/kyo_punch_palette.sv">
+      <FileInfo>
+        <Attr Name="UsedIn" Val="synthesis"/>
+        <Attr Name="UsedIn" Val="implementation"/>
+        <Attr Name="UsedIn" Val="simulation"/>
+      </FileInfo>
+    </File>
+    <File Path="$PPRDIR/kyo_squat/kyo_squat.sv">
+      <FileInfo>
+        <Attr Name="UsedIn" Val="synthesis"/>
+        <Attr Name="UsedIn" Val="implementation"/>
+        <Attr Name="UsedIn" Val="simulation"/>
+      </FileInfo>
+    </File>
+    <File Path="$PPRDIR/kyo_squat/kyo_squat_palette.sv">
       <FileInfo>
         <Attr Name="UsedIn" Val="synthesis"/>
         <Attr Name="UsedIn" Val="implementation"/>
@@ -130,10 +214,8 @@
         <Attr Name="UsedIn" Val="simulation"/>
       </FileInfo>
     </File>
-    <File Path="$PSRCDIR/sources_1/imports/mai_back/mai_back_example.sv">
+    <File Path="$PPRDIR/mai_back/mai_back.sv">
       <FileInfo>
-        <Attr Name="ImportPath" Val="$PPRDIR/mai_back/mai_back_example.sv"/>
-        <Attr Name="ImportTime" Val="1700180998"/>
         <Attr Name="UsedIn" Val="synthesis"/>
         <Attr Name="UsedIn" Val="implementation"/>
         <Attr Name="UsedIn" Val="simulation"/>
@@ -146,10 +228,8 @@
         <Attr Name="UsedIn" Val="simulation"/>
       </FileInfo>
     </File>
-    <File Path="$PSRCDIR/sources_1/imports/mai_forward/mai_forward_example.sv">
+    <File Path="$PPRDIR/mai_forward/mai_forward.sv">
       <FileInfo>
-        <Attr Name="ImportPath" Val="$PPRDIR/mai_forward/mai_forward_example.sv"/>
-        <Attr Name="ImportTime" Val="1700180964"/>
         <Attr Name="UsedIn" Val="synthesis"/>
         <Attr Name="UsedIn" Val="implementation"/>
         <Attr Name="UsedIn" Val="simulation"/>
@@ -204,23 +284,14 @@
         <Attr Name="UsedIn" Val="simulation"/>
       </FileInfo>
     </File>
-    <File Path="$PSRCDIR/sources_1/imports/mai_stand/mai_stand_example.sv">
+    <File Path="$PPRDIR/mai_stand/mai_stand.sv">
       <FileInfo>
-        <Attr Name="ImportPath" Val="$PPRDIR/mai_stand/mai_stand_example.sv"/>
-        <Attr Name="ImportTime" Val="1700176316"/>
         <Attr Name="UsedIn" Val="synthesis"/>
         <Attr Name="UsedIn" Val="implementation"/>
         <Attr Name="UsedIn" Val="simulation"/>
       </FileInfo>
     </File>
     <File Path="$PPRDIR/mai_stand/mai_stand_palette.sv">
-      <FileInfo>
-        <Attr Name="UsedIn" Val="synthesis"/>
-        <Attr Name="UsedIn" Val="implementation"/>
-        <Attr Name="UsedIn" Val="simulation"/>
-      </FileInfo>
-    </File>
-    <File Path="$PPRDIR/scene/scene.sv">
       <FileInfo>
         <Attr Name="UsedIn" Val="synthesis"/>
         <Attr Name="UsedIn" Val="implementation"/>
@@ -241,15 +312,24 @@
         <Attr Name="UsedIn" Val="simulation"/>
       </FileInfo>
     </File>
-    <File Path="$PPRDIR/scene/scene_palette.sv">
+    <File Path="$PPRDIR/lab6.2_provided/design_source/mb_usb_hdmi_top.sv">
       <FileInfo>
         <Attr Name="UsedIn" Val="synthesis"/>
         <Attr Name="UsedIn" Val="implementation"/>
         <Attr Name="UsedIn" Val="simulation"/>
       </FileInfo>
     </File>
-    <File Path="$PPRDIR/lab6.2_provided/design_source/mb_usb_hdmi_top.sv">
+    <File Path="$PPRDIR/kyo_kick/kyo_kick.sv">
       <FileInfo>
+        <Attr Name="AutoDisabled" Val="1"/>
+        <Attr Name="UsedIn" Val="synthesis"/>
+        <Attr Name="UsedIn" Val="implementation"/>
+        <Attr Name="UsedIn" Val="simulation"/>
+      </FileInfo>
+    </File>
+    <File Path="$PPRDIR/kyo_kick/kyo_kick_palette.sv">
+      <FileInfo>
+        <Attr Name="AutoDisabled" Val="1"/>
         <Attr Name="UsedIn" Val="synthesis"/>
         <Attr Name="UsedIn" Val="implementation"/>
         <Attr Name="UsedIn" Val="simulation"/>
@@ -338,6 +418,72 @@
         <Attr Name="UsedIn" Val="simulation"/>
       </FileInfo>
     </File>
+    <File Path="$PSRCDIR/sources_1/new/timer.sv">
+      <FileInfo>
+        <Attr Name="AutoDisabled" Val="1"/>
+        <Attr Name="UsedIn" Val="synthesis"/>
+        <Attr Name="UsedIn" Val="implementation"/>
+        <Attr Name="UsedIn" Val="simulation"/>
+      </FileInfo>
+    </File>
+    <File Path="$PPRDIR/font_rom.sv">
+      <FileInfo>
+        <Attr Name="AutoDisabled" Val="1"/>
+        <Attr Name="UsedIn" Val="synthesis"/>
+        <Attr Name="UsedIn" Val="implementation"/>
+        <Attr Name="UsedIn" Val="simulation"/>
+      </FileInfo>
+    </File>
+    <File Path="$PSRCDIR/sources_1/new/hp_sys.sv">
+      <FileInfo>
+        <Attr Name="AutoDisabled" Val="1"/>
+        <Attr Name="UsedIn" Val="synthesis"/>
+        <Attr Name="UsedIn" Val="implementation"/>
+        <Attr Name="UsedIn" Val="simulation"/>
+      </FileInfo>
+    </File>
+    <File Path="$PPRDIR/bg1/bg1.COE">
+      <FileInfo>
+        <Attr Name="UsedIn" Val="synthesis"/>
+        <Attr Name="UsedIn" Val="simulation"/>
+      </FileInfo>
+    </File>
+    <File Path="$PPRDIR/bg2/bg2.COE">
+      <FileInfo>
+        <Attr Name="UsedIn" Val="synthesis"/>
+        <Attr Name="UsedIn" Val="simulation"/>
+      </FileInfo>
+    </File>
+    <File Path="$PPRDIR/bg3/bg3.COE">
+      <FileInfo>
+        <Attr Name="UsedIn" Val="synthesis"/>
+        <Attr Name="UsedIn" Val="simulation"/>
+      </FileInfo>
+    </File>
+    <File Path="$PPRDIR/kyo_forward/kyo_forward.COE">
+      <FileInfo>
+        <Attr Name="UsedIn" Val="synthesis"/>
+        <Attr Name="UsedIn" Val="simulation"/>
+      </FileInfo>
+    </File>
+    <File Path="$PPRDIR/kyo_punch/kyo_punch.COE">
+      <FileInfo>
+        <Attr Name="UsedIn" Val="synthesis"/>
+        <Attr Name="UsedIn" Val="simulation"/>
+      </FileInfo>
+    </File>
+    <File Path="$PPRDIR/kyo_squat/kyo_squat.COE">
+      <FileInfo>
+        <Attr Name="UsedIn" Val="synthesis"/>
+        <Attr Name="UsedIn" Val="simulation"/>
+      </FileInfo>
+    </File>
+    <File Path="$PPRDIR/kyo_kick/kyo_kick.COE">
+      <FileInfo>
+        <Attr Name="UsedIn" Val="synthesis"/>
+        <Attr Name="UsedIn" Val="simulation"/>
+      </FileInfo>
+    </File>
     <Config>
       <Option Name="DesignMode" Val="RTL"/>
       <Option Name="TopModule" Val="mb_usb_hdmi_top"/>
@@ -396,8 +542,8 @@
   <BlockFileSet Type="BlockSrcs" Name="mb_block_ilmb_bram_if_cntlr_0"/>
   <BlockFileSet Type="BlockSrcs" Name="mb_block_lmb_bram_0"/>
   <BlockFileSet Type="BlockSrcs" Name="mb_block_axi_uartlite_0_0"/>
-  <BlockFileSet Type="BlockSrcs" Name="scene_rom"/>
   <BlockFileSet Type="BlockSrcs" Name="mai_stand_rom"/>
+  <BlockFileSet Type="BlockSrcs" Name="bg1_rom"/>
   <BlockFileSet Type="BlockSrcs" Name="mb_block_mdm_1_0"/>
   <BlockFileSet Type="BlockSrcs" Name="mb_block_clk_wiz_1_0"/>
   <BlockFileSet Type="BlockSrcs" Name="mb_block_microblaze_0_axi_intc_0"/>
@@ -406,13 +552,18 @@
   <BlockFileSet Type="BlockSrcs" Name="clk_wiz_0"/>
   <BlockFileSet Type="BlockSrcs" Name="mb_block_microblaze_0_0"/>
   <BlockFileSet Type="BlockSrcs" Name="hdmi_tx_0"/>
+  <BlockFileSet Type="BlockSrcs" Name="kyo_squat_rom"/>
   <BlockFileSet Type="BlockSrcs" Name="mb_block_axi_gpio_0_3"/>
+  <BlockFileSet Type="BlockSrcs" Name="bg2_rom"/>
   <BlockFileSet Type="BlockSrcs" Name="mb_block_axi_timer_0_0"/>
   <BlockFileSet Type="BlockSrcs" Name="mb_block_axi_quad_spi_0_0"/>
+  <BlockFileSet Type="BlockSrcs" Name="bg3_rom"/>
   <BlockFileSet Type="BlockSrcs" Name="mai_forward_rom"/>
   <BlockFileSet Type="BlockSrcs" Name="mai_back_rom"/>
   <BlockFileSet Type="BlockSrcs" Name="mai_punch_rom"/>
   <BlockFileSet Type="BlockSrcs" Name="mai_squat_rom"/>
+  <BlockFileSet Type="BlockSrcs" Name="kyo_punch_rom"/>
   <BlockFileSet Type="BlockSrcs" Name="mai_kick_rom"/>
   <BlockFileSet Type="BlockSrcs" Name="kyo_stand_rom"/>
+  <BlockFileSet Type="BlockSrcs" Name="kyo_forward_rom"/>
 </GenRun>

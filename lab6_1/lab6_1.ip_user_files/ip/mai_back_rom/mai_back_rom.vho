@@ -55,7 +55,7 @@ COMPONENT mai_back_rom
   PORT (
     clka : IN STD_LOGIC;
     addra : IN STD_LOGIC_VECTOR(15 DOWNTO 0);
-    douta : OUT STD_LOGIC_VECTOR(3 DOWNTO 0) 
+    douta : OUT STD_LOGIC_VECTOR(2 DOWNTO 0) 
   );
 END COMPONENT;
 -- COMP_TAG_END ------ End COMPONENT Declaration ------------
