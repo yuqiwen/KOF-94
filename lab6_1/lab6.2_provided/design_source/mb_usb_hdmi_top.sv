@@ -57,6 +57,8 @@ module mb_usb_hdmi_top(
     logic stop;
     logic [5:0] seconds;
     
+    logic [7:0] char1_hp,char2_hp;
+    
     logic [9:0]drawX, drawY;
     logic [12:0] char1X, char1Y,char2X, char2Y,backX;
 
@@ -180,6 +182,10 @@ module mb_usb_hdmi_top(
         .*,
         .reset(reset_ah)
     );
-
+    
+    hp_sys hp(
+        .*,
+        .reset(reset_ah)
+    );
     
 endmodule

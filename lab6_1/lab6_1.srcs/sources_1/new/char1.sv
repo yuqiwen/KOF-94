@@ -21,7 +21,7 @@
 
 
 module char_mai(
-        input logic Reset, frame_clk,
+        input logic Reset, frame_clk,stop,
         input logic [7:0] keycode1,keycode2,keycode3,keycode4,keycode5,keycode6,
         output logic [12:0]  char1X, char1Y,char2X, char2Y,backX,
         output logic forward_1,back_1,punch_1,squat_1,kick_1,jump_1,forward_2,back_2,punch_2,squat_2,kick_2,jump_2
@@ -133,8 +133,18 @@ module char_mai(
         end
            
         else 
-        begin 
-                 if (c1_bac) begin
+        begin       
+                 if(stop)begin
+                     char1_X_Motion <= 10'd0;
+                     char1_Y_Motion <= 10'd0;
+                     forward_1<=1'b0;
+                     back_1<=1'b0;
+                     punch_1<=1'b0;
+                     squat_1<=1'b0;
+                     kick_1<=1'b0;
+                     jump_1<=1'b0;
+                 end     
+                 else if (c1_bac) begin
                      char1_X_Motion <= -10'd3;
                      char1_Y_Motion <= 10'd0;
                      forward_1<=1'b0;
@@ -206,7 +216,17 @@ module char_mai(
                      jump_1<=1'b0;
                  end
                  
-                  if (c2_bac) begin
+                 if(stop)begin
+                     char2_X_Motion <= 10'd0;
+                     char2_Y_Motion <= 10'd0;
+                     forward_2<=1'b0;
+                     back_2<=1'b0;
+                     punch_2<=1'b0;
+                     squat_2<=1'b0;
+                     kick_2<=1'b0;
+                     jump_2<=1'b0;
+                 end
+                 else if (c2_bac) begin
                      char2_X_Motion <= 10'd3;
                      char2_Y_Motion <= 10'd0;
                      forward_2<=1'b0;
@@ -216,7 +236,7 @@ module char_mai(
                      kick_2<=1'b0;
                      jump_2<=1'b0;
                  end
-                 
+
                  else if (c2_for) begin
                      char2_X_Motion <= -10'd3;
                      char2_Y_Motion <= 10'd0;

@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<GenRun Id="impl_1" LaunchPart="xc7s50csga324-1" LaunchTime="1701472399">
+<GenRun Id="impl_1" LaunchPart="xc7s50csga324-1" LaunchTime="1701509242">
   <File Type="ROUTE-PWR" Name="mb_usb_hdmi_top_power_routed.rpt"/>
   <File Type="PA-TCL" Name="mb_usb_hdmi_top.tcl"/>
   <File Type="BITSTR-MMI" Name="mb_usb_hdmi_top.mmi"/>
@@ -81,6 +81,104 @@
   <File Type="POSTROUTE-PHYSOPT-RQS-RPT" Name="postroute_physopt_report_qor_suggestions_0.rpt"/>
   <FileSet Name="sources" Type="DesignSrcs" RelSrcDir="$PSRCDIR/sources_1" RelGenDir="$PGENDIR/sources_1">
     <Filter Type="Srcs"/>
+    <File Path="$PSRCDIR/sources_1/ip/kyo_punch_rom/kyo_punch_rom.xci">
+      <FileInfo>
+        <Attr Name="UsedIn" Val="synthesis"/>
+        <Attr Name="UsedIn" Val="implementation"/>
+        <Attr Name="UsedIn" Val="simulation"/>
+      </FileInfo>
+    </File>
+    <File Path="$PSRCDIR/sources_1/ip/kyo_squat_rom/kyo_squat_rom.xci">
+      <FileInfo>
+        <Attr Name="UsedIn" Val="synthesis"/>
+        <Attr Name="UsedIn" Val="implementation"/>
+        <Attr Name="UsedIn" Val="simulation"/>
+      </FileInfo>
+    </File>
+    <File Path="$PSRCDIR/sources_1/ip/kyo_forward_rom/kyo_forward_rom.xci">
+      <FileInfo>
+        <Attr Name="UsedIn" Val="synthesis"/>
+        <Attr Name="UsedIn" Val="implementation"/>
+        <Attr Name="UsedIn" Val="simulation"/>
+      </FileInfo>
+    </File>
+    <File Path="$PSRCDIR/sources_1/ip/kyo_stand_rom/kyo_stand_rom.xci">
+      <FileInfo>
+        <Attr Name="UsedIn" Val="synthesis"/>
+        <Attr Name="UsedIn" Val="implementation"/>
+        <Attr Name="UsedIn" Val="simulation"/>
+      </FileInfo>
+    </File>
+    <File Path="$PSRCDIR/sources_1/ip/mai_kick_rom/mai_kick_rom.xci">
+      <FileInfo>
+        <Attr Name="UsedIn" Val="synthesis"/>
+        <Attr Name="UsedIn" Val="implementation"/>
+        <Attr Name="UsedIn" Val="simulation"/>
+      </FileInfo>
+    </File>
+    <File Path="$PSRCDIR/sources_1/ip/mai_squat_rom/mai_squat_rom.xci">
+      <FileInfo>
+        <Attr Name="UsedIn" Val="synthesis"/>
+        <Attr Name="UsedIn" Val="implementation"/>
+        <Attr Name="UsedIn" Val="simulation"/>
+      </FileInfo>
+    </File>
+    <File Path="$PSRCDIR/sources_1/ip/mai_punch_rom/mai_punch_rom.xci">
+      <FileInfo>
+        <Attr Name="UsedIn" Val="synthesis"/>
+        <Attr Name="UsedIn" Val="implementation"/>
+        <Attr Name="UsedIn" Val="simulation"/>
+      </FileInfo>
+    </File>
+    <File Path="$PSRCDIR/sources_1/ip/mai_back_rom/mai_back_rom.xci">
+      <FileInfo>
+        <Attr Name="UsedIn" Val="synthesis"/>
+        <Attr Name="UsedIn" Val="implementation"/>
+        <Attr Name="UsedIn" Val="simulation"/>
+      </FileInfo>
+    </File>
+    <File Path="$PSRCDIR/sources_1/ip/mai_forward_rom/mai_forward_rom.xci">
+      <FileInfo>
+        <Attr Name="UsedIn" Val="synthesis"/>
+        <Attr Name="UsedIn" Val="implementation"/>
+        <Attr Name="UsedIn" Val="simulation"/>
+      </FileInfo>
+    </File>
+    <File Path="$PSRCDIR/sources_1/ip/mai_stand_rom/mai_stand_rom.xci">
+      <FileInfo>
+        <Attr Name="UsedIn" Val="synthesis"/>
+        <Attr Name="UsedIn" Val="implementation"/>
+        <Attr Name="UsedIn" Val="simulation"/>
+      </FileInfo>
+    </File>
+    <File Path="$PSRCDIR/sources_1/ip/scene1_rom/scene1_rom.xci">
+      <FileInfo>
+        <Attr Name="UsedIn" Val="synthesis"/>
+        <Attr Name="UsedIn" Val="implementation"/>
+        <Attr Name="UsedIn" Val="simulation"/>
+      </FileInfo>
+    </File>
+    <File Path="$PSRCDIR/sources_1/ip/bg3_rom/bg3_rom.xci">
+      <FileInfo>
+        <Attr Name="UsedIn" Val="synthesis"/>
+        <Attr Name="UsedIn" Val="implementation"/>
+        <Attr Name="UsedIn" Val="simulation"/>
+      </FileInfo>
+    </File>
+    <File Path="$PSRCDIR/sources_1/ip/bg2_rom/bg2_rom.xci">
+      <FileInfo>
+        <Attr Name="UsedIn" Val="synthesis"/>
+        <Attr Name="UsedIn" Val="implementation"/>
+        <Attr Name="UsedIn" Val="simulation"/>
+      </FileInfo>
+    </File>
+    <File Path="$PSRCDIR/sources_1/ip/bg1_rom_1/bg1_rom.xci">
+      <FileInfo>
+        <Attr Name="UsedIn" Val="synthesis"/>
+        <Attr Name="UsedIn" Val="implementation"/>
+        <Attr Name="UsedIn" Val="simulation"/>
+      </FileInfo>
+    </File>
     <File Path="$PSRCDIR/sources_1/bd/mb_block/mb_block.bd">
       <FileInfo>
         <Attr Name="UsedIn" Val="synthesis"/>
@@ -159,6 +257,13 @@
       </FileInfo>
     </File>
     <File Path="$PPRDIR/lab6.2_provided/design_source/hex.sv">
+      <FileInfo>
+        <Attr Name="UsedIn" Val="synthesis"/>
+        <Attr Name="UsedIn" Val="implementation"/>
+        <Attr Name="UsedIn" Val="simulation"/>
+      </FileInfo>
+    </File>
+    <File Path="$PSRCDIR/sources_1/new/hp_sys.sv">
       <FileInfo>
         <Attr Name="UsedIn" Val="synthesis"/>
         <Attr Name="UsedIn" Val="implementation"/>
@@ -432,14 +537,6 @@
         <Attr Name="UsedIn" Val="simulation"/>
       </FileInfo>
     </File>
-    <File Path="$PSRCDIR/sources_1/new/hp_sys.sv">
-      <FileInfo>
-        <Attr Name="AutoDisabled" Val="1"/>
-        <Attr Name="UsedIn" Val="synthesis"/>
-        <Attr Name="UsedIn" Val="implementation"/>
-        <Attr Name="UsedIn" Val="simulation"/>
-      </FileInfo>
-    </File>
     <File Path="$PPRDIR/bg1/bg1.COE">
       <FileInfo>
         <Attr Name="UsedIn" Val="synthesis"/>
@@ -479,6 +576,14 @@
     <File Path="$PPRDIR/kyo_kick/kyo_kick.COE">
       <FileInfo>
         <Attr Name="UsedIn" Val="synthesis"/>
+        <Attr Name="UsedIn" Val="simulation"/>
+      </FileInfo>
+    </File>
+    <File Path="$PSRCDIR/sources_1/ip/kyo_kick_rom/kyo_kick_rom.xci">
+      <FileInfo>
+        <Attr Name="AutoDisabled" Val="1"/>
+        <Attr Name="UsedIn" Val="synthesis"/>
+        <Attr Name="UsedIn" Val="implementation"/>
         <Attr Name="UsedIn" Val="simulation"/>
       </FileInfo>
     </File>
@@ -536,12 +641,9 @@
   <BlockFileSet Type="BlockSrcs" Name="mb_block_dlmb_v10_0"/>
   <BlockFileSet Type="BlockSrcs" Name="mb_block_ilmb_v10_0"/>
   <BlockFileSet Type="BlockSrcs" Name="mb_block_dlmb_bram_if_cntlr_0"/>
-  <BlockFileSet Type="BlockSrcs" Name="scene1_rom"/>
   <BlockFileSet Type="BlockSrcs" Name="mb_block_ilmb_bram_if_cntlr_0"/>
   <BlockFileSet Type="BlockSrcs" Name="mb_block_lmb_bram_0"/>
   <BlockFileSet Type="BlockSrcs" Name="mb_block_axi_uartlite_0_0"/>
-  <BlockFileSet Type="BlockSrcs" Name="mai_stand_rom"/>
-  <BlockFileSet Type="BlockSrcs" Name="bg1_rom"/>
   <BlockFileSet Type="BlockSrcs" Name="mb_block_mdm_1_0"/>
   <BlockFileSet Type="BlockSrcs" Name="mb_block_clk_wiz_1_0"/>
   <BlockFileSet Type="BlockSrcs" Name="mb_block_microblaze_0_axi_intc_0"/>
@@ -550,18 +652,7 @@
   <BlockFileSet Type="BlockSrcs" Name="clk_wiz_0"/>
   <BlockFileSet Type="BlockSrcs" Name="mb_block_microblaze_0_0"/>
   <BlockFileSet Type="BlockSrcs" Name="hdmi_tx_0"/>
-  <BlockFileSet Type="BlockSrcs" Name="kyo_squat_rom"/>
   <BlockFileSet Type="BlockSrcs" Name="mb_block_axi_gpio_0_3"/>
-  <BlockFileSet Type="BlockSrcs" Name="bg2_rom"/>
   <BlockFileSet Type="BlockSrcs" Name="mb_block_axi_timer_0_0"/>
   <BlockFileSet Type="BlockSrcs" Name="mb_block_axi_quad_spi_0_0"/>
-  <BlockFileSet Type="BlockSrcs" Name="bg3_rom"/>
-  <BlockFileSet Type="BlockSrcs" Name="kyo_stand_rom"/>
-  <BlockFileSet Type="BlockSrcs" Name="kyo_forward_rom"/>
-  <BlockFileSet Type="BlockSrcs" Name="mai_kick_rom"/>
-  <BlockFileSet Type="BlockSrcs" Name="kyo_punch_rom"/>
-  <BlockFileSet Type="BlockSrcs" Name="mai_forward_rom"/>
-  <BlockFileSet Type="BlockSrcs" Name="mai_back_rom"/>
-  <BlockFileSet Type="BlockSrcs" Name="mai_punch_rom"/>
-  <BlockFileSet Type="BlockSrcs" Name="mai_squat_rom"/>
 </GenRun>
