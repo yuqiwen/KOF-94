@@ -1,0 +1,4 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<session version="1.0">
+<refactoring comment="Delete 12 resources" deleteContents="false" description="Delete 12 resources" element1="/keyboard/src/GenericMacros.h" element10="/keyboard/src/transfer.h" element11="/keyboard/src/usb_ch9.h" element12="/keyboard/src/USB.h" element2="/keyboard/src/GenericTypeDefs.h" element3="/keyboard/src/helloworld.c" element4="/keyboard/src/HID.c" element5="/keyboard/src/HID.h" element6="/keyboard/src/MAX3421E.c" element7="/keyboard/src/MAX3421E.h" element8="/keyboard/src/project_config.h" element9="/keyboard/src/transfer.c" flags="7" id="org.eclipse.ltk.core.refactoring.delete.resources" resources="12" stamp="1701563544154"/>
+</session>

@@ -71,7 +71,6 @@ proc create_report { reportName command } {
 }
 OPTRACE "synth_1" START { ROLLUP_AUTO }
 set_param chipscope.maxJobs 6
-set_param xicom.use_bs_reader 1
 OPTRACE "Creating in-memory project" START { }
 create_project -in_memory -part xc7s50csga324-1
 
@@ -106,6 +105,8 @@ add_files C:/Users/Yuqi/KOF-94/lab6_1/kyo_forward/kyo_forward.COE
 add_files C:/Users/Yuqi/KOF-94/lab6_1/kyo_punch/kyo_punch.COE
 add_files C:/Users/Yuqi/KOF-94/lab6_1/kyo_squat/kyo_squat.COE
 add_files C:/Users/Yuqi/KOF-94/lab6_1/kyo_kick/kyo_kick.COE
+add_files c:/Users/Yuqi/KOF-94/lab6_1/kyo_head/kyo_head.COE
+add_files c:/Users/Yuqi/KOF-94/lab6_1/mai_head/mai_head.COE
 read_verilog -library xil_defaultlib -sv {
   C:/Users/Yuqi/KOF-94/lab6_1/lab6.2_provided/design_source/Color_Mapper.sv
   C:/Users/Yuqi/KOF-94/lab6_1/lab6.2_provided/design_source/VGA_controller.sv
@@ -121,6 +122,8 @@ read_verilog -library xil_defaultlib -sv {
   C:/Users/Yuqi/KOF-94/lab6_1/lab6_1.srcs/sources_1/new/hp_sys.sv
   C:/Users/Yuqi/KOF-94/lab6_1/kyo_forward/kyo_forward.sv
   C:/Users/Yuqi/KOF-94/lab6_1/kyo_forward/kyo_forward_palette.sv
+  C:/Users/Yuqi/KOF-94/lab6_1/kyo_head/kyo_head.sv
+  C:/Users/Yuqi/KOF-94/lab6_1/kyo_head/kyo_head_palette.sv
   C:/Users/Yuqi/KOF-94/lab6_1/kyo_punch/kyo_punch.sv
   C:/Users/Yuqi/KOF-94/lab6_1/kyo_punch/kyo_punch_palette.sv
   C:/Users/Yuqi/KOF-94/lab6_1/kyo_squat/kyo_squat.sv
@@ -131,6 +134,8 @@ read_verilog -library xil_defaultlib -sv {
   C:/Users/Yuqi/KOF-94/lab6_1/mai_back/mai_back_palette.sv
   C:/Users/Yuqi/KOF-94/lab6_1/mai_forward/mai_forward.sv
   C:/Users/Yuqi/KOF-94/lab6_1/mai_forward/mai_forward_palette.sv
+  C:/Users/Yuqi/KOF-94/lab6_1/mai_head/mai_head.sv
+  C:/Users/Yuqi/KOF-94/lab6_1/mai_head/mai_head_palette.sv
   C:/Users/Yuqi/KOF-94/lab6_1/mai_kick/mai_kick.sv
   C:/Users/Yuqi/KOF-94/lab6_1/mai_kick/mai_kick_palette.sv
   C:/Users/Yuqi/KOF-94/lab6_1/mai_punch/mai_punch.sv
@@ -234,6 +239,12 @@ read_ip -quiet C:/Users/Yuqi/KOF-94/lab6_1/lab6_1.srcs/sources_1/ip/clk_wiz_0/cl
 set_property used_in_implementation false [get_files -all c:/Users/Yuqi/KOF-94/lab6_1/lab6_1.gen/sources_1/ip/clk_wiz_0/clk_wiz_0_board.xdc]
 set_property used_in_implementation false [get_files -all c:/Users/Yuqi/KOF-94/lab6_1/lab6_1.gen/sources_1/ip/clk_wiz_0/clk_wiz_0.xdc]
 set_property used_in_implementation false [get_files -all c:/Users/Yuqi/KOF-94/lab6_1/lab6_1.gen/sources_1/ip/clk_wiz_0/clk_wiz_0_ooc.xdc]
+
+read_ip -quiet c:/Users/Yuqi/KOF-94/lab6_1/lab6_1.srcs/sources_1/ip/kyo_head_rom/kyo_head_rom.xci
+set_property used_in_implementation false [get_files -all c:/Users/Yuqi/KOF-94/lab6_1/lab6_1.gen/sources_1/ip/kyo_head_rom/kyo_head_rom_ooc.xdc]
+
+read_ip -quiet c:/Users/Yuqi/KOF-94/lab6_1/lab6_1.srcs/sources_1/ip/mai_head_rom/mai_head_rom.xci
+set_property used_in_implementation false [get_files -all c:/Users/Yuqi/KOF-94/lab6_1/lab6_1.gen/sources_1/ip/mai_head_rom/mai_head_rom_ooc.xdc]
 
 OPTRACE "Adding files" END { }
 # Mark all dcp files as not used in implementation to prevent them from being

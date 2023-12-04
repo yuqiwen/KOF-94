@@ -1,0 +1,1 @@
+--incr --debug typical --relax --mt auto --include "%xv_boost_lib_path%"  -L blk_mem_gen_v8_4_5 -L xil_defaultlib -L unisims_ver -L unimacro_ver -L secureip -L xpm --snapshot mai_head_rom xil_defaultlib.mai_head_rom xil_defaultlib.glbl -log elaborate.log

@@ -21,7 +21,7 @@
 
 
 module char_mai(
-        input logic Reset, frame_clk,stop,
+        input logic Reset, frame_clk,stop,stop1,
         input logic [7:0] keycode1,keycode2,keycode3,keycode4,keycode5,keycode6,
         output logic [12:0]  char1X, char1Y,char2X, char2Y,backX,
         output logic forward_1,back_1,punch_1,squat_1,kick_1,jump_1,forward_2,back_2,punch_2,squat_2,kick_2,jump_2
@@ -134,7 +134,7 @@ module char_mai(
            
         else 
         begin       
-                 if(stop)begin
+                 if(stop||stop1)begin
                      char1_X_Motion <= 10'd0;
                      char1_Y_Motion <= 10'd0;
                      forward_1<=1'b0;

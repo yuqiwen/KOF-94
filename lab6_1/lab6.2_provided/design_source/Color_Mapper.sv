@@ -19,9 +19,10 @@ module  color_mapper ( input  logic [9:0] DrawX, DrawY,
                        input logic clk_25MHz, blank,reset,vsync,
                        input logic [12:0]  char1X, char1Y,char2X, char2Y,backX,
                        input logic [5:0] seconds,
-                       input logic forward_1,back_1,punch_1,squat_1,kick_1,jump_1,forward_2,back_2,punch_2,squat_2,kick_2,jump_2,stop,
+                       input logic forward_1,back_1,punch_1,squat_1,kick_1,jump_1,forward_2,back_2,punch_2,squat_2,kick_2,jump_2,
                        input logic [7:0] char1_hp,char2_hp,
                        output logic [3:0]  Red, Green, Blue );
+    parameter [9:0] head_width=50;
     parameter [9:0] forward_x_size=96;
     parameter [9:0] back_x_size=80;
     parameter [9:0] stand_x_size=80;
@@ -59,48 +60,90 @@ module  color_mapper ( input  logic [9:0] DrawX, DrawY,
     parameter [10:0] Back_X_size=1024;
     parameter [9:0] Back_Y_size=480;
     parameter [9:0] vga_size=640;
-    logic [17:0] bg1_rom_address, bg2_rom_address,bg3_rom_address,bg4_rom_address,bg5_rom_address;
+
+    logic [17:0] bg1_rom_address, bg2_rom_address,bg3_rom_address,bg4_rom_address,bg5_rom_address,char1_head_address,char2_head_address;
     logic [17:0] char1_rom_address,char1_stand_addr,char1_fwd_addr,char1_back_addr,char1_punch_addr,char1_squat_addr,char1_kick_addr;
     logic [17:0] char2_rom_address,char2_stand_addr,char2_fwd_addr,char2_back_addr,char2_punch_addr,char2_squat_addr,char2_kick_addr;
     logic [9:0] pos_x,pos2_x;
     logic [3:0]  bg_r, bg_g, bg_b,bg1_r, bg1_g, bg1_b,bg2_r, bg2_g, bg2_b, bg3_r, bg3_g, bg3_b,bg4_r, bg4_g, bg4_b,bg5_r, bg5_g, bg5_b;
     logic [3:0] char1_r,char1_g,char1_b, char1_stand_r, char1_stand_g, char1_stand_b;
     logic [3:0] char1_fwd_r,char1_fwd_g,char1_fwd_b,char1_back_r,char1_back_g,char1_back_b,char1_punch_r,char1_punch_g,char1_punch_b;
-    logic [3:0] char1_squat_r,char1_squat_g,char1_squat_b,char1_kick_r,char1_kick_g,char1_kick_b;
-    logic [3:0] char2_r,char2_g,char2_b, char2_stand_r, char2_stand_g, char2_stand_b,char2_fwd_r,char2_fwd_g,char2_fwd_b;
+    logic [3:0] char1_squat_r,char1_squat_g,char1_squat_b,char1_kick_r,char1_kick_g,char1_kick_b,char1_head_r,char1_head_g,char1_head_b;
+    logic [3:0] char2_r,char2_g,char2_b, char2_stand_r, char2_stand_g, char2_stand_b,char2_fwd_r,char2_fwd_g,char2_fwd_b,char2_head_r,char2_head_g,char2_head_b;
     logic [3:0] char2_back_r,char2_back_g,char2_back_b,char2_punch_r,char2_punch_g,char2_punch_b, char2_squat_r,char2_squat_g,char2_squat_b,char2_kick_r,char2_kick_g,char2_kick_b;
-    logic char1_on,char2_on,stand_1,stand_2,s_on,hp1_on,hp2_on;
+    logic char1_on,char2_on,stand_1,stand_2,s_on,hp1_on,hp2_on,name_on,time_on,head1_on,head2_on;
     logic [5:0] char1_cnt,char2_cnt,bg_cnt;  // 5-bit counter to handle 18 states
     logic [5:0] char1_fwd_cnt,char1_back_cnt,char1_punch_cnt,char1_kick_cnt;
     logic [5:0] char2_fwd_cnt,char2_back_cnt,char2_punch_cnt,char2_kick_cnt;
-    
+    localparam MAX_STR_LEN = 64;  // Maximum string length
+    logic [4*12-1:0] time_array= {"TIME"};
+    logic [8*12-1:0] char1_array= {"MAI SHIRANUI"};
+    logic [8*12-1:0] char2_array = {"KYO KUSANAGI"};
+    logic [8*10-1:0] Winner = {"Winner is "};
+    logic [7:0]char_to_display;
     //timer
     logic [7:0]first_ascii,second_ascii;
     logic [10:0]sprite_addr;
     logic [7:0] sprite_data;
-    
+    logic char1_punch_debounce,char1_kick_debounce,char2_punch_debounce,char2_kick_debounce;
+
     always_comb begin
+        s_on=0;
         first_ascii=(seconds/10)+8'h30;
         second_ascii=(seconds%10)+8'h30;
-        if(DrawX>=304&&DrawX<320&&DrawY>=20&&DrawY<52)
-            sprite_addr=first_ascii*16 + ((DrawY-20)/2)%16;
-        else if(DrawX>=320&&DrawX<336&&DrawY>=20&&DrawY<52)
-            sprite_addr=second_ascii*16 + ((DrawY-20)/2)%16;
+        if(DrawX>=288&&DrawX<320&&DrawY>=16&&DrawY<80)begin
+            sprite_addr=first_ascii*16 + ((DrawY-16)/4)%16;
+            s_on=sprite_data[7-DrawX[4:2]]; 
+        end
+        else if(DrawX>=320&&DrawX<352&&DrawY>=16&&DrawY<80)begin
+            sprite_addr=second_ascii*16 + ((DrawY-16)/4)%16;
+            s_on=sprite_data[7-DrawX[4:2]]; 
+        end
+        else if(((DrawX>=70&&DrawX<262)||(DrawX>=378&&DrawX<570))&&DrawY>=35&&DrawY<67)begin
+            sprite_addr=char_to_display*16 + ((DrawY-35)/2)%16;
+        end
+        else if(DrawX>=304&&DrawX<336&&DrawY>=0&&DrawY<16)begin
+            sprite_addr=char_to_display*16 + DrawY[3:0];
+        end
         else sprite_addr=0;
-        s_on=sprite_data[7-DrawX[3:1]]; 
+        
+        
+        
     end
+    font_rom fr(.addr(sprite_addr), .data(sprite_data));
     
-     font_rom fr(.addr(sprite_addr), .data(sprite_data));
-    
+    //hp_sys
+
     always_comb begin
-         if(DrawX>=70&&DrawX<270&&DrawY>=20&&DrawY<30)hp1_on=1;
+         char_to_display=0;
+         name_on=0;
+         time_on=0;
+         if(DrawX>=70&&DrawX<270&&DrawY>=20&&DrawY<35)hp1_on=1;
          else hp1_on=0;
-         if(DrawX>=370&&DrawX<570&&DrawY>=20&&DrawY<30)hp2_on=1;
+         if(DrawX>=370&&DrawX<570&&DrawY>=20&&DrawY<35)hp2_on=1;
          else hp2_on=0;
+         if(DrawX>=70&&DrawX<262&&DrawY>=35&&DrawY<67)begin
+            char_to_display=char1_array[8*(12-(DrawX-70)/16)-1 -: 8];
+            name_on=sprite_data[7-((DrawX-70)/2)%8];
+         end
+         else if(DrawX>=378&&DrawX<570&&DrawY>=35&&DrawY<67)begin
+           char_to_display=char2_array[8*(12-(DrawX-378)/16)-1 -: 8];
+           name_on=sprite_data[7-((DrawX-378)/2)%8];
+         end
+         else if(DrawX>=304&&DrawX<336&&DrawY>=0&&DrawY<16)begin
+           char_to_display=time_array[8*(4-(DrawX-304)/8)-1 -: 8];
+           time_on=sprite_data[7-(DrawX-304)%8];
+         end
      end
     
-    
-    
+    always_comb begin
+        if(DrawX>=18&&DrawX<70&&DrawY>=14&&DrawY<66)
+            head1_on=1;
+        if(DrawX>=570&&DrawX<622&&DrawY>=14&&DrawY<66)
+            head2_on=1;
+        char1_head_address=head_width*(DrawY-15)+DrawX-19;
+        char2_head_address=head_width*(DrawY-15)+DrawX-571;
+    end
     always_comb begin
         pos_x=char1X-backX;
         pos2_x=char2X-backX;
@@ -352,7 +395,6 @@ module  color_mapper ( input  logic [9:0] DrawX, DrawY,
         endcase
 
         char1_squat_addr=char1_squat_width * ((DrawY - (char1Y+(height-char1_squat_height)*2)) /2) + ((DrawX - pos_x) /2);
-        
         //char2
         char2_fwd_addr=0;
         char2_punch_addr=0;
@@ -450,7 +492,7 @@ module  color_mapper ( input  logic [9:0] DrawX, DrawY,
         char2_squat_addr=char2_squat_width * ((DrawY - (char2Y+(height-char2_squat_height)*2)) /2) + ((DrawX - pos2_x) /2);
         
         if(DrawX+backX>=bg5_Xstart*2&&DrawX+backX<bg5_Xstart*2+bg2_width*2&&DrawY >= bg2_Ystart*2 && DrawY < bg2_Ystart*2+bg2_height*2)
-            bg2_rom_address = bg2_width * ((DrawY - bg2_Ystart) /2) + (bg2_width-((DrawX+backX - bg5_Xstart*2) /2));
+            bg2_rom_address = bg2_width * ((DrawY - bg2_Ystart) /2) + (bg2_width-1-((DrawX+backX - bg5_Xstart*2) /2));
         else 
             bg2_rom_address = bg2_width * ((DrawY - bg2_Ystart) /2) + ((DrawX+backX) /2);
         
@@ -517,13 +559,77 @@ module  color_mapper ( input  logic [9:0] DrawX, DrawY,
 	
     always_comb
     begin:RGB_Display
-          if(s_on&&DrawX>=304&&DrawX<336&&DrawY>=20&&DrawY<52)begin
-               Red = 4'hD; 
-               Green = 4'hD;
-               Blue = 4'h0;
+          if(s_on)begin
+              if (DrawY < 48) begin
+                    // Transition from red to orange
+                   Red = 4'hF; 
+                   Green = ((DrawY-16) * 15) / 32;
+                   Blue = 4'h0;
+               end 
+               else begin
+                    // Transition from orange to white
+                   Red = 4'hF; 
+                   Green = 4'hF;
+                   Blue = ((DrawY - 48) * 15) / 32;
+               end
           end 
+          else if(time_on)begin
+                if (DrawY < 8) begin
+                    // Transition from red to orange
+                   Red = 4'hF; 
+                   Green = (DrawY * 15) / 8;
+                   Blue = 4'h0;
+               end 
+               else begin
+                    // Transition from orange to white
+                   Red = 4'hF; 
+                   Green = 4'hF;
+                   Blue = ((DrawY - 8) * 15) / 8;
+               end
+          end
+          else if(name_on)begin
+               if(DrawX>=70&&DrawX<262)begin
+                   Red = ((DrawY-3)/2)%16; 
+                   Green = ((DrawY-3)/2)%16;
+                   Blue = 4'hf;
+               end
+               else begin
+                   Red =  4'hf;
+                   Green = ((DrawY-3)/2)%16;
+                   Blue = ((DrawY-3)/2)%16;
+               end
+          end
+          else if(head1_on)begin
+                 if(DrawX==18||DrawX==70||DrawY==14||DrawY==65)begin
+                       Red = 4'hf; 
+                       Green = 4'hf;
+                       Blue = 4'hf;
+                end
+                else begin
+                       Red = char1_head_r; 
+                       Green = char1_head_g;
+                       Blue = char1_head_b;
+                end
+          end
+          else if(head2_on)begin
+                 if(DrawX==570||DrawX==621||DrawY==14||DrawY==65)begin
+                       Red = 4'hf; 
+                       Green = 4'hf;
+                       Blue = 4'hf;
+                end
+                else begin
+                       Red = char2_head_r; 
+                       Green = char2_head_g;
+                       Blue = char2_head_b;
+                end
+          end
           else if(hp1_on)begin
-                if(DrawX<70+char1_hp*2)begin
+                if(DrawX==70||DrawX==269||DrawY==20||DrawY==34)begin
+                       Red = 4'hf; 
+                       Green = 4'hf;
+                       Blue = 4'hf;
+                end
+                else if(DrawX<70+char1_hp*2)begin
                     if(char1_hp>=70)begin
                        Red = 4'h0; 
                        Green = 4'hD;
@@ -546,8 +652,13 @@ module  color_mapper ( input  logic [9:0] DrawX, DrawY,
                    Blue = 4'h5;
                 end
           end
-          else if(hp2_on)begin
-                if(DrawX<370+char2_hp*2)begin
+          else if(hp2_on)begin 
+                if(DrawX==370||DrawX==569||DrawY==20||DrawY==34)begin
+                       Red = 4'hf; 
+                       Green = 4'hf;
+                       Blue = 4'hf;
+                end
+                else if(DrawX<370+char2_hp*2)begin
                     if(char2_hp>=70)begin
                        Red = 4'h0; 
                        Green = 4'hD;
@@ -799,6 +910,14 @@ module  color_mapper ( input  logic [9:0] DrawX, DrawY,
         .green(char1_kick_g), 
         .blue(char1_kick_b)
     );
+    mai_head st6(
+        .vga_clk(clk_25MHz),
+        .rom_address(char1_head_address),
+        .blank(blank),
+        .red(char1_head_r), 
+        .green(char1_head_g), 
+        .blue(char1_head_b)
+    );
      kyo_stand kt1(
         .vga_clk(clk_25MHz),
         .rom_address(char2_rom_address),
@@ -840,4 +959,12 @@ module  color_mapper ( input  logic [9:0] DrawX, DrawY,
 //        .green(char2_kick_g), 
 //        .blue(char2_kick_b)
 //    );
+    kyo_head kt7(
+        .vga_clk(clk_25MHz),
+        .rom_address(char2_head_address),
+        .blank(blank),
+        .red(char2_head_r), 
+        .green(char2_head_g), 
+        .blue(char2_head_b)
+    );
 endmodule

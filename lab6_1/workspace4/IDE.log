@@ -1,0 +1,694 @@
+18:28:55 DEBUG : Logs will be stored at 'C:/Users/Yuqi/KOF-94/lab6_1/workspace4/IDE.log'.
+18:28:56 INFO  : Launching XSCT server: xsct.bat -n  -interactive C:\Users\Yuqi\KOF-94\lab6_1\workspace4\temp_xsdb_launch_script.tcl
+18:28:56 INFO  : Platform repository initialization has completed.
+18:28:56 INFO  : Registering command handlers for Vitis TCF services
+18:28:58 INFO  : XSCT server has started successfully.
+18:28:58 INFO  : plnx-install-location is set to ''
+18:28:58 INFO  : Successfully done setting XSCT server connection channel  
+18:28:59 INFO  : Successfully done setting workspace for the tool. 
+18:28:59 INFO  : Successfully done query RDI_DATADIR 
+18:29:45 INFO  : Result from executing command 'getProjects': mb_usb_hdmi_top
+18:29:45 INFO  : Result from executing command 'getPlatforms': 
+18:29:45 WARN  : An unexpected exception occurred in the module 'platform project logging'
+18:29:45 INFO  : Platform 'mb_usb_hdmi_top' is added to custom repositories.
+18:29:46 INFO  : Platform 'mb_usb_hdmi_top' is added to custom repositories.
+18:34:23 INFO  : Result from executing command 'getProjects': mb_usb_hdmi_top
+18:34:23 INFO  : Result from executing command 'getPlatforms': mb_usb_hdmi_top|C:/Users/Yuqi/KOF-94/lab6_1/workspace4/mb_usb_hdmi_top/export/mb_usb_hdmi_top/mb_usb_hdmi_top.xpfm
+18:34:23 INFO  : Checking for BSP changes to sync application flags for project 'keyboard'...
+18:34:44 INFO  : Connected to target on host '127.0.0.1' and port '3121'.
+18:34:45 INFO  : Jtag cable 'RealDigital Boo 8874292302C1A' is selected.
+18:34:45 INFO  : 'jtag frequency' command is executed.
+18:34:45 INFO  : 'targets -set -filter {jtag_cable_name =~ "RealDigital Boo 8874292302C1A" && level==0 && jtag_device_ctx=="jsn1-0362f093-0"}' command is executed.
+18:34:46 INFO  : Device configured successfully with "C:/Users/Yuqi/KOF-94/lab6_1/workspace4/keyboard/_ide/bitstream/mb_usb_hdmi_top.bit"
+18:34:46 INFO  : Context for processor 'microblaze_0' is selected.
+18:34:46 INFO  : Hardware design and registers information is loaded from 'C:/Users/Yuqi/KOF-94/lab6_1/workspace4/mb_usb_hdmi_top/export/mb_usb_hdmi_top/hw/mb_usb_hdmi_top.xsa'.
+18:34:46 INFO  : 'configparams mdm-detect-bscan-mask 2' command is executed.
+18:34:46 INFO  : Context for processor 'microblaze_0' is selected.
+18:34:46 INFO  : System reset is completed.
+18:34:49 INFO  : 'after 3000' command is executed.
+18:34:49 INFO  : Context for processor 'microblaze_0' is selected.
+18:34:49 INFO  : The application 'C:/Users/Yuqi/KOF-94/lab6_1/workspace4/keyboard/Debug/keyboard.elf' is downloaded to processor 'microblaze_0'.
+18:34:49 INFO  : ----------------XSDB Script----------------
+connect -url tcp:127.0.0.1:3121
+targets -set -filter {jtag_cable_name =~ "RealDigital Boo 8874292302C1A" && level==0 && jtag_device_ctx=="jsn1-0362f093-0"}
+fpga -file C:/Users/Yuqi/KOF-94/lab6_1/workspace4/keyboard/_ide/bitstream/mb_usb_hdmi_top.bit
+targets -set -nocase -filter {name =~ "*microblaze*#0" && bscan=="USER2" }
+loadhw -hw C:/Users/Yuqi/KOF-94/lab6_1/workspace4/mb_usb_hdmi_top/export/mb_usb_hdmi_top/hw/mb_usb_hdmi_top.xsa -regs
+configparams mdm-detect-bscan-mask 2
+targets -set -nocase -filter {name =~ "*microblaze*#0" && bscan=="USER2" }
+rst -system
+after 3000
+targets -set -nocase -filter {name =~ "*microblaze*#0" && bscan=="USER2" }
+dow C:/Users/Yuqi/KOF-94/lab6_1/workspace4/keyboard/Debug/keyboard.elf
+----------------End of Script----------------
+
+18:34:49 INFO  : Context for processor 'microblaze_0' is selected.
+18:34:49 INFO  : 'con' command is executed.
+18:34:49 INFO  : ----------------XSDB Script (After Launch)----------------
+targets -set -nocase -filter {name =~ "*microblaze*#0" && bscan=="USER2" }
+con
+----------------End of Script----------------
+
+18:34:49 INFO  : Disconnected from the channel tcfchan#2.
+18:41:17 INFO  : Hardware specification for platform project 'mb_usb_hdmi_top' is updated.
+18:41:22 INFO  : Result from executing command 'getProjects': mb_usb_hdmi_top
+18:41:22 INFO  : Result from executing command 'getPlatforms': mb_usb_hdmi_top|C:/Users/Yuqi/KOF-94/lab6_1/workspace4/mb_usb_hdmi_top/export/mb_usb_hdmi_top/mb_usb_hdmi_top.xpfm
+18:41:23 INFO  : Checking for BSP changes to sync application flags for project 'keyboard'...
+18:41:23 INFO  : The hardware specification used by project 'keyboard' is out of sync with the platform. Resource files extracted from the hardware specification will be updated.
+18:41:23 INFO  : The file 'C:\Users\Yuqi\KOF-94\lab6_1\workspace4\keyboard\_ide\bitstream\mb_usb_hdmi_top.bit' stored in project is removed.
+18:41:23 INFO  : The file 'C:\Users\Yuqi\KOF-94\lab6_1\workspace4\keyboard\_ide\bitstream\mb_usb_hdmi_top.mmi' stored in project is removed.
+18:41:24 INFO  : The updated bitstream files are copied from platform to folder 'C:\Users\Yuqi\KOF-94\lab6_1\workspace4\keyboard\_ide\bitstream' in project 'keyboard'.
+18:41:31 INFO  : Connected to target on host '127.0.0.1' and port '3121'.
+18:41:31 INFO  : Jtag cable 'RealDigital Boo 8874292302C1A' is selected.
+18:41:31 INFO  : 'jtag frequency' command is executed.
+18:41:31 INFO  : 'targets -set -filter {jtag_cable_name =~ "RealDigital Boo 8874292302C1A" && level==0 && jtag_device_ctx=="jsn1-0362f093-0"}' command is executed.
+18:41:32 INFO  : Device configured successfully with "C:/Users/Yuqi/KOF-94/lab6_1/workspace4/keyboard/_ide/bitstream/mb_usb_hdmi_top.bit"
+18:41:32 INFO  : Context for processor 'microblaze_0' is selected.
+18:41:32 INFO  : Hardware design and registers information is loaded from 'C:/Users/Yuqi/KOF-94/lab6_1/workspace4/mb_usb_hdmi_top/export/mb_usb_hdmi_top/hw/mb_usb_hdmi_top.xsa'.
+18:41:32 INFO  : 'configparams mdm-detect-bscan-mask 2' command is executed.
+18:41:32 INFO  : Context for processor 'microblaze_0' is selected.
+18:41:32 INFO  : System reset is completed.
+18:41:35 INFO  : 'after 3000' command is executed.
+18:41:35 INFO  : Context for processor 'microblaze_0' is selected.
+18:41:36 INFO  : The application 'C:/Users/Yuqi/KOF-94/lab6_1/workspace4/keyboard/Debug/keyboard.elf' is downloaded to processor 'microblaze_0'.
+18:41:36 INFO  : ----------------XSDB Script----------------
+connect -url tcp:127.0.0.1:3121
+targets -set -filter {jtag_cable_name =~ "RealDigital Boo 8874292302C1A" && level==0 && jtag_device_ctx=="jsn1-0362f093-0"}
+fpga -file C:/Users/Yuqi/KOF-94/lab6_1/workspace4/keyboard/_ide/bitstream/mb_usb_hdmi_top.bit
+targets -set -nocase -filter {name =~ "*microblaze*#0" && bscan=="USER2" }
+loadhw -hw C:/Users/Yuqi/KOF-94/lab6_1/workspace4/mb_usb_hdmi_top/export/mb_usb_hdmi_top/hw/mb_usb_hdmi_top.xsa -regs
+configparams mdm-detect-bscan-mask 2
+targets -set -nocase -filter {name =~ "*microblaze*#0" && bscan=="USER2" }
+rst -system
+after 3000
+targets -set -nocase -filter {name =~ "*microblaze*#0" && bscan=="USER2" }
+dow C:/Users/Yuqi/KOF-94/lab6_1/workspace4/keyboard/Debug/keyboard.elf
+----------------End of Script----------------
+
+18:41:36 INFO  : Context for processor 'microblaze_0' is selected.
+18:41:36 INFO  : 'con' command is executed.
+18:41:36 INFO  : ----------------XSDB Script (After Launch)----------------
+targets -set -nocase -filter {name =~ "*microblaze*#0" && bscan=="USER2" }
+con
+----------------End of Script----------------
+
+18:41:36 INFO  : Disconnected from the channel tcfchan#4.
+18:42:41 INFO  : Connected to target on host '127.0.0.1' and port '3121'.
+18:42:41 INFO  : Jtag cable 'RealDigital Boo 8874292302C1A' is selected.
+18:42:41 INFO  : 'jtag frequency' command is executed.
+18:42:41 INFO  : 'targets -set -filter {jtag_cable_name =~ "RealDigital Boo 8874292302C1A" && level==0 && jtag_device_ctx=="jsn1-0362f093-0"}' command is executed.
+18:42:42 INFO  : Device configured successfully with "C:/Users/Yuqi/KOF-94/lab6_1/workspace4/keyboard/_ide/bitstream/mb_usb_hdmi_top.bit"
+18:42:42 INFO  : Context for processor 'microblaze_0' is selected.
+18:42:42 INFO  : Hardware design and registers information is loaded from 'C:/Users/Yuqi/KOF-94/lab6_1/workspace4/mb_usb_hdmi_top/export/mb_usb_hdmi_top/hw/mb_usb_hdmi_top.xsa'.
+18:42:42 INFO  : 'configparams mdm-detect-bscan-mask 2' command is executed.
+18:42:43 INFO  : Context for processor 'microblaze_0' is selected.
+18:42:43 INFO  : System reset is completed.
+18:42:46 INFO  : 'after 3000' command is executed.
+18:42:46 INFO  : Context for processor 'microblaze_0' is selected.
+18:42:46 INFO  : The application 'C:/Users/Yuqi/KOF-94/lab6_1/workspace4/keyboard/Debug/keyboard.elf' is downloaded to processor 'microblaze_0'.
+18:42:46 INFO  : ----------------XSDB Script----------------
+connect -url tcp:127.0.0.1:3121
+targets -set -filter {jtag_cable_name =~ "RealDigital Boo 8874292302C1A" && level==0 && jtag_device_ctx=="jsn1-0362f093-0"}
+fpga -file C:/Users/Yuqi/KOF-94/lab6_1/workspace4/keyboard/_ide/bitstream/mb_usb_hdmi_top.bit
+targets -set -nocase -filter {name =~ "*microblaze*#0" && bscan=="USER2" }
+loadhw -hw C:/Users/Yuqi/KOF-94/lab6_1/workspace4/mb_usb_hdmi_top/export/mb_usb_hdmi_top/hw/mb_usb_hdmi_top.xsa -regs
+configparams mdm-detect-bscan-mask 2
+targets -set -nocase -filter {name =~ "*microblaze*#0" && bscan=="USER2" }
+rst -system
+after 3000
+targets -set -nocase -filter {name =~ "*microblaze*#0" && bscan=="USER2" }
+dow C:/Users/Yuqi/KOF-94/lab6_1/workspace4/keyboard/Debug/keyboard.elf
+----------------End of Script----------------
+
+18:42:46 INFO  : Context for processor 'microblaze_0' is selected.
+18:42:46 INFO  : 'con' command is executed.
+18:42:46 INFO  : ----------------XSDB Script (After Launch)----------------
+targets -set -nocase -filter {name =~ "*microblaze*#0" && bscan=="USER2" }
+con
+----------------End of Script----------------
+
+18:42:46 INFO  : Disconnected from the channel tcfchan#5.
+15:13:20 DEBUG : Logs will be stored at 'C:/Users/Yuqi/KOF-94/lab6_1/workspace4/IDE.log'.
+15:13:20 INFO  : Launching XSCT server: xsct.bat -n  -interactive C:\Users\Yuqi\KOF-94\lab6_1\workspace4\temp_xsdb_launch_script.tcl
+15:13:22 INFO  : Platform repository initialization has completed.
+15:13:22 INFO  : Registering command handlers for Vitis TCF services
+15:13:22 INFO  : XSCT server has started successfully.
+15:13:22 INFO  : Successfully done setting XSCT server connection channel  
+15:13:24 INFO  : plnx-install-location is set to ''
+15:13:24 INFO  : Successfully done setting workspace for the tool. 
+15:13:24 INFO  : Successfully done query RDI_DATADIR 
+15:18:13 INFO  : Connected to target on host '127.0.0.1' and port '3121'.
+15:18:13 INFO  : Jtag cable 'RealDigital Boo 8874292302C1A' is selected.
+15:18:13 INFO  : 'jtag frequency' command is executed.
+15:18:13 INFO  : 'targets -set -filter {jtag_cable_name =~ "RealDigital Boo 8874292302C1A" && level==0 && jtag_device_ctx=="jsn1-0362f093-0"}' command is executed.
+15:18:15 INFO  : Device configured successfully with "C:/Users/Yuqi/KOF-94/lab6_1/workspace4/keyboard/_ide/bitstream/mb_usb_hdmi_top.bit"
+15:18:15 INFO  : Context for processor 'microblaze_0' is selected.
+15:18:15 INFO  : Hardware design and registers information is loaded from 'C:/Users/Yuqi/KOF-94/lab6_1/workspace4/mb_usb_hdmi_top/export/mb_usb_hdmi_top/hw/mb_usb_hdmi_top.xsa'.
+15:18:15 INFO  : 'configparams mdm-detect-bscan-mask 2' command is executed.
+15:18:15 INFO  : Context for processor 'microblaze_0' is selected.
+15:18:15 INFO  : System reset is completed.
+15:18:18 INFO  : 'after 3000' command is executed.
+15:18:18 INFO  : Context for processor 'microblaze_0' is selected.
+15:18:18 INFO  : The application 'C:/Users/Yuqi/KOF-94/lab6_1/workspace4/keyboard/Debug/keyboard.elf' is downloaded to processor 'microblaze_0'.
+15:18:18 INFO  : ----------------XSDB Script----------------
+connect -url tcp:127.0.0.1:3121
+targets -set -filter {jtag_cable_name =~ "RealDigital Boo 8874292302C1A" && level==0 && jtag_device_ctx=="jsn1-0362f093-0"}
+fpga -file C:/Users/Yuqi/KOF-94/lab6_1/workspace4/keyboard/_ide/bitstream/mb_usb_hdmi_top.bit
+targets -set -nocase -filter {name =~ "*microblaze*#0" && bscan=="USER2" }
+loadhw -hw C:/Users/Yuqi/KOF-94/lab6_1/workspace4/mb_usb_hdmi_top/export/mb_usb_hdmi_top/hw/mb_usb_hdmi_top.xsa -regs
+configparams mdm-detect-bscan-mask 2
+targets -set -nocase -filter {name =~ "*microblaze*#0" && bscan=="USER2" }
+rst -system
+after 3000
+targets -set -nocase -filter {name =~ "*microblaze*#0" && bscan=="USER2" }
+dow C:/Users/Yuqi/KOF-94/lab6_1/workspace4/keyboard/Debug/keyboard.elf
+----------------End of Script----------------
+
+15:18:18 INFO  : Context for processor 'microblaze_0' is selected.
+15:18:18 INFO  : 'con' command is executed.
+15:18:18 INFO  : ----------------XSDB Script (After Launch)----------------
+targets -set -nocase -filter {name =~ "*microblaze*#0" && bscan=="USER2" }
+con
+----------------End of Script----------------
+
+15:18:18 INFO  : Disconnected from the channel tcfchan#1.
+15:47:44 INFO  : Hardware specification for platform project 'mb_usb_hdmi_top' is updated.
+15:47:51 INFO  : Result from executing command 'getProjects': mb_usb_hdmi_top
+15:47:51 INFO  : Result from executing command 'getPlatforms': mb_usb_hdmi_top|C:/Users/Yuqi/KOF-94/lab6_1/workspace4/mb_usb_hdmi_top/export/mb_usb_hdmi_top/mb_usb_hdmi_top.xpfm
+15:47:51 INFO  : Checking for BSP changes to sync application flags for project 'keyboard'...
+15:47:51 WARN  : Failed to closehw "C:/Users/Yuqi/KOF-94/lab6_1/workspace4/mb_usb_hdmi_top/export/mb_usb_hdmi_top/hw/mb_usb_hdmi_top.xsa"
+Reason: Cannot close hw design 'C:/Users/Yuqi/KOF-94/lab6_1/workspace4/mb_usb_hdmi_top/export/mb_usb_hdmi_top/hw/mb_usb_hdmi_top.xsa'.
+Design is not opened in the current session.
+
+15:47:52 INFO  : The hardware specification used by project 'keyboard' is out of sync with the platform. Resource files extracted from the hardware specification will be updated.
+15:47:52 INFO  : The file 'C:\Users\Yuqi\KOF-94\lab6_1\workspace4\keyboard\_ide\bitstream\mb_usb_hdmi_top.bit' stored in project is removed.
+15:47:52 INFO  : The file 'C:\Users\Yuqi\KOF-94\lab6_1\workspace4\keyboard\_ide\bitstream\mb_usb_hdmi_top.mmi' stored in project is removed.
+15:47:52 INFO  : The updated bitstream files are copied from platform to folder 'C:\Users\Yuqi\KOF-94\lab6_1\workspace4\keyboard\_ide\bitstream' in project 'keyboard'.
+15:47:57 INFO  : Connected to target on host '127.0.0.1' and port '3121'.
+15:47:57 INFO  : Jtag cable 'RealDigital Boo 8874292302C1A' is selected.
+15:47:57 INFO  : 'jtag frequency' command is executed.
+15:47:57 INFO  : 'targets -set -filter {jtag_cable_name =~ "RealDigital Boo 8874292302C1A" && level==0 && jtag_device_ctx=="jsn1-0362f093-0"}' command is executed.
+15:47:59 INFO  : Device configured successfully with "C:/Users/Yuqi/KOF-94/lab6_1/workspace4/keyboard/_ide/bitstream/mb_usb_hdmi_top.bit"
+15:47:59 INFO  : Context for processor 'microblaze_0' is selected.
+15:47:59 INFO  : Hardware design and registers information is loaded from 'C:/Users/Yuqi/KOF-94/lab6_1/workspace4/mb_usb_hdmi_top/export/mb_usb_hdmi_top/hw/mb_usb_hdmi_top.xsa'.
+15:47:59 INFO  : 'configparams mdm-detect-bscan-mask 2' command is executed.
+15:47:59 INFO  : Context for processor 'microblaze_0' is selected.
+15:47:59 INFO  : System reset is completed.
+15:48:02 INFO  : 'after 3000' command is executed.
+15:48:02 INFO  : Context for processor 'microblaze_0' is selected.
+15:48:02 INFO  : The application 'C:/Users/Yuqi/KOF-94/lab6_1/workspace4/keyboard/Debug/keyboard.elf' is downloaded to processor 'microblaze_0'.
+15:48:02 INFO  : ----------------XSDB Script----------------
+connect -url tcp:127.0.0.1:3121
+targets -set -filter {jtag_cable_name =~ "RealDigital Boo 8874292302C1A" && level==0 && jtag_device_ctx=="jsn1-0362f093-0"}
+fpga -file C:/Users/Yuqi/KOF-94/lab6_1/workspace4/keyboard/_ide/bitstream/mb_usb_hdmi_top.bit
+targets -set -nocase -filter {name =~ "*microblaze*#0" && bscan=="USER2" }
+loadhw -hw C:/Users/Yuqi/KOF-94/lab6_1/workspace4/mb_usb_hdmi_top/export/mb_usb_hdmi_top/hw/mb_usb_hdmi_top.xsa -regs
+configparams mdm-detect-bscan-mask 2
+targets -set -nocase -filter {name =~ "*microblaze*#0" && bscan=="USER2" }
+rst -system
+after 3000
+targets -set -nocase -filter {name =~ "*microblaze*#0" && bscan=="USER2" }
+dow C:/Users/Yuqi/KOF-94/lab6_1/workspace4/keyboard/Debug/keyboard.elf
+----------------End of Script----------------
+
+15:48:02 INFO  : Context for processor 'microblaze_0' is selected.
+15:48:02 INFO  : 'con' command is executed.
+15:48:02 INFO  : ----------------XSDB Script (After Launch)----------------
+targets -set -nocase -filter {name =~ "*microblaze*#0" && bscan=="USER2" }
+con
+----------------End of Script----------------
+
+15:48:02 INFO  : Disconnected from the channel tcfchan#3.
+21:33:18 INFO  : Hardware specification for platform project 'mb_usb_hdmi_top' is updated.
+21:33:25 INFO  : Result from executing command 'getProjects': mb_usb_hdmi_top
+21:33:25 INFO  : Result from executing command 'getPlatforms': mb_usb_hdmi_top|C:/Users/Yuqi/KOF-94/lab6_1/workspace4/mb_usb_hdmi_top/export/mb_usb_hdmi_top/mb_usb_hdmi_top.xpfm
+21:33:25 INFO  : Checking for BSP changes to sync application flags for project 'keyboard'...
+21:33:26 INFO  : The hardware specification used by project 'keyboard' is out of sync with the platform. Resource files extracted from the hardware specification will be updated.
+21:33:26 INFO  : The file 'C:\Users\Yuqi\KOF-94\lab6_1\workspace4\keyboard\_ide\bitstream\mb_usb_hdmi_top.bit' stored in project is removed.
+21:33:26 INFO  : The file 'C:\Users\Yuqi\KOF-94\lab6_1\workspace4\keyboard\_ide\bitstream\mb_usb_hdmi_top.mmi' stored in project is removed.
+21:33:26 INFO  : The updated bitstream files are copied from platform to folder 'C:\Users\Yuqi\KOF-94\lab6_1\workspace4\keyboard\_ide\bitstream' in project 'keyboard'.
+21:33:30 INFO  : Connected to target on host '127.0.0.1' and port '3121'.
+21:33:31 INFO  : Jtag cable 'RealDigital Boo 8874292302C1A' is selected.
+21:33:31 INFO  : 'jtag frequency' command is executed.
+21:33:31 INFO  : 'targets -set -filter {jtag_cable_name =~ "RealDigital Boo 8874292302C1A" && level==0 && jtag_device_ctx=="jsn1-0362f093-0"}' command is executed.
+21:33:32 INFO  : Device configured successfully with "C:/Users/Yuqi/KOF-94/lab6_1/workspace4/keyboard/_ide/bitstream/mb_usb_hdmi_top.bit"
+21:33:32 INFO  : Context for processor 'microblaze_0' is selected.
+21:33:32 INFO  : Hardware design and registers information is loaded from 'C:/Users/Yuqi/KOF-94/lab6_1/workspace4/mb_usb_hdmi_top/export/mb_usb_hdmi_top/hw/mb_usb_hdmi_top.xsa'.
+21:33:32 INFO  : 'configparams mdm-detect-bscan-mask 2' command is executed.
+21:33:32 INFO  : Context for processor 'microblaze_0' is selected.
+21:33:32 INFO  : System reset is completed.
+21:33:35 INFO  : 'after 3000' command is executed.
+21:33:35 INFO  : Context for processor 'microblaze_0' is selected.
+21:33:35 INFO  : The application 'C:/Users/Yuqi/KOF-94/lab6_1/workspace4/keyboard/Debug/keyboard.elf' is downloaded to processor 'microblaze_0'.
+21:33:35 INFO  : ----------------XSDB Script----------------
+connect -url tcp:127.0.0.1:3121
+targets -set -filter {jtag_cable_name =~ "RealDigital Boo 8874292302C1A" && level==0 && jtag_device_ctx=="jsn1-0362f093-0"}
+fpga -file C:/Users/Yuqi/KOF-94/lab6_1/workspace4/keyboard/_ide/bitstream/mb_usb_hdmi_top.bit
+targets -set -nocase -filter {name =~ "*microblaze*#0" && bscan=="USER2" }
+loadhw -hw C:/Users/Yuqi/KOF-94/lab6_1/workspace4/mb_usb_hdmi_top/export/mb_usb_hdmi_top/hw/mb_usb_hdmi_top.xsa -regs
+configparams mdm-detect-bscan-mask 2
+targets -set -nocase -filter {name =~ "*microblaze*#0" && bscan=="USER2" }
+rst -system
+after 3000
+targets -set -nocase -filter {name =~ "*microblaze*#0" && bscan=="USER2" }
+dow C:/Users/Yuqi/KOF-94/lab6_1/workspace4/keyboard/Debug/keyboard.elf
+----------------End of Script----------------
+
+21:33:35 INFO  : Context for processor 'microblaze_0' is selected.
+21:33:35 INFO  : 'con' command is executed.
+21:33:35 INFO  : ----------------XSDB Script (After Launch)----------------
+targets -set -nocase -filter {name =~ "*microblaze*#0" && bscan=="USER2" }
+con
+----------------End of Script----------------
+
+21:33:35 INFO  : Disconnected from the channel tcfchan#5.
+21:41:18 INFO  : Hardware specification for platform project 'mb_usb_hdmi_top' is updated.
+21:41:23 INFO  : Result from executing command 'getProjects': mb_usb_hdmi_top
+21:41:23 INFO  : Result from executing command 'getPlatforms': mb_usb_hdmi_top|C:/Users/Yuqi/KOF-94/lab6_1/workspace4/mb_usb_hdmi_top/export/mb_usb_hdmi_top/mb_usb_hdmi_top.xpfm
+21:41:23 INFO  : Checking for BSP changes to sync application flags for project 'keyboard'...
+21:41:25 INFO  : The hardware specification used by project 'keyboard' is out of sync with the platform. Resource files extracted from the hardware specification will be updated.
+21:41:25 INFO  : The file 'C:\Users\Yuqi\KOF-94\lab6_1\workspace4\keyboard\_ide\bitstream\mb_usb_hdmi_top.bit' stored in project is removed.
+21:41:25 INFO  : The file 'C:\Users\Yuqi\KOF-94\lab6_1\workspace4\keyboard\_ide\bitstream\mb_usb_hdmi_top.mmi' stored in project is removed.
+21:41:25 INFO  : The updated bitstream files are copied from platform to folder 'C:\Users\Yuqi\KOF-94\lab6_1\workspace4\keyboard\_ide\bitstream' in project 'keyboard'.
+21:41:30 INFO  : Connected to target on host '127.0.0.1' and port '3121'.
+21:41:30 INFO  : Jtag cable 'RealDigital Boo 8874292302C1A' is selected.
+21:41:30 INFO  : 'jtag frequency' command is executed.
+21:41:30 INFO  : 'targets -set -filter {jtag_cable_name =~ "RealDigital Boo 8874292302C1A" && level==0 && jtag_device_ctx=="jsn1-0362f093-0"}' command is executed.
+21:41:31 INFO  : Device configured successfully with "C:/Users/Yuqi/KOF-94/lab6_1/workspace4/keyboard/_ide/bitstream/mb_usb_hdmi_top.bit"
+21:41:31 INFO  : Context for processor 'microblaze_0' is selected.
+21:41:31 INFO  : Hardware design and registers information is loaded from 'C:/Users/Yuqi/KOF-94/lab6_1/workspace4/mb_usb_hdmi_top/export/mb_usb_hdmi_top/hw/mb_usb_hdmi_top.xsa'.
+21:41:31 INFO  : 'configparams mdm-detect-bscan-mask 2' command is executed.
+21:41:31 INFO  : Context for processor 'microblaze_0' is selected.
+21:41:31 INFO  : System reset is completed.
+21:41:34 INFO  : 'after 3000' command is executed.
+21:41:34 INFO  : Context for processor 'microblaze_0' is selected.
+21:41:35 INFO  : The application 'C:/Users/Yuqi/KOF-94/lab6_1/workspace4/keyboard/Debug/keyboard.elf' is downloaded to processor 'microblaze_0'.
+21:41:35 INFO  : ----------------XSDB Script----------------
+connect -url tcp:127.0.0.1:3121
+targets -set -filter {jtag_cable_name =~ "RealDigital Boo 8874292302C1A" && level==0 && jtag_device_ctx=="jsn1-0362f093-0"}
+fpga -file C:/Users/Yuqi/KOF-94/lab6_1/workspace4/keyboard/_ide/bitstream/mb_usb_hdmi_top.bit
+targets -set -nocase -filter {name =~ "*microblaze*#0" && bscan=="USER2" }
+loadhw -hw C:/Users/Yuqi/KOF-94/lab6_1/workspace4/mb_usb_hdmi_top/export/mb_usb_hdmi_top/hw/mb_usb_hdmi_top.xsa -regs
+configparams mdm-detect-bscan-mask 2
+targets -set -nocase -filter {name =~ "*microblaze*#0" && bscan=="USER2" }
+rst -system
+after 3000
+targets -set -nocase -filter {name =~ "*microblaze*#0" && bscan=="USER2" }
+dow C:/Users/Yuqi/KOF-94/lab6_1/workspace4/keyboard/Debug/keyboard.elf
+----------------End of Script----------------
+
+21:41:35 INFO  : Context for processor 'microblaze_0' is selected.
+21:41:35 INFO  : 'con' command is executed.
+21:41:35 INFO  : ----------------XSDB Script (After Launch)----------------
+targets -set -nocase -filter {name =~ "*microblaze*#0" && bscan=="USER2" }
+con
+----------------End of Script----------------
+
+21:41:35 INFO  : Disconnected from the channel tcfchan#7.
+22:00:10 INFO  : Hardware specification for platform project 'mb_usb_hdmi_top' is updated.
+22:00:15 INFO  : Result from executing command 'getProjects': mb_usb_hdmi_top
+22:00:15 INFO  : Result from executing command 'getPlatforms': mb_usb_hdmi_top|C:/Users/Yuqi/KOF-94/lab6_1/workspace4/mb_usb_hdmi_top/export/mb_usb_hdmi_top/mb_usb_hdmi_top.xpfm
+22:00:15 INFO  : Checking for BSP changes to sync application flags for project 'keyboard'...
+22:00:16 INFO  : The hardware specification used by project 'keyboard' is out of sync with the platform. Resource files extracted from the hardware specification will be updated.
+22:00:16 INFO  : The file 'C:\Users\Yuqi\KOF-94\lab6_1\workspace4\keyboard\_ide\bitstream\mb_usb_hdmi_top.bit' stored in project is removed.
+22:00:16 INFO  : The file 'C:\Users\Yuqi\KOF-94\lab6_1\workspace4\keyboard\_ide\bitstream\mb_usb_hdmi_top.mmi' stored in project is removed.
+22:00:16 INFO  : The updated bitstream files are copied from platform to folder 'C:\Users\Yuqi\KOF-94\lab6_1\workspace4\keyboard\_ide\bitstream' in project 'keyboard'.
+22:00:19 INFO  : Connected to target on host '127.0.0.1' and port '3121'.
+22:00:20 INFO  : Jtag cable 'RealDigital Boo 8874292302C1A' is selected.
+22:00:20 INFO  : 'jtag frequency' command is executed.
+22:00:20 INFO  : 'targets -set -filter {jtag_cable_name =~ "RealDigital Boo 8874292302C1A" && level==0 && jtag_device_ctx=="jsn1-0362f093-0"}' command is executed.
+22:00:21 INFO  : Device configured successfully with "C:/Users/Yuqi/KOF-94/lab6_1/workspace4/keyboard/_ide/bitstream/mb_usb_hdmi_top.bit"
+22:00:21 INFO  : Context for processor 'microblaze_0' is selected.
+22:00:21 INFO  : Hardware design and registers information is loaded from 'C:/Users/Yuqi/KOF-94/lab6_1/workspace4/mb_usb_hdmi_top/export/mb_usb_hdmi_top/hw/mb_usb_hdmi_top.xsa'.
+22:00:21 INFO  : 'configparams mdm-detect-bscan-mask 2' command is executed.
+22:00:21 INFO  : Context for processor 'microblaze_0' is selected.
+22:00:21 INFO  : System reset is completed.
+22:00:24 INFO  : 'after 3000' command is executed.
+22:00:24 INFO  : Context for processor 'microblaze_0' is selected.
+22:00:24 INFO  : The application 'C:/Users/Yuqi/KOF-94/lab6_1/workspace4/keyboard/Debug/keyboard.elf' is downloaded to processor 'microblaze_0'.
+22:00:24 INFO  : ----------------XSDB Script----------------
+connect -url tcp:127.0.0.1:3121
+targets -set -filter {jtag_cable_name =~ "RealDigital Boo 8874292302C1A" && level==0 && jtag_device_ctx=="jsn1-0362f093-0"}
+fpga -file C:/Users/Yuqi/KOF-94/lab6_1/workspace4/keyboard/_ide/bitstream/mb_usb_hdmi_top.bit
+targets -set -nocase -filter {name =~ "*microblaze*#0" && bscan=="USER2" }
+loadhw -hw C:/Users/Yuqi/KOF-94/lab6_1/workspace4/mb_usb_hdmi_top/export/mb_usb_hdmi_top/hw/mb_usb_hdmi_top.xsa -regs
+configparams mdm-detect-bscan-mask 2
+targets -set -nocase -filter {name =~ "*microblaze*#0" && bscan=="USER2" }
+rst -system
+after 3000
+targets -set -nocase -filter {name =~ "*microblaze*#0" && bscan=="USER2" }
+dow C:/Users/Yuqi/KOF-94/lab6_1/workspace4/keyboard/Debug/keyboard.elf
+----------------End of Script----------------
+
+22:00:24 INFO  : Context for processor 'microblaze_0' is selected.
+22:00:24 INFO  : 'con' command is executed.
+22:00:24 INFO  : ----------------XSDB Script (After Launch)----------------
+targets -set -nocase -filter {name =~ "*microblaze*#0" && bscan=="USER2" }
+con
+----------------End of Script----------------
+
+22:00:24 INFO  : Disconnected from the channel tcfchan#9.
+22:15:57 INFO  : Hardware specification for platform project 'mb_usb_hdmi_top' is updated.
+22:16:02 INFO  : Result from executing command 'getProjects': mb_usb_hdmi_top
+22:16:02 INFO  : Result from executing command 'getPlatforms': mb_usb_hdmi_top|C:/Users/Yuqi/KOF-94/lab6_1/workspace4/mb_usb_hdmi_top/export/mb_usb_hdmi_top/mb_usb_hdmi_top.xpfm
+22:16:02 INFO  : Checking for BSP changes to sync application flags for project 'keyboard'...
+22:16:03 INFO  : The hardware specification used by project 'keyboard' is out of sync with the platform. Resource files extracted from the hardware specification will be updated.
+22:16:03 INFO  : The file 'C:\Users\Yuqi\KOF-94\lab6_1\workspace4\keyboard\_ide\bitstream\mb_usb_hdmi_top.bit' stored in project is removed.
+22:16:03 INFO  : The file 'C:\Users\Yuqi\KOF-94\lab6_1\workspace4\keyboard\_ide\bitstream\mb_usb_hdmi_top.mmi' stored in project is removed.
+22:16:03 INFO  : The updated bitstream files are copied from platform to folder 'C:\Users\Yuqi\KOF-94\lab6_1\workspace4\keyboard\_ide\bitstream' in project 'keyboard'.
+22:16:07 INFO  : Connected to target on host '127.0.0.1' and port '3121'.
+22:16:08 INFO  : Jtag cable 'RealDigital Boo 8874292302C1A' is selected.
+22:16:08 INFO  : 'jtag frequency' command is executed.
+22:16:08 INFO  : 'targets -set -filter {jtag_cable_name =~ "RealDigital Boo 8874292302C1A" && level==0 && jtag_device_ctx=="jsn1-0362f093-0"}' command is executed.
+22:16:09 INFO  : Device configured successfully with "C:/Users/Yuqi/KOF-94/lab6_1/workspace4/keyboard/_ide/bitstream/mb_usb_hdmi_top.bit"
+22:16:09 INFO  : Context for processor 'microblaze_0' is selected.
+22:16:09 INFO  : Hardware design and registers information is loaded from 'C:/Users/Yuqi/KOF-94/lab6_1/workspace4/mb_usb_hdmi_top/export/mb_usb_hdmi_top/hw/mb_usb_hdmi_top.xsa'.
+22:16:09 INFO  : 'configparams mdm-detect-bscan-mask 2' command is executed.
+22:16:09 INFO  : Context for processor 'microblaze_0' is selected.
+22:16:09 INFO  : System reset is completed.
+22:16:12 INFO  : 'after 3000' command is executed.
+22:16:12 INFO  : Context for processor 'microblaze_0' is selected.
+22:16:12 INFO  : The application 'C:/Users/Yuqi/KOF-94/lab6_1/workspace4/keyboard/Debug/keyboard.elf' is downloaded to processor 'microblaze_0'.
+22:16:12 INFO  : ----------------XSDB Script----------------
+connect -url tcp:127.0.0.1:3121
+targets -set -filter {jtag_cable_name =~ "RealDigital Boo 8874292302C1A" && level==0 && jtag_device_ctx=="jsn1-0362f093-0"}
+fpga -file C:/Users/Yuqi/KOF-94/lab6_1/workspace4/keyboard/_ide/bitstream/mb_usb_hdmi_top.bit
+targets -set -nocase -filter {name =~ "*microblaze*#0" && bscan=="USER2" }
+loadhw -hw C:/Users/Yuqi/KOF-94/lab6_1/workspace4/mb_usb_hdmi_top/export/mb_usb_hdmi_top/hw/mb_usb_hdmi_top.xsa -regs
+configparams mdm-detect-bscan-mask 2
+targets -set -nocase -filter {name =~ "*microblaze*#0" && bscan=="USER2" }
+rst -system
+after 3000
+targets -set -nocase -filter {name =~ "*microblaze*#0" && bscan=="USER2" }
+dow C:/Users/Yuqi/KOF-94/lab6_1/workspace4/keyboard/Debug/keyboard.elf
+----------------End of Script----------------
+
+22:16:12 INFO  : Context for processor 'microblaze_0' is selected.
+22:16:12 INFO  : 'con' command is executed.
+22:16:12 INFO  : ----------------XSDB Script (After Launch)----------------
+targets -set -nocase -filter {name =~ "*microblaze*#0" && bscan=="USER2" }
+con
+----------------End of Script----------------
+
+22:16:12 INFO  : Disconnected from the channel tcfchan#11.
+22:25:12 INFO  : Hardware specification for platform project 'mb_usb_hdmi_top' is updated.
+22:25:16 INFO  : Result from executing command 'getProjects': mb_usb_hdmi_top
+22:25:16 INFO  : Result from executing command 'getPlatforms': mb_usb_hdmi_top|C:/Users/Yuqi/KOF-94/lab6_1/workspace4/mb_usb_hdmi_top/export/mb_usb_hdmi_top/mb_usb_hdmi_top.xpfm
+22:25:17 INFO  : Checking for BSP changes to sync application flags for project 'keyboard'...
+22:25:18 INFO  : The hardware specification used by project 'keyboard' is out of sync with the platform. Resource files extracted from the hardware specification will be updated.
+22:25:18 INFO  : The file 'C:\Users\Yuqi\KOF-94\lab6_1\workspace4\keyboard\_ide\bitstream\mb_usb_hdmi_top.bit' stored in project is removed.
+22:25:18 INFO  : The file 'C:\Users\Yuqi\KOF-94\lab6_1\workspace4\keyboard\_ide\bitstream\mb_usb_hdmi_top.mmi' stored in project is removed.
+22:25:18 INFO  : The updated bitstream files are copied from platform to folder 'C:\Users\Yuqi\KOF-94\lab6_1\workspace4\keyboard\_ide\bitstream' in project 'keyboard'.
+22:25:21 INFO  : Connected to target on host '127.0.0.1' and port '3121'.
+22:25:21 INFO  : Jtag cable 'RealDigital Boo 8874292302C1A' is selected.
+22:25:21 INFO  : 'jtag frequency' command is executed.
+22:25:21 INFO  : 'targets -set -filter {jtag_cable_name =~ "RealDigital Boo 8874292302C1A" && level==0 && jtag_device_ctx=="jsn1-0362f093-0"}' command is executed.
+22:25:23 INFO  : Device configured successfully with "C:/Users/Yuqi/KOF-94/lab6_1/workspace4/keyboard/_ide/bitstream/mb_usb_hdmi_top.bit"
+22:25:23 INFO  : Context for processor 'microblaze_0' is selected.
+22:25:23 INFO  : Hardware design and registers information is loaded from 'C:/Users/Yuqi/KOF-94/lab6_1/workspace4/mb_usb_hdmi_top/export/mb_usb_hdmi_top/hw/mb_usb_hdmi_top.xsa'.
+22:25:23 INFO  : 'configparams mdm-detect-bscan-mask 2' command is executed.
+22:25:23 INFO  : Context for processor 'microblaze_0' is selected.
+22:25:23 INFO  : System reset is completed.
+22:25:26 INFO  : 'after 3000' command is executed.
+22:25:26 INFO  : Context for processor 'microblaze_0' is selected.
+22:25:26 INFO  : The application 'C:/Users/Yuqi/KOF-94/lab6_1/workspace4/keyboard/Debug/keyboard.elf' is downloaded to processor 'microblaze_0'.
+22:25:26 INFO  : ----------------XSDB Script----------------
+connect -url tcp:127.0.0.1:3121
+targets -set -filter {jtag_cable_name =~ "RealDigital Boo 8874292302C1A" && level==0 && jtag_device_ctx=="jsn1-0362f093-0"}
+fpga -file C:/Users/Yuqi/KOF-94/lab6_1/workspace4/keyboard/_ide/bitstream/mb_usb_hdmi_top.bit
+targets -set -nocase -filter {name =~ "*microblaze*#0" && bscan=="USER2" }
+loadhw -hw C:/Users/Yuqi/KOF-94/lab6_1/workspace4/mb_usb_hdmi_top/export/mb_usb_hdmi_top/hw/mb_usb_hdmi_top.xsa -regs
+configparams mdm-detect-bscan-mask 2
+targets -set -nocase -filter {name =~ "*microblaze*#0" && bscan=="USER2" }
+rst -system
+after 3000
+targets -set -nocase -filter {name =~ "*microblaze*#0" && bscan=="USER2" }
+dow C:/Users/Yuqi/KOF-94/lab6_1/workspace4/keyboard/Debug/keyboard.elf
+----------------End of Script----------------
+
+22:25:26 INFO  : Context for processor 'microblaze_0' is selected.
+22:25:26 INFO  : 'con' command is executed.
+22:25:26 INFO  : ----------------XSDB Script (After Launch)----------------
+targets -set -nocase -filter {name =~ "*microblaze*#0" && bscan=="USER2" }
+con
+----------------End of Script----------------
+
+22:25:26 INFO  : Disconnected from the channel tcfchan#13.
+22:45:12 INFO  : Hardware specification for platform project 'mb_usb_hdmi_top' is updated.
+22:45:20 INFO  : Result from executing command 'getProjects': mb_usb_hdmi_top
+22:45:20 INFO  : Result from executing command 'getPlatforms': mb_usb_hdmi_top|C:/Users/Yuqi/KOF-94/lab6_1/workspace4/mb_usb_hdmi_top/export/mb_usb_hdmi_top/mb_usb_hdmi_top.xpfm
+22:45:20 INFO  : Checking for BSP changes to sync application flags for project 'keyboard'...
+22:45:21 INFO  : The hardware specification used by project 'keyboard' is out of sync with the platform. Resource files extracted from the hardware specification will be updated.
+22:45:21 INFO  : The file 'C:\Users\Yuqi\KOF-94\lab6_1\workspace4\keyboard\_ide\bitstream\mb_usb_hdmi_top.bit' stored in project is removed.
+22:45:21 INFO  : The file 'C:\Users\Yuqi\KOF-94\lab6_1\workspace4\keyboard\_ide\bitstream\mb_usb_hdmi_top.mmi' stored in project is removed.
+22:45:21 INFO  : The updated bitstream files are copied from platform to folder 'C:\Users\Yuqi\KOF-94\lab6_1\workspace4\keyboard\_ide\bitstream' in project 'keyboard'.
+22:45:40 INFO  : Connected to target on host '127.0.0.1' and port '3121'.
+22:45:40 INFO  : Jtag cable 'RealDigital Boo 8874292302C1A' is selected.
+22:45:40 INFO  : 'jtag frequency' command is executed.
+22:45:40 INFO  : 'targets -set -filter {jtag_cable_name =~ "RealDigital Boo 8874292302C1A" && level==0 && jtag_device_ctx=="jsn1-0362f093-0"}' command is executed.
+22:45:42 INFO  : Device configured successfully with "C:/Users/Yuqi/KOF-94/lab6_1/workspace4/keyboard/_ide/bitstream/mb_usb_hdmi_top.bit"
+22:45:42 INFO  : Context for processor 'microblaze_0' is selected.
+22:45:42 INFO  : Hardware design and registers information is loaded from 'C:/Users/Yuqi/KOF-94/lab6_1/workspace4/mb_usb_hdmi_top/export/mb_usb_hdmi_top/hw/mb_usb_hdmi_top.xsa'.
+22:45:42 INFO  : 'configparams mdm-detect-bscan-mask 2' command is executed.
+22:45:42 INFO  : Context for processor 'microblaze_0' is selected.
+22:45:42 INFO  : System reset is completed.
+22:45:45 INFO  : 'after 3000' command is executed.
+22:45:45 INFO  : Context for processor 'microblaze_0' is selected.
+22:45:45 INFO  : The application 'C:/Users/Yuqi/KOF-94/lab6_1/workspace4/keyboard/Debug/keyboard.elf' is downloaded to processor 'microblaze_0'.
+22:45:45 INFO  : ----------------XSDB Script----------------
+connect -url tcp:127.0.0.1:3121
+targets -set -filter {jtag_cable_name =~ "RealDigital Boo 8874292302C1A" && level==0 && jtag_device_ctx=="jsn1-0362f093-0"}
+fpga -file C:/Users/Yuqi/KOF-94/lab6_1/workspace4/keyboard/_ide/bitstream/mb_usb_hdmi_top.bit
+targets -set -nocase -filter {name =~ "*microblaze*#0" && bscan=="USER2" }
+loadhw -hw C:/Users/Yuqi/KOF-94/lab6_1/workspace4/mb_usb_hdmi_top/export/mb_usb_hdmi_top/hw/mb_usb_hdmi_top.xsa -regs
+configparams mdm-detect-bscan-mask 2
+targets -set -nocase -filter {name =~ "*microblaze*#0" && bscan=="USER2" }
+rst -system
+after 3000
+targets -set -nocase -filter {name =~ "*microblaze*#0" && bscan=="USER2" }
+dow C:/Users/Yuqi/KOF-94/lab6_1/workspace4/keyboard/Debug/keyboard.elf
+----------------End of Script----------------
+
+22:45:45 INFO  : Context for processor 'microblaze_0' is selected.
+22:45:45 INFO  : 'con' command is executed.
+22:45:45 INFO  : ----------------XSDB Script (After Launch)----------------
+targets -set -nocase -filter {name =~ "*microblaze*#0" && bscan=="USER2" }
+con
+----------------End of Script----------------
+
+22:45:45 INFO  : Disconnected from the channel tcfchan#15.
+23:34:45 INFO  : Hardware specification for platform project 'mb_usb_hdmi_top' is updated.
+23:34:51 INFO  : Result from executing command 'getProjects': mb_usb_hdmi_top
+23:34:51 INFO  : Result from executing command 'getPlatforms': mb_usb_hdmi_top|C:/Users/Yuqi/KOF-94/lab6_1/workspace4/mb_usb_hdmi_top/export/mb_usb_hdmi_top/mb_usb_hdmi_top.xpfm
+23:34:51 INFO  : Checking for BSP changes to sync application flags for project 'keyboard'...
+23:34:52 INFO  : The hardware specification used by project 'keyboard' is out of sync with the platform. Resource files extracted from the hardware specification will be updated.
+23:34:52 INFO  : The file 'C:\Users\Yuqi\KOF-94\lab6_1\workspace4\keyboard\_ide\bitstream\mb_usb_hdmi_top.bit' stored in project is removed.
+23:34:52 INFO  : The file 'C:\Users\Yuqi\KOF-94\lab6_1\workspace4\keyboard\_ide\bitstream\mb_usb_hdmi_top.mmi' stored in project is removed.
+23:34:52 INFO  : The updated bitstream files are copied from platform to folder 'C:\Users\Yuqi\KOF-94\lab6_1\workspace4\keyboard\_ide\bitstream' in project 'keyboard'.
+23:35:09 INFO  : Connected to target on host '127.0.0.1' and port '3121'.
+23:35:10 INFO  : Jtag cable 'RealDigital Boo 8874292302C1A' is selected.
+23:35:10 INFO  : 'jtag frequency' command is executed.
+23:35:10 INFO  : 'targets -set -filter {jtag_cable_name =~ "RealDigital Boo 8874292302C1A" && level==0 && jtag_device_ctx=="jsn1-0362f093-0"}' command is executed.
+23:35:11 INFO  : Device configured successfully with "C:/Users/Yuqi/KOF-94/lab6_1/workspace4/keyboard/_ide/bitstream/mb_usb_hdmi_top.bit"
+23:35:11 INFO  : Context for processor 'microblaze_0' is selected.
+23:35:11 INFO  : Hardware design and registers information is loaded from 'C:/Users/Yuqi/KOF-94/lab6_1/workspace4/mb_usb_hdmi_top/export/mb_usb_hdmi_top/hw/mb_usb_hdmi_top.xsa'.
+23:35:11 INFO  : 'configparams mdm-detect-bscan-mask 2' command is executed.
+23:35:11 INFO  : Context for processor 'microblaze_0' is selected.
+23:35:11 INFO  : System reset is completed.
+23:35:14 INFO  : 'after 3000' command is executed.
+23:35:14 INFO  : Context for processor 'microblaze_0' is selected.
+23:35:14 INFO  : The application 'C:/Users/Yuqi/KOF-94/lab6_1/workspace4/keyboard/Debug/keyboard.elf' is downloaded to processor 'microblaze_0'.
+23:35:14 INFO  : ----------------XSDB Script----------------
+connect -url tcp:127.0.0.1:3121
+targets -set -filter {jtag_cable_name =~ "RealDigital Boo 8874292302C1A" && level==0 && jtag_device_ctx=="jsn1-0362f093-0"}
+fpga -file C:/Users/Yuqi/KOF-94/lab6_1/workspace4/keyboard/_ide/bitstream/mb_usb_hdmi_top.bit
+targets -set -nocase -filter {name =~ "*microblaze*#0" && bscan=="USER2" }
+loadhw -hw C:/Users/Yuqi/KOF-94/lab6_1/workspace4/mb_usb_hdmi_top/export/mb_usb_hdmi_top/hw/mb_usb_hdmi_top.xsa -regs
+configparams mdm-detect-bscan-mask 2
+targets -set -nocase -filter {name =~ "*microblaze*#0" && bscan=="USER2" }
+rst -system
+after 3000
+targets -set -nocase -filter {name =~ "*microblaze*#0" && bscan=="USER2" }
+dow C:/Users/Yuqi/KOF-94/lab6_1/workspace4/keyboard/Debug/keyboard.elf
+----------------End of Script----------------
+
+23:35:14 INFO  : Context for processor 'microblaze_0' is selected.
+23:35:14 INFO  : 'con' command is executed.
+23:35:14 INFO  : ----------------XSDB Script (After Launch)----------------
+targets -set -nocase -filter {name =~ "*microblaze*#0" && bscan=="USER2" }
+con
+----------------End of Script----------------
+
+23:35:14 INFO  : Disconnected from the channel tcfchan#17.
+00:00:18 INFO  : Hardware specification for platform project 'mb_usb_hdmi_top' is updated.
+00:00:24 INFO  : Result from executing command 'getProjects': mb_usb_hdmi_top
+00:00:24 INFO  : Result from executing command 'getPlatforms': mb_usb_hdmi_top|C:/Users/Yuqi/KOF-94/lab6_1/workspace4/mb_usb_hdmi_top/export/mb_usb_hdmi_top/mb_usb_hdmi_top.xpfm
+00:00:24 INFO  : Checking for BSP changes to sync application flags for project 'keyboard'...
+00:00:25 INFO  : The hardware specification used by project 'keyboard' is out of sync with the platform. Resource files extracted from the hardware specification will be updated.
+00:00:25 INFO  : The file 'C:\Users\Yuqi\KOF-94\lab6_1\workspace4\keyboard\_ide\bitstream\mb_usb_hdmi_top.bit' stored in project is removed.
+00:00:25 INFO  : The file 'C:\Users\Yuqi\KOF-94\lab6_1\workspace4\keyboard\_ide\bitstream\mb_usb_hdmi_top.mmi' stored in project is removed.
+00:00:25 INFO  : The updated bitstream files are copied from platform to folder 'C:\Users\Yuqi\KOF-94\lab6_1\workspace4\keyboard\_ide\bitstream' in project 'keyboard'.
+00:00:29 INFO  : Connected to target on host '127.0.0.1' and port '3121'.
+00:00:29 INFO  : Jtag cable 'RealDigital Boo 8874292302C1A' is selected.
+00:00:29 INFO  : 'jtag frequency' command is executed.
+00:00:29 INFO  : 'targets -set -filter {jtag_cable_name =~ "RealDigital Boo 8874292302C1A" && level==0 && jtag_device_ctx=="jsn1-0362f093-0"}' command is executed.
+00:00:31 INFO  : Device configured successfully with "C:/Users/Yuqi/KOF-94/lab6_1/workspace4/keyboard/_ide/bitstream/mb_usb_hdmi_top.bit"
+00:00:31 INFO  : Context for processor 'microblaze_0' is selected.
+00:00:31 INFO  : Hardware design and registers information is loaded from 'C:/Users/Yuqi/KOF-94/lab6_1/workspace4/mb_usb_hdmi_top/export/mb_usb_hdmi_top/hw/mb_usb_hdmi_top.xsa'.
+00:00:31 INFO  : 'configparams mdm-detect-bscan-mask 2' command is executed.
+00:00:31 INFO  : Context for processor 'microblaze_0' is selected.
+00:00:31 INFO  : System reset is completed.
+00:00:34 INFO  : 'after 3000' command is executed.
+00:00:34 INFO  : Context for processor 'microblaze_0' is selected.
+00:00:34 INFO  : The application 'C:/Users/Yuqi/KOF-94/lab6_1/workspace4/keyboard/Debug/keyboard.elf' is downloaded to processor 'microblaze_0'.
+00:00:34 INFO  : ----------------XSDB Script----------------
+connect -url tcp:127.0.0.1:3121
+targets -set -filter {jtag_cable_name =~ "RealDigital Boo 8874292302C1A" && level==0 && jtag_device_ctx=="jsn1-0362f093-0"}
+fpga -file C:/Users/Yuqi/KOF-94/lab6_1/workspace4/keyboard/_ide/bitstream/mb_usb_hdmi_top.bit
+targets -set -nocase -filter {name =~ "*microblaze*#0" && bscan=="USER2" }
+loadhw -hw C:/Users/Yuqi/KOF-94/lab6_1/workspace4/mb_usb_hdmi_top/export/mb_usb_hdmi_top/hw/mb_usb_hdmi_top.xsa -regs
+configparams mdm-detect-bscan-mask 2
+targets -set -nocase -filter {name =~ "*microblaze*#0" && bscan=="USER2" }
+rst -system
+after 3000
+targets -set -nocase -filter {name =~ "*microblaze*#0" && bscan=="USER2" }
+dow C:/Users/Yuqi/KOF-94/lab6_1/workspace4/keyboard/Debug/keyboard.elf
+----------------End of Script----------------
+
+00:00:34 INFO  : Context for processor 'microblaze_0' is selected.
+00:00:34 INFO  : 'con' command is executed.
+00:00:34 INFO  : ----------------XSDB Script (After Launch)----------------
+targets -set -nocase -filter {name =~ "*microblaze*#0" && bscan=="USER2" }
+con
+----------------End of Script----------------
+
+00:00:34 INFO  : Disconnected from the channel tcfchan#19.
+00:53:39 INFO  : Hardware specification for platform project 'mb_usb_hdmi_top' is updated.
+00:53:47 INFO  : Result from executing command 'getProjects': mb_usb_hdmi_top
+00:53:47 INFO  : Result from executing command 'getPlatforms': mb_usb_hdmi_top|C:/Users/Yuqi/KOF-94/lab6_1/workspace4/mb_usb_hdmi_top/export/mb_usb_hdmi_top/mb_usb_hdmi_top.xpfm
+00:53:47 INFO  : Checking for BSP changes to sync application flags for project 'keyboard'...
+00:53:48 INFO  : The hardware specification used by project 'keyboard' is out of sync with the platform. Resource files extracted from the hardware specification will be updated.
+00:53:48 INFO  : The file 'C:\Users\Yuqi\KOF-94\lab6_1\workspace4\keyboard\_ide\bitstream\mb_usb_hdmi_top.bit' stored in project is removed.
+00:53:48 INFO  : The file 'C:\Users\Yuqi\KOF-94\lab6_1\workspace4\keyboard\_ide\bitstream\mb_usb_hdmi_top.mmi' stored in project is removed.
+00:53:48 INFO  : The updated bitstream files are copied from platform to folder 'C:\Users\Yuqi\KOF-94\lab6_1\workspace4\keyboard\_ide\bitstream' in project 'keyboard'.
+00:53:57 INFO  : Connected to target on host '127.0.0.1' and port '3121'.
+00:53:57 INFO  : Jtag cable 'RealDigital Boo 8874292302C1A' is selected.
+00:53:57 INFO  : 'jtag frequency' command is executed.
+00:53:57 INFO  : 'targets -set -filter {jtag_cable_name =~ "RealDigital Boo 8874292302C1A" && level==0 && jtag_device_ctx=="jsn1-0362f093-0"}' command is executed.
+00:53:58 INFO  : Device configured successfully with "C:/Users/Yuqi/KOF-94/lab6_1/workspace4/keyboard/_ide/bitstream/mb_usb_hdmi_top.bit"
+00:53:58 INFO  : Context for processor 'microblaze_0' is selected.
+00:53:58 INFO  : Hardware design and registers information is loaded from 'C:/Users/Yuqi/KOF-94/lab6_1/workspace4/mb_usb_hdmi_top/export/mb_usb_hdmi_top/hw/mb_usb_hdmi_top.xsa'.
+00:53:58 INFO  : 'configparams mdm-detect-bscan-mask 2' command is executed.
+00:53:58 INFO  : Context for processor 'microblaze_0' is selected.
+00:53:58 INFO  : System reset is completed.
+00:54:01 INFO  : 'after 3000' command is executed.
+00:54:01 INFO  : Context for processor 'microblaze_0' is selected.
+00:54:02 INFO  : The application 'C:/Users/Yuqi/KOF-94/lab6_1/workspace4/keyboard/Debug/keyboard.elf' is downloaded to processor 'microblaze_0'.
+00:54:02 INFO  : ----------------XSDB Script----------------
+connect -url tcp:127.0.0.1:3121
+targets -set -filter {jtag_cable_name =~ "RealDigital Boo 8874292302C1A" && level==0 && jtag_device_ctx=="jsn1-0362f093-0"}
+fpga -file C:/Users/Yuqi/KOF-94/lab6_1/workspace4/keyboard/_ide/bitstream/mb_usb_hdmi_top.bit
+targets -set -nocase -filter {name =~ "*microblaze*#0" && bscan=="USER2" }
+loadhw -hw C:/Users/Yuqi/KOF-94/lab6_1/workspace4/mb_usb_hdmi_top/export/mb_usb_hdmi_top/hw/mb_usb_hdmi_top.xsa -regs
+configparams mdm-detect-bscan-mask 2
+targets -set -nocase -filter {name =~ "*microblaze*#0" && bscan=="USER2" }
+rst -system
+after 3000
+targets -set -nocase -filter {name =~ "*microblaze*#0" && bscan=="USER2" }
+dow C:/Users/Yuqi/KOF-94/lab6_1/workspace4/keyboard/Debug/keyboard.elf
+----------------End of Script----------------
+
+00:54:02 INFO  : Context for processor 'microblaze_0' is selected.
+00:54:02 INFO  : 'con' command is executed.
+00:54:02 INFO  : ----------------XSDB Script (After Launch)----------------
+targets -set -nocase -filter {name =~ "*microblaze*#0" && bscan=="USER2" }
+con
+----------------End of Script----------------
+
+00:54:02 INFO  : Disconnected from the channel tcfchan#21.
+00:59:05 INFO  : Hardware specification for platform project 'mb_usb_hdmi_top' is updated.
+00:59:16 INFO  : Result from executing command 'getProjects': mb_usb_hdmi_top
+00:59:16 INFO  : Result from executing command 'getPlatforms': mb_usb_hdmi_top|C:/Users/Yuqi/KOF-94/lab6_1/workspace4/mb_usb_hdmi_top/export/mb_usb_hdmi_top/mb_usb_hdmi_top.xpfm
+00:59:16 INFO  : Checking for BSP changes to sync application flags for project 'keyboard'...
+00:59:17 INFO  : The hardware specification used by project 'keyboard' is out of sync with the platform. Resource files extracted from the hardware specification will be updated.
+00:59:17 INFO  : The file 'C:\Users\Yuqi\KOF-94\lab6_1\workspace4\keyboard\_ide\bitstream\mb_usb_hdmi_top.bit' stored in project is removed.
+00:59:17 INFO  : The file 'C:\Users\Yuqi\KOF-94\lab6_1\workspace4\keyboard\_ide\bitstream\mb_usb_hdmi_top.mmi' stored in project is removed.
+00:59:17 INFO  : The updated bitstream files are copied from platform to folder 'C:\Users\Yuqi\KOF-94\lab6_1\workspace4\keyboard\_ide\bitstream' in project 'keyboard'.
+00:59:27 INFO  : Connected to target on host '127.0.0.1' and port '3121'.
+00:59:27 INFO  : Jtag cable 'RealDigital Boo 8874292302C1A' is selected.
+00:59:27 INFO  : 'jtag frequency' command is executed.
+00:59:27 INFO  : 'targets -set -filter {jtag_cable_name =~ "RealDigital Boo 8874292302C1A" && level==0 && jtag_device_ctx=="jsn1-0362f093-0"}' command is executed.
+00:59:29 INFO  : Device configured successfully with "C:/Users/Yuqi/KOF-94/lab6_1/workspace4/keyboard/_ide/bitstream/mb_usb_hdmi_top.bit"
+00:59:29 INFO  : Context for processor 'microblaze_0' is selected.
+00:59:29 INFO  : Hardware design and registers information is loaded from 'C:/Users/Yuqi/KOF-94/lab6_1/workspace4/mb_usb_hdmi_top/export/mb_usb_hdmi_top/hw/mb_usb_hdmi_top.xsa'.
+00:59:29 INFO  : 'configparams mdm-detect-bscan-mask 2' command is executed.
+00:59:29 INFO  : Context for processor 'microblaze_0' is selected.
+00:59:29 INFO  : System reset is completed.
+00:59:32 INFO  : 'after 3000' command is executed.
+00:59:32 INFO  : Context for processor 'microblaze_0' is selected.
+00:59:32 INFO  : The application 'C:/Users/Yuqi/KOF-94/lab6_1/workspace4/keyboard/Debug/keyboard.elf' is downloaded to processor 'microblaze_0'.
+00:59:32 INFO  : ----------------XSDB Script----------------
+connect -url tcp:127.0.0.1:3121
+targets -set -filter {jtag_cable_name =~ "RealDigital Boo 8874292302C1A" && level==0 && jtag_device_ctx=="jsn1-0362f093-0"}
+fpga -file C:/Users/Yuqi/KOF-94/lab6_1/workspace4/keyboard/_ide/bitstream/mb_usb_hdmi_top.bit
+targets -set -nocase -filter {name =~ "*microblaze*#0" && bscan=="USER2" }
+loadhw -hw C:/Users/Yuqi/KOF-94/lab6_1/workspace4/mb_usb_hdmi_top/export/mb_usb_hdmi_top/hw/mb_usb_hdmi_top.xsa -regs
+configparams mdm-detect-bscan-mask 2
+targets -set -nocase -filter {name =~ "*microblaze*#0" && bscan=="USER2" }
+rst -system
+after 3000
+targets -set -nocase -filter {name =~ "*microblaze*#0" && bscan=="USER2" }
+dow C:/Users/Yuqi/KOF-94/lab6_1/workspace4/keyboard/Debug/keyboard.elf
+----------------End of Script----------------
+
+00:59:32 INFO  : Context for processor 'microblaze_0' is selected.
+00:59:32 INFO  : 'con' command is executed.
+00:59:32 INFO  : ----------------XSDB Script (After Launch)----------------
+targets -set -nocase -filter {name =~ "*microblaze*#0" && bscan=="USER2" }
+con
+----------------End of Script----------------
+
+00:59:32 INFO  : Disconnected from the channel tcfchan#23.
+01:11:50 INFO  : Hardware specification for platform project 'mb_usb_hdmi_top' is updated.
+01:11:56 INFO  : Result from executing command 'getProjects': mb_usb_hdmi_top
+01:11:56 INFO  : Result from executing command 'getPlatforms': mb_usb_hdmi_top|C:/Users/Yuqi/KOF-94/lab6_1/workspace4/mb_usb_hdmi_top/export/mb_usb_hdmi_top/mb_usb_hdmi_top.xpfm
+01:11:56 INFO  : Checking for BSP changes to sync application flags for project 'keyboard'...
+01:11:57 INFO  : The hardware specification used by project 'keyboard' is out of sync with the platform. Resource files extracted from the hardware specification will be updated.
+01:11:57 INFO  : The file 'C:\Users\Yuqi\KOF-94\lab6_1\workspace4\keyboard\_ide\bitstream\mb_usb_hdmi_top.bit' stored in project is removed.
+01:11:57 INFO  : The file 'C:\Users\Yuqi\KOF-94\lab6_1\workspace4\keyboard\_ide\bitstream\mb_usb_hdmi_top.mmi' stored in project is removed.
+01:11:57 INFO  : The updated bitstream files are copied from platform to folder 'C:\Users\Yuqi\KOF-94\lab6_1\workspace4\keyboard\_ide\bitstream' in project 'keyboard'.
+01:12:02 INFO  : Connected to target on host '127.0.0.1' and port '3121'.
+01:12:03 INFO  : Jtag cable 'RealDigital Boo 8874292302C1A' is selected.
+01:12:03 INFO  : 'jtag frequency' command is executed.
+01:12:03 INFO  : 'targets -set -filter {jtag_cable_name =~ "RealDigital Boo 8874292302C1A" && level==0 && jtag_device_ctx=="jsn1-0362f093-0"}' command is executed.
+01:12:04 INFO  : Device configured successfully with "C:/Users/Yuqi/KOF-94/lab6_1/workspace4/keyboard/_ide/bitstream/mb_usb_hdmi_top.bit"
+01:12:04 INFO  : Context for processor 'microblaze_0' is selected.
+01:12:04 INFO  : Hardware design and registers information is loaded from 'C:/Users/Yuqi/KOF-94/lab6_1/workspace4/mb_usb_hdmi_top/export/mb_usb_hdmi_top/hw/mb_usb_hdmi_top.xsa'.
+01:12:04 INFO  : 'configparams mdm-detect-bscan-mask 2' command is executed.
+01:12:04 INFO  : Context for processor 'microblaze_0' is selected.
+01:12:04 INFO  : System reset is completed.
+01:12:07 INFO  : 'after 3000' command is executed.
+01:12:07 INFO  : Context for processor 'microblaze_0' is selected.
+01:12:07 INFO  : The application 'C:/Users/Yuqi/KOF-94/lab6_1/workspace4/keyboard/Debug/keyboard.elf' is downloaded to processor 'microblaze_0'.
+01:12:07 INFO  : ----------------XSDB Script----------------
+connect -url tcp:127.0.0.1:3121
+targets -set -filter {jtag_cable_name =~ "RealDigital Boo 8874292302C1A" && level==0 && jtag_device_ctx=="jsn1-0362f093-0"}
+fpga -file C:/Users/Yuqi/KOF-94/lab6_1/workspace4/keyboard/_ide/bitstream/mb_usb_hdmi_top.bit
+targets -set -nocase -filter {name =~ "*microblaze*#0" && bscan=="USER2" }
+loadhw -hw C:/Users/Yuqi/KOF-94/lab6_1/workspace4/mb_usb_hdmi_top/export/mb_usb_hdmi_top/hw/mb_usb_hdmi_top.xsa -regs
+configparams mdm-detect-bscan-mask 2
+targets -set -nocase -filter {name =~ "*microblaze*#0" && bscan=="USER2" }
+rst -system
+after 3000
+targets -set -nocase -filter {name =~ "*microblaze*#0" && bscan=="USER2" }
+dow C:/Users/Yuqi/KOF-94/lab6_1/workspace4/keyboard/Debug/keyboard.elf
+----------------End of Script----------------
+
+01:12:07 INFO  : Context for processor 'microblaze_0' is selected.
+01:12:07 INFO  : 'con' command is executed.
+01:12:07 INFO  : ----------------XSDB Script (After Launch)----------------
+targets -set -nocase -filter {name =~ "*microblaze*#0" && bscan=="USER2" }
+con
+----------------End of Script----------------
+
+01:12:07 INFO  : Disconnected from the channel tcfchan#25.
