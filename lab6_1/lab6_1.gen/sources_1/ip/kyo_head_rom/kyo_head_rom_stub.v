@@ -3,8 +3,8 @@
 // Tool Version: Vivado v.2022.2 (win64) Build 3671981 Fri Oct 14 05:00:03 MDT 2022
 // Date        : Mon Dec  4 00:35:29 2023
 // Host        : DESKTOP-D8Q9UV3 running 64-bit major release  (build 9200)
-// Command     : write_verilog -force -mode synth_stub
-//               c:/Users/Yuqi/KOF-94/lab6_1/lab6_1.gen/sources_1/ip/kyo_head_rom/kyo_head_rom_stub.v
+// Command     : write_verilog -force -mode synth_stub -rename_top kyo_head_rom -prefix
+//               kyo_head_rom_ kyo_head_rom_stub.v
 // Design      : kyo_head_rom
 // Purpose     : Stub declaration of top-level module interface
 // Device      : xc7s50csga324-1

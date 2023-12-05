@@ -23,6 +23,7 @@
 module char_mai(
         input logic Reset, frame_clk,stop,stop1,
         input logic [7:0] keycode1,keycode2,keycode3,keycode4,keycode5,keycode6,
+        input logic char1_punch_act,char1_kick_act,char2_punch_act,char2_kick_act,
         output logic [12:0]  char1X, char1Y,char2X, char2Y,backX,
         output logic forward_1,back_1,punch_1,squat_1,kick_1,jump_1,forward_2,back_2,punch_2,squat_2,kick_2,jump_2
     );
@@ -31,6 +32,7 @@ module char_mai(
     logic signed [12:0] char1_X_Motion, char1_Y_Motion,char2_X_Motion, char2_Y_Motion,back_Motion;
 //    logic signed [12:0]tempX;
     logic c1_for,c1_bac,c1_squ,c1_jmp,c1_pun,c1_kic,c2_for,c2_bac,c2_squ,c2_jmp,c2_pun,c2_kic;
+    logic char1_punch_debounce,char1_kick_debounce,char2_punch_debounce,char2_kick_debounce;
     parameter [12:0] char1_X_start=192+70;  // Center position on the X axis
     parameter [12:0] char1_Y_start=250;  // Center position on the Y axis
     parameter [12:0] char2_X_start=192+640-70-160;  // Center position on the X axis
@@ -63,9 +65,13 @@ module char_mai(
         c2_jmp=0;
         c2_pun=0;
         c2_kic=0;
-        if(keycode1==8'h0E||keycode2==8'h0E||keycode3==8'h0E||keycode4==8'h0E||keycode5==8'h0E||keycode6==8'h0E)
+        if(char1_punch_act)
             c1_pun=1;
-        else if(keycode1==8'h0D||keycode2==8'h0D||keycode3==8'h0D||keycode4==8'h0D||keycode5==8'h0D||keycode6==8'h0D)
+        else if(char1_kick_act)
+            c1_kic=1;
+        else if(~char1_punch_debounce&&(keycode1==8'h0E||keycode2==8'h0E||keycode3==8'h0E||keycode4==8'h0E||keycode5==8'h0E||keycode6==8'h0E))
+            c1_pun=1;
+        else if(~char1_kick_debounce&&(keycode1==8'h0D||keycode2==8'h0D||keycode3==8'h0D||keycode4==8'h0D||keycode5==8'h0D||keycode6==8'h0D))
             c1_kic=1;
         else if(keycode1==8'h16||keycode2==8'h16||keycode3==8'h16||keycode4==8'h16||keycode5==8'h16||keycode6==8'h16)
             c1_squ=1;
@@ -84,9 +90,13 @@ module char_mai(
             c1_kic=0;
         end
             
-        if(keycode1==8'h5A||keycode2==8'h5A||keycode3==8'h5A||keycode4==8'h5A||keycode5==8'h5A||keycode6==8'h5A)
+        if(char2_punch_act)
             c2_pun=1;
-        else if(keycode1==8'h59||keycode2==8'h59||keycode3==8'h59||keycode4==8'h59||keycode5==8'h59||keycode6==8'h59)
+        else if(char2_kick_act)
+            c2_kic=1;
+        else if(~char2_punch_debounce&&(keycode1==8'h5A||keycode2==8'h5A||keycode3==8'h5A||keycode4==8'h5A||keycode5==8'h5A||keycode6==8'h5A))
+            c2_pun=1;
+        else if(~char2_kick_debounce&&(keycode1==8'h59||keycode2==8'h59||keycode3==8'h59||keycode4==8'h59||keycode5==8'h59||keycode6==8'h59))
             c2_kic=1;
         else if(keycode1==8'h51||keycode2==8'h51||keycode3==8'h51||keycode4==8'h51||keycode5==8'h51||keycode6==8'h51)
             c2_squ=1;
@@ -130,10 +140,22 @@ module char_mai(
              squat_2<=1'b0;
              kick_2<=1'b0;
              jump_2<=1'b0;
+             char1_punch_debounce<=0;
+             char1_kick_debounce<=0;
+             char2_punch_debounce<=0;
+             char2_kick_debounce<=0;
         end
            
         else 
-        begin       
+        begin    
+                 if(~(keycode1==8'h0E||keycode2==8'h0E||keycode3==8'h0E||keycode4==8'h0E||keycode5==8'h0E||keycode6==8'h0E)&&char1_punch_debounce)char1_punch_debounce<=0;
+                 if(~(keycode1==8'h0D||keycode2==8'h0D||keycode3==8'h0D||keycode4==8'h0D||keycode5==8'h0D||keycode6==8'h0D)&&char1_kick_debounce)char1_kick_debounce<=0;
+                 if(~(keycode1==8'h5A||keycode2==8'h5A||keycode3==8'h5A||keycode4==8'h5A||keycode5==8'h5A||keycode6==8'h5A)&&char2_punch_debounce)char2_punch_debounce<=0;
+                 if(~(keycode1==8'h59||keycode2==8'h59||keycode3==8'h59||keycode4==8'h59||keycode5==8'h59||keycode6==8'h59)&&char2_kick_debounce)char2_kick_debounce<=0;
+                 if((keycode1==8'h0E||keycode2==8'h0E||keycode3==8'h0E||keycode4==8'h0E||keycode5==8'h0E||keycode6==8'h0E)&&~char1_punch_debounce)char1_punch_debounce<=1;
+                 if((keycode1==8'h0D||keycode2==8'h0D||keycode3==8'h0D||keycode4==8'h0D||keycode5==8'h0D||keycode6==8'h0D)&&~char1_kick_debounce)char1_kick_debounce<=1;
+                 if((keycode1==8'h5A||keycode2==8'h5A||keycode3==8'h5A||keycode4==8'h5A||keycode5==8'h5A||keycode6==8'h5A)&&~char2_punch_debounce)char2_punch_debounce<=1;
+                 if((keycode1==8'h59||keycode2==8'h59||keycode3==8'h59||keycode4==8'h59||keycode5==8'h59||keycode6==8'h59)&&~char2_kick_debounce)char2_kick_debounce<=1;
                  if(stop||stop1)begin
                      char1_X_Motion <= 10'd0;
                      char1_Y_Motion <= 10'd0;
@@ -216,7 +238,7 @@ module char_mai(
                      jump_1<=1'b0;
                  end
                  
-                 if(stop)begin
+                 if(stop||stop1)begin
                      char2_X_Motion <= 10'd0;
                      char2_Y_Motion <= 10'd0;
                      forward_2<=1'b0;

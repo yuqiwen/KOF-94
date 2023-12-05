@@ -53,7 +53,7 @@ module mb_usb_hdmi_top(
     logic [31:0] keycode0_gpio, keycode1_gpio;
     logic clk_25MHz, clk_125MHz, clk, clk_100MHz;
     logic locked,forward_1,back_1,punch_1,squat_1,kick_1,jump_1,forward_2,back_2,punch_2,squat_2,kick_2,jump_2;
-    
+    logic char1_punch_act,char1_kick_act,char2_punch_act,char2_kick_act;
     logic stop,stop1;
     logic [5:0] seconds;
     

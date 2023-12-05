@@ -4,7 +4,7 @@
 
 set TIME_start [clock seconds] 
 namespace eval ::optrace {
-  variable script "C:/Users/Yuqi/KOF-94/lab6_1/lab6_1.runs/synth_1/mb_usb_hdmi_top.tcl"
+  variable script "C:/Users/yunxuan5/KOF-94/lab6_1/lab6_1.runs/synth_1/mb_usb_hdmi_top.tcl"
   variable category "vivado_synth"
 }
 
@@ -70,7 +70,8 @@ proc create_report { reportName command } {
   }
 }
 OPTRACE "synth_1" START { ROLLUP_AUTO }
-set_param chipscope.maxJobs 6
+set_param chipscope.maxJobs 3
+set_param xicom.use_bs_reader 1
 OPTRACE "Creating in-memory project" START { }
 create_project -in_memory -part xc7s50csga324-1
 
@@ -78,173 +79,178 @@ set_param project.singleFileAddWarning.threshold 0
 set_param project.compositeFile.enableAutoGeneration 0
 set_param synth.vivado.isSynthRun true
 set_msg_config -source 4 -id {IP_Flow 19-2162} -severity warning -new_severity info
-set_property webtalk.parent_dir C:/Users/Yuqi/KOF-94/lab6_1/lab6_1.cache/wt [current_project]
-set_property parent.project_path C:/Users/Yuqi/KOF-94/lab6_1/lab6_1.xpr [current_project]
+set_property webtalk.parent_dir C:/Users/yunxuan5/KOF-94/lab6_1/lab6_1.cache/wt [current_project]
+set_property parent.project_path C:/Users/yunxuan5/KOF-94/lab6_1/lab6_1.xpr [current_project]
 set_property XPM_LIBRARIES {XPM_CDC XPM_FIFO XPM_MEMORY} [current_project]
 set_property default_lib xil_defaultlib [current_project]
 set_property target_language Verilog [current_project]
-set_property ip_repo_paths c:/Users/Yuqi/KOF-94/lab6_1/hdmi_tx_1.0 [current_project]
+set_property ip_repo_paths c:/Users/yunxuan5/KOF-94/lab6_1/hdmi_tx_1.0 [current_project]
 update_ip_catalog
-set_property ip_output_repo c:/Users/Yuqi/KOF-94/lab6_1/lab6_1.cache/ip [current_project]
+set_property ip_output_repo c:/Users/yunxuan5/KOF-94/lab6_1/lab6_1.cache/ip [current_project]
 set_property ip_cache_permissions {read write} [current_project]
 OPTRACE "Creating in-memory project" END { }
 OPTRACE "Adding files" START { }
-add_files C:/Users/Yuqi/KOF-94/lab6_1/scene/scene.COE
-add_files C:/Users/Yuqi/KOF-94/lab6_1/mai_stand/mai_stand.COE
-add_files C:/Users/Yuqi/KOF-94/lab6_1/mai_forward/mai_forward.COE
-add_files C:/Users/Yuqi/KOF-94/lab6_1/mai_back/mai_back.COE
-add_files C:/Users/Yuqi/KOF-94/lab6_1/mai_punch/mai_punch.COE
-add_files C:/Users/Yuqi/KOF-94/lab6_1/mai_squat/mai_squat.COE
-add_files C:/Users/Yuqi/KOF-94/lab6_1/mai_kick/mai_kick.COE
-add_files C:/Users/Yuqi/KOF-94/lab6_1/kyo_stand/kyo_stand.COE
-add_files C:/Users/Yuqi/KOF-94/lab6_1/scene1/scene1.COE
-add_files C:/Users/Yuqi/KOF-94/lab6_1/bg1/bg1.COE
-add_files C:/Users/Yuqi/KOF-94/lab6_1/bg2/bg2.COE
-add_files C:/Users/Yuqi/KOF-94/lab6_1/bg3/bg3.COE
-add_files C:/Users/Yuqi/KOF-94/lab6_1/kyo_forward/kyo_forward.COE
-add_files C:/Users/Yuqi/KOF-94/lab6_1/kyo_punch/kyo_punch.COE
-add_files C:/Users/Yuqi/KOF-94/lab6_1/kyo_squat/kyo_squat.COE
-add_files C:/Users/Yuqi/KOF-94/lab6_1/kyo_kick/kyo_kick.COE
-add_files c:/Users/Yuqi/KOF-94/lab6_1/kyo_head/kyo_head.COE
-add_files c:/Users/Yuqi/KOF-94/lab6_1/mai_head/mai_head.COE
+add_files C:/Users/yunxuan5/KOF-94/lab6_1/scene/scene.COE
+add_files C:/Users/yunxuan5/KOF-94/lab6_1/mai_stand/mai_stand.COE
+add_files C:/Users/yunxuan5/KOF-94/lab6_1/mai_forward/mai_forward.COE
+add_files C:/Users/yunxuan5/KOF-94/lab6_1/mai_back/mai_back.COE
+add_files C:/Users/yunxuan5/KOF-94/lab6_1/mai_punch/mai_punch.COE
+add_files C:/Users/yunxuan5/KOF-94/lab6_1/mai_squat/mai_squat.COE
+add_files C:/Users/yunxuan5/KOF-94/lab6_1/mai_kick/mai_kick.COE
+add_files C:/Users/yunxuan5/KOF-94/lab6_1/kyo_stand/kyo_stand.COE
+add_files C:/Users/yunxuan5/KOF-94/lab6_1/scene1/scene1.COE
+add_files C:/Users/yunxuan5/KOF-94/lab6_1/bg1/bg1.COE
+add_files C:/Users/yunxuan5/KOF-94/lab6_1/bg2/bg2.COE
+add_files C:/Users/yunxuan5/KOF-94/lab6_1/bg3/bg3.COE
+add_files C:/Users/yunxuan5/KOF-94/lab6_1/kyo_forward/kyo_forward.COE
+add_files C:/Users/yunxuan5/KOF-94/lab6_1/kyo_punch/kyo_punch.COE
+add_files C:/Users/yunxuan5/KOF-94/lab6_1/kyo_squat/kyo_squat.COE
+add_files C:/Users/yunxuan5/KOF-94/lab6_1/kyo_kick/kyo_kick.COE
+add_files C:/Users/yunxuan5/KOF-94/lab6_1/kyo_head/kyo_head.COE
+add_files C:/Users/yunxuan5/KOF-94/lab6_1/mai_head/mai_head.COE
 read_verilog -library xil_defaultlib -sv {
-  C:/Users/Yuqi/KOF-94/lab6_1/lab6.2_provided/design_source/Color_Mapper.sv
-  C:/Users/Yuqi/KOF-94/lab6_1/lab6.2_provided/design_source/VGA_controller.sv
-  C:/Users/Yuqi/KOF-94/lab6_1/bg1/bg1.sv
-  C:/Users/Yuqi/KOF-94/lab6_1/bg1/bg1_palette.sv
-  C:/Users/Yuqi/KOF-94/lab6_1/bg2/bg2.sv
-  C:/Users/Yuqi/KOF-94/lab6_1/bg2/bg2_palette.sv
-  C:/Users/Yuqi/KOF-94/lab6_1/bg3/bg3.sv
-  C:/Users/Yuqi/KOF-94/lab6_1/bg3/bg3_palette.sv
-  C:/Users/Yuqi/KOF-94/lab6_1/lab6_1.srcs/sources_1/new/char1.sv
-  C:/Users/Yuqi/KOF-94/lab6_1/font_rom.sv
-  C:/Users/Yuqi/KOF-94/lab6_1/lab6.2_provided/design_source/hex.sv
-  C:/Users/Yuqi/KOF-94/lab6_1/lab6_1.srcs/sources_1/new/hp_sys.sv
-  C:/Users/Yuqi/KOF-94/lab6_1/kyo_forward/kyo_forward.sv
-  C:/Users/Yuqi/KOF-94/lab6_1/kyo_forward/kyo_forward_palette.sv
-  C:/Users/Yuqi/KOF-94/lab6_1/kyo_head/kyo_head.sv
-  C:/Users/Yuqi/KOF-94/lab6_1/kyo_head/kyo_head_palette.sv
-  C:/Users/Yuqi/KOF-94/lab6_1/kyo_punch/kyo_punch.sv
-  C:/Users/Yuqi/KOF-94/lab6_1/kyo_punch/kyo_punch_palette.sv
-  C:/Users/Yuqi/KOF-94/lab6_1/kyo_squat/kyo_squat.sv
-  C:/Users/Yuqi/KOF-94/lab6_1/kyo_squat/kyo_squat_palette.sv
-  C:/Users/Yuqi/KOF-94/lab6_1/kyo_stand/kyo_stand.sv
-  C:/Users/Yuqi/KOF-94/lab6_1/kyo_stand/kyo_stand_palette.sv
-  C:/Users/Yuqi/KOF-94/lab6_1/mai_back/mai_back.sv
-  C:/Users/Yuqi/KOF-94/lab6_1/mai_back/mai_back_palette.sv
-  C:/Users/Yuqi/KOF-94/lab6_1/mai_forward/mai_forward.sv
-  C:/Users/Yuqi/KOF-94/lab6_1/mai_forward/mai_forward_palette.sv
-  C:/Users/Yuqi/KOF-94/lab6_1/mai_head/mai_head.sv
-  C:/Users/Yuqi/KOF-94/lab6_1/mai_head/mai_head_palette.sv
-  C:/Users/Yuqi/KOF-94/lab6_1/mai_kick/mai_kick.sv
-  C:/Users/Yuqi/KOF-94/lab6_1/mai_kick/mai_kick_palette.sv
-  C:/Users/Yuqi/KOF-94/lab6_1/mai_punch/mai_punch.sv
-  C:/Users/Yuqi/KOF-94/lab6_1/mai_punch/mai_punch_palette.sv
-  C:/Users/Yuqi/KOF-94/lab6_1/mai_squat/mai_squat.sv
-  C:/Users/Yuqi/KOF-94/lab6_1/mai_squat/mai_squat_palette.sv
-  C:/Users/Yuqi/KOF-94/lab6_1/mai_stand/mai_stand.sv
-  C:/Users/Yuqi/KOF-94/lab6_1/mai_stand/mai_stand_palette.sv
-  C:/Users/Yuqi/KOF-94/lab6_1/scene1/scene1.sv
-  C:/Users/Yuqi/KOF-94/lab6_1/scene1/scene1_palette.sv
-  C:/Users/Yuqi/KOF-94/lab6_1/lab6_1.srcs/sources_1/new/timer.sv
-  C:/Users/Yuqi/KOF-94/lab6_1/lab6.2_provided/design_source/mb_usb_hdmi_top.sv
+  C:/Users/yunxuan5/KOF-94/lab6_1/lab6.2_provided/design_source/Color_Mapper.sv
+  C:/Users/yunxuan5/KOF-94/lab6_1/lab6.2_provided/design_source/VGA_controller.sv
+  C:/Users/yunxuan5/KOF-94/lab6_1/bg1/bg1.sv
+  C:/Users/yunxuan5/KOF-94/lab6_1/bg1/bg1_palette.sv
+  C:/Users/yunxuan5/KOF-94/lab6_1/bg2/bg2.sv
+  C:/Users/yunxuan5/KOF-94/lab6_1/bg2/bg2_palette.sv
+  C:/Users/yunxuan5/KOF-94/lab6_1/bg3/bg3.sv
+  C:/Users/yunxuan5/KOF-94/lab6_1/bg3/bg3_palette.sv
+  C:/Users/yunxuan5/KOF-94/lab6_1/lab6_1.srcs/sources_1/new/char1.sv
+  C:/Users/yunxuan5/KOF-94/lab6_1/font_rom.sv
+  C:/Users/yunxuan5/KOF-94/lab6_1/lab6.2_provided/design_source/hex.sv
+  C:/Users/yunxuan5/KOF-94/lab6_1/lab6_1.srcs/sources_1/new/hp_sys.sv
+  C:/Users/yunxuan5/KOF-94/lab6_1/kyo_forward/kyo_forward.sv
+  C:/Users/yunxuan5/KOF-94/lab6_1/kyo_forward/kyo_forward_palette.sv
+  C:/Users/yunxuan5/KOF-94/lab6_1/kyo_head/kyo_head.sv
+  C:/Users/yunxuan5/KOF-94/lab6_1/kyo_head/kyo_head_palette.sv
+  C:/Users/yunxuan5/KOF-94/lab6_1/kyo_kick/kyo_kick.sv
+  C:/Users/yunxuan5/KOF-94/lab6_1/kyo_kick/kyo_kick_palette.sv
+  C:/Users/yunxuan5/KOF-94/lab6_1/kyo_punch/kyo_punch.sv
+  C:/Users/yunxuan5/KOF-94/lab6_1/kyo_punch/kyo_punch_palette.sv
+  C:/Users/yunxuan5/KOF-94/lab6_1/kyo_squat/kyo_squat.sv
+  C:/Users/yunxuan5/KOF-94/lab6_1/kyo_squat/kyo_squat_palette.sv
+  C:/Users/yunxuan5/KOF-94/lab6_1/kyo_stand/kyo_stand.sv
+  C:/Users/yunxuan5/KOF-94/lab6_1/kyo_stand/kyo_stand_palette.sv
+  C:/Users/yunxuan5/KOF-94/lab6_1/mai_back/mai_back.sv
+  C:/Users/yunxuan5/KOF-94/lab6_1/mai_back/mai_back_palette.sv
+  C:/Users/yunxuan5/KOF-94/lab6_1/mai_forward/mai_forward.sv
+  C:/Users/yunxuan5/KOF-94/lab6_1/mai_forward/mai_forward_palette.sv
+  C:/Users/yunxuan5/KOF-94/lab6_1/mai_head/mai_head.sv
+  C:/Users/yunxuan5/KOF-94/lab6_1/mai_head/mai_head_palette.sv
+  C:/Users/yunxuan5/KOF-94/lab6_1/mai_kick/mai_kick.sv
+  C:/Users/yunxuan5/KOF-94/lab6_1/mai_kick/mai_kick_palette.sv
+  C:/Users/yunxuan5/KOF-94/lab6_1/mai_punch/mai_punch.sv
+  C:/Users/yunxuan5/KOF-94/lab6_1/mai_punch/mai_punch_palette.sv
+  C:/Users/yunxuan5/KOF-94/lab6_1/mai_squat/mai_squat.sv
+  C:/Users/yunxuan5/KOF-94/lab6_1/mai_squat/mai_squat_palette.sv
+  C:/Users/yunxuan5/KOF-94/lab6_1/mai_stand/mai_stand.sv
+  C:/Users/yunxuan5/KOF-94/lab6_1/mai_stand/mai_stand_palette.sv
+  C:/Users/yunxuan5/KOF-94/lab6_1/scene1/scene1.sv
+  C:/Users/yunxuan5/KOF-94/lab6_1/scene1/scene1_palette.sv
+  C:/Users/yunxuan5/KOF-94/lab6_1/lab6_1.srcs/sources_1/new/timer.sv
+  C:/Users/yunxuan5/KOF-94/lab6_1/lab6.2_provided/design_source/mb_usb_hdmi_top.sv
 }
-read_ip -quiet C:/Users/Yuqi/KOF-94/lab6_1/lab6_1.srcs/sources_1/ip/kyo_punch_rom/kyo_punch_rom.xci
-set_property used_in_implementation false [get_files -all c:/Users/Yuqi/KOF-94/lab6_1/lab6_1.gen/sources_1/ip/kyo_punch_rom/kyo_punch_rom_ooc.xdc]
+read_ip -quiet C:/Users/yunxuan5/KOF-94/lab6_1/lab6_1.srcs/sources_1/ip/kyo_punch_rom/kyo_punch_rom.xci
+set_property used_in_implementation false [get_files -all c:/Users/yunxuan5/KOF-94/lab6_1/lab6_1.gen/sources_1/ip/kyo_punch_rom/kyo_punch_rom_ooc.xdc]
 
-read_ip -quiet C:/Users/Yuqi/KOF-94/lab6_1/lab6_1.srcs/sources_1/ip/kyo_squat_rom/kyo_squat_rom.xci
-set_property used_in_implementation false [get_files -all c:/Users/Yuqi/KOF-94/lab6_1/lab6_1.gen/sources_1/ip/kyo_squat_rom/kyo_squat_rom_ooc.xdc]
+read_ip -quiet C:/Users/yunxuan5/KOF-94/lab6_1/lab6_1.srcs/sources_1/ip/kyo_squat_rom/kyo_squat_rom.xci
+set_property used_in_implementation false [get_files -all c:/Users/yunxuan5/KOF-94/lab6_1/lab6_1.gen/sources_1/ip/kyo_squat_rom/kyo_squat_rom_ooc.xdc]
 
-read_ip -quiet C:/Users/Yuqi/KOF-94/lab6_1/lab6_1.srcs/sources_1/ip/kyo_forward_rom/kyo_forward_rom.xci
-set_property used_in_implementation false [get_files -all c:/Users/Yuqi/KOF-94/lab6_1/lab6_1.gen/sources_1/ip/kyo_forward_rom/kyo_forward_rom_ooc.xdc]
+read_ip -quiet C:/Users/yunxuan5/KOF-94/lab6_1/lab6_1.srcs/sources_1/ip/kyo_forward_rom/kyo_forward_rom.xci
+set_property used_in_implementation false [get_files -all c:/Users/yunxuan5/KOF-94/lab6_1/lab6_1.gen/sources_1/ip/kyo_forward_rom/kyo_forward_rom_ooc.xdc]
 
-read_ip -quiet C:/Users/Yuqi/KOF-94/lab6_1/lab6_1.srcs/sources_1/ip/kyo_stand_rom/kyo_stand_rom.xci
-set_property used_in_implementation false [get_files -all c:/Users/Yuqi/KOF-94/lab6_1/lab6_1.gen/sources_1/ip/kyo_stand_rom/kyo_stand_rom_ooc.xdc]
+read_ip -quiet C:/Users/yunxuan5/KOF-94/lab6_1/lab6_1.srcs/sources_1/ip/kyo_stand_rom/kyo_stand_rom.xci
+set_property used_in_implementation false [get_files -all c:/Users/yunxuan5/KOF-94/lab6_1/lab6_1.gen/sources_1/ip/kyo_stand_rom/kyo_stand_rom_ooc.xdc]
 
-read_ip -quiet C:/Users/Yuqi/KOF-94/lab6_1/lab6_1.srcs/sources_1/ip/mai_kick_rom/mai_kick_rom.xci
-set_property used_in_implementation false [get_files -all c:/Users/Yuqi/KOF-94/lab6_1/lab6_1.gen/sources_1/ip/mai_kick_rom/mai_kick_rom_ooc.xdc]
+read_ip -quiet C:/Users/yunxuan5/KOF-94/lab6_1/lab6_1.srcs/sources_1/ip/mai_kick_rom/mai_kick_rom.xci
+set_property used_in_implementation false [get_files -all c:/Users/yunxuan5/KOF-94/lab6_1/lab6_1.gen/sources_1/ip/mai_kick_rom/mai_kick_rom_ooc.xdc]
 
-read_ip -quiet C:/Users/Yuqi/KOF-94/lab6_1/lab6_1.srcs/sources_1/ip/mai_squat_rom/mai_squat_rom.xci
-set_property used_in_implementation false [get_files -all c:/Users/Yuqi/KOF-94/lab6_1/lab6_1.gen/sources_1/ip/mai_squat_rom/mai_squat_rom_ooc.xdc]
+read_ip -quiet C:/Users/yunxuan5/KOF-94/lab6_1/lab6_1.srcs/sources_1/ip/mai_squat_rom/mai_squat_rom.xci
+set_property used_in_implementation false [get_files -all c:/Users/yunxuan5/KOF-94/lab6_1/lab6_1.gen/sources_1/ip/mai_squat_rom/mai_squat_rom_ooc.xdc]
 
-read_ip -quiet C:/Users/Yuqi/KOF-94/lab6_1/lab6_1.srcs/sources_1/ip/mai_punch_rom/mai_punch_rom.xci
-set_property used_in_implementation false [get_files -all c:/Users/Yuqi/KOF-94/lab6_1/lab6_1.gen/sources_1/ip/mai_punch_rom/mai_punch_rom_ooc.xdc]
+read_ip -quiet C:/Users/yunxuan5/KOF-94/lab6_1/lab6_1.srcs/sources_1/ip/mai_punch_rom/mai_punch_rom.xci
+set_property used_in_implementation false [get_files -all c:/Users/yunxuan5/KOF-94/lab6_1/lab6_1.gen/sources_1/ip/mai_punch_rom/mai_punch_rom_ooc.xdc]
 
-read_ip -quiet C:/Users/Yuqi/KOF-94/lab6_1/lab6_1.srcs/sources_1/ip/mai_back_rom/mai_back_rom.xci
-set_property used_in_implementation false [get_files -all c:/Users/Yuqi/KOF-94/lab6_1/lab6_1.gen/sources_1/ip/mai_back_rom/mai_back_rom_ooc.xdc]
+read_ip -quiet C:/Users/yunxuan5/KOF-94/lab6_1/lab6_1.srcs/sources_1/ip/mai_back_rom/mai_back_rom.xci
+set_property used_in_implementation false [get_files -all c:/Users/yunxuan5/KOF-94/lab6_1/lab6_1.gen/sources_1/ip/mai_back_rom/mai_back_rom_ooc.xdc]
 
-read_ip -quiet C:/Users/Yuqi/KOF-94/lab6_1/lab6_1.srcs/sources_1/ip/mai_forward_rom/mai_forward_rom.xci
-set_property used_in_implementation false [get_files -all c:/Users/Yuqi/KOF-94/lab6_1/lab6_1.gen/sources_1/ip/mai_forward_rom/mai_forward_rom_ooc.xdc]
+read_ip -quiet C:/Users/yunxuan5/KOF-94/lab6_1/lab6_1.srcs/sources_1/ip/mai_forward_rom/mai_forward_rom.xci
+set_property used_in_implementation false [get_files -all c:/Users/yunxuan5/KOF-94/lab6_1/lab6_1.gen/sources_1/ip/mai_forward_rom/mai_forward_rom_ooc.xdc]
 
-read_ip -quiet C:/Users/Yuqi/KOF-94/lab6_1/lab6_1.srcs/sources_1/ip/mai_stand_rom/mai_stand_rom.xci
-set_property used_in_implementation false [get_files -all c:/Users/Yuqi/KOF-94/lab6_1/lab6_1.gen/sources_1/ip/mai_stand_rom_1/mai_stand_rom_ooc.xdc]
+read_ip -quiet C:/Users/yunxuan5/KOF-94/lab6_1/lab6_1.srcs/sources_1/ip/mai_stand_rom/mai_stand_rom.xci
+set_property used_in_implementation false [get_files -all c:/Users/yunxuan5/KOF-94/lab6_1/lab6_1.gen/sources_1/ip/mai_stand_rom_1/mai_stand_rom_ooc.xdc]
 
-read_ip -quiet C:/Users/Yuqi/KOF-94/lab6_1/lab6_1.srcs/sources_1/ip/scene1_rom/scene1_rom.xci
-set_property used_in_implementation false [get_files -all c:/Users/Yuqi/KOF-94/lab6_1/lab6_1.gen/sources_1/ip/scene1_rom/scene1_rom_ooc.xdc]
+read_ip -quiet C:/Users/yunxuan5/KOF-94/lab6_1/lab6_1.srcs/sources_1/ip/scene1_rom/scene1_rom.xci
+set_property used_in_implementation false [get_files -all c:/Users/yunxuan5/KOF-94/lab6_1/lab6_1.gen/sources_1/ip/scene1_rom/scene1_rom_ooc.xdc]
 
-read_ip -quiet C:/Users/Yuqi/KOF-94/lab6_1/lab6_1.srcs/sources_1/ip/bg3_rom/bg3_rom.xci
-set_property used_in_implementation false [get_files -all c:/Users/Yuqi/KOF-94/lab6_1/lab6_1.gen/sources_1/ip/bg3_rom/bg3_rom_ooc.xdc]
+read_ip -quiet C:/Users/yunxuan5/KOF-94/lab6_1/lab6_1.srcs/sources_1/ip/bg3_rom/bg3_rom.xci
+set_property used_in_implementation false [get_files -all c:/Users/yunxuan5/KOF-94/lab6_1/lab6_1.gen/sources_1/ip/bg3_rom/bg3_rom_ooc.xdc]
 
-read_ip -quiet C:/Users/Yuqi/KOF-94/lab6_1/lab6_1.srcs/sources_1/ip/bg2_rom/bg2_rom.xci
-set_property used_in_implementation false [get_files -all c:/Users/Yuqi/KOF-94/lab6_1/lab6_1.gen/sources_1/ip/bg2_rom/bg2_rom_ooc.xdc]
+read_ip -quiet C:/Users/yunxuan5/KOF-94/lab6_1/lab6_1.srcs/sources_1/ip/bg2_rom/bg2_rom.xci
+set_property used_in_implementation false [get_files -all c:/Users/yunxuan5/KOF-94/lab6_1/lab6_1.gen/sources_1/ip/bg2_rom/bg2_rom_ooc.xdc]
 
-read_ip -quiet C:/Users/Yuqi/KOF-94/lab6_1/lab6_1.srcs/sources_1/ip/bg1_rom_1/bg1_rom.xci
-set_property used_in_implementation false [get_files -all c:/Users/Yuqi/KOF-94/lab6_1/lab6_1.gen/sources_1/ip/bg1_rom_1/bg1_rom_ooc.xdc]
+read_ip -quiet C:/Users/yunxuan5/KOF-94/lab6_1/lab6_1.srcs/sources_1/ip/bg1_rom_1/bg1_rom.xci
+set_property used_in_implementation false [get_files -all c:/Users/yunxuan5/KOF-94/lab6_1/lab6_1.gen/sources_1/ip/bg1_rom_1/bg1_rom_ooc.xdc]
 
-add_files C:/Users/Yuqi/KOF-94/lab6_1/lab6_1.srcs/sources_1/bd/mb_block/mb_block.bd
-set_property used_in_implementation false [get_files -all c:/Users/Yuqi/KOF-94/lab6_1/lab6_1.gen/sources_1/bd/mb_block/ip/mb_block_microblaze_0_0/mb_block_microblaze_0_0.xdc]
-set_property used_in_implementation false [get_files -all c:/Users/Yuqi/KOF-94/lab6_1/lab6_1.gen/sources_1/bd/mb_block/ip/mb_block_microblaze_0_0/mb_block_microblaze_0_0_ooc_debug.xdc]
-set_property used_in_implementation false [get_files -all c:/Users/Yuqi/KOF-94/lab6_1/lab6_1.gen/sources_1/bd/mb_block/ip/mb_block_microblaze_0_0/mb_block_microblaze_0_0_ooc.xdc]
-set_property used_in_implementation false [get_files -all c:/Users/Yuqi/KOF-94/lab6_1/lab6_1.gen/sources_1/bd/mb_block/ip/mb_block_dlmb_v10_0/mb_block_dlmb_v10_0_ooc.xdc]
-set_property used_in_implementation false [get_files -all c:/Users/Yuqi/KOF-94/lab6_1/lab6_1.gen/sources_1/bd/mb_block/ip/mb_block_ilmb_v10_0/mb_block_ilmb_v10_0_ooc.xdc]
-set_property used_in_implementation false [get_files -all c:/Users/Yuqi/KOF-94/lab6_1/lab6_1.gen/sources_1/bd/mb_block/ip/mb_block_dlmb_bram_if_cntlr_0/mb_block_dlmb_bram_if_cntlr_0_ooc.xdc]
-set_property used_in_implementation false [get_files -all c:/Users/Yuqi/KOF-94/lab6_1/lab6_1.gen/sources_1/bd/mb_block/ip/mb_block_ilmb_bram_if_cntlr_0/mb_block_ilmb_bram_if_cntlr_0_ooc.xdc]
-set_property used_in_implementation false [get_files -all c:/Users/Yuqi/KOF-94/lab6_1/lab6_1.gen/sources_1/bd/mb_block/ip/mb_block_lmb_bram_0/mb_block_lmb_bram_0_ooc.xdc]
-set_property used_in_implementation false [get_files -all c:/Users/Yuqi/KOF-94/lab6_1/lab6_1.gen/sources_1/bd/mb_block/ip/mb_block_xbar_0/mb_block_xbar_0_ooc.xdc]
-set_property used_in_implementation false [get_files -all c:/Users/Yuqi/KOF-94/lab6_1/lab6_1.gen/sources_1/bd/mb_block/ip/mb_block_microblaze_0_axi_intc_0/mb_block_microblaze_0_axi_intc_0.xdc]
-set_property used_in_implementation false [get_files -all c:/Users/Yuqi/KOF-94/lab6_1/lab6_1.gen/sources_1/bd/mb_block/ip/mb_block_microblaze_0_axi_intc_0/mb_block_microblaze_0_axi_intc_0_clocks.xdc]
-set_property used_in_implementation false [get_files -all c:/Users/Yuqi/KOF-94/lab6_1/lab6_1.gen/sources_1/bd/mb_block/ip/mb_block_microblaze_0_axi_intc_0/mb_block_microblaze_0_axi_intc_0_ooc.xdc]
-set_property used_in_implementation false [get_files -all c:/Users/Yuqi/KOF-94/lab6_1/lab6_1.gen/sources_1/bd/mb_block/ip/mb_block_mdm_1_0/mb_block_mdm_1_0.xdc]
-set_property used_in_implementation false [get_files -all c:/Users/Yuqi/KOF-94/lab6_1/lab6_1.gen/sources_1/bd/mb_block/ip/mb_block_mdm_1_0/mb_block_mdm_1_0_ooc_trace.xdc]
-set_property used_in_implementation false [get_files -all c:/Users/Yuqi/KOF-94/lab6_1/lab6_1.gen/sources_1/bd/mb_block/ip/mb_block_clk_wiz_1_0/mb_block_clk_wiz_1_0_board.xdc]
-set_property used_in_implementation false [get_files -all c:/Users/Yuqi/KOF-94/lab6_1/lab6_1.gen/sources_1/bd/mb_block/ip/mb_block_clk_wiz_1_0/mb_block_clk_wiz_1_0.xdc]
-set_property used_in_implementation false [get_files -all c:/Users/Yuqi/KOF-94/lab6_1/lab6_1.gen/sources_1/bd/mb_block/ip/mb_block_clk_wiz_1_0/mb_block_clk_wiz_1_0_ooc.xdc]
-set_property used_in_implementation false [get_files -all c:/Users/Yuqi/KOF-94/lab6_1/lab6_1.gen/sources_1/bd/mb_block/ip/mb_block_rst_clk_wiz_1_100M_0/mb_block_rst_clk_wiz_1_100M_0_board.xdc]
-set_property used_in_implementation false [get_files -all c:/Users/Yuqi/KOF-94/lab6_1/lab6_1.gen/sources_1/bd/mb_block/ip/mb_block_rst_clk_wiz_1_100M_0/mb_block_rst_clk_wiz_1_100M_0.xdc]
-set_property used_in_implementation false [get_files -all c:/Users/Yuqi/KOF-94/lab6_1/lab6_1.gen/sources_1/bd/mb_block/ip/mb_block_rst_clk_wiz_1_100M_0/mb_block_rst_clk_wiz_1_100M_0_ooc.xdc]
-set_property used_in_implementation false [get_files -all c:/Users/Yuqi/KOF-94/lab6_1/lab6_1.gen/sources_1/bd/mb_block/ip/mb_block_axi_uartlite_0_0/mb_block_axi_uartlite_0_0_board.xdc]
-set_property used_in_implementation false [get_files -all c:/Users/Yuqi/KOF-94/lab6_1/lab6_1.gen/sources_1/bd/mb_block/ip/mb_block_axi_uartlite_0_0/mb_block_axi_uartlite_0_0_ooc.xdc]
-set_property used_in_implementation false [get_files -all c:/Users/Yuqi/KOF-94/lab6_1/lab6_1.gen/sources_1/bd/mb_block/ip/mb_block_axi_uartlite_0_0/mb_block_axi_uartlite_0_0.xdc]
-set_property used_in_implementation false [get_files -all c:/Users/Yuqi/KOF-94/lab6_1/lab6_1.gen/sources_1/bd/mb_block/ip/mb_block_axi_gpio_0_1/mb_block_axi_gpio_0_1_board.xdc]
-set_property used_in_implementation false [get_files -all c:/Users/Yuqi/KOF-94/lab6_1/lab6_1.gen/sources_1/bd/mb_block/ip/mb_block_axi_gpio_0_1/mb_block_axi_gpio_0_1_ooc.xdc]
-set_property used_in_implementation false [get_files -all c:/Users/Yuqi/KOF-94/lab6_1/lab6_1.gen/sources_1/bd/mb_block/ip/mb_block_axi_gpio_0_1/mb_block_axi_gpio_0_1.xdc]
-set_property used_in_implementation false [get_files -all c:/Users/Yuqi/KOF-94/lab6_1/lab6_1.gen/sources_1/bd/mb_block/ip/mb_block_axi_gpio_0_2/mb_block_axi_gpio_0_2_board.xdc]
-set_property used_in_implementation false [get_files -all c:/Users/Yuqi/KOF-94/lab6_1/lab6_1.gen/sources_1/bd/mb_block/ip/mb_block_axi_gpio_0_2/mb_block_axi_gpio_0_2_ooc.xdc]
-set_property used_in_implementation false [get_files -all c:/Users/Yuqi/KOF-94/lab6_1/lab6_1.gen/sources_1/bd/mb_block/ip/mb_block_axi_gpio_0_2/mb_block_axi_gpio_0_2.xdc]
-set_property used_in_implementation false [get_files -all c:/Users/Yuqi/KOF-94/lab6_1/lab6_1.gen/sources_1/bd/mb_block/ip/mb_block_axi_gpio_0_3/mb_block_axi_gpio_0_3_board.xdc]
-set_property used_in_implementation false [get_files -all c:/Users/Yuqi/KOF-94/lab6_1/lab6_1.gen/sources_1/bd/mb_block/ip/mb_block_axi_gpio_0_3/mb_block_axi_gpio_0_3_ooc.xdc]
-set_property used_in_implementation false [get_files -all c:/Users/Yuqi/KOF-94/lab6_1/lab6_1.gen/sources_1/bd/mb_block/ip/mb_block_axi_gpio_0_3/mb_block_axi_gpio_0_3.xdc]
-set_property used_in_implementation false [get_files -all c:/Users/Yuqi/KOF-94/lab6_1/lab6_1.gen/sources_1/bd/mb_block/ip/mb_block_axi_timer_0_0/mb_block_axi_timer_0_0.xdc]
-set_property used_in_implementation false [get_files -all c:/Users/Yuqi/KOF-94/lab6_1/lab6_1.gen/sources_1/bd/mb_block/ip/mb_block_axi_timer_0_0/mb_block_axi_timer_0_0_ooc.xdc]
-set_property used_in_implementation false [get_files -all c:/Users/Yuqi/KOF-94/lab6_1/lab6_1.gen/sources_1/bd/mb_block/ip/mb_block_axi_quad_spi_0_0/mb_block_axi_quad_spi_0_0_board.xdc]
-set_property used_in_implementation false [get_files -all c:/Users/Yuqi/KOF-94/lab6_1/lab6_1.gen/sources_1/bd/mb_block/ip/mb_block_axi_quad_spi_0_0/mb_block_axi_quad_spi_0_0.xdc]
-set_property used_in_implementation false [get_files -all c:/Users/Yuqi/KOF-94/lab6_1/lab6_1.gen/sources_1/bd/mb_block/ip/mb_block_axi_quad_spi_0_0/mb_block_axi_quad_spi_0_0_ooc.xdc]
-set_property used_in_implementation false [get_files -all c:/Users/Yuqi/KOF-94/lab6_1/lab6_1.gen/sources_1/bd/mb_block/ip/mb_block_axi_quad_spi_0_0/mb_block_axi_quad_spi_0_0_clocks.xdc]
-set_property used_in_implementation false [get_files -all c:/Users/Yuqi/KOF-94/lab6_1/lab6_1.gen/sources_1/bd/mb_block/mb_block_ooc.xdc]
-set_property used_in_implementation false [get_files -all c:/Users/Yuqi/KOF-94/lab6_1/lab6_1.gen/sources_1/bd/mb_block/ip/mb_block_microblaze_0_0/data/mb_bootloop_le.elf]
+add_files C:/Users/yunxuan5/KOF-94/lab6_1/lab6_1.srcs/sources_1/bd/mb_block/mb_block.bd
+set_property used_in_implementation false [get_files -all c:/Users/yunxuan5/KOF-94/lab6_1/lab6_1.gen/sources_1/bd/mb_block/ip/mb_block_microblaze_0_0/mb_block_microblaze_0_0.xdc]
+set_property used_in_implementation false [get_files -all c:/Users/yunxuan5/KOF-94/lab6_1/lab6_1.gen/sources_1/bd/mb_block/ip/mb_block_microblaze_0_0/mb_block_microblaze_0_0_ooc_debug.xdc]
+set_property used_in_implementation false [get_files -all c:/Users/yunxuan5/KOF-94/lab6_1/lab6_1.gen/sources_1/bd/mb_block/ip/mb_block_microblaze_0_0/mb_block_microblaze_0_0_ooc.xdc]
+set_property used_in_implementation false [get_files -all c:/Users/yunxuan5/KOF-94/lab6_1/lab6_1.gen/sources_1/bd/mb_block/ip/mb_block_dlmb_v10_0/mb_block_dlmb_v10_0_ooc.xdc]
+set_property used_in_implementation false [get_files -all c:/Users/yunxuan5/KOF-94/lab6_1/lab6_1.gen/sources_1/bd/mb_block/ip/mb_block_ilmb_v10_0/mb_block_ilmb_v10_0_ooc.xdc]
+set_property used_in_implementation false [get_files -all c:/Users/yunxuan5/KOF-94/lab6_1/lab6_1.gen/sources_1/bd/mb_block/ip/mb_block_dlmb_bram_if_cntlr_0/mb_block_dlmb_bram_if_cntlr_0_ooc.xdc]
+set_property used_in_implementation false [get_files -all c:/Users/yunxuan5/KOF-94/lab6_1/lab6_1.gen/sources_1/bd/mb_block/ip/mb_block_ilmb_bram_if_cntlr_0/mb_block_ilmb_bram_if_cntlr_0_ooc.xdc]
+set_property used_in_implementation false [get_files -all c:/Users/yunxuan5/KOF-94/lab6_1/lab6_1.gen/sources_1/bd/mb_block/ip/mb_block_lmb_bram_0/mb_block_lmb_bram_0_ooc.xdc]
+set_property used_in_implementation false [get_files -all c:/Users/yunxuan5/KOF-94/lab6_1/lab6_1.gen/sources_1/bd/mb_block/ip/mb_block_xbar_0/mb_block_xbar_0_ooc.xdc]
+set_property used_in_implementation false [get_files -all c:/Users/yunxuan5/KOF-94/lab6_1/lab6_1.gen/sources_1/bd/mb_block/ip/mb_block_microblaze_0_axi_intc_0/mb_block_microblaze_0_axi_intc_0.xdc]
+set_property used_in_implementation false [get_files -all c:/Users/yunxuan5/KOF-94/lab6_1/lab6_1.gen/sources_1/bd/mb_block/ip/mb_block_microblaze_0_axi_intc_0/mb_block_microblaze_0_axi_intc_0_clocks.xdc]
+set_property used_in_implementation false [get_files -all c:/Users/yunxuan5/KOF-94/lab6_1/lab6_1.gen/sources_1/bd/mb_block/ip/mb_block_microblaze_0_axi_intc_0/mb_block_microblaze_0_axi_intc_0_ooc.xdc]
+set_property used_in_implementation false [get_files -all c:/Users/yunxuan5/KOF-94/lab6_1/lab6_1.gen/sources_1/bd/mb_block/ip/mb_block_mdm_1_0/mb_block_mdm_1_0.xdc]
+set_property used_in_implementation false [get_files -all c:/Users/yunxuan5/KOF-94/lab6_1/lab6_1.gen/sources_1/bd/mb_block/ip/mb_block_mdm_1_0/mb_block_mdm_1_0_ooc_trace.xdc]
+set_property used_in_implementation false [get_files -all c:/Users/yunxuan5/KOF-94/lab6_1/lab6_1.gen/sources_1/bd/mb_block/ip/mb_block_clk_wiz_1_0/mb_block_clk_wiz_1_0_board.xdc]
+set_property used_in_implementation false [get_files -all c:/Users/yunxuan5/KOF-94/lab6_1/lab6_1.gen/sources_1/bd/mb_block/ip/mb_block_clk_wiz_1_0/mb_block_clk_wiz_1_0.xdc]
+set_property used_in_implementation false [get_files -all c:/Users/yunxuan5/KOF-94/lab6_1/lab6_1.gen/sources_1/bd/mb_block/ip/mb_block_clk_wiz_1_0/mb_block_clk_wiz_1_0_ooc.xdc]
+set_property used_in_implementation false [get_files -all c:/Users/yunxuan5/KOF-94/lab6_1/lab6_1.gen/sources_1/bd/mb_block/ip/mb_block_rst_clk_wiz_1_100M_0/mb_block_rst_clk_wiz_1_100M_0_board.xdc]
+set_property used_in_implementation false [get_files -all c:/Users/yunxuan5/KOF-94/lab6_1/lab6_1.gen/sources_1/bd/mb_block/ip/mb_block_rst_clk_wiz_1_100M_0/mb_block_rst_clk_wiz_1_100M_0.xdc]
+set_property used_in_implementation false [get_files -all c:/Users/yunxuan5/KOF-94/lab6_1/lab6_1.gen/sources_1/bd/mb_block/ip/mb_block_rst_clk_wiz_1_100M_0/mb_block_rst_clk_wiz_1_100M_0_ooc.xdc]
+set_property used_in_implementation false [get_files -all c:/Users/yunxuan5/KOF-94/lab6_1/lab6_1.gen/sources_1/bd/mb_block/ip/mb_block_axi_uartlite_0_0/mb_block_axi_uartlite_0_0_board.xdc]
+set_property used_in_implementation false [get_files -all c:/Users/yunxuan5/KOF-94/lab6_1/lab6_1.gen/sources_1/bd/mb_block/ip/mb_block_axi_uartlite_0_0/mb_block_axi_uartlite_0_0_ooc.xdc]
+set_property used_in_implementation false [get_files -all c:/Users/yunxuan5/KOF-94/lab6_1/lab6_1.gen/sources_1/bd/mb_block/ip/mb_block_axi_uartlite_0_0/mb_block_axi_uartlite_0_0.xdc]
+set_property used_in_implementation false [get_files -all c:/Users/yunxuan5/KOF-94/lab6_1/lab6_1.gen/sources_1/bd/mb_block/ip/mb_block_axi_gpio_0_1/mb_block_axi_gpio_0_1_board.xdc]
+set_property used_in_implementation false [get_files -all c:/Users/yunxuan5/KOF-94/lab6_1/lab6_1.gen/sources_1/bd/mb_block/ip/mb_block_axi_gpio_0_1/mb_block_axi_gpio_0_1_ooc.xdc]
+set_property used_in_implementation false [get_files -all c:/Users/yunxuan5/KOF-94/lab6_1/lab6_1.gen/sources_1/bd/mb_block/ip/mb_block_axi_gpio_0_1/mb_block_axi_gpio_0_1.xdc]
+set_property used_in_implementation false [get_files -all c:/Users/yunxuan5/KOF-94/lab6_1/lab6_1.gen/sources_1/bd/mb_block/ip/mb_block_axi_gpio_0_2/mb_block_axi_gpio_0_2_board.xdc]
+set_property used_in_implementation false [get_files -all c:/Users/yunxuan5/KOF-94/lab6_1/lab6_1.gen/sources_1/bd/mb_block/ip/mb_block_axi_gpio_0_2/mb_block_axi_gpio_0_2_ooc.xdc]
+set_property used_in_implementation false [get_files -all c:/Users/yunxuan5/KOF-94/lab6_1/lab6_1.gen/sources_1/bd/mb_block/ip/mb_block_axi_gpio_0_2/mb_block_axi_gpio_0_2.xdc]
+set_property used_in_implementation false [get_files -all c:/Users/yunxuan5/KOF-94/lab6_1/lab6_1.gen/sources_1/bd/mb_block/ip/mb_block_axi_gpio_0_3/mb_block_axi_gpio_0_3_board.xdc]
+set_property used_in_implementation false [get_files -all c:/Users/yunxuan5/KOF-94/lab6_1/lab6_1.gen/sources_1/bd/mb_block/ip/mb_block_axi_gpio_0_3/mb_block_axi_gpio_0_3_ooc.xdc]
+set_property used_in_implementation false [get_files -all c:/Users/yunxuan5/KOF-94/lab6_1/lab6_1.gen/sources_1/bd/mb_block/ip/mb_block_axi_gpio_0_3/mb_block_axi_gpio_0_3.xdc]
+set_property used_in_implementation false [get_files -all c:/Users/yunxuan5/KOF-94/lab6_1/lab6_1.gen/sources_1/bd/mb_block/ip/mb_block_axi_timer_0_0/mb_block_axi_timer_0_0.xdc]
+set_property used_in_implementation false [get_files -all c:/Users/yunxuan5/KOF-94/lab6_1/lab6_1.gen/sources_1/bd/mb_block/ip/mb_block_axi_timer_0_0/mb_block_axi_timer_0_0_ooc.xdc]
+set_property used_in_implementation false [get_files -all c:/Users/yunxuan5/KOF-94/lab6_1/lab6_1.gen/sources_1/bd/mb_block/ip/mb_block_axi_quad_spi_0_0/mb_block_axi_quad_spi_0_0_board.xdc]
+set_property used_in_implementation false [get_files -all c:/Users/yunxuan5/KOF-94/lab6_1/lab6_1.gen/sources_1/bd/mb_block/ip/mb_block_axi_quad_spi_0_0/mb_block_axi_quad_spi_0_0.xdc]
+set_property used_in_implementation false [get_files -all c:/Users/yunxuan5/KOF-94/lab6_1/lab6_1.gen/sources_1/bd/mb_block/ip/mb_block_axi_quad_spi_0_0/mb_block_axi_quad_spi_0_0_ooc.xdc]
+set_property used_in_implementation false [get_files -all c:/Users/yunxuan5/KOF-94/lab6_1/lab6_1.gen/sources_1/bd/mb_block/ip/mb_block_axi_quad_spi_0_0/mb_block_axi_quad_spi_0_0_clocks.xdc]
+set_property used_in_implementation false [get_files -all c:/Users/yunxuan5/KOF-94/lab6_1/lab6_1.gen/sources_1/bd/mb_block/mb_block_ooc.xdc]
+set_property used_in_implementation false [get_files -all c:/Users/yunxuan5/KOF-94/lab6_1/lab6_1.gen/sources_1/bd/mb_block/ip/mb_block_microblaze_0_0/data/mb_bootloop_le.elf]
 
-read_ip -quiet C:/Users/Yuqi/KOF-94/lab6_1/lab6_1.srcs/sources_1/ip/hdmi_tx_0/hdmi_tx_0.xci
+read_ip -quiet C:/Users/yunxuan5/KOF-94/lab6_1/lab6_1.srcs/sources_1/ip/hdmi_tx_0/hdmi_tx_0.xci
 
-read_ip -quiet C:/Users/Yuqi/KOF-94/lab6_1/lab6_1.srcs/sources_1/ip/clk_wiz_0/clk_wiz_0.xci
-set_property used_in_implementation false [get_files -all c:/Users/Yuqi/KOF-94/lab6_1/lab6_1.gen/sources_1/ip/clk_wiz_0/clk_wiz_0_board.xdc]
-set_property used_in_implementation false [get_files -all c:/Users/Yuqi/KOF-94/lab6_1/lab6_1.gen/sources_1/ip/clk_wiz_0/clk_wiz_0.xdc]
-set_property used_in_implementation false [get_files -all c:/Users/Yuqi/KOF-94/lab6_1/lab6_1.gen/sources_1/ip/clk_wiz_0/clk_wiz_0_ooc.xdc]
+read_ip -quiet C:/Users/yunxuan5/KOF-94/lab6_1/lab6_1.srcs/sources_1/ip/clk_wiz_0/clk_wiz_0.xci
+set_property used_in_implementation false [get_files -all c:/Users/yunxuan5/KOF-94/lab6_1/lab6_1.gen/sources_1/ip/clk_wiz_0/clk_wiz_0_board.xdc]
+set_property used_in_implementation false [get_files -all c:/Users/yunxuan5/KOF-94/lab6_1/lab6_1.gen/sources_1/ip/clk_wiz_0/clk_wiz_0.xdc]
+set_property used_in_implementation false [get_files -all c:/Users/yunxuan5/KOF-94/lab6_1/lab6_1.gen/sources_1/ip/clk_wiz_0/clk_wiz_0_ooc.xdc]
 
-read_ip -quiet c:/Users/Yuqi/KOF-94/lab6_1/lab6_1.srcs/sources_1/ip/kyo_head_rom/kyo_head_rom.xci
-set_property used_in_implementation false [get_files -all c:/Users/Yuqi/KOF-94/lab6_1/lab6_1.gen/sources_1/ip/kyo_head_rom/kyo_head_rom_ooc.xdc]
+read_ip -quiet C:/Users/yunxuan5/KOF-94/lab6_1/lab6_1.srcs/sources_1/ip/kyo_head_rom/kyo_head_rom.xci
+set_property used_in_implementation false [get_files -all c:/Users/yunxuan5/KOF-94/lab6_1/lab6_1.gen/sources_1/ip/kyo_head_rom/kyo_head_rom_ooc.xdc]
 
-read_ip -quiet c:/Users/Yuqi/KOF-94/lab6_1/lab6_1.srcs/sources_1/ip/mai_head_rom/mai_head_rom.xci
-set_property used_in_implementation false [get_files -all c:/Users/Yuqi/KOF-94/lab6_1/lab6_1.gen/sources_1/ip/mai_head_rom/mai_head_rom_ooc.xdc]
+read_ip -quiet C:/Users/yunxuan5/KOF-94/lab6_1/lab6_1.srcs/sources_1/ip/mai_head_rom/mai_head_rom.xci
+set_property used_in_implementation false [get_files -all c:/Users/yunxuan5/KOF-94/lab6_1/lab6_1.gen/sources_1/ip/mai_head_rom/mai_head_rom_ooc.xdc]
+
+read_ip -quiet c:/Users/yunxuan5/KOF-94/lab6_1/lab6_1.srcs/sources_1/ip/kyo_kick_rom/kyo_kick_rom.xci
+set_property used_in_implementation false [get_files -all c:/Users/yunxuan5/KOF-94/lab6_1/lab6_1.gen/sources_1/ip/kyo_kick_rom/kyo_kick_rom_ooc.xdc]
 
 OPTRACE "Adding files" END { }
 # Mark all dcp files as not used in implementation to prevent them from being
@@ -255,17 +261,17 @@ OPTRACE "Adding files" END { }
 foreach dcp [get_files -quiet -all -filter file_type=="Design\ Checkpoint"] {
   set_property used_in_implementation false $dcp
 }
-read_xdc C:/Users/Yuqi/KOF-94/lab6_1/lab6_1_provided/mb_intro_top.xdc
-set_property used_in_implementation false [get_files C:/Users/Yuqi/KOF-94/lab6_1/lab6_1_provided/mb_intro_top.xdc]
+read_xdc C:/Users/yunxuan5/KOF-94/lab6_1/lab6_1_provided/mb_intro_top.xdc
+set_property used_in_implementation false [get_files C:/Users/yunxuan5/KOF-94/lab6_1/lab6_1_provided/mb_intro_top.xdc]
 
-read_xdc C:/Users/Yuqi/KOF-94/lab6_1/lab6.2_provided/pin_assignment/mb_usb_hdmi_top.xdc
-set_property used_in_implementation false [get_files C:/Users/Yuqi/KOF-94/lab6_1/lab6.2_provided/pin_assignment/mb_usb_hdmi_top.xdc]
+read_xdc C:/Users/yunxuan5/KOF-94/lab6_1/lab6.2_provided/pin_assignment/mb_usb_hdmi_top.xdc
+set_property used_in_implementation false [get_files C:/Users/yunxuan5/KOF-94/lab6_1/lab6.2_provided/pin_assignment/mb_usb_hdmi_top.xdc]
 
 read_xdc dont_touch.xdc
 set_property used_in_implementation false [get_files dont_touch.xdc]
 set_param ips.enableIPCacheLiteLoad 1
 
-read_checkpoint -auto_incremental -incremental C:/Users/Yuqi/KOF-94/lab6_1/lab6_1.srcs/utils_1/imports/synth_1/mb_intro_top.dcp
+read_checkpoint -auto_incremental -incremental C:/Users/yunxuan5/KOF-94/lab6_1/lab6_1.srcs/utils_1/imports/synth_1/mb_intro_top.dcp
 close [open __synthesis_is_running__ w]
 
 OPTRACE "synth_design" START { }
