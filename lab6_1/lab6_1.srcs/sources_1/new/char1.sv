@@ -25,7 +25,7 @@ module char_mai(
         input logic [7:0] keycode1,keycode2,keycode3,keycode4,keycode5,keycode6,
         input logic char1_punch_act,char1_kick_act,char2_punch_act,char2_kick_act,
         output logic [12:0]  char1X, char1Y,char2X, char2Y,backX,
-        output logic forward_1,back_1,punch_1,squat_1,kick_1,jump_1,forward_2,back_2,punch_2,squat_2,kick_2,jump_2
+        output logic forward_1,back_1,punch_1,squat_1,kick_1,jump_1,forward_2,back_2,punch_2,squat_2,kick_2,jump_2,start
     );
 
     
@@ -128,6 +128,7 @@ module char_mai(
             char2Y <= char2_Y_start;
 			char2X <= char2_X_start;
 			backX<=Back_X_start;
+			start<=0;
              forward_1<=1'b0;
              back_1<=1'b0;
              punch_1<=1'b0;
@@ -148,6 +149,7 @@ module char_mai(
            
         else 
         begin    
+                 if(keycode1!=8'h0)start<=1;
                  if(~(keycode1==8'h0E||keycode2==8'h0E||keycode3==8'h0E||keycode4==8'h0E||keycode5==8'h0E||keycode6==8'h0E)&&char1_punch_debounce)char1_punch_debounce<=0;
                  if(~(keycode1==8'h0D||keycode2==8'h0D||keycode3==8'h0D||keycode4==8'h0D||keycode5==8'h0D||keycode6==8'h0D)&&char1_kick_debounce)char1_kick_debounce<=0;
                  if(~(keycode1==8'h5A||keycode2==8'h5A||keycode3==8'h5A||keycode4==8'h5A||keycode5==8'h5A||keycode6==8'h5A)&&char2_punch_debounce)char2_punch_debounce<=0;

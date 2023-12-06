@@ -45,3 +45,37 @@ platform config -updatehw {C:/Users/Yuqi/KOF-94/lab6_1/mb_usb_hdmi_top.xsa}
 platform generate -domains 
 platform config -updatehw {C:/Users/Yuqi/KOF-94/lab6_1/mb_usb_hdmi_top.xsa}
 platform generate -domains 
+platform active {mb_usb_hdmi_top}
+platform config -updatehw {C:/Users/Yuqi/KOF-94/lab6_1/mb_usb_hdmi_top.xsa}
+platform generate -domains 
+platform config -updatehw {C:/Users/Yuqi/KOF-94/lab6_1/mb_usb_hdmi_top.xsa}
+platform generate -domains 
+platform config -updatehw {C:/Users/Yuqi/KOF-94/lab6_1/mb_usb_hdmi_top.xsa}
+platform generate -domains 
+platform active {mb_usb_hdmi_top}
+platform config -updatehw {C:/Users/Yuqi/KOF-94/lab6_1/mb_usb_hdmi_top.xsa}
+platform generate -domains 
+platform config -updatehw {C:/Users/Yuqi/KOF-94/lab6_1/mb_usb_hdmi_top.xsa}
+platform generate -domains 
+platform config -updatehw {C:/Users/Yuqi/KOF-94/lab6_1/mb_usb_hdmi_top.xsa}
+platform generate -domains 
+platform active {mb_usb_hdmi_top}
+platform config -updatehw {C:/Users/Yuqi/KOF-94/lab6_1/mb_usb_hdmi_top.xsa}
+platform generate -domains 
+platform config -updatehw {C:/Users/Yuqi/KOF-94/lab6_1/mb_usb_hdmi_top.xsa}
+platform generate -domains 
+platform config -updatehw {C:/Users/Yuqi/KOF-94/lab6_1/mb_usb_hdmi_top.xsa}
+platform generate -domains 
+platform config -updatehw {C:/Users/Yuqi/KOF-94/lab6_1/mb_usb_hdmi_top.xsa}
+platform generate -domains 
+platform config -updatehw {C:/Users/Yuqi/KOF-94/lab6_1/mb_usb_hdmi_top.xsa}
+platform generate -domains 
+platform config -updatehw {C:/Users/Yuqi/KOF-94/lab6_1/mb_usb_hdmi_top.xsa}
+platform generate -domains 
+platform active {mb_usb_hdmi_top}
+platform config -updatehw {C:/Users/Yuqi/KOF-94/lab6_1/mb_usb_hdmi_top.xsa}
+platform generate -domains 
+platform config -updatehw {C:/Users/Yuqi/KOF-94/lab6_1/mb_usb_hdmi_top.xsa}
+platform generate -domains 
+platform config -updatehw {C:/Users/Yuqi/KOF-94/lab6_1/mb_usb_hdmi_top.xsa}
+platform generate -domains 

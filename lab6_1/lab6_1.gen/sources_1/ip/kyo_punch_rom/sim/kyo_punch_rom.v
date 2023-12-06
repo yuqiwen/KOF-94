@@ -65,7 +65,7 @@ input wire clka;
 input wire [14 : 0] addra;
 (* X_INTERFACE_PARAMETER = "XIL_INTERFACENAME BRAM_PORTA, MEM_SIZE 8192, MEM_WIDTH 32, MEM_ECC NONE, MASTER_TYPE OTHER, READ_LATENCY 1" *)
 (* X_INTERFACE_INFO = "xilinx.com:interface:bram:1.0 BRAM_PORTA DOUT" *)
-output wire [2 : 0] douta;
+output wire [3 : 0] douta;
 
   blk_mem_gen_v8_4_5 #(
     .C_FAMILY("spartan7"),
@@ -97,10 +97,10 @@ output wire [2 : 0] douta;
     .C_USE_BYTE_WEA(0),
     .C_WEA_WIDTH(1),
     .C_WRITE_MODE_A("WRITE_FIRST"),
-    .C_WRITE_WIDTH_A(3),
-    .C_READ_WIDTH_A(3),
-    .C_WRITE_DEPTH_A(32256),
-    .C_READ_DEPTH_A(32256),
+    .C_WRITE_WIDTH_A(4),
+    .C_READ_WIDTH_A(4),
+    .C_WRITE_DEPTH_A(21504),
+    .C_READ_DEPTH_A(21504),
     .C_ADDRA_WIDTH(15),
     .C_HAS_RSTB(0),
     .C_RST_PRIORITY_B("CE"),
@@ -111,10 +111,10 @@ output wire [2 : 0] douta;
     .C_USE_BYTE_WEB(0),
     .C_WEB_WIDTH(1),
     .C_WRITE_MODE_B("WRITE_FIRST"),
-    .C_WRITE_WIDTH_B(3),
-    .C_READ_WIDTH_B(3),
-    .C_WRITE_DEPTH_B(32256),
-    .C_READ_DEPTH_B(32256),
+    .C_WRITE_WIDTH_B(4),
+    .C_READ_WIDTH_B(4),
+    .C_WRITE_DEPTH_B(21504),
+    .C_READ_DEPTH_B(21504),
     .C_ADDRB_WIDTH(15),
     .C_HAS_MEM_OUTPUT_REGS_A(0),
     .C_HAS_MEM_OUTPUT_REGS_B(0),
@@ -142,7 +142,7 @@ output wire [2 : 0] douta;
     .C_DISABLE_WARN_BHV_RANGE(0),
     .C_COUNT_36K_BRAM("3"),
     .C_COUNT_18K_BRAM("0"),
-    .C_EST_POWER_SUMMARY("Estimated Power for IP     :     6.64365 mW")
+    .C_EST_POWER_SUMMARY("Estimated Power for IP     :     3.978607 mW")
   ) inst (
     .clka(clka),
     .rsta(1'D0),
@@ -150,7 +150,7 @@ output wire [2 : 0] douta;
     .regcea(1'D0),
     .wea(1'B0),
     .addra(addra),
-    .dina(3'B0),
+    .dina(4'B0),
     .douta(douta),
     .clkb(1'D0),
     .rstb(1'D0),
@@ -158,7 +158,7 @@ output wire [2 : 0] douta;
     .regceb(1'D0),
     .web(1'B0),
     .addrb(15'B0),
-    .dinb(3'B0),
+    .dinb(4'B0),
     .doutb(),
     .injectsbiterr(1'D0),
     .injectdbiterr(1'D0),
@@ -180,7 +180,7 @@ output wire [2 : 0] douta;
     .s_axi_awburst(2'B0),
     .s_axi_awvalid(1'D0),
     .s_axi_awready(),
-    .s_axi_wdata(3'B0),
+    .s_axi_wdata(4'B0),
     .s_axi_wstrb(1'B0),
     .s_axi_wlast(1'D0),
     .s_axi_wvalid(1'D0),
