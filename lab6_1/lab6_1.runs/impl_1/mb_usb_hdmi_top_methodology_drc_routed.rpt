@@ -1,7 +1,7 @@
 Copyright 1986-2022 Xilinx, Inc. All Rights Reserved.
 -----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
 | Tool Version : Vivado v.2022.2 (win64) Build 3671981 Fri Oct 14 05:00:03 MDT 2022
-| Date         : Wed Dec  6 15:55:17 2023
+| Date         : Wed Dec  6 17:51:02 2023
 | Host         : DESKTOP-D8Q9UV3 running 64-bit major release  (build 9200)
 | Command      : report_methodology -file mb_usb_hdmi_top_methodology_drc_routed.rpt -pb mb_usb_hdmi_top_methodology_drc_routed.pb -rpx mb_usb_hdmi_top_methodology_drc_routed.rpx
 | Design       : mb_usb_hdmi_top
@@ -850,62 +850,62 @@ Related violations: <none>
 
 TIMING-16#1 Warning
 Large setup violation  
-There is a large setup violation of -6.001 ns between hp/char2_hp_reg[4]/C (clocked by clk_100) and vga_to_hdmi/inst/srldly_0/srl[21].srl16_i_srlopt/D (clocked by clk_out1_clk_wiz_0). Large setup violations at the end of those stages might be difficult to fix during the post-placement implementation flow and could be the result of non-optimal XDC constraints or non-optimal design architecture
+There is a large setup violation of -6.474 ns between hp/char1_hp_reg[3]_replica_1/C (clocked by clk_100) and vga_to_hdmi/inst/srldly_0/srl[37].srl16_i_srlopt/D (clocked by clk_out1_clk_wiz_0). Large setup violations at the end of those stages might be difficult to fix during the post-placement implementation flow and could be the result of non-optimal XDC constraints or non-optimal design architecture
 Related violations: <none>
 
 TIMING-16#2 Warning
 Large setup violation  
-There is a large setup violation of -6.132 ns between hp/char2_hp_reg[4]/C (clocked by clk_100) and vga_to_hdmi/inst/srldly_0/srl[39].srl16_i_srlopt/D (clocked by clk_out1_clk_wiz_0). Large setup violations at the end of those stages might be difficult to fix during the post-placement implementation flow and could be the result of non-optimal XDC constraints or non-optimal design architecture
+There is a large setup violation of -6.589 ns between hp/char1_hp_reg[3]_replica_1/C (clocked by clk_100) and vga_to_hdmi/inst/srldly_0/srl[38].srl16_i_srlopt/D (clocked by clk_out1_clk_wiz_0). Large setup violations at the end of those stages might be difficult to fix during the post-placement implementation flow and could be the result of non-optimal XDC constraints or non-optimal design architecture
 Related violations: <none>
 
 TIMING-16#3 Warning
 Large setup violation  
-There is a large setup violation of -6.202 ns between hp/char2_hp_reg[4]/C (clocked by clk_100) and vga_to_hdmi/inst/srldly_0/srl[20].srl16_i_srlopt/D (clocked by clk_out1_clk_wiz_0). Large setup violations at the end of those stages might be difficult to fix during the post-placement implementation flow and could be the result of non-optimal XDC constraints or non-optimal design architecture
+There is a large setup violation of -6.620 ns between hp/char1_hp_reg[3]_replica_1/C (clocked by clk_100) and vga_to_hdmi/inst/srldly_0/srl[31].srl16_i_srlopt/D (clocked by clk_out1_clk_wiz_0). Large setup violations at the end of those stages might be difficult to fix during the post-placement implementation flow and could be the result of non-optimal XDC constraints or non-optimal design architecture
 Related violations: <none>
 
 TIMING-16#4 Warning
 Large setup violation  
-There is a large setup violation of -6.284 ns between hp/char2_hp_reg[4]/C (clocked by clk_100) and vga_to_hdmi/inst/srldly_0/srl[31].srl16_i/D (clocked by clk_out1_clk_wiz_0). Large setup violations at the end of those stages might be difficult to fix during the post-placement implementation flow and could be the result of non-optimal XDC constraints or non-optimal design architecture
+There is a large setup violation of -6.687 ns between hp/char1_hp_reg[3]_replica_1/C (clocked by clk_100) and vga_to_hdmi/inst/srldly_0/srl[20].srl16_i_srlopt/D (clocked by clk_out1_clk_wiz_0). Large setup violations at the end of those stages might be difficult to fix during the post-placement implementation flow and could be the result of non-optimal XDC constraints or non-optimal design architecture
 Related violations: <none>
 
 TIMING-16#5 Warning
 Large setup violation  
-There is a large setup violation of -6.327 ns between hp/char2_hp_reg[4]/C (clocked by clk_100) and vga_to_hdmi/inst/srldly_0/srl[28].srl16_i_srlopt/D (clocked by clk_out1_clk_wiz_0). Large setup violations at the end of those stages might be difficult to fix during the post-placement implementation flow and could be the result of non-optimal XDC constraints or non-optimal design architecture
+There is a large setup violation of -6.697 ns between hp/char1_hp_reg[3]_replica_1/C (clocked by clk_100) and vga_to_hdmi/inst/srldly_0/srl[28].srl16_i_srlopt/D (clocked by clk_out1_clk_wiz_0). Large setup violations at the end of those stages might be difficult to fix during the post-placement implementation flow and could be the result of non-optimal XDC constraints or non-optimal design architecture
 Related violations: <none>
 
 TIMING-16#6 Warning
 Large setup violation  
-There is a large setup violation of -6.331 ns between hp/char2_hp_reg[4]/C (clocked by clk_100) and vga_to_hdmi/inst/srldly_0/srl[37].srl16_i_srlopt/D (clocked by clk_out1_clk_wiz_0). Large setup violations at the end of those stages might be difficult to fix during the post-placement implementation flow and could be the result of non-optimal XDC constraints or non-optimal design architecture
+There is a large setup violation of -6.740 ns between hp/char1_hp_reg[3]_replica_1/C (clocked by clk_100) and vga_to_hdmi/inst/srldly_0/srl[23].srl16_i_srlopt/D (clocked by clk_out1_clk_wiz_0). Large setup violations at the end of those stages might be difficult to fix during the post-placement implementation flow and could be the result of non-optimal XDC constraints or non-optimal design architecture
 Related violations: <none>
 
 TIMING-16#7 Warning
 Large setup violation  
-There is a large setup violation of -6.346 ns between hp/char2_hp_reg[4]/C (clocked by clk_100) and vga_to_hdmi/inst/srldly_0/srl[36].srl16_i_srlopt/D (clocked by clk_out1_clk_wiz_0). Large setup violations at the end of those stages might be difficult to fix during the post-placement implementation flow and could be the result of non-optimal XDC constraints or non-optimal design architecture
+There is a large setup violation of -6.789 ns between hp/char1_hp_reg[3]_replica_1/C (clocked by clk_100) and vga_to_hdmi/inst/srldly_0/srl[30].srl16_i_srlopt/D (clocked by clk_out1_clk_wiz_0). Large setup violations at the end of those stages might be difficult to fix during the post-placement implementation flow and could be the result of non-optimal XDC constraints or non-optimal design architecture
 Related violations: <none>
 
 TIMING-16#8 Warning
 Large setup violation  
-There is a large setup violation of -6.489 ns between hp/char2_hp_reg[4]/C (clocked by clk_100) and vga_to_hdmi/inst/srldly_0/srl[23].srl16_i_srlopt/D (clocked by clk_out1_clk_wiz_0). Large setup violations at the end of those stages might be difficult to fix during the post-placement implementation flow and could be the result of non-optimal XDC constraints or non-optimal design architecture
+There is a large setup violation of -6.829 ns between hp/char1_hp_reg[3]_replica_1/C (clocked by clk_100) and vga_to_hdmi/inst/srldly_0/srl[22].srl16_i_srlopt/D (clocked by clk_out1_clk_wiz_0). Large setup violations at the end of those stages might be difficult to fix during the post-placement implementation flow and could be the result of non-optimal XDC constraints or non-optimal design architecture
 Related violations: <none>
 
 TIMING-16#9 Warning
 Large setup violation  
-There is a large setup violation of -6.499 ns between hp/char2_hp_reg[4]/C (clocked by clk_100) and vga_to_hdmi/inst/srldly_0/srl[38].srl16_i_srlopt/D (clocked by clk_out1_clk_wiz_0). Large setup violations at the end of those stages might be difficult to fix during the post-placement implementation flow and could be the result of non-optimal XDC constraints or non-optimal design architecture
+There is a large setup violation of -6.850 ns between hp/char1_hp_reg[3]_replica_1/C (clocked by clk_100) and vga_to_hdmi/inst/srldly_0/srl[39].srl16_i_srlopt/D (clocked by clk_out1_clk_wiz_0). Large setup violations at the end of those stages might be difficult to fix during the post-placement implementation flow and could be the result of non-optimal XDC constraints or non-optimal design architecture
 Related violations: <none>
 
 TIMING-16#10 Warning
 Large setup violation  
-There is a large setup violation of -6.535 ns between hp/char2_hp_reg[4]/C (clocked by clk_100) and vga_to_hdmi/inst/srldly_0/srl[22].srl16_i/D (clocked by clk_out1_clk_wiz_0). Large setup violations at the end of those stages might be difficult to fix during the post-placement implementation flow and could be the result of non-optimal XDC constraints or non-optimal design architecture
+There is a large setup violation of -6.892 ns between hp/char1_hp_reg[3]_replica_1/C (clocked by clk_100) and vga_to_hdmi/inst/srldly_0/srl[29].srl16_i_srlopt/D (clocked by clk_out1_clk_wiz_0). Large setup violations at the end of those stages might be difficult to fix during the post-placement implementation flow and could be the result of non-optimal XDC constraints or non-optimal design architecture
 Related violations: <none>
 
 TIMING-16#11 Warning
 Large setup violation  
-There is a large setup violation of -6.629 ns between hp/char2_hp_reg[4]/C (clocked by clk_100) and vga_to_hdmi/inst/srldly_0/srl[30].srl16_i_srlopt/D (clocked by clk_out1_clk_wiz_0). Large setup violations at the end of those stages might be difficult to fix during the post-placement implementation flow and could be the result of non-optimal XDC constraints or non-optimal design architecture
+There is a large setup violation of -6.922 ns between hp/char1_hp_reg[3]_replica_1/C (clocked by clk_100) and vga_to_hdmi/inst/srldly_0/srl[21].srl16_i_srlopt/D (clocked by clk_out1_clk_wiz_0). Large setup violations at the end of those stages might be difficult to fix during the post-placement implementation flow and could be the result of non-optimal XDC constraints or non-optimal design architecture
 Related violations: <none>
 
 TIMING-16#12 Warning
 Large setup violation  
-There is a large setup violation of -6.645 ns between hp/char2_hp_reg[4]/C (clocked by clk_100) and vga_to_hdmi/inst/srldly_0/srl[29].srl16_i_srlopt/D (clocked by clk_out1_clk_wiz_0). Large setup violations at the end of those stages might be difficult to fix during the post-placement implementation flow and could be the result of non-optimal XDC constraints or non-optimal design architecture
+There is a large setup violation of -6.922 ns between hp/char1_hp_reg[3]_replica_1/C (clocked by clk_100) and vga_to_hdmi/inst/srldly_0/srl[36].srl16_i/D (clocked by clk_out1_clk_wiz_0). Large setup violations at the end of those stages might be difficult to fix during the post-placement implementation flow and could be the result of non-optimal XDC constraints or non-optimal design architecture
 Related violations: <none>
 
 TIMING-18#1 Warning

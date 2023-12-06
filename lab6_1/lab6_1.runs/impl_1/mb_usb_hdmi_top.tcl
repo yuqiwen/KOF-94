@@ -161,6 +161,8 @@ OPTRACE "add files" START { }
   read_ip -quiet C:/Users/Yuqi/KOF-94/lab6_1/lab6_1.srcs/sources_1/ip/kyo_kick_rom/kyo_kick_rom.xci
   read_ip -quiet c:/Users/Yuqi/KOF-94/lab6_1/lab6_1.srcs/sources_1/ip/kyo_stand_rom/kyo_stand_rom.xci
   read_ip -quiet c:/Users/Yuqi/KOF-94/lab6_1/lab6_1.srcs/sources_1/ip/kyo_forward_rom/kyo_forward_rom.xci
+  read_ip -quiet c:/Users/Yuqi/KOF-94/lab6_1/lab6_1.srcs/sources_1/ip/kyo_jump_rom/kyo_jump_rom.xci
+  read_ip -quiet c:/Users/Yuqi/KOF-94/lab6_1/lab6_1.srcs/sources_1/ip/mai_jump_rom/mai_jump_rom.xci
   set_param project.isImplRun false
 OPTRACE "read constraints: implementation" START { }
   read_xdc C:/Users/Yuqi/KOF-94/lab6_1/lab6_1_provided/mb_intro_top.xdc

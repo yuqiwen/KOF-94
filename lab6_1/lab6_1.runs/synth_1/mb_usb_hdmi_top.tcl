@@ -126,6 +126,8 @@ read_verilog -library xil_defaultlib -sv {
   C:/Users/Yuqi/KOF-94/lab6_1/kyo_forward/kyo_forward_palette.sv
   C:/Users/Yuqi/KOF-94/lab6_1/kyo_head/kyo_head.sv
   C:/Users/Yuqi/KOF-94/lab6_1/kyo_head/kyo_head_palette.sv
+  C:/Users/Yuqi/KOF-94/lab6_1/kyo_jump/kyo_jump.sv
+  C:/Users/Yuqi/KOF-94/lab6_1/kyo_jump/kyo_jump_palette.sv
   C:/Users/Yuqi/KOF-94/lab6_1/kyo_kick/kyo_kick.sv
   C:/Users/Yuqi/KOF-94/lab6_1/kyo_kick/kyo_kick_palette.sv
   C:/Users/Yuqi/KOF-94/lab6_1/kyo_punch/kyo_punch.sv
@@ -140,6 +142,8 @@ read_verilog -library xil_defaultlib -sv {
   C:/Users/Yuqi/KOF-94/lab6_1/mai_forward/mai_forward_palette.sv
   C:/Users/Yuqi/KOF-94/lab6_1/mai_head/mai_head.sv
   C:/Users/Yuqi/KOF-94/lab6_1/mai_head/mai_head_palette.sv
+  C:/Users/Yuqi/KOF-94/lab6_1/mai_jump/mai_jump.sv
+  C:/Users/Yuqi/KOF-94/lab6_1/mai_jump/mai_jump_palette.sv
   C:/Users/Yuqi/KOF-94/lab6_1/mai_kick/mai_kick.sv
   C:/Users/Yuqi/KOF-94/lab6_1/mai_kick/mai_kick_palette.sv
   C:/Users/Yuqi/KOF-94/lab6_1/mai_punch/mai_punch.sv
@@ -252,6 +256,12 @@ set_property used_in_implementation false [get_files -all c:/Users/Yuqi/KOF-94/l
 
 read_ip -quiet c:/Users/Yuqi/KOF-94/lab6_1/lab6_1.srcs/sources_1/ip/kyo_forward_rom/kyo_forward_rom.xci
 set_property used_in_implementation false [get_files -all c:/Users/Yuqi/KOF-94/lab6_1/lab6_1.gen/sources_1/ip/kyo_forward_rom/kyo_forward_rom_ooc.xdc]
+
+read_ip -quiet c:/Users/Yuqi/KOF-94/lab6_1/lab6_1.srcs/sources_1/ip/kyo_jump_rom/kyo_jump_rom.xci
+set_property used_in_implementation false [get_files -all c:/Users/Yuqi/KOF-94/lab6_1/lab6_1.gen/sources_1/ip/kyo_jump_rom/kyo_jump_rom_ooc.xdc]
+
+read_ip -quiet c:/Users/Yuqi/KOF-94/lab6_1/lab6_1.srcs/sources_1/ip/mai_jump_rom/mai_jump_rom.xci
+set_property used_in_implementation false [get_files -all c:/Users/Yuqi/KOF-94/lab6_1/lab6_1.gen/sources_1/ip/mai_jump_rom/mai_jump_rom_ooc.xdc]
 
 OPTRACE "Adding files" END { }
 # Mark all dcp files as not used in implementation to prevent them from being
