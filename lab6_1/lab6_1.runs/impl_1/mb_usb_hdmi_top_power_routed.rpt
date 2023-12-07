@@ -1,7 +1,7 @@
 Copyright 1986-2022 Xilinx, Inc. All Rights Reserved.
 -------------------------------------------------------------------------------------------------------------------------------------------------------------------
 | Tool Version     : Vivado v.2022.2 (win64) Build 3671981 Fri Oct 14 05:00:03 MDT 2022
-| Date             : Wed Dec  6 18:20:44 2023
+| Date             : Wed Dec  6 18:50:41 2023
 | Host             : DESKTOP-D8Q9UV3 running 64-bit major release  (build 9200)
 | Command          : report_power -file mb_usb_hdmi_top_power_routed.rpt -pb mb_usb_hdmi_top_power_summary_routed.pb -rpx mb_usb_hdmi_top_power_routed.rpx
 | Design           : mb_usb_hdmi_top
@@ -30,7 +30,7 @@ Table of Contents
 ----------
 
 +--------------------------+--------------+
-| Total On-Chip Power (W)  | 0.511        |
+| Total On-Chip Power (W)  | 0.510        |
 | Design Power Budget (W)  | Unspecified* |
 | Power Budget Margin (W)  | NA           |
 | Dynamic (W)              | 0.432        |
@@ -53,22 +53,22 @@ Table of Contents
 | On-Chip                  | Power (W) | Used     | Available | Utilization (%) |
 +--------------------------+-----------+----------+-----------+-----------------+
 | Clocks                   |     0.018 |       12 |       --- |             --- |
-| Slice Logic              |     0.018 |    18044 |       --- |             --- |
-|   LUT as Logic           |     0.016 |     9488 |     32600 |           29.10 |
+| Slice Logic              |     0.018 |    18207 |       --- |             --- |
+|   LUT as Logic           |     0.016 |     9566 |     32600 |           29.34 |
 |   CARRY4                 |     0.001 |     1563 |      8150 |           19.18 |
 |   LUT as Distributed RAM |    <0.001 |      108 |      9600 |            1.13 |
-|   Register               |    <0.001 |     3316 |     65200 |            5.09 |
-|   F7/F8 Muxes            |    <0.001 |      118 |     32600 |            0.36 |
+|   Register               |    <0.001 |     3315 |     65200 |            5.08 |
+|   F7/F8 Muxes            |    <0.001 |      202 |     32600 |            0.62 |
 |   LUT as Shift Register  |    <0.001 |       90 |      9600 |            0.94 |
 |   BUFG                   |    <0.001 |        1 |        32 |            3.13 |
 |   Others                 |     0.000 |      804 |       --- |             --- |
-| Signals                  |     0.021 |    13465 |       --- |             --- |
+| Signals                  |     0.021 |    13540 |       --- |             --- |
 | Block RAM                |     0.021 |       72 |        75 |           96.00 |
 | MMCM                     |     0.212 |        2 |         5 |           40.00 |
 | DSPs                     |     0.003 |       14 |       120 |           11.67 |
 | I/O                      |     0.139 |       42 |       210 |           20.00 |
 | Static Power             |     0.079 |          |           |                 |
-| Total                    |     0.511 |          |           |                 |
+| Total                    |     0.510 |          |           |                 |
 +--------------------------+-----------+----------+-----------+-----------------+
 
 
@@ -78,7 +78,7 @@ Table of Contents
 +-----------+-------------+-----------+-------------+------------+-------------+-------------+------------+
 | Source    | Voltage (V) | Total (A) | Dynamic (A) | Static (A) | Powerup (A) | Budget (A)  | Margin (A) |
 +-----------+-------------+-----------+-------------+------------+-------------+-------------+------------+
-| Vccint    |       1.000 |     0.093 |       0.081 |      0.012 |       NA    | Unspecified | NA         |
+| Vccint    |       1.000 |     0.093 |       0.080 |      0.012 |       NA    | Unspecified | NA         |
 | Vccaux    |       1.800 |     0.130 |       0.118 |      0.013 |       NA    | Unspecified | NA         |
 | Vcco33    |       3.300 |     0.041 |       0.040 |      0.001 |       NA    | Unspecified | NA         |
 | Vcco25    |       2.500 |     0.003 |       0.002 |      0.001 |       NA    | Unspecified | NA         |
@@ -175,7 +175,7 @@ Table of Contents
 |       mai_punch_rom           |     0.001 |
 |     st5                       |     0.002 |
 |       mai_kick_rom            |     0.002 |
-|   mb_block_i                  |     0.132 |
+|   mb_block_i                  |     0.133 |
 |     clk_wiz_1                 |     0.106 |
 |       inst                    |     0.106 |
 |     gpio_usb_keycode          |     0.001 |
