@@ -30,7 +30,7 @@ logic [31:0] counter;
 
 always_ff @(posedge Clk) begin
   if(reset)begin
-       seconds<=60;
+       seconds<=62;
        stop<=1'b0;
        counter<=1'b0;
   end

@@ -5,12 +5,6 @@
 
 # XDC: C:/Users/Yuqi/KOF-94/lab6_1/lab6.2_provided/pin_assignment/mb_usb_hdmi_top.xdc
 
-# IP: ip/kyo_squat_rom/kyo_squat_rom.xci
-set_property KEEP_HIERARCHY SOFT [get_cells -hier -filter {REF_NAME==kyo_squat_rom || ORIG_REF_NAME==kyo_squat_rom} -quiet] -quiet
-
-# IP: ip/mai_kick_rom/mai_kick_rom.xci
-set_property KEEP_HIERARCHY SOFT [get_cells -hier -filter {REF_NAME==mai_kick_rom || ORIG_REF_NAME==mai_kick_rom} -quiet] -quiet
-
 # IP: ip/mai_squat_rom/mai_squat_rom.xci
 set_property KEEP_HIERARCHY SOFT [get_cells -hier -filter {REF_NAME==mai_squat_rom || ORIG_REF_NAME==mai_squat_rom} -quiet] -quiet
 

@@ -24,6 +24,7 @@ module char_mai(
         input logic Reset, frame_clk,stop,stop1,
         input logic [7:0] keycode1,keycode2,keycode3,keycode4,keycode5,keycode6,
         input logic char1_punch_act,char1_kick_act,char2_punch_act,char2_kick_act,
+        input logic [5:0] seconds,
         output logic [12:0]  char1X, char1Y,char2X, char2Y,backX,
         output logic forward_1,back_1,punch_1,squat_1,kick_1,jump_1,forward_2,back_2,punch_2,squat_2,kick_2,jump_2,start
     );
@@ -158,7 +159,7 @@ module char_mai(
                  if((keycode1==8'h0D||keycode2==8'h0D||keycode3==8'h0D||keycode4==8'h0D||keycode5==8'h0D||keycode6==8'h0D)&&~char1_kick_debounce)char1_kick_debounce<=1;
                  if((keycode1==8'h5A||keycode2==8'h5A||keycode3==8'h5A||keycode4==8'h5A||keycode5==8'h5A||keycode6==8'h5A)&&~char2_punch_debounce)char2_punch_debounce<=1;
                  if((keycode1==8'h59||keycode2==8'h59||keycode3==8'h59||keycode4==8'h59||keycode5==8'h59||keycode6==8'h59)&&~char2_kick_debounce)char2_kick_debounce<=1;
-                 if(stop||stop1)begin
+                 if(stop||stop1||seconds==62||seconds==61)begin
                      char1_X_Motion <= 10'd0;
                      char1_Y_Motion <= 10'd0;
                      forward_1<=1'b0;
@@ -240,7 +241,7 @@ module char_mai(
                      jump_1<=1'b0;
                  end
                  
-                 if(stop||stop1)begin
+                 if(stop||stop1||seconds==62||seconds==61)begin
                      char2_X_Motion <= 10'd0;
                      char2_Y_Motion <= 10'd0;
                      forward_2<=1'b0;

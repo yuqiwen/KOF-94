@@ -5,7 +5,7 @@ module mai_jump (
 	output logic [3:0] red, green, blue
 );
 
-logic [3:0] rom_q;
+logic [2:0] rom_q;
 
 logic [3:0] palette_red, palette_green, palette_blue;
 

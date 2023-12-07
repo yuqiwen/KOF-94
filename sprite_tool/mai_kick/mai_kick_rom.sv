@@ -4,7 +4,7 @@ module mai_kick_rom (
 	output logic [2:0] q
 );
 
-logic [2:0] memory [0:57119] /* synthesis ram_init_file = "./mai_kick/mai_kick.COE" */;
+logic [2:0] memory [0:34271] /* synthesis ram_init_file = "./mai_kick/mai_kick.COE" */;
 
 always_ff @ (posedge clock) begin
 	q <= memory[address];

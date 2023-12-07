@@ -34,9 +34,12 @@ parameter INITIAL_HP = 100; // Initial HP for both players
 parameter ATTACK_DAMAGE = 5; // Damage inflicted by each attack
 parameter DEBOUNCE_CYCLES = 2; // Debounce cycles
 parameter [9:0] char1_punch_width=128;
-parameter [9:0] char1_kick_width=100;
+parameter [9:0] char1_kick_width=102;
 parameter [9:0] char2_punch_width=96;
 parameter [9:0] char2_kick_width=112;
+parameter [9:0] char2_kick_ext=60;
+parameter [9:0] char2_punch_ext=20;
+parameter [9:0] char_size=160;
 // Registers to handle attack debounce
 logic  char1_punch_debounce,char1_kick_debounce;
 logic  char2_punch_debounce,char2_kick_debounce;
@@ -54,7 +57,7 @@ always @(posedge Clk or posedge reset) begin
     char2_kick_debounce <= 1'b1;
   end 
   else begin
-    if((punch_1&&punch_2)||(kick_1&&kick_2)||(punch_1&&squat_2)||(kick_1&&squat_2)||(punch_2&&squat_1)||(kick_2&&squat_1)||(punch_1&&jump_2)||(kick_1&&jump_2)||(punch_2&&jump_1)||(kick_2&&jump_1))begin
+    if((punch_1&&punch_2)||(kick_1&&kick_2)||(kick_1&&squat_2)||(kick_2&&squat_1)||(punch_1&&jump_2)||(punch_2&&jump_1))begin
            //
     end
     else begin
@@ -62,13 +65,13 @@ always @(posedge Clk or posedge reset) begin
         if(char1_hp==0||char2_hp==0)
             stop1<=1;
         if (punch_1&& char1_punch_debounce) begin
-            if(char1X+char1_punch_width*2>char2X)begin
+            if(char1X+char1_punch_width*2-20>char2X)begin
                   char2_hp <= char2_hp - ATTACK_DAMAGE;
                   char1_punch_debounce <= 1'b0;
             end
         end
         else if(kick_1&& char1_kick_debounce) begin
-            if(char1X+char1_kick_width*2>char2X)begin
+            if(char1X+char1_kick_width*2-20>char2X)begin
                   char2_hp <= char2_hp - ATTACK_DAMAGE;
                   char1_kick_debounce <= 1'b0;
             end
@@ -82,13 +85,13 @@ always @(posedge Clk or posedge reset) begin
     
         // Handle attack debounce for Player 2 (similar logic as Player 1)
         if (punch_2&& char2_punch_debounce) begin
-            if(char2X<char2_punch_width*2+char1X)begin
+            if(char2X<char2_punch_ext*2-20+char_size+char1X)begin
                   char1_hp <= char1_hp - ATTACK_DAMAGE;
                   char2_punch_debounce <= 1'b0;
             end
         end
         else if(kick_2&& char2_kick_debounce) begin
-            if(char2X<char2_kick_width*2+char1X)begin
+            if(char2X<char2_kick_ext*2-20+char_size+char1X)begin
                   char1_hp <= char1_hp - ATTACK_DAMAGE;
                   char2_kick_debounce <= 1'b0;
             end
