@@ -318,7 +318,7 @@ module  color_mapper ( input  logic [9:0] DrawX, DrawY,
         end
         else begin
             char1_fwd_cnt <= char1_fwd_cnt + 1'b1;
-            if (char1_fwd_cnt == 6'b11011) begin  // Reset counter after 18 (binary 10001)
+            if (char1_fwd_cnt == 6'b10100) begin  // Reset counter after 18 (binary 10001)
                 char1_fwd_cnt <= 6'b00000;
             end
         end
@@ -458,9 +458,6 @@ module  color_mapper ( input  logic [9:0] DrawX, DrawY,
                     3'b010:begin
                         char1_fwd_addr=forward_x_size * ((DrawY - char1Y) /2) + ((DrawX - pos_x) /2)+2*forward_x_size*height;
                     end
-                    3'b011: begin
-                        char1_fwd_addr=forward_x_size * ((DrawY - char1Y) /2) + ((DrawX - pos_x) /2)+3*forward_x_size*height;
-                    end
                     default: begin
                         char1_fwd_addr=0;
                     end // Define a default value or handle it as an error
@@ -477,9 +474,6 @@ module  color_mapper ( input  logic [9:0] DrawX, DrawY,
                     3'b010:begin
                         char1_back_addr=back_x_size * ((DrawY - char1Y) /2) + ((DrawX - pos_x) /2)+2*back_x_size*height;
                     end
-//                    3'b011: begin
-//                        char1_back_addr=back_x_size * ((DrawY - char1Y) /2) + ((DrawX - pos_x) /2)+3*back_x_size*height;
-//                    end
                     default: begin
                         char1_back_addr=0;
                     end // Define a default value or handle it as an error

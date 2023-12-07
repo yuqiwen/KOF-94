@@ -4,12 +4,12 @@ module mai_forward_palette (
 );
 
 localparam [0:7][11:0] palette = {
-	{4'h5, 4'h0, 4'h0},
-	{4'hF, 4'hC, 4'h8},
-	{4'hA, 4'h4, 4'h2},
-	{4'h1, 4'h0, 4'h0},
-	{4'hF, 4'hE, 4'hC},
 	{4'hE, 4'h9, 4'h5},
+	{4'h5, 4'h0, 4'h0},
+	{4'hF, 4'hE, 4'hC},
+	{4'hA, 4'h4, 4'h2},
+	{4'hF, 4'hC, 4'h8},
+	{4'h1, 4'h0, 4'h0},
 	{4'h9, 4'h0, 4'h0},
 	{4'hF, 4'h0, 4'hF}
 };

@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<GenRun Id="impl_1" LaunchPart="xc7s50csga324-1" LaunchTime="1701990629">
+<GenRun Id="impl_1" LaunchPart="xc7s50csga324-1" LaunchTime="1701992490">
   <File Type="ROUTE-PWR" Name="mb_usb_hdmi_top_power_routed.rpt"/>
   <File Type="PA-TCL" Name="mb_usb_hdmi_top.tcl"/>
   <File Type="BITSTR-MMI" Name="mb_usb_hdmi_top.mmi"/>
@@ -89,20 +89,6 @@
       </FileInfo>
     </File>
     <File Path="$PSRCDIR/sources_1/ip/mai_punch_rom/mai_punch_rom.xci">
-      <FileInfo>
-        <Attr Name="UsedIn" Val="synthesis"/>
-        <Attr Name="UsedIn" Val="implementation"/>
-        <Attr Name="UsedIn" Val="simulation"/>
-      </FileInfo>
-    </File>
-    <File Path="$PSRCDIR/sources_1/ip/mai_back_rom/mai_back_rom.xci">
-      <FileInfo>
-        <Attr Name="UsedIn" Val="synthesis"/>
-        <Attr Name="UsedIn" Val="implementation"/>
-        <Attr Name="UsedIn" Val="simulation"/>
-      </FileInfo>
-    </File>
-    <File Path="$PSRCDIR/sources_1/ip/mai_forward_rom/mai_forward_rom.xci">
       <FileInfo>
         <Attr Name="UsedIn" Val="synthesis"/>
         <Attr Name="UsedIn" Val="implementation"/>
@@ -742,4 +728,6 @@
   <BlockFileSet Type="BlockSrcs" Name="mai_jump_rom"/>
   <BlockFileSet Type="BlockSrcs" Name="kyo_hit_rom"/>
   <BlockFileSet Type="BlockSrcs" Name="mai_hit_rom"/>
+  <BlockFileSet Type="BlockSrcs" Name="mai_forward_rom"/>
+  <BlockFileSet Type="BlockSrcs" Name="mai_back_rom"/>
 </GenRun>

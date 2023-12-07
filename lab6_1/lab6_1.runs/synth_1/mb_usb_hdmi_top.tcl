@@ -169,12 +169,6 @@ set_property used_in_implementation false [get_files -all c:/Users/Yuqi/KOF-94/l
 read_ip -quiet C:/Users/Yuqi/KOF-94/lab6_1/lab6_1.srcs/sources_1/ip/mai_punch_rom/mai_punch_rom.xci
 set_property used_in_implementation false [get_files -all c:/Users/Yuqi/KOF-94/lab6_1/lab6_1.gen/sources_1/ip/mai_punch_rom/mai_punch_rom_ooc.xdc]
 
-read_ip -quiet C:/Users/Yuqi/KOF-94/lab6_1/lab6_1.srcs/sources_1/ip/mai_back_rom/mai_back_rom.xci
-set_property used_in_implementation false [get_files -all c:/Users/Yuqi/KOF-94/lab6_1/lab6_1.gen/sources_1/ip/mai_back_rom/mai_back_rom_ooc.xdc]
-
-read_ip -quiet C:/Users/Yuqi/KOF-94/lab6_1/lab6_1.srcs/sources_1/ip/mai_forward_rom/mai_forward_rom.xci
-set_property used_in_implementation false [get_files -all c:/Users/Yuqi/KOF-94/lab6_1/lab6_1.gen/sources_1/ip/mai_forward_rom/mai_forward_rom_ooc.xdc]
-
 read_ip -quiet C:/Users/Yuqi/KOF-94/lab6_1/lab6_1.srcs/sources_1/ip/mai_stand_rom/mai_stand_rom.xci
 set_property used_in_implementation false [get_files -all c:/Users/Yuqi/KOF-94/lab6_1/lab6_1.gen/sources_1/ip/mai_stand_rom_1/mai_stand_rom_ooc.xdc]
 
@@ -274,6 +268,12 @@ set_property used_in_implementation false [get_files -all c:/Users/Yuqi/KOF-94/l
 
 read_ip -quiet C:/Users/Yuqi/KOF-94/lab6_1/lab6_1.srcs/sources_1/ip/mai_kick_rom/mai_kick_rom.xci
 set_property used_in_implementation false [get_files -all c:/Users/Yuqi/KOF-94/lab6_1/lab6_1.gen/sources_1/ip/mai_kick_rom/mai_kick_rom_ooc.xdc]
+
+read_ip -quiet c:/Users/Yuqi/KOF-94/lab6_1/lab6_1.srcs/sources_1/ip/mai_forward_rom/mai_forward_rom.xci
+set_property used_in_implementation false [get_files -all c:/Users/Yuqi/KOF-94/lab6_1/lab6_1.gen/sources_1/ip/mai_forward_rom/mai_forward_rom_ooc.xdc]
+
+read_ip -quiet c:/Users/Yuqi/KOF-94/lab6_1/lab6_1.srcs/sources_1/ip/mai_back_rom/mai_back_rom.xci
+set_property used_in_implementation false [get_files -all c:/Users/Yuqi/KOF-94/lab6_1/lab6_1.gen/sources_1/ip/mai_back_rom/mai_back_rom_ooc.xdc]
 
 OPTRACE "Adding files" END { }
 # Mark all dcp files as not used in implementation to prevent them from being

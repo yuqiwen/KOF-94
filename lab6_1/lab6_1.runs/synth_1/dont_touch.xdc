@@ -11,12 +11,6 @@ set_property KEEP_HIERARCHY SOFT [get_cells -hier -filter {REF_NAME==mai_squat_r
 # IP: ip/mai_punch_rom/mai_punch_rom.xci
 set_property KEEP_HIERARCHY SOFT [get_cells -hier -filter {REF_NAME==mai_punch_rom || ORIG_REF_NAME==mai_punch_rom} -quiet] -quiet
 
-# IP: ip/mai_back_rom/mai_back_rom.xci
-set_property KEEP_HIERARCHY SOFT [get_cells -hier -filter {REF_NAME==mai_back_rom || ORIG_REF_NAME==mai_back_rom} -quiet] -quiet
-
-# IP: ip/mai_forward_rom/mai_forward_rom.xci
-set_property KEEP_HIERARCHY SOFT [get_cells -hier -filter {REF_NAME==mai_forward_rom || ORIG_REF_NAME==mai_forward_rom} -quiet] -quiet
-
 # IP: ip/mai_stand_rom/mai_stand_rom.xci
 set_property KEEP_HIERARCHY SOFT [get_cells -hier -filter {REF_NAME==mai_stand_rom || ORIG_REF_NAME==mai_stand_rom} -quiet] -quiet
 
