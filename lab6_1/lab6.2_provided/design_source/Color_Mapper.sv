@@ -33,6 +33,8 @@ module  color_mapper ( input  logic [9:0] DrawX, DrawY,
     parameter [9:0] char1_squat_width=80;
     parameter [9:0] char1_kick_height=112;
     parameter [9:0] char1_kick_width=102;
+    parameter [9:0] char1_jump_height=144;
+    parameter [9:0] char1_jump_width=50;
     
     parameter [9:0] char2_forward_width=80;
     parameter [9:0] forward_x_size2=80;
@@ -45,6 +47,8 @@ module  color_mapper ( input  logic [9:0] DrawX, DrawY,
     parameter [9:0] char2_kick_ext=60;
     parameter [9:0] char2_punch_ext=20;
     parameter [9:0] char2_forward_height=128;
+    parameter [9:0] char2_jump_height=144;
+    parameter [9:0] char2_jump_width=80;
     
     parameter [9:0] bg1_height=128;
     parameter [9:0] bg1_width=130;
@@ -65,8 +69,8 @@ module  color_mapper ( input  logic [9:0] DrawX, DrawY,
     parameter [9:0] vga_size=640;
 
     logic [17:0] bg1_rom_address, bg2_rom_address,bg3_rom_address,bg4_rom_address,bg5_rom_address,char1_head_address,char2_head_address;
-    logic [17:0] char1_rom_address,char1_stand_addr,char1_fwd_addr,char1_back_addr,char1_punch_addr,char1_squat_addr,char1_kick_addr;
-    logic [17:0] char2_rom_address,char2_stand_addr,char2_fwd_addr,char2_back_addr,char2_punch_addr,char2_squat_addr,char2_kick_addr;
+    logic [17:0] char1_rom_address,char1_stand_addr,char1_fwd_addr,char1_back_addr,char1_punch_addr,char1_squat_addr,char1_kick_addr,char1_jump_addr;
+    logic [17:0] char2_rom_address,char2_stand_addr,char2_fwd_addr,char2_back_addr,char2_punch_addr,char2_squat_addr,char2_kick_addr,char2_jump_addr;
     logic [9:0] pos_x,pos2_x;
     logic [3:0]  bg_r, bg_g, bg_b,bg1_r, bg1_g, bg1_b,bg2_r, bg2_g, bg2_b, bg3_r, bg3_g, bg3_b,bg4_r, bg4_g, bg4_b,bg5_r, bg5_g, bg5_b;
     logic [3:0] char1_r,char1_g,char1_b, char1_stand_r, char1_stand_g, char1_stand_b;
@@ -76,8 +80,8 @@ module  color_mapper ( input  logic [9:0] DrawX, DrawY,
     logic [3:0] char2_back_r,char2_back_g,char2_back_b,char2_punch_r,char2_punch_g,char2_punch_b, char2_squat_r,char2_squat_g,char2_squat_b,char2_kick_r,char2_kick_g,char2_kick_b,char2_jump_r,char2_jump_g,char2_jump_b;
     logic char1_on,char2_on,stand_1,stand_2,s_on,hp1_on,hp2_on,name_on,time_on,head1_on,head2_on,win_on,start1_on,start2_on,start3_on,press_on;
     logic [5:0] char1_cnt,char2_cnt,bg_cnt,press_cnt;  // 5-bit counter to handle 18 states
-    logic [5:0] char1_fwd_cnt,char1_back_cnt,char1_punch_cnt,char1_kick_cnt;
-    logic [5:0] char2_fwd_cnt,char2_back_cnt,char2_punch_cnt,char2_kick_cnt;
+    logic [5:0] char1_fwd_cnt,char1_back_cnt,char1_punch_cnt,char1_kick_cnt,char1_jump_cnt;
+    logic [5:0] char2_fwd_cnt,char2_back_cnt,char2_punch_cnt,char2_kick_cnt,char2_jump_cnt;
     localparam MAX_STR_LEN = 64;  // Maximum string length
     logic [4*12-1:0] time_array= {"TIME"};
     logic [8*12-1:0] char1_array= {"MAI SHIRANUI"};
@@ -288,6 +292,17 @@ module  color_mapper ( input  logic [9:0] DrawX, DrawY,
             end
         end
     end
+    always_ff @(posedge vsync) begin
+        if (~jump_1) begin
+            char1_jump_cnt <= 6'b00000;
+        end
+        else begin
+            char1_jump_cnt <= char1_jump_cnt + 1'b1;
+            if (char1_jump_cnt == 6'b10100) begin  // Reset counter after 18 (binary 10001)
+                char1_jump_cnt <= 6'b00000;
+            end
+        end
+    end
     always_ff @(posedge vsync or posedge reset) begin
         if (reset) begin
             char1_punch_cnt <= 6'b00000;
@@ -336,17 +351,17 @@ module  color_mapper ( input  logic [9:0] DrawX, DrawY,
             end
         end
     end
-//    always_ff @(posedge vsync) begin
-//        if (~back_2) begin
-//            char2_back_cnt <= 6'b00000;
-//        end
-//        else begin
-//            char2_back_cnt <= char2_back_cnt + 1'b1;
-//            if (char2_back_cnt == 6'b101001) begin  // Reset counter after 18 (binary 10001)
-//                char2_back_cnt <= 6'b00000;
-//            end
-//        end
-//    end
+    always_ff @(posedge vsync) begin
+        if (~jump_2) begin
+            char2_jump_cnt <= 6'b00000;
+        end
+        else begin
+            char2_jump_cnt <= char2_jump_cnt + 1'b1;
+            if (char2_jump_cnt == 6'b10100) begin  // Reset counter after 18 (binary 10001)
+                char2_jump_cnt <= 6'b00000;
+            end
+        end
+    end
     always_ff @(posedge vsync or posedge reset)begin
         if (reset) begin
             char2_punch_cnt <= 6'b00000;
@@ -469,6 +484,22 @@ module  color_mapper ( input  logic [9:0] DrawX, DrawY,
                     end // Define a default value or handle it as an error
                 endcase
         end
+        else if(jump_1)begin
+            case (char1_jump_cnt / 7)
+                    3'b000: begin
+                        char1_jump_addr=char1_kick_width * ((DrawY - char1Y) /2) + ((DrawX - pos_x) /2);
+                    end
+                    3'b001: begin
+                        char1_jump_addr=char1_kick_width * ((DrawY - char1Y) /2) + ((DrawX - pos_x) /2)+1*char1_kick_width*char1_kick_height;
+                    end
+                    3'b010:begin
+                        char1_jump_addr=char1_kick_width * ((DrawY - char1Y) /2) + ((DrawX - pos_x) /2)+2*char1_kick_width*char1_kick_height;
+                    end
+                    default: begin
+                        char1_jump_addr=0;
+                    end // Define a default value or handle it as an error
+                endcase
+        end
         case (char1_cnt / 7)
             3'b000: begin
                 char1_stand_addr=stand_x_size * ((DrawY - char1Y) /2) + ((DrawX - pos_x) /2);
@@ -547,6 +578,22 @@ module  color_mapper ( input  logic [9:0] DrawX, DrawY,
                     end
                     default: begin
                         char2_kick_addr=0;
+                    end // Define a default value or handle it as an error
+                endcase
+        end
+        else if(jump_2)begin
+            case (char2_jump_cnt / 7)
+                    3'b000: begin
+                        char2_jump_addr=char2_jump_width * ((DrawY - char2Y-60) /2) + ((DrawX - pos2_x) /2);
+                    end
+                    3'b001: begin
+                        char2_jump_addr=char2_jump_width * ((DrawY - char2Y-120) /2) + ((DrawX - pos2_x) /2)+1*char2_jump_width*char2_jump_height;
+                    end
+                    3'b010:begin
+                        char2_jump_addr=char2_jump_width * ((DrawY - char2Y-60) /2) + ((DrawX - pos2_x) /2);
+                    end
+                    default: begin
+                        char2_jump_addr=0;
                     end // Define a default value or handle it as an error
                 endcase
         end
@@ -635,6 +682,25 @@ module  color_mapper ( input  logic [9:0] DrawX, DrawY,
 	       char2_rom_address = char2_punch_addr;
        else if(squat_2 && DrawX >= pos2_x && DrawX < pos2_x+2*char2_squat_width && DrawY >= (char2Y+(height-char2_squat_height)*2) && DrawY < (char2Y+(height-char2_squat_height)*2+char2_squat_height*2))
 	       char2_rom_address = char2_squat_addr;
+       else if(jump_2)begin
+               case (char2_jump_cnt / 7)
+                    3'b000: begin
+                        if(DrawX >= pos2_x && DrawX < pos2_x+2*char2_jump_width && DrawY >= char2Y+60 && DrawY < char2Y+60+height*2)
+                            char2_rom_address = char2_jump_addr;
+                    end
+                    3'b001: begin
+                        if(DrawX >= pos2_x && DrawX < pos2_x+2*char2_jump_width && DrawY >= char2Y+120 && DrawY < char2Y+120+height*2)
+                            char2_rom_address = char2_jump_addr;
+                    end
+                    3'b010:begin
+                         if(DrawX >= pos2_x && DrawX < pos2_x+2*char2_jump_width && DrawY >= char2Y+60 && DrawY < char2Y+60+height*2)
+                            char2_rom_address = char2_jump_addr;
+                    end
+                    default: begin
+                        char2_rom_address=0;
+                    end // Define a default value or handle it as an error
+                endcase
+	   end
 	   else
 	       char2_rom_address = 0;
 	end
@@ -957,6 +1023,40 @@ module  color_mapper ( input  logic [9:0] DrawX, DrawY,
                 char2_b=char2_squat_b;
             end
         end
+        else if(jump_2)begin
+               case (char2_jump_cnt / 7)
+                    3'b000: begin
+                        if(DrawX >= pos2_x && DrawX < pos2_x+2*char2_jump_width && DrawY >= char2Y+60 && DrawY < char2Y+60+height*2)begin
+                             if(char2_jump_r != 4'hF || char2_jump_g != 4'h0 || char2_jump_b != 4'hF)begin
+                                char2_on = 1;
+                                char2_r=char2_jump_r;
+                                char2_g=char2_jump_g;
+                                char2_b=char2_jump_b;
+                            end
+                        end
+                    end
+                    3'b001: begin
+                        if(DrawX >= pos2_x&& DrawX < pos2_x+2*char2_jump_width && DrawY >= char2Y+120 && DrawY < char2Y+120+height*2)begin
+                            if(char2_jump_r != 4'hF || char2_jump_g != 4'h0 || char2_jump_b != 4'hF)begin
+                                char2_on = 1;
+                                char2_r=char2_jump_r;
+                                char2_g=char2_jump_g;
+                                char2_b=char2_jump_b;
+                            end
+                         end
+                    end
+                    3'b010:begin
+                         if(DrawX >= pos2_x && DrawX < pos2_x+2*char2_jump_width && DrawY >= char2Y+60 && DrawY < char2Y+60+height*2)begin
+                             if(char2_jump_r != 4'hF || char2_jump_g != 4'h0 || char2_jump_b != 4'hF)begin
+                                char2_on = 1;
+                                char2_r=char2_jump_r;
+                                char2_g=char2_jump_g;
+                                char2_b=char2_jump_b;
+                            end
+                         end
+                    end
+                endcase
+	   end
     end
     
     
@@ -1054,7 +1154,7 @@ module  color_mapper ( input  logic [9:0] DrawX, DrawY,
     );
     mai_jump st8(
         .vga_clk(clk_25MHz),
-        .rom_address(char2_head_address),
+        .rom_address(char1_rom_address),
         .blank(blank),
         .red(char1_jump_r), 
         .green(char1_jump_g), 
@@ -1111,7 +1211,7 @@ module  color_mapper ( input  logic [9:0] DrawX, DrawY,
     );
     kyo_jump kt8(
         .vga_clk(clk_25MHz),
-        .rom_address(char2_head_address),
+        .rom_address(char2_rom_address),
         .blank(blank),
         .red(char2_jump_r), 
         .green(char2_jump_g), 
