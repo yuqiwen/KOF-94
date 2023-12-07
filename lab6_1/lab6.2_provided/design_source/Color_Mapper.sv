@@ -298,7 +298,7 @@ module  color_mapper ( input  logic [9:0] DrawX, DrawY,
         end
         else begin
             char1_jump_cnt <= char1_jump_cnt + 1'b1;
-            if (char1_jump_cnt == 6'b10100) begin  // Reset counter after 18 (binary 10001)
+            if (char1_jump_cnt == 6'b100111) begin  // Reset counter after 18 (binary 10001)
                 char1_jump_cnt <= 6'b00000;
             end
         end
@@ -485,15 +485,15 @@ module  color_mapper ( input  logic [9:0] DrawX, DrawY,
                 endcase
         end
         else if(jump_1)begin
-            case (char1_jump_cnt / 7)
+            case (char1_jump_cnt / 10)
                     3'b000: begin
-                        char1_jump_addr=char1_jump_width * ((DrawY - char1Y+100) /2) + ((DrawX - pos_x-60) /2);
+                        char1_jump_addr=char1_jump_width * ((DrawY - char1Y+100) /2) + ((DrawX - pos_x-30) /2);
                     end
                     3'b001: begin
-                        char1_jump_addr=char1_jump_width * ((DrawY - char1Y+200) /2) + ((DrawX - pos_x-60) /2)+1*char1_jump_width*char1_jump_height;
+                        char1_jump_addr=char1_jump_width * ((DrawY - char1Y+200) /2) + ((DrawX - pos_x-30) /2)+1*char1_jump_width*char1_jump_height;
                     end
                     3'b010:begin
-                        char1_jump_addr=char1_jump_width * ((DrawY - char1Y+100) /2) + ((DrawX - pos_x-60) /2);
+                        char1_jump_addr=char1_jump_width * ((DrawY - char1Y+100) /2) + ((DrawX - pos_x-30) /2);
                     end
                     3'b011:begin
                         char1_jump_addr=stand_x_size * ((DrawY - char1Y) /2) + ((DrawX - pos_x) /2);
@@ -664,15 +664,15 @@ module  color_mapper ( input  logic [9:0] DrawX, DrawY,
 	   else if(jump_1)begin
                case (char1_jump_cnt / 10)
                     3'b000: begin
-                        if(DrawX >= pos_x+60 && DrawX < pos_x+60+2*char1_jump_width && DrawY >= char1Y-100 && DrawY < char1Y-100+char1_jump_height*2)
+                        if(DrawX >= pos_x+30 && DrawX < pos_x+30+2*char1_jump_width && DrawY >= char1Y-100 && DrawY < char1Y-100+char1_jump_height*2)
                             char1_rom_address = char1_jump_addr;
                     end
                     3'b001: begin
-                        if(DrawX >= pos_x+60 && DrawX < pos_x+60+2*char1_jump_width && DrawY >= char1Y-200 && DrawY < char1Y-200+char1_jump_height*2)
+                        if(DrawX >= pos_x+30 && DrawX < pos_x+30+2*char1_jump_width && DrawY >= char1Y-200 && DrawY < char1Y-200+char1_jump_height*2)
                             char1_rom_address = char1_jump_addr;
                     end
                     3'b010:begin
-                         if(DrawX >= pos_x+60 && DrawX < pos_x+60+2*char1_jump_width && DrawY >= char1Y-100 && DrawY < char1Y-100+char1_jump_height*2)
+                         if(DrawX >= pos_x+30 && DrawX < pos_x+30+2*char1_jump_width && DrawY >= char1Y-100 && DrawY < char1Y-100+char1_jump_height*2)
                             char1_rom_address = char1_jump_addr;
                     end
                      3'b011:begin
@@ -995,7 +995,7 @@ module  color_mapper ( input  logic [9:0] DrawX, DrawY,
          else if(jump_1)begin
                case (char1_jump_cnt / 10)
                     3'b000: begin
-                        if(DrawX >= pos_x+60 && DrawX < pos_x+60+2*char1_jump_width && DrawY >= char1Y-100 && DrawY < char1Y-100+char1_jump_height*2)begin
+                        if(DrawX >= pos_x+30 && DrawX < pos_x+30+2*char1_jump_width && DrawY >= char1Y-100 && DrawY < char1Y-100+char1_jump_height*2)begin
                              if(char1_jump_r != 4'hF || char1_jump_g != 4'h0 || char1_jump_b != 4'hF)begin
                                 char1_on = 1;
                                 char1_r=char1_jump_r;
@@ -1005,7 +1005,7 @@ module  color_mapper ( input  logic [9:0] DrawX, DrawY,
                         end
                     end
                     3'b001: begin
-                        if(DrawX >= pos_x+60 && DrawX < pos_x+60+2*char1_jump_width && DrawY >= char1Y-200 && DrawY < char1Y-200+char1_jump_height*2)begin
+                        if(DrawX >= pos_x+30 && DrawX < pos_x+30+2*char1_jump_width && DrawY >= char1Y-200 && DrawY < char1Y-200+char1_jump_height*2)begin
                              if(char1_jump_r != 4'hF || char1_jump_g != 4'h0 || char1_jump_b != 4'hF)begin
                                 char1_on = 1;
                                 char1_r=char1_jump_r;
@@ -1015,7 +1015,7 @@ module  color_mapper ( input  logic [9:0] DrawX, DrawY,
                         end
                     end
                     3'b010:begin
-                        if(DrawX >= pos_x+60 && DrawX < pos_x+60+2*char1_jump_width && DrawY >= char1Y-100 && DrawY < char1Y-100+char1_jump_height*2)begin
+                        if(DrawX >= pos_x+30 && DrawX < pos_x+30+2*char1_jump_width && DrawY >= char1Y-100 && DrawY < char1Y-100+char1_jump_height*2)begin
                              if(char1_jump_r != 4'hF || char1_jump_g != 4'h0 || char1_jump_b != 4'hF)begin
                                 char1_on = 1;
                                 char1_r=char1_jump_r;
