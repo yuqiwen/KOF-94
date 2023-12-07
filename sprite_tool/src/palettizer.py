@@ -115,7 +115,7 @@ def palettizer(image, k):
 
     # Compress colors to 4 bit and adjust colors
     for i in range(len(palette)-1):  # Exclude hot pink from adjustment
-        palette[i][0] = min(palette[i][0]+5 , 0xF0)  # Increase red
+        palette[i][0] = min(palette[i][0], 0xF0)  # Increase red
         # palette[i][2] = min(palette[i][2] + 6, 0xF0)  # Increase blue
         palette[i][1] = max(palette[i][1], 00)  # Increase green
 
