@@ -1,6 +1,6 @@
 module kyo_forward (
 	input logic vga_clk,
-	input logic [14:0] rom_address,
+	input logic [15:0] rom_address,
 	input logic blank,
 	output logic [3:0] red, green, blue
 );

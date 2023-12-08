@@ -1,4 +1,4 @@
-05:52:04 **** Incremental Build of configuration Debug for project keyboard ****
+03:33:46 **** Incremental Build of configuration Debug for project keyboard ****
 make all 
 'Building file: ../src/lw_usb/MAX3421E.c'
 'Invoking: MicroBlaze gcc compiler'
@@ -74,5 +74,5 @@ mb-size keyboard.elf  |tee "keyboard.elf.size"
 'Finished building: keyboard.elf.size'
 ' '
 
-05:52:05 Build Finished (took 810ms)
+03:33:47 Build Finished (took 717ms)
 

@@ -1,6 +1,6 @@
 module mai_hit (
 	input logic vga_clk,
-	input logic [12:0] rom_address,
+	input logic [13:0] rom_address,
 	input logic blank,
 	output logic [3:0] red, green, blue
 );

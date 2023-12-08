@@ -141,7 +141,6 @@ OPTRACE "add files" START { }
   add_files -quiet C:/Users/Yuqi/KOF-94/lab6_1/lab6_1.runs/synth_1/mb_usb_hdmi_top.dcp
   set_msg_config -source 4 -id {BD 41-1661} -limit 0
   set_param project.isImplRun true
-  read_ip -quiet C:/Users/Yuqi/KOF-94/lab6_1/lab6_1.srcs/sources_1/ip/mai_squat_rom/mai_squat_rom.xci
   read_ip -quiet C:/Users/Yuqi/KOF-94/lab6_1/lab6_1.srcs/sources_1/ip/mai_punch_rom/mai_punch_rom.xci
   read_ip -quiet C:/Users/Yuqi/KOF-94/lab6_1/lab6_1.srcs/sources_1/ip/mai_stand_rom/mai_stand_rom.xci
   read_ip -quiet C:/Users/Yuqi/KOF-94/lab6_1/lab6_1.srcs/sources_1/ip/scene1_rom/scene1_rom.xci
@@ -156,15 +155,15 @@ OPTRACE "add files" START { }
   read_ip -quiet C:/Users/Yuqi/KOF-94/lab6_1/lab6_1.srcs/sources_1/ip/kyo_punch_rom/kyo_punch_rom.xci
   read_ip -quiet C:/Users/Yuqi/KOF-94/lab6_1/lab6_1.srcs/sources_1/ip/kyo_kick_rom/kyo_kick_rom.xci
   read_ip -quiet C:/Users/Yuqi/KOF-94/lab6_1/lab6_1.srcs/sources_1/ip/kyo_stand_rom/kyo_stand_rom.xci
-  read_ip -quiet C:/Users/Yuqi/KOF-94/lab6_1/lab6_1.srcs/sources_1/ip/kyo_forward_rom/kyo_forward_rom.xci
-  read_ip -quiet C:/Users/Yuqi/KOF-94/lab6_1/lab6_1.srcs/sources_1/ip/kyo_jump_rom/kyo_jump_rom.xci
   read_ip -quiet C:/Users/Yuqi/KOF-94/lab6_1/lab6_1.srcs/sources_1/ip/mai_jump_rom/mai_jump_rom.xci
   read_ip -quiet C:/Users/Yuqi/KOF-94/lab6_1/lab6_1.srcs/sources_1/ip/kyo_squat_rom/kyo_squat_rom.xci
-  read_ip -quiet C:/Users/Yuqi/KOF-94/lab6_1/lab6_1.srcs/sources_1/ip/kyo_hit_rom/kyo_hit_rom.xci
-  read_ip -quiet C:/Users/Yuqi/KOF-94/lab6_1/lab6_1.srcs/sources_1/ip/mai_hit_rom/mai_hit_rom.xci
   read_ip -quiet C:/Users/Yuqi/KOF-94/lab6_1/lab6_1.srcs/sources_1/ip/mai_kick_rom/mai_kick_rom.xci
   read_ip -quiet c:/Users/Yuqi/KOF-94/lab6_1/lab6_1.srcs/sources_1/ip/mai_forward_rom/mai_forward_rom.xci
   read_ip -quiet c:/Users/Yuqi/KOF-94/lab6_1/lab6_1.srcs/sources_1/ip/mai_back_rom/mai_back_rom.xci
+  read_ip -quiet c:/Users/Yuqi/KOF-94/lab6_1/lab6_1.srcs/sources_1/ip/kyo_hit_rom/kyo_hit_rom.xci
+  read_ip -quiet c:/Users/Yuqi/KOF-94/lab6_1/lab6_1.srcs/sources_1/ip/kyo_forward_rom/kyo_forward_rom.xci
+  read_ip -quiet c:/Users/Yuqi/KOF-94/lab6_1/lab6_1.srcs/sources_1/ip/mai_hit_rom/mai_hit_rom.xci
+  read_ip -quiet c:/Users/Yuqi/KOF-94/lab6_1/lab6_1.srcs/sources_1/ip/mai_win_rom/mai_win_rom.xci
   set_param project.isImplRun false
 OPTRACE "read constraints: implementation" START { }
   read_xdc C:/Users/Yuqi/KOF-94/lab6_1/lab6_1_provided/mb_intro_top.xdc

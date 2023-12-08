@@ -111,6 +111,10 @@ add_files C:/Users/Yuqi/KOF-94/lab6_1/kyo_jump/kyo_jump.COE
 add_files C:/Users/Yuqi/KOF-94/lab6_1/mai_jump/mai_jump.COE
 add_files C:/Users/Yuqi/KOF-94/lab6_1/kyo_hit/kyo_hit.COE
 add_files C:/Users/Yuqi/KOF-94/lab6_1/mai_hit/mai_hit.COE
+add_files c:/Users/Yuqi/KOF-94/lab6_1/mai_win/mai_win.COE
+add_files c:/Users/Yuqi/KOF-94/lab6_1/kyo_win/kyo_win.COE
+add_files c:/Users/Yuqi/KOF-94/lab6_1/kyo_lose/kyo_lose.COE
+add_files c:/Users/Yuqi/KOF-94/lab6_1/mai_lose/mai_lose.COE
 read_verilog -library xil_defaultlib -sv {
   C:/Users/Yuqi/KOF-94/lab6_1/lab6.2_provided/design_source/Color_Mapper.sv
   C:/Users/Yuqi/KOF-94/lab6_1/lab6.2_provided/design_source/VGA_controller.sv
@@ -130,8 +134,6 @@ read_verilog -library xil_defaultlib -sv {
   C:/Users/Yuqi/KOF-94/lab6_1/kyo_head/kyo_head_palette.sv
   C:/Users/Yuqi/KOF-94/lab6_1/kyo_hit/kyo_hit.sv
   C:/Users/Yuqi/KOF-94/lab6_1/kyo_hit/kyo_hit_palette.sv
-  C:/Users/Yuqi/KOF-94/lab6_1/kyo_jump/kyo_jump.sv
-  C:/Users/Yuqi/KOF-94/lab6_1/kyo_jump/kyo_jump_palette.sv
   C:/Users/Yuqi/KOF-94/lab6_1/kyo_kick/kyo_kick.sv
   C:/Users/Yuqi/KOF-94/lab6_1/kyo_kick/kyo_kick_palette.sv
   C:/Users/Yuqi/KOF-94/lab6_1/kyo_punch/kyo_punch.sv
@@ -154,18 +156,15 @@ read_verilog -library xil_defaultlib -sv {
   C:/Users/Yuqi/KOF-94/lab6_1/mai_kick/mai_kick_palette.sv
   C:/Users/Yuqi/KOF-94/lab6_1/mai_punch/mai_punch.sv
   C:/Users/Yuqi/KOF-94/lab6_1/mai_punch/mai_punch_palette.sv
-  C:/Users/Yuqi/KOF-94/lab6_1/mai_squat/mai_squat.sv
-  C:/Users/Yuqi/KOF-94/lab6_1/mai_squat/mai_squat_palette.sv
   C:/Users/Yuqi/KOF-94/lab6_1/mai_stand/mai_stand.sv
   C:/Users/Yuqi/KOF-94/lab6_1/mai_stand/mai_stand_palette.sv
+  C:/Users/Yuqi/KOF-94/lab6_1/mai_win/mai_win.sv
+  C:/Users/Yuqi/KOF-94/lab6_1/mai_win/mai_win_palette.sv
   C:/Users/Yuqi/KOF-94/lab6_1/scene1/scene1.sv
   C:/Users/Yuqi/KOF-94/lab6_1/scene1/scene1_palette.sv
   C:/Users/Yuqi/KOF-94/lab6_1/lab6_1.srcs/sources_1/new/timer.sv
   C:/Users/Yuqi/KOF-94/lab6_1/lab6.2_provided/design_source/mb_usb_hdmi_top.sv
 }
-read_ip -quiet C:/Users/Yuqi/KOF-94/lab6_1/lab6_1.srcs/sources_1/ip/mai_squat_rom/mai_squat_rom.xci
-set_property used_in_implementation false [get_files -all c:/Users/Yuqi/KOF-94/lab6_1/lab6_1.gen/sources_1/ip/mai_squat_rom/mai_squat_rom_ooc.xdc]
-
 read_ip -quiet C:/Users/Yuqi/KOF-94/lab6_1/lab6_1.srcs/sources_1/ip/mai_punch_rom/mai_punch_rom.xci
 set_property used_in_implementation false [get_files -all c:/Users/Yuqi/KOF-94/lab6_1/lab6_1.gen/sources_1/ip/mai_punch_rom/mai_punch_rom_ooc.xdc]
 
@@ -248,23 +247,11 @@ set_property used_in_implementation false [get_files -all c:/Users/Yuqi/KOF-94/l
 read_ip -quiet C:/Users/Yuqi/KOF-94/lab6_1/lab6_1.srcs/sources_1/ip/kyo_stand_rom/kyo_stand_rom.xci
 set_property used_in_implementation false [get_files -all c:/Users/Yuqi/KOF-94/lab6_1/lab6_1.gen/sources_1/ip/kyo_stand_rom/kyo_stand_rom_ooc.xdc]
 
-read_ip -quiet C:/Users/Yuqi/KOF-94/lab6_1/lab6_1.srcs/sources_1/ip/kyo_forward_rom/kyo_forward_rom.xci
-set_property used_in_implementation false [get_files -all c:/Users/Yuqi/KOF-94/lab6_1/lab6_1.gen/sources_1/ip/kyo_forward_rom/kyo_forward_rom_ooc.xdc]
-
-read_ip -quiet C:/Users/Yuqi/KOF-94/lab6_1/lab6_1.srcs/sources_1/ip/kyo_jump_rom/kyo_jump_rom.xci
-set_property used_in_implementation false [get_files -all c:/Users/Yuqi/KOF-94/lab6_1/lab6_1.gen/sources_1/ip/kyo_jump_rom/kyo_jump_rom_ooc.xdc]
-
 read_ip -quiet C:/Users/Yuqi/KOF-94/lab6_1/lab6_1.srcs/sources_1/ip/mai_jump_rom/mai_jump_rom.xci
 set_property used_in_implementation false [get_files -all c:/Users/Yuqi/KOF-94/lab6_1/lab6_1.gen/sources_1/ip/mai_jump_rom/mai_jump_rom_ooc.xdc]
 
 read_ip -quiet C:/Users/Yuqi/KOF-94/lab6_1/lab6_1.srcs/sources_1/ip/kyo_squat_rom/kyo_squat_rom.xci
 set_property used_in_implementation false [get_files -all c:/Users/Yuqi/KOF-94/lab6_1/lab6_1.gen/sources_1/ip/kyo_squat_rom/kyo_squat_rom_ooc.xdc]
-
-read_ip -quiet C:/Users/Yuqi/KOF-94/lab6_1/lab6_1.srcs/sources_1/ip/kyo_hit_rom/kyo_hit_rom.xci
-set_property used_in_implementation false [get_files -all c:/Users/Yuqi/KOF-94/lab6_1/lab6_1.gen/sources_1/ip/kyo_hit_rom/kyo_hit_rom_ooc.xdc]
-
-read_ip -quiet C:/Users/Yuqi/KOF-94/lab6_1/lab6_1.srcs/sources_1/ip/mai_hit_rom/mai_hit_rom.xci
-set_property used_in_implementation false [get_files -all c:/Users/Yuqi/KOF-94/lab6_1/lab6_1.gen/sources_1/ip/mai_hit_rom/mai_hit_rom_ooc.xdc]
 
 read_ip -quiet C:/Users/Yuqi/KOF-94/lab6_1/lab6_1.srcs/sources_1/ip/mai_kick_rom/mai_kick_rom.xci
 set_property used_in_implementation false [get_files -all c:/Users/Yuqi/KOF-94/lab6_1/lab6_1.gen/sources_1/ip/mai_kick_rom/mai_kick_rom_ooc.xdc]
@@ -274,6 +261,18 @@ set_property used_in_implementation false [get_files -all c:/Users/Yuqi/KOF-94/l
 
 read_ip -quiet c:/Users/Yuqi/KOF-94/lab6_1/lab6_1.srcs/sources_1/ip/mai_back_rom/mai_back_rom.xci
 set_property used_in_implementation false [get_files -all c:/Users/Yuqi/KOF-94/lab6_1/lab6_1.gen/sources_1/ip/mai_back_rom/mai_back_rom_ooc.xdc]
+
+read_ip -quiet c:/Users/Yuqi/KOF-94/lab6_1/lab6_1.srcs/sources_1/ip/kyo_hit_rom/kyo_hit_rom.xci
+set_property used_in_implementation false [get_files -all c:/Users/Yuqi/KOF-94/lab6_1/lab6_1.gen/sources_1/ip/kyo_hit_rom/kyo_hit_rom_ooc.xdc]
+
+read_ip -quiet c:/Users/Yuqi/KOF-94/lab6_1/lab6_1.srcs/sources_1/ip/kyo_forward_rom/kyo_forward_rom.xci
+set_property used_in_implementation false [get_files -all c:/Users/Yuqi/KOF-94/lab6_1/lab6_1.gen/sources_1/ip/kyo_forward_rom/kyo_forward_rom_ooc.xdc]
+
+read_ip -quiet c:/Users/Yuqi/KOF-94/lab6_1/lab6_1.srcs/sources_1/ip/mai_hit_rom/mai_hit_rom.xci
+set_property used_in_implementation false [get_files -all c:/Users/Yuqi/KOF-94/lab6_1/lab6_1.gen/sources_1/ip/mai_hit_rom/mai_hit_rom_ooc.xdc]
+
+read_ip -quiet c:/Users/Yuqi/KOF-94/lab6_1/lab6_1.srcs/sources_1/ip/mai_win_rom/mai_win_rom.xci
+set_property used_in_implementation false [get_files -all c:/Users/Yuqi/KOF-94/lab6_1/lab6_1.gen/sources_1/ip/mai_win_rom/mai_win_rom_ooc.xdc]
 
 OPTRACE "Adding files" END { }
 # Mark all dcp files as not used in implementation to prevent them from being

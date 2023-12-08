@@ -2,8 +2,8 @@
 # Vivado v2022.2 (64-bit)
 # SW Build 3671981 on Fri Oct 14 05:00:03 MDT 2022
 # IP Build 3669848 on Fri Oct 14 08:30:02 MDT 2022
-# Start of session at: Thu Dec  7 03:51:22 2023
-# Process ID: 10032
+# Start of session at: Fri Dec  8 03:02:56 2023
+# Process ID: 16000
 # Current directory: C:/Users/Yuqi/KOF-94/lab6_1/lab6_1.runs/mai_hit_rom_synth_1
 # Command line: vivado.exe -log mai_hit_rom.vds -product Vivado -mode batch -messageDb vivado.pb -notrace -source mai_hit_rom.tcl
 # Log file: C:/Users/Yuqi/KOF-94/lab6_1/lab6_1.runs/mai_hit_rom_synth_1/mai_hit_rom.vds
@@ -22,10 +22,10 @@ INFO: [Common 17-349] Got license for feature 'Synthesis' and/or device 'xc7s50'
 INFO: [Device 21-403] Loading part xc7s50csga324-1
 INFO: [Synth 8-7079] Multithreading enabled for synth_design using a maximum of 2 processes.
 INFO: [Synth 8-7078] Launching helper process for spawning children vivado processes
-INFO: [Synth 8-7075] Helper process launched with PID 14720
+INFO: [Synth 8-7075] Helper process launched with PID 10708
 INFO: [Synth 8-11241] undeclared symbol 'REGCCE', assumed default net type 'wire' [E:/Xilinx/Vivado/2022.2/data/verilog/src/unimacro/BRAM_SINGLE_MACRO.v:2170]
 ---------------------------------------------------------------------------------
-Starting RTL Elaboration : Time (s): cpu = 00:00:03 ; elapsed = 00:00:04 . Memory (MB): peak = 1187.062 ; gain = 406.844
+Starting RTL Elaboration : Time (s): cpu = 00:00:04 ; elapsed = 00:00:04 . Memory (MB): peak = 1185.477 ; gain = 407.367
 ---------------------------------------------------------------------------------
 INFO: [Synth 8-638] synthesizing module 'mai_hit_rom' [c:/Users/Yuqi/KOF-94/lab6_1/lab6_1.gen/sources_1/ip/mai_hit_rom/synth/mai_hit_rom.vhd:67]
 	Parameter C_FAMILY bound to: spartan7 - type: string 
@@ -59,9 +59,9 @@ INFO: [Synth 8-638] synthesizing module 'mai_hit_rom' [c:/Users/Yuqi/KOF-94/lab6
 	Parameter C_WRITE_MODE_A bound to: WRITE_FIRST - type: string 
 	Parameter C_WRITE_WIDTH_A bound to: 3 - type: integer 
 	Parameter C_READ_WIDTH_A bound to: 3 - type: integer 
-	Parameter C_WRITE_DEPTH_A bound to: 6144 - type: integer 
-	Parameter C_READ_DEPTH_A bound to: 6144 - type: integer 
-	Parameter C_ADDRA_WIDTH bound to: 13 - type: integer 
+	Parameter C_WRITE_DEPTH_A bound to: 9216 - type: integer 
+	Parameter C_READ_DEPTH_A bound to: 9216 - type: integer 
+	Parameter C_ADDRA_WIDTH bound to: 14 - type: integer 
 	Parameter C_HAS_RSTB bound to: 0 - type: integer 
 	Parameter C_RST_PRIORITY_B bound to: CE - type: string 
 	Parameter C_RSTRAM_B bound to: 0 - type: integer 
@@ -73,9 +73,9 @@ INFO: [Synth 8-638] synthesizing module 'mai_hit_rom' [c:/Users/Yuqi/KOF-94/lab6
 	Parameter C_WRITE_MODE_B bound to: WRITE_FIRST - type: string 
 	Parameter C_WRITE_WIDTH_B bound to: 3 - type: integer 
 	Parameter C_READ_WIDTH_B bound to: 3 - type: integer 
-	Parameter C_WRITE_DEPTH_B bound to: 6144 - type: integer 
-	Parameter C_READ_DEPTH_B bound to: 6144 - type: integer 
-	Parameter C_ADDRB_WIDTH bound to: 13 - type: integer 
+	Parameter C_WRITE_DEPTH_B bound to: 9216 - type: integer 
+	Parameter C_READ_DEPTH_B bound to: 9216 - type: integer 
+	Parameter C_ADDRB_WIDTH bound to: 14 - type: integer 
 	Parameter C_HAS_MEM_OUTPUT_REGS_A bound to: 0 - type: integer 
 	Parameter C_HAS_MEM_OUTPUT_REGS_B bound to: 0 - type: integer 
 	Parameter C_HAS_MUX_OUTPUT_REGS_A bound to: 0 - type: integer 
@@ -101,8 +101,8 @@ INFO: [Synth 8-638] synthesizing module 'mai_hit_rom' [c:/Users/Yuqi/KOF-94/lab6
 	Parameter C_EN_SAFETY_CKT bound to: 0 - type: integer 
 	Parameter C_DISABLE_WARN_BHV_RANGE bound to: 0 - type: integer 
 	Parameter C_COUNT_36K_BRAM bound to: 1 - type: string 
-	Parameter C_COUNT_18K_BRAM bound to: 0 - type: string 
-	Parameter C_EST_POWER_SUMMARY bound to: Estimated Power for IP     :     2.25735 mW - type: string 
+	Parameter C_COUNT_18K_BRAM bound to: 1 - type: string 
+	Parameter C_EST_POWER_SUMMARY bound to: Estimated Power for IP     :     3.4081 mW - type: string 
 INFO: [Synth 8-3491] module 'blk_mem_gen_v8_4_5' declared at 'c:/Users/Yuqi/KOF-94/lab6_1/lab6_1.gen/sources_1/ip/mai_hit_rom/hdl/blk_mem_gen_v8_4_vhsyn_rfs.vhd:195321' bound to instance 'U0' of component 'blk_mem_gen_v8_4_5' [c:/Users/Yuqi/KOF-94/lab6_1/lab6_1.gen/sources_1/ip/mai_hit_rom/synth/mai_hit_rom.vhd:230]
 INFO: [Synth 8-256] done synthesizing module 'mai_hit_rom' (0#1) [c:/Users/Yuqi/KOF-94/lab6_1/lab6_1.gen/sources_1/ip/mai_hit_rom/synth/mai_hit_rom.vhd:67]
 WARNING: [Synth 8-7129] Port CLKB in module blk_mem_output_block is either unconnected or has no load
@@ -111,6 +111,7 @@ WARNING: [Synth 8-7129] Port DOUTB_I[1] in module blk_mem_output_block is either
 WARNING: [Synth 8-7129] Port DOUTB_I[0] in module blk_mem_output_block is either unconnected or has no load
 WARNING: [Synth 8-7129] Port SBITERR_I in module blk_mem_output_block is either unconnected or has no load
 WARNING: [Synth 8-7129] Port DBITERR_I in module blk_mem_output_block is either unconnected or has no load
+WARNING: [Synth 8-7129] Port RDADDRECC_I[13] in module blk_mem_output_block is either unconnected or has no load
 WARNING: [Synth 8-7129] Port RDADDRECC_I[12] in module blk_mem_output_block is either unconnected or has no load
 WARNING: [Synth 8-7129] Port RDADDRECC_I[11] in module blk_mem_output_block is either unconnected or has no load
 WARNING: [Synth 8-7129] Port RDADDRECC_I[10] in module blk_mem_output_block is either unconnected or has no load
@@ -124,9 +125,38 @@ WARNING: [Synth 8-7129] Port RDADDRECC_I[3] in module blk_mem_output_block is ei
 WARNING: [Synth 8-7129] Port RDADDRECC_I[2] in module blk_mem_output_block is either unconnected or has no load
 WARNING: [Synth 8-7129] Port RDADDRECC_I[1] in module blk_mem_output_block is either unconnected or has no load
 WARNING: [Synth 8-7129] Port RDADDRECC_I[0] in module blk_mem_output_block is either unconnected or has no load
-WARNING: [Synth 8-7129] Port DOUTB[3] in module blk_mem_gen_prim_wrapper_init is either unconnected or has no load
-WARNING: [Synth 8-7129] Port DOUTB[2] in module blk_mem_gen_prim_wrapper_init is either unconnected or has no load
-WARNING: [Synth 8-7129] Port DOUTB[1] in module blk_mem_gen_prim_wrapper_init is either unconnected or has no load
+WARNING: [Synth 8-7129] Port DOUTB[1] in module blk_mem_gen_prim_wrapper_init__parameterized0 is either unconnected or has no load
+WARNING: [Synth 8-7129] Port DOUTB[0] in module blk_mem_gen_prim_wrapper_init__parameterized0 is either unconnected or has no load
+WARNING: [Synth 8-7129] Port SBITERR in module blk_mem_gen_prim_wrapper_init__parameterized0 is either unconnected or has no load
+WARNING: [Synth 8-7129] Port DBITERR in module blk_mem_gen_prim_wrapper_init__parameterized0 is either unconnected or has no load
+WARNING: [Synth 8-7129] Port SSRA in module blk_mem_gen_prim_wrapper_init__parameterized0 is either unconnected or has no load
+WARNING: [Synth 8-7129] Port CLKB in module blk_mem_gen_prim_wrapper_init__parameterized0 is either unconnected or has no load
+WARNING: [Synth 8-7129] Port SSRB in module blk_mem_gen_prim_wrapper_init__parameterized0 is either unconnected or has no load
+WARNING: [Synth 8-7129] Port ENB in module blk_mem_gen_prim_wrapper_init__parameterized0 is either unconnected or has no load
+WARNING: [Synth 8-7129] Port REGCEB in module blk_mem_gen_prim_wrapper_init__parameterized0 is either unconnected or has no load
+WARNING: [Synth 8-7129] Port WEB[0] in module blk_mem_gen_prim_wrapper_init__parameterized0 is either unconnected or has no load
+WARNING: [Synth 8-7129] Port ADDRB[13] in module blk_mem_gen_prim_wrapper_init__parameterized0 is either unconnected or has no load
+WARNING: [Synth 8-7129] Port ADDRB[12] in module blk_mem_gen_prim_wrapper_init__parameterized0 is either unconnected or has no load
+WARNING: [Synth 8-7129] Port ADDRB[11] in module blk_mem_gen_prim_wrapper_init__parameterized0 is either unconnected or has no load
+WARNING: [Synth 8-7129] Port ADDRB[10] in module blk_mem_gen_prim_wrapper_init__parameterized0 is either unconnected or has no load
+WARNING: [Synth 8-7129] Port ADDRB[9] in module blk_mem_gen_prim_wrapper_init__parameterized0 is either unconnected or has no load
+WARNING: [Synth 8-7129] Port ADDRB[8] in module blk_mem_gen_prim_wrapper_init__parameterized0 is either unconnected or has no load
+WARNING: [Synth 8-7129] Port ADDRB[7] in module blk_mem_gen_prim_wrapper_init__parameterized0 is either unconnected or has no load
+WARNING: [Synth 8-7129] Port ADDRB[6] in module blk_mem_gen_prim_wrapper_init__parameterized0 is either unconnected or has no load
+WARNING: [Synth 8-7129] Port ADDRB[5] in module blk_mem_gen_prim_wrapper_init__parameterized0 is either unconnected or has no load
+WARNING: [Synth 8-7129] Port ADDRB[4] in module blk_mem_gen_prim_wrapper_init__parameterized0 is either unconnected or has no load
+WARNING: [Synth 8-7129] Port ADDRB[3] in module blk_mem_gen_prim_wrapper_init__parameterized0 is either unconnected or has no load
+WARNING: [Synth 8-7129] Port ADDRB[2] in module blk_mem_gen_prim_wrapper_init__parameterized0 is either unconnected or has no load
+WARNING: [Synth 8-7129] Port ADDRB[1] in module blk_mem_gen_prim_wrapper_init__parameterized0 is either unconnected or has no load
+WARNING: [Synth 8-7129] Port ADDRB[0] in module blk_mem_gen_prim_wrapper_init__parameterized0 is either unconnected or has no load
+WARNING: [Synth 8-7129] Port DINB[1] in module blk_mem_gen_prim_wrapper_init__parameterized0 is either unconnected or has no load
+WARNING: [Synth 8-7129] Port DINB[0] in module blk_mem_gen_prim_wrapper_init__parameterized0 is either unconnected or has no load
+WARNING: [Synth 8-7129] Port SLEEP in module blk_mem_gen_prim_wrapper_init__parameterized0 is either unconnected or has no load
+WARNING: [Synth 8-7129] Port INJECTSBITERR in module blk_mem_gen_prim_wrapper_init__parameterized0 is either unconnected or has no load
+WARNING: [Synth 8-7129] Port INJECTDBITERR in module blk_mem_gen_prim_wrapper_init__parameterized0 is either unconnected or has no load
+WARNING: [Synth 8-7129] Port ECCPIPECE in module blk_mem_gen_prim_wrapper_init__parameterized0 is either unconnected or has no load
+WARNING: [Synth 8-7129] Port ram_rstram_b in module blk_mem_gen_prim_wrapper_init__parameterized0 is either unconnected or has no load
+WARNING: [Synth 8-7129] Port ram_rstreg_b in module blk_mem_gen_prim_wrapper_init__parameterized0 is either unconnected or has no load
 WARNING: [Synth 8-7129] Port DOUTB[0] in module blk_mem_gen_prim_wrapper_init is either unconnected or has no load
 WARNING: [Synth 8-7129] Port SBITERR in module blk_mem_gen_prim_wrapper_init is either unconnected or has no load
 WARNING: [Synth 8-7129] Port DBITERR in module blk_mem_gen_prim_wrapper_init is either unconnected or has no load
@@ -136,6 +166,7 @@ WARNING: [Synth 8-7129] Port SSRB in module blk_mem_gen_prim_wrapper_init is eit
 WARNING: [Synth 8-7129] Port ENB in module blk_mem_gen_prim_wrapper_init is either unconnected or has no load
 WARNING: [Synth 8-7129] Port REGCEB in module blk_mem_gen_prim_wrapper_init is either unconnected or has no load
 WARNING: [Synth 8-7129] Port WEB[0] in module blk_mem_gen_prim_wrapper_init is either unconnected or has no load
+WARNING: [Synth 8-7129] Port ADDRB[13] in module blk_mem_gen_prim_wrapper_init is either unconnected or has no load
 WARNING: [Synth 8-7129] Port ADDRB[12] in module blk_mem_gen_prim_wrapper_init is either unconnected or has no load
 WARNING: [Synth 8-7129] Port ADDRB[11] in module blk_mem_gen_prim_wrapper_init is either unconnected or has no load
 WARNING: [Synth 8-7129] Port ADDRB[10] in module blk_mem_gen_prim_wrapper_init is either unconnected or has no load
@@ -149,9 +180,6 @@ WARNING: [Synth 8-7129] Port ADDRB[3] in module blk_mem_gen_prim_wrapper_init is
 WARNING: [Synth 8-7129] Port ADDRB[2] in module blk_mem_gen_prim_wrapper_init is either unconnected or has no load
 WARNING: [Synth 8-7129] Port ADDRB[1] in module blk_mem_gen_prim_wrapper_init is either unconnected or has no load
 WARNING: [Synth 8-7129] Port ADDRB[0] in module blk_mem_gen_prim_wrapper_init is either unconnected or has no load
-WARNING: [Synth 8-7129] Port DINB[3] in module blk_mem_gen_prim_wrapper_init is either unconnected or has no load
-WARNING: [Synth 8-7129] Port DINB[2] in module blk_mem_gen_prim_wrapper_init is either unconnected or has no load
-WARNING: [Synth 8-7129] Port DINB[1] in module blk_mem_gen_prim_wrapper_init is either unconnected or has no load
 WARNING: [Synth 8-7129] Port DINB[0] in module blk_mem_gen_prim_wrapper_init is either unconnected or has no load
 WARNING: [Synth 8-7129] Port SLEEP in module blk_mem_gen_prim_wrapper_init is either unconnected or has no load
 WARNING: [Synth 8-7129] Port INJECTSBITERR in module blk_mem_gen_prim_wrapper_init is either unconnected or has no load
@@ -175,51 +203,23 @@ WARNING: [Synth 8-7129] Port RSTB in module blk_mem_input_block is either unconn
 WARNING: [Synth 8-7129] Port ENB in module blk_mem_input_block is either unconnected or has no load
 WARNING: [Synth 8-7129] Port REGCEB in module blk_mem_input_block is either unconnected or has no load
 WARNING: [Synth 8-7129] Port WEB[0] in module blk_mem_input_block is either unconnected or has no load
+WARNING: [Synth 8-7129] Port ADDRB[13] in module blk_mem_input_block is either unconnected or has no load
 WARNING: [Synth 8-7129] Port ADDRB[12] in module blk_mem_input_block is either unconnected or has no load
-WARNING: [Synth 8-7129] Port ADDRB[11] in module blk_mem_input_block is either unconnected or has no load
-WARNING: [Synth 8-7129] Port ADDRB[10] in module blk_mem_input_block is either unconnected or has no load
-WARNING: [Synth 8-7129] Port ADDRB[9] in module blk_mem_input_block is either unconnected or has no load
-WARNING: [Synth 8-7129] Port ADDRB[8] in module blk_mem_input_block is either unconnected or has no load
-WARNING: [Synth 8-7129] Port ADDRB[7] in module blk_mem_input_block is either unconnected or has no load
-WARNING: [Synth 8-7129] Port ADDRB[6] in module blk_mem_input_block is either unconnected or has no load
-WARNING: [Synth 8-7129] Port ADDRB[5] in module blk_mem_input_block is either unconnected or has no load
-WARNING: [Synth 8-7129] Port ADDRB[4] in module blk_mem_input_block is either unconnected or has no load
-WARNING: [Synth 8-7129] Port ADDRB[3] in module blk_mem_input_block is either unconnected or has no load
-WARNING: [Synth 8-7129] Port ADDRB[2] in module blk_mem_input_block is either unconnected or has no load
-WARNING: [Synth 8-7129] Port ADDRB[1] in module blk_mem_input_block is either unconnected or has no load
-WARNING: [Synth 8-7129] Port ADDRB[0] in module blk_mem_input_block is either unconnected or has no load
-WARNING: [Synth 8-7129] Port DINB[2] in module blk_mem_input_block is either unconnected or has no load
-WARNING: [Synth 8-7129] Port DINB[1] in module blk_mem_input_block is either unconnected or has no load
-WARNING: [Synth 8-7129] Port DINB[0] in module blk_mem_input_block is either unconnected or has no load
-WARNING: [Synth 8-7129] Port INJECTDBITERR in module blk_mem_input_block is either unconnected or has no load
-WARNING: [Synth 8-7129] Port INJECTSBITERR in module blk_mem_input_block is either unconnected or has no load
-WARNING: [Synth 8-7129] Port S_AClk in module blk_mem_gen_v8_4_5_synth is either unconnected or has no load
-WARNING: [Synth 8-7129] Port S_ARESETN in module blk_mem_gen_v8_4_5_synth is either unconnected or has no load
-WARNING: [Synth 8-7129] Port S_AXI_AWID[3] in module blk_mem_gen_v8_4_5_synth is either unconnected or has no load
-WARNING: [Synth 8-7129] Port S_AXI_AWID[2] in module blk_mem_gen_v8_4_5_synth is either unconnected or has no load
-WARNING: [Synth 8-7129] Port S_AXI_AWID[1] in module blk_mem_gen_v8_4_5_synth is either unconnected or has no load
-WARNING: [Synth 8-7129] Port S_AXI_AWID[0] in module blk_mem_gen_v8_4_5_synth is either unconnected or has no load
-WARNING: [Synth 8-7129] Port S_AXI_AWADDR[31] in module blk_mem_gen_v8_4_5_synth is either unconnected or has no load
-WARNING: [Synth 8-7129] Port S_AXI_AWADDR[30] in module blk_mem_gen_v8_4_5_synth is either unconnected or has no load
-WARNING: [Synth 8-7129] Port S_AXI_AWADDR[29] in module blk_mem_gen_v8_4_5_synth is either unconnected or has no load
-WARNING: [Synth 8-7129] Port S_AXI_AWADDR[28] in module blk_mem_gen_v8_4_5_synth is either unconnected or has no load
-WARNING: [Synth 8-7129] Port S_AXI_AWADDR[27] in module blk_mem_gen_v8_4_5_synth is either unconnected or has no load
-WARNING: [Synth 8-7129] Port S_AXI_AWADDR[26] in module blk_mem_gen_v8_4_5_synth is either unconnected or has no load
 INFO: [Common 17-14] Message 'Synth 8-7129' appears 100 times and further instances of the messages will be disabled. Use the Tcl command set_msg_config to change the current settings.
 ---------------------------------------------------------------------------------
-Finished RTL Elaboration : Time (s): cpu = 00:00:11 ; elapsed = 00:00:12 . Memory (MB): peak = 1517.246 ; gain = 737.027
+Finished RTL Elaboration : Time (s): cpu = 00:00:12 ; elapsed = 00:00:12 . Memory (MB): peak = 1519.746 ; gain = 741.637
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start Handling Custom Attributes
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished Handling Custom Attributes : Time (s): cpu = 00:00:11 ; elapsed = 00:00:12 . Memory (MB): peak = 1517.246 ; gain = 737.027
+Finished Handling Custom Attributes : Time (s): cpu = 00:00:12 ; elapsed = 00:00:12 . Memory (MB): peak = 1519.746 ; gain = 741.637
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished RTL Optimization Phase 1 : Time (s): cpu = 00:00:11 ; elapsed = 00:00:12 . Memory (MB): peak = 1517.246 ; gain = 737.027
+Finished RTL Optimization Phase 1 : Time (s): cpu = 00:00:12 ; elapsed = 00:00:12 . Memory (MB): peak = 1519.746 ; gain = 741.637
 ---------------------------------------------------------------------------------
-Netlist sorting complete. Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.003 . Memory (MB): peak = 1517.246 ; gain = 0.000
-INFO: [Netlist 29-17] Analyzing 1 Unisim elements for replacement
+Netlist sorting complete. Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.004 . Memory (MB): peak = 1519.746 ; gain = 0.000
+INFO: [Netlist 29-17] Analyzing 2 Unisim elements for replacement
 INFO: [Netlist 29-28] Unisim Transformation completed in 0 CPU seconds
 INFO: [Project 1-570] Preparing netlist for logic optimization
 
@@ -231,32 +231,32 @@ Parsing XDC File [C:/Users/Yuqi/KOF-94/lab6_1/lab6_1.runs/mai_hit_rom_synth_1/do
 Finished Parsing XDC File [C:/Users/Yuqi/KOF-94/lab6_1/lab6_1.runs/mai_hit_rom_synth_1/dont_touch.xdc]
 Completed Processing XDC Constraints
 
-Netlist sorting complete. Time (s): cpu = 00:00:00 ; elapsed = 00:00:00 . Memory (MB): peak = 1517.246 ; gain = 0.000
+Netlist sorting complete. Time (s): cpu = 00:00:00 ; elapsed = 00:00:00 . Memory (MB): peak = 1519.746 ; gain = 0.000
 INFO: [Project 1-111] Unisim Transformation Summary:
 No Unisim elements were transformed.
 
-Constraint Validation Runtime : Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.013 . Memory (MB): peak = 1517.246 ; gain = 0.000
+Constraint Validation Runtime : Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.014 . Memory (MB): peak = 1519.746 ; gain = 0.000
 INFO: [Designutils 20-5008] Incremental synthesis strategy off
 INFO: [Synth 8-11241] undeclared symbol 'REGCCE', assumed default net type 'wire' [E:/Xilinx/Vivado/2022.2/data/verilog/src/unimacro/BRAM_SINGLE_MACRO.v:2170]
 ---------------------------------------------------------------------------------
-Finished Constraint Validation : Time (s): cpu = 00:00:15 ; elapsed = 00:00:16 . Memory (MB): peak = 1517.246 ; gain = 737.027
+Finished Constraint Validation : Time (s): cpu = 00:00:16 ; elapsed = 00:00:16 . Memory (MB): peak = 1519.746 ; gain = 741.637
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start Loading Part and Timing Information
 ---------------------------------------------------------------------------------
 Loading part: xc7s50csga324-1
 ---------------------------------------------------------------------------------
-Finished Loading Part and Timing Information : Time (s): cpu = 00:00:15 ; elapsed = 00:00:16 . Memory (MB): peak = 1517.246 ; gain = 737.027
+Finished Loading Part and Timing Information : Time (s): cpu = 00:00:16 ; elapsed = 00:00:16 . Memory (MB): peak = 1519.746 ; gain = 741.637
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start Applying 'set_property' XDC Constraints
 ---------------------------------------------------------------------------------
 Applied set_property KEEP_HIERARCHY = SOFT for U0. (constraint file  C:/Users/Yuqi/KOF-94/lab6_1/lab6_1.runs/mai_hit_rom_synth_1/dont_touch.xdc, line 9).
 ---------------------------------------------------------------------------------
-Finished applying 'set_property' XDC Constraints : Time (s): cpu = 00:00:15 ; elapsed = 00:00:16 . Memory (MB): peak = 1517.246 ; gain = 737.027
+Finished applying 'set_property' XDC Constraints : Time (s): cpu = 00:00:16 ; elapsed = 00:00:16 . Memory (MB): peak = 1519.746 ; gain = 741.637
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished RTL Optimization Phase 2 : Time (s): cpu = 00:00:15 ; elapsed = 00:00:17 . Memory (MB): peak = 1517.246 ; gain = 737.027
+Finished RTL Optimization Phase 2 : Time (s): cpu = 00:00:16 ; elapsed = 00:00:16 . Memory (MB): peak = 1519.746 ; gain = 741.637
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start RTL Component Statistics 
@@ -279,25 +279,25 @@ Start Cross Boundary and Area Optimization
 ---------------------------------------------------------------------------------
 WARNING: [Synth 8-7080] Parallel synthesis criteria is not met
 ---------------------------------------------------------------------------------
-Finished Cross Boundary and Area Optimization : Time (s): cpu = 00:00:16 ; elapsed = 00:00:18 . Memory (MB): peak = 1517.246 ; gain = 737.027
+Finished Cross Boundary and Area Optimization : Time (s): cpu = 00:00:17 ; elapsed = 00:00:17 . Memory (MB): peak = 1519.746 ; gain = 741.637
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start Applying XDC Timing Constraints
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished Applying XDC Timing Constraints : Time (s): cpu = 00:00:19 ; elapsed = 00:00:20 . Memory (MB): peak = 1517.246 ; gain = 737.027
+Finished Applying XDC Timing Constraints : Time (s): cpu = 00:00:20 ; elapsed = 00:00:20 . Memory (MB): peak = 1519.746 ; gain = 741.637
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start Timing Optimization
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished Timing Optimization : Time (s): cpu = 00:00:19 ; elapsed = 00:00:20 . Memory (MB): peak = 1517.246 ; gain = 737.027
+Finished Timing Optimization : Time (s): cpu = 00:00:20 ; elapsed = 00:00:20 . Memory (MB): peak = 1519.746 ; gain = 741.637
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start Technology Mapping
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished Technology Mapping : Time (s): cpu = 00:00:19 ; elapsed = 00:00:20 . Memory (MB): peak = 1517.246 ; gain = 737.027
+Finished Technology Mapping : Time (s): cpu = 00:00:20 ; elapsed = 00:00:20 . Memory (MB): peak = 1519.746 ; gain = 741.637
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start IO Insertion
@@ -315,37 +315,37 @@ Start Final Netlist Cleanup
 Finished Final Netlist Cleanup
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished IO Insertion : Time (s): cpu = 00:00:21 ; elapsed = 00:00:23 . Memory (MB): peak = 1517.246 ; gain = 737.027
+Finished IO Insertion : Time (s): cpu = 00:00:22 ; elapsed = 00:00:22 . Memory (MB): peak = 1519.746 ; gain = 741.637
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start Renaming Generated Instances
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished Renaming Generated Instances : Time (s): cpu = 00:00:21 ; elapsed = 00:00:23 . Memory (MB): peak = 1517.246 ; gain = 737.027
+Finished Renaming Generated Instances : Time (s): cpu = 00:00:22 ; elapsed = 00:00:22 . Memory (MB): peak = 1519.746 ; gain = 741.637
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start Rebuilding User Hierarchy
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished Rebuilding User Hierarchy : Time (s): cpu = 00:00:21 ; elapsed = 00:00:23 . Memory (MB): peak = 1517.246 ; gain = 737.027
+Finished Rebuilding User Hierarchy : Time (s): cpu = 00:00:22 ; elapsed = 00:00:22 . Memory (MB): peak = 1519.746 ; gain = 741.637
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start Renaming Generated Ports
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished Renaming Generated Ports : Time (s): cpu = 00:00:21 ; elapsed = 00:00:23 . Memory (MB): peak = 1517.246 ; gain = 737.027
+Finished Renaming Generated Ports : Time (s): cpu = 00:00:22 ; elapsed = 00:00:22 . Memory (MB): peak = 1519.746 ; gain = 741.637
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start Handling Custom Attributes
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished Handling Custom Attributes : Time (s): cpu = 00:00:21 ; elapsed = 00:00:23 . Memory (MB): peak = 1517.246 ; gain = 737.027
+Finished Handling Custom Attributes : Time (s): cpu = 00:00:22 ; elapsed = 00:00:22 . Memory (MB): peak = 1519.746 ; gain = 741.637
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start Renaming Generated Nets
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished Renaming Generated Nets : Time (s): cpu = 00:00:21 ; elapsed = 00:00:23 . Memory (MB): peak = 1517.246 ; gain = 737.027
+Finished Renaming Generated Nets : Time (s): cpu = 00:00:22 ; elapsed = 00:00:22 . Memory (MB): peak = 1519.746 ; gain = 741.637
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start Writing Synthesis Report
@@ -361,32 +361,33 @@ Report Cell Usage:
 +------+---------+------+
 |      |Cell     |Count |
 +------+---------+------+
-|1     |RAMB36E1 |     1|
+|1     |RAMB18E1 |     1|
+|2     |RAMB36E1 |     1|
 +------+---------+------+
 ---------------------------------------------------------------------------------
-Finished Writing Synthesis Report : Time (s): cpu = 00:00:21 ; elapsed = 00:00:23 . Memory (MB): peak = 1517.246 ; gain = 737.027
+Finished Writing Synthesis Report : Time (s): cpu = 00:00:22 ; elapsed = 00:00:22 . Memory (MB): peak = 1519.746 ; gain = 741.637
 ---------------------------------------------------------------------------------
-Synthesis finished with 0 errors, 0 critical warnings and 147 warnings.
-Synthesis Optimization Runtime : Time (s): cpu = 00:00:09 ; elapsed = 00:00:21 . Memory (MB): peak = 1517.246 ; gain = 737.027
-Synthesis Optimization Complete : Time (s): cpu = 00:00:21 ; elapsed = 00:00:23 . Memory (MB): peak = 1517.246 ; gain = 737.027
+Synthesis finished with 0 errors, 0 critical warnings and 148 warnings.
+Synthesis Optimization Runtime : Time (s): cpu = 00:00:09 ; elapsed = 00:00:21 . Memory (MB): peak = 1519.746 ; gain = 741.637
+Synthesis Optimization Complete : Time (s): cpu = 00:00:22 ; elapsed = 00:00:22 . Memory (MB): peak = 1519.746 ; gain = 741.637
 INFO: [Project 1-571] Translating synthesized netlist
-Netlist sorting complete. Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.001 . Memory (MB): peak = 1517.246 ; gain = 0.000
-INFO: [Netlist 29-17] Analyzing 1 Unisim elements for replacement
+Netlist sorting complete. Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.001 . Memory (MB): peak = 1519.746 ; gain = 0.000
+INFO: [Netlist 29-17] Analyzing 2 Unisim elements for replacement
 INFO: [Netlist 29-28] Unisim Transformation completed in 0 CPU seconds
 INFO: [Project 1-570] Preparing netlist for logic optimization
 INFO: [Opt 31-138] Pushed 0 inverter(s) to 0 load pin(s).
-Netlist sorting complete. Time (s): cpu = 00:00:00 ; elapsed = 00:00:00 . Memory (MB): peak = 1517.246 ; gain = 0.000
+Netlist sorting complete. Time (s): cpu = 00:00:00 ; elapsed = 00:00:00 . Memory (MB): peak = 1519.746 ; gain = 0.000
 INFO: [Project 1-111] Unisim Transformation Summary:
 No Unisim elements were transformed.
 
-Synth Design complete, checksum: 3a84bb90
+Synth Design complete, checksum: eac7ac7e
 INFO: [Common 17-83] Releasing license: Synthesis
 27 Infos, 101 Warnings, 0 Critical Warnings and 0 Errors encountered.
 synth_design completed successfully
-synth_design: Time (s): cpu = 00:00:24 ; elapsed = 00:00:25 . Memory (MB): peak = 1517.246 ; gain = 1113.305
+synth_design: Time (s): cpu = 00:00:23 ; elapsed = 00:00:24 . Memory (MB): peak = 1519.746 ; gain = 1116.223
 INFO: [Common 17-1381] The checkpoint 'C:/Users/Yuqi/KOF-94/lab6_1/lab6_1.runs/mai_hit_rom_synth_1/mai_hit_rom.dcp' has been generated.
-INFO: [Coretcl 2-1648] Added synthesis output to IP cache for IP mai_hit_rom, cache-ID = f65d0e4ec5530610
-INFO: [Coretcl 2-1174] Renamed 6 cell refs.
+INFO: [Coretcl 2-1648] Added synthesis output to IP cache for IP mai_hit_rom, cache-ID = 0fa16c9de65a7208
+INFO: [Coretcl 2-1174] Renamed 8 cell refs.
 INFO: [Common 17-1381] The checkpoint 'C:/Users/Yuqi/KOF-94/lab6_1/lab6_1.runs/mai_hit_rom_synth_1/mai_hit_rom.dcp' has been generated.
 INFO: [runtcl-4] Executing : report_utilization -file mai_hit_rom_utilization_synth.rpt -pb mai_hit_rom_utilization_synth.pb
-INFO: [Common 17-206] Exiting Vivado at Thu Dec  7 03:51:51 2023...
+INFO: [Common 17-206] Exiting Vivado at Fri Dec  8 03:03:25 2023...
