@@ -18,7 +18,7 @@ module  color_mapper ( input  logic [9:0] DrawX, DrawY,
 
                        input logic clk_25MHz, blank,reset,vsync,
                        input logic [12:0]  char1X, char1Y,char2X, char2Y,backX,
-                       input logic [5:0] seconds,
+                       input logic [6:0] seconds,
                        input logic forward_1,back_1,punch_1,squat_1,kick_1,jump_1,forward_2,back_2,punch_2,squat_2,kick_2,jump_2,stop,stop1,start,
                        input logic [7:0] char1_hp,char2_hp,
                        output logic [3:0]  Red, Green, Blue,
@@ -86,8 +86,9 @@ module  color_mapper ( input  logic [9:0] DrawX, DrawY,
     logic [3:0] char1_squat_r,char1_squat_g,char1_squat_b,char1_kick_r,char1_kick_g,char1_kick_b,char1_head_r,char1_head_g,char1_head_b,char1_jump_r,char1_jump_g,char1_jump_b;
     logic [3:0] char2_r,char2_g,char2_b, char2_stand_r, char2_stand_g, char2_stand_b,char2_fwd_r,char2_fwd_g,char2_fwd_b,char2_head_r,char2_head_g,char2_head_b,char2_hit_r,char2_hit_g,char2_hit_b;
     logic [3:0] char2_back_r,char2_back_g,char2_back_b,char2_punch_r,char2_punch_g,char2_punch_b, char2_squat_r,char2_squat_g,char2_squat_b,char2_kick_r,char2_kick_g,char2_kick_b,char2_jump_r,char2_jump_g,char2_jump_b;
-    logic char1_on,char2_on,stand_1,stand_2,s_on,hp1_on,hp2_on,name_on,time_on,head1_on,head2_on,win_on,start1_on,start2_on,start3_on,press_on,hit_1,hit_2,start5,start6,start5_on,start6_on;
-    logic [5:0] char1_cnt,char2_cnt,bg_cnt,press_cnt;  // 5-bit counter to handle 18 states
+    logic char1_on,char2_on,stand_1,stand_2,s_on,hp1_on,hp2_on,name_on,time_on,head1_on,head2_on,win_on,start1_on,start2_on,start3_on,press_on,hit_1,hit_2,start5,start6,start5_on,start6_on,show_on;
+    logic [5:0] char1_cnt,char2_cnt,bg_cnt,press_cnt;  
+    logic [6:0] start_cnt;
     logic [5:0] char1_fwd_cnt,char1_back_cnt,char1_punch_cnt,char1_kick_cnt,char1_jump_cnt;
     logic [5:0] char2_fwd_cnt,char2_back_cnt,char2_punch_cnt,char2_kick_cnt,char2_jump_cnt;
     logic [4*12-1:0] time_array= {"TIME"};
@@ -128,9 +129,15 @@ module  color_mapper ( input  logic [9:0] DrawX, DrawY,
         start6=0;
         start5_on=0;
         start6_on=0;
+        show_on=0;
         if(start)begin
             first_ascii=(seconds/10)+8'h30;
             second_ascii=(seconds%10)+8'h30;
+            if(seconds==64||seconds==63)begin
+                second_ascii=8'h30;
+                if(DrawX<320-start_cnt*4||DrawX>320+start_cnt*4)
+                    show_on=1;
+            end
             if(seconds==62)begin
                 second_ascii=8'h30;
                 start5=1;
@@ -266,7 +273,14 @@ module  color_mapper ( input  logic [9:0] DrawX, DrawY,
             stand_2=1;
         end
     end
-    
+    always_ff @(posedge vsync or posedge reset) begin
+        if (reset) begin
+            start_cnt <= 0;
+        end
+        else if(seconds==64||seconds==63)begin
+            start_cnt <= start_cnt + 1'b1;
+        end
+    end
     always_ff @(posedge vsync or posedge reset) begin
         if (reset) begin
             press_cnt <= 6'b00000;
@@ -769,9 +783,14 @@ module  color_mapper ( input  logic [9:0] DrawX, DrawY,
  
 	
 	
-    always_comb
-    begin:RGB_Display
-        if(start)begin
+always_comb begin:RGB_Display
+    if(start)begin
+        if(show_on)begin 
+            Red = 4'h0; 
+            Green = 4'h0;
+            Blue = 4'h0;
+        end
+        else begin
               if(s_on)begin
                   if (DrawY < 48) begin
                         // Transition from red to orange
@@ -938,40 +957,41 @@ module  color_mapper ( input  logic [9:0] DrawX, DrawY,
                    Blue = bg_b;
               end
           end
-          else begin
-            if(start1_on)begin
-                Red = 4'hF - ((DrawY - 56) * 8) / 64;
-                Green = 4'hF - ((DrawY - 56) * 8) / 64;
-                Blue = 4'hF - ((DrawY - 56) * 8) / 64;
-            end
-            else if(start2_on)begin
-                Red = 4'hF;
-                Green = 4'h8 - ((DrawY - 120) * 8) / 80;
-                Blue = 4'h8 - ((DrawY - 120) * 8) / 80;
-            end
-            else if(start3_on)begin
-                Red = 4'hF - ((DrawY - 60) * 3) / 160;
-                Green = 4'hF - ((DrawY - 60) * 3) / 160;
-                Blue = 4'hF - ((DrawY - 60) * 3) / 160;
-            end
-            else if(press_on)begin
-                if(press_cnt/15==0)begin
-                    Red =  4'hf;
-                    Green =(DrawY-8)%16;
-                    Blue = (DrawY-8)%16;
-                 end
-                 else begin
-                    Red = 4'h0; 
-                    Green = 4'h0;
-                    Blue = 4'h0;
-                 end
-            end
-            else begin
+      end
+      else begin
+        if(start1_on)begin
+            Red = 4'hF - ((DrawY - 56) * 8) / 64;
+            Green = 4'hF - ((DrawY - 56) * 8) / 64;
+            Blue = 4'hF - ((DrawY - 56) * 8) / 64;
+        end
+        else if(start2_on)begin
+            Red = 4'hF;
+            Green = 4'h8 - ((DrawY - 120) * 8) / 80;
+            Blue = 4'h8 - ((DrawY - 120) * 8) / 80;
+        end
+        else if(start3_on)begin
+            Red = 4'hF - ((DrawY - 60) * 3) / 160;
+            Green = 4'hF - ((DrawY - 60) * 3) / 160;
+            Blue = 4'hF - ((DrawY - 60) * 3) / 160;
+        end
+        else if(press_on)begin
+            if(press_cnt/15==0)begin
+                Red =  4'hf;
+                Green =(DrawY-8)%16;
+                Blue = (DrawY-8)%16;
+             end
+             else begin
                 Red = 4'h0; 
                 Green = 4'h0;
                 Blue = 4'h0;
-            end
-          end
+             end
+        end
+        else begin
+            Red = 4'h0; 
+            Green = 4'h0;
+            Blue = 4'h0;
+        end
+      end
     end 
     
     always_comb begin

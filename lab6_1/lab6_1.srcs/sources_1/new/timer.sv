@@ -22,7 +22,7 @@
 
 module timer(
   input logic Clk,reset,stop1,start,        // 100 MHz clock input
-  output logic [5:0] seconds, // 32-bit output representing seconds
+  output logic [6:0] seconds, // 32-bit output representing seconds
   output logic stop       // Indicates when 60 seconds have elapsed
     );
 
@@ -30,7 +30,7 @@ logic [31:0] counter;
 
 always_ff @(posedge Clk) begin
   if(reset)begin
-       seconds<=62;
+       seconds<=64;
        stop<=1'b0;
        counter<=1'b0;
   end
