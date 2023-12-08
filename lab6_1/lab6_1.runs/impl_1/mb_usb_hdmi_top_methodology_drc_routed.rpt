@@ -1,7 +1,7 @@
 Copyright 1986-2022 Xilinx, Inc. All Rights Reserved.
 -----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
 | Tool Version : Vivado v.2022.2 (win64) Build 3671981 Fri Oct 14 05:00:03 MDT 2022
-| Date         : Thu Dec  7 18:36:14 2023
+| Date         : Thu Dec  7 18:59:18 2023
 | Host         : DESKTOP-D8Q9UV3 running 64-bit major release  (build 9200)
 | Command      : report_methodology -file mb_usb_hdmi_top_methodology_drc_routed.rpt -pb mb_usb_hdmi_top_methodology_drc_routed.pb -rpx mb_usb_hdmi_top_methodology_drc_routed.rpx
 | Design       : mb_usb_hdmi_top
@@ -23,14 +23,14 @@ Table of Contents
           Floorplan: design_1
       Design limits: <entire design considered>
              Max violations: <unlimited>
-             Violations found: 289
+             Violations found: 295
 +-----------+------------------+----------------------------------------------------+------------+
 | Rule      | Severity         | Description                                        | Violations |
 +-----------+------------------+----------------------------------------------------+------------+
 | TIMING-4  | Critical Warning | Invalid primary clock redefinition on a clock tree | 2          |
 | TIMING-6  | Critical Warning | No common primary clock between related clocks     | 1          |
 | TIMING-7  | Critical Warning | No common node between related clocks              | 1          |
-| TIMING-17 | Critical Warning | Non-clocked sequential cell                        | 147        |
+| TIMING-17 | Critical Warning | Non-clocked sequential cell                        | 153        |
 | TIMING-27 | Critical Warning | Invalid primary clock on hierarchical pin          | 2          |
 | DPIR-1    | Warning          | Asynchronous driver check                          | 22         |
 | LUTAR-1   | Warning          | LUT drives async reset alert                       | 3          |
@@ -445,357 +445,387 @@ Related violations: <none>
 
 TIMING-17#77 Critical Warning
 Non-clocked sequential cell  
-The clock pin color_instance/press_cnt_reg[0]/C is not reached by a timing clock
+The clock pin color_instance/ko_cnt_reg[0]/C is not reached by a timing clock
 Related violations: <none>
 
 TIMING-17#78 Critical Warning
 Non-clocked sequential cell  
-The clock pin color_instance/press_cnt_reg[1]/C is not reached by a timing clock
+The clock pin color_instance/ko_cnt_reg[1]/C is not reached by a timing clock
 Related violations: <none>
 
 TIMING-17#79 Critical Warning
 Non-clocked sequential cell  
-The clock pin color_instance/press_cnt_reg[2]/C is not reached by a timing clock
+The clock pin color_instance/ko_cnt_reg[2]/C is not reached by a timing clock
 Related violations: <none>
 
 TIMING-17#80 Critical Warning
 Non-clocked sequential cell  
-The clock pin color_instance/press_cnt_reg[3]/C is not reached by a timing clock
+The clock pin color_instance/ko_cnt_reg[3]/C is not reached by a timing clock
 Related violations: <none>
 
 TIMING-17#81 Critical Warning
 Non-clocked sequential cell  
-The clock pin color_instance/press_cnt_reg[4]/C is not reached by a timing clock
+The clock pin color_instance/ko_cnt_reg[4]/C is not reached by a timing clock
 Related violations: <none>
 
 TIMING-17#82 Critical Warning
 Non-clocked sequential cell  
-The clock pin color_instance/press_cnt_reg[5]/C is not reached by a timing clock
+The clock pin color_instance/ko_cnt_reg[5]/C is not reached by a timing clock
 Related violations: <none>
 
 TIMING-17#83 Critical Warning
 Non-clocked sequential cell  
-The clock pin color_instance/start_cnt_reg[0]/C is not reached by a timing clock
+The clock pin color_instance/press_cnt_reg[0]/C is not reached by a timing clock
 Related violations: <none>
 
 TIMING-17#84 Critical Warning
 Non-clocked sequential cell  
-The clock pin color_instance/start_cnt_reg[1]/C is not reached by a timing clock
+The clock pin color_instance/press_cnt_reg[1]/C is not reached by a timing clock
 Related violations: <none>
 
 TIMING-17#85 Critical Warning
 Non-clocked sequential cell  
-The clock pin color_instance/start_cnt_reg[2]/C is not reached by a timing clock
+The clock pin color_instance/press_cnt_reg[2]/C is not reached by a timing clock
 Related violations: <none>
 
 TIMING-17#86 Critical Warning
 Non-clocked sequential cell  
-The clock pin color_instance/start_cnt_reg[3]/C is not reached by a timing clock
+The clock pin color_instance/press_cnt_reg[3]/C is not reached by a timing clock
 Related violations: <none>
 
 TIMING-17#87 Critical Warning
 Non-clocked sequential cell  
-The clock pin color_instance/start_cnt_reg[4]/C is not reached by a timing clock
+The clock pin color_instance/press_cnt_reg[4]/C is not reached by a timing clock
 Related violations: <none>
 
 TIMING-17#88 Critical Warning
 Non-clocked sequential cell  
-The clock pin color_instance/start_cnt_reg[5]/C is not reached by a timing clock
+The clock pin color_instance/press_cnt_reg[5]/C is not reached by a timing clock
 Related violations: <none>
 
 TIMING-17#89 Critical Warning
 Non-clocked sequential cell  
-The clock pin color_instance/start_cnt_reg[6]/C is not reached by a timing clock
+The clock pin color_instance/start_cnt_reg[0]/C is not reached by a timing clock
 Related violations: <none>
 
 TIMING-17#90 Critical Warning
 Non-clocked sequential cell  
-The clock pin mai/backX_reg[0]/C is not reached by a timing clock
+The clock pin color_instance/start_cnt_reg[1]/C is not reached by a timing clock
 Related violations: <none>
 
 TIMING-17#91 Critical Warning
 Non-clocked sequential cell  
-The clock pin mai/backX_reg[10]/C is not reached by a timing clock
+The clock pin color_instance/start_cnt_reg[2]/C is not reached by a timing clock
 Related violations: <none>
 
 TIMING-17#92 Critical Warning
 Non-clocked sequential cell  
-The clock pin mai/backX_reg[11]/C is not reached by a timing clock
+The clock pin color_instance/start_cnt_reg[3]/C is not reached by a timing clock
 Related violations: <none>
 
 TIMING-17#93 Critical Warning
 Non-clocked sequential cell  
-The clock pin mai/backX_reg[12]/C is not reached by a timing clock
+The clock pin color_instance/start_cnt_reg[4]/C is not reached by a timing clock
 Related violations: <none>
 
 TIMING-17#94 Critical Warning
 Non-clocked sequential cell  
-The clock pin mai/backX_reg[1]/C is not reached by a timing clock
+The clock pin color_instance/start_cnt_reg[5]/C is not reached by a timing clock
 Related violations: <none>
 
 TIMING-17#95 Critical Warning
 Non-clocked sequential cell  
-The clock pin mai/backX_reg[2]/C is not reached by a timing clock
+The clock pin color_instance/start_cnt_reg[6]/C is not reached by a timing clock
 Related violations: <none>
 
 TIMING-17#96 Critical Warning
 Non-clocked sequential cell  
-The clock pin mai/backX_reg[3]/C is not reached by a timing clock
+The clock pin mai/backX_reg[0]/C is not reached by a timing clock
 Related violations: <none>
 
 TIMING-17#97 Critical Warning
 Non-clocked sequential cell  
-The clock pin mai/backX_reg[4]/C is not reached by a timing clock
+The clock pin mai/backX_reg[10]/C is not reached by a timing clock
 Related violations: <none>
 
 TIMING-17#98 Critical Warning
 Non-clocked sequential cell  
-The clock pin mai/backX_reg[5]/C is not reached by a timing clock
+The clock pin mai/backX_reg[11]/C is not reached by a timing clock
 Related violations: <none>
 
 TIMING-17#99 Critical Warning
 Non-clocked sequential cell  
-The clock pin mai/backX_reg[6]/C is not reached by a timing clock
+The clock pin mai/backX_reg[12]/C is not reached by a timing clock
 Related violations: <none>
 
 TIMING-17#100 Critical Warning
 Non-clocked sequential cell  
-The clock pin mai/backX_reg[7]/C is not reached by a timing clock
+The clock pin mai/backX_reg[1]/C is not reached by a timing clock
 Related violations: <none>
 
 TIMING-17#101 Critical Warning
 Non-clocked sequential cell  
-The clock pin mai/backX_reg[8]/C is not reached by a timing clock
+The clock pin mai/backX_reg[2]/C is not reached by a timing clock
 Related violations: <none>
 
 TIMING-17#102 Critical Warning
 Non-clocked sequential cell  
-The clock pin mai/backX_reg[9]/C is not reached by a timing clock
+The clock pin mai/backX_reg[3]/C is not reached by a timing clock
 Related violations: <none>
 
 TIMING-17#103 Critical Warning
 Non-clocked sequential cell  
-The clock pin mai/back_1_reg/C is not reached by a timing clock
+The clock pin mai/backX_reg[4]/C is not reached by a timing clock
 Related violations: <none>
 
 TIMING-17#104 Critical Warning
 Non-clocked sequential cell  
-The clock pin mai/back_2_reg/C is not reached by a timing clock
+The clock pin mai/backX_reg[5]/C is not reached by a timing clock
 Related violations: <none>
 
 TIMING-17#105 Critical Warning
 Non-clocked sequential cell  
-The clock pin mai/char1X_reg[0]/C is not reached by a timing clock
+The clock pin mai/backX_reg[6]/C is not reached by a timing clock
 Related violations: <none>
 
 TIMING-17#106 Critical Warning
 Non-clocked sequential cell  
-The clock pin mai/char1X_reg[10]/C is not reached by a timing clock
+The clock pin mai/backX_reg[7]/C is not reached by a timing clock
 Related violations: <none>
 
 TIMING-17#107 Critical Warning
 Non-clocked sequential cell  
-The clock pin mai/char1X_reg[11]/C is not reached by a timing clock
+The clock pin mai/backX_reg[8]/C is not reached by a timing clock
 Related violations: <none>
 
 TIMING-17#108 Critical Warning
 Non-clocked sequential cell  
-The clock pin mai/char1X_reg[12]/C is not reached by a timing clock
+The clock pin mai/backX_reg[9]/C is not reached by a timing clock
 Related violations: <none>
 
 TIMING-17#109 Critical Warning
 Non-clocked sequential cell  
-The clock pin mai/char1X_reg[1]/C is not reached by a timing clock
+The clock pin mai/back_1_reg/C is not reached by a timing clock
 Related violations: <none>
 
 TIMING-17#110 Critical Warning
 Non-clocked sequential cell  
-The clock pin mai/char1X_reg[2]/C is not reached by a timing clock
+The clock pin mai/back_2_reg/C is not reached by a timing clock
 Related violations: <none>
 
 TIMING-17#111 Critical Warning
 Non-clocked sequential cell  
-The clock pin mai/char1X_reg[3]/C is not reached by a timing clock
+The clock pin mai/char1X_reg[0]/C is not reached by a timing clock
 Related violations: <none>
 
 TIMING-17#112 Critical Warning
 Non-clocked sequential cell  
-The clock pin mai/char1X_reg[4]/C is not reached by a timing clock
+The clock pin mai/char1X_reg[10]/C is not reached by a timing clock
 Related violations: <none>
 
 TIMING-17#113 Critical Warning
 Non-clocked sequential cell  
-The clock pin mai/char1X_reg[5]/C is not reached by a timing clock
+The clock pin mai/char1X_reg[11]/C is not reached by a timing clock
 Related violations: <none>
 
 TIMING-17#114 Critical Warning
 Non-clocked sequential cell  
-The clock pin mai/char1X_reg[6]/C is not reached by a timing clock
+The clock pin mai/char1X_reg[12]/C is not reached by a timing clock
 Related violations: <none>
 
 TIMING-17#115 Critical Warning
 Non-clocked sequential cell  
-The clock pin mai/char1X_reg[7]/C is not reached by a timing clock
+The clock pin mai/char1X_reg[1]/C is not reached by a timing clock
 Related violations: <none>
 
 TIMING-17#116 Critical Warning
 Non-clocked sequential cell  
-The clock pin mai/char1X_reg[8]/C is not reached by a timing clock
+The clock pin mai/char1X_reg[2]/C is not reached by a timing clock
 Related violations: <none>
 
 TIMING-17#117 Critical Warning
 Non-clocked sequential cell  
-The clock pin mai/char1X_reg[9]/C is not reached by a timing clock
+The clock pin mai/char1X_reg[3]/C is not reached by a timing clock
 Related violations: <none>
 
 TIMING-17#118 Critical Warning
 Non-clocked sequential cell  
-The clock pin mai/char1_X_Motion_reg[0]/C is not reached by a timing clock
+The clock pin mai/char1X_reg[4]/C is not reached by a timing clock
 Related violations: <none>
 
 TIMING-17#119 Critical Warning
 Non-clocked sequential cell  
-The clock pin mai/char1_kick_debounce_reg/C is not reached by a timing clock
+The clock pin mai/char1X_reg[5]/C is not reached by a timing clock
 Related violations: <none>
 
 TIMING-17#120 Critical Warning
 Non-clocked sequential cell  
-The clock pin mai/char1_punch_debounce_reg/C is not reached by a timing clock
+The clock pin mai/char1X_reg[6]/C is not reached by a timing clock
 Related violations: <none>
 
 TIMING-17#121 Critical Warning
 Non-clocked sequential cell  
-The clock pin mai/char2X_reg[0]/C is not reached by a timing clock
+The clock pin mai/char1X_reg[7]/C is not reached by a timing clock
 Related violations: <none>
 
 TIMING-17#122 Critical Warning
 Non-clocked sequential cell  
-The clock pin mai/char2X_reg[10]/C is not reached by a timing clock
+The clock pin mai/char1X_reg[8]/C is not reached by a timing clock
 Related violations: <none>
 
 TIMING-17#123 Critical Warning
 Non-clocked sequential cell  
-The clock pin mai/char2X_reg[11]/C is not reached by a timing clock
+The clock pin mai/char1X_reg[9]/C is not reached by a timing clock
 Related violations: <none>
 
 TIMING-17#124 Critical Warning
 Non-clocked sequential cell  
-The clock pin mai/char2X_reg[12]/C is not reached by a timing clock
+The clock pin mai/char1_X_Motion_reg[0]/C is not reached by a timing clock
 Related violations: <none>
 
 TIMING-17#125 Critical Warning
 Non-clocked sequential cell  
-The clock pin mai/char2X_reg[1]/C is not reached by a timing clock
+The clock pin mai/char1_kick_debounce_reg/C is not reached by a timing clock
 Related violations: <none>
 
 TIMING-17#126 Critical Warning
 Non-clocked sequential cell  
-The clock pin mai/char2X_reg[2]/C is not reached by a timing clock
+The clock pin mai/char1_punch_debounce_reg/C is not reached by a timing clock
 Related violations: <none>
 
 TIMING-17#127 Critical Warning
 Non-clocked sequential cell  
-The clock pin mai/char2X_reg[3]/C is not reached by a timing clock
+The clock pin mai/char2X_reg[0]/C is not reached by a timing clock
 Related violations: <none>
 
 TIMING-17#128 Critical Warning
 Non-clocked sequential cell  
-The clock pin mai/char2X_reg[4]/C is not reached by a timing clock
+The clock pin mai/char2X_reg[10]/C is not reached by a timing clock
 Related violations: <none>
 
 TIMING-17#129 Critical Warning
 Non-clocked sequential cell  
-The clock pin mai/char2X_reg[5]/C is not reached by a timing clock
+The clock pin mai/char2X_reg[11]/C is not reached by a timing clock
 Related violations: <none>
 
 TIMING-17#130 Critical Warning
 Non-clocked sequential cell  
-The clock pin mai/char2X_reg[6]/C is not reached by a timing clock
+The clock pin mai/char2X_reg[12]/C is not reached by a timing clock
 Related violations: <none>
 
 TIMING-17#131 Critical Warning
 Non-clocked sequential cell  
-The clock pin mai/char2X_reg[7]/C is not reached by a timing clock
+The clock pin mai/char2X_reg[1]/C is not reached by a timing clock
 Related violations: <none>
 
 TIMING-17#132 Critical Warning
 Non-clocked sequential cell  
-The clock pin mai/char2X_reg[8]/C is not reached by a timing clock
+The clock pin mai/char2X_reg[2]/C is not reached by a timing clock
 Related violations: <none>
 
 TIMING-17#133 Critical Warning
 Non-clocked sequential cell  
-The clock pin mai/char2X_reg[9]/C is not reached by a timing clock
+The clock pin mai/char2X_reg[3]/C is not reached by a timing clock
 Related violations: <none>
 
 TIMING-17#134 Critical Warning
 Non-clocked sequential cell  
-The clock pin mai/char2_X_Motion_reg[0]/C is not reached by a timing clock
+The clock pin mai/char2X_reg[4]/C is not reached by a timing clock
 Related violations: <none>
 
 TIMING-17#135 Critical Warning
 Non-clocked sequential cell  
-The clock pin mai/char2_kick_debounce_reg/C is not reached by a timing clock
+The clock pin mai/char2X_reg[5]/C is not reached by a timing clock
 Related violations: <none>
 
 TIMING-17#136 Critical Warning
 Non-clocked sequential cell  
-The clock pin mai/char2_punch_debounce_reg/C is not reached by a timing clock
+The clock pin mai/char2X_reg[6]/C is not reached by a timing clock
 Related violations: <none>
 
 TIMING-17#137 Critical Warning
 Non-clocked sequential cell  
-The clock pin mai/forward_1_reg/C is not reached by a timing clock
+The clock pin mai/char2X_reg[7]/C is not reached by a timing clock
 Related violations: <none>
 
 TIMING-17#138 Critical Warning
 Non-clocked sequential cell  
-The clock pin mai/forward_2_reg/C is not reached by a timing clock
+The clock pin mai/char2X_reg[8]/C is not reached by a timing clock
 Related violations: <none>
 
 TIMING-17#139 Critical Warning
 Non-clocked sequential cell  
-The clock pin mai/jump_1_reg/C is not reached by a timing clock
+The clock pin mai/char2X_reg[9]/C is not reached by a timing clock
 Related violations: <none>
 
 TIMING-17#140 Critical Warning
 Non-clocked sequential cell  
-The clock pin mai/jump_2_reg/C is not reached by a timing clock
+The clock pin mai/char2_X_Motion_reg[0]/C is not reached by a timing clock
 Related violations: <none>
 
 TIMING-17#141 Critical Warning
 Non-clocked sequential cell  
-The clock pin mai/kick_1_reg/C is not reached by a timing clock
+The clock pin mai/char2_kick_debounce_reg/C is not reached by a timing clock
 Related violations: <none>
 
 TIMING-17#142 Critical Warning
 Non-clocked sequential cell  
-The clock pin mai/kick_2_reg/C is not reached by a timing clock
+The clock pin mai/char2_punch_debounce_reg/C is not reached by a timing clock
 Related violations: <none>
 
 TIMING-17#143 Critical Warning
 Non-clocked sequential cell  
-The clock pin mai/punch_1_reg/C is not reached by a timing clock
+The clock pin mai/forward_1_reg/C is not reached by a timing clock
 Related violations: <none>
 
 TIMING-17#144 Critical Warning
 Non-clocked sequential cell  
-The clock pin mai/punch_2_reg/C is not reached by a timing clock
+The clock pin mai/forward_2_reg/C is not reached by a timing clock
 Related violations: <none>
 
 TIMING-17#145 Critical Warning
 Non-clocked sequential cell  
-The clock pin mai/squat_1_reg/C is not reached by a timing clock
+The clock pin mai/jump_1_reg/C is not reached by a timing clock
 Related violations: <none>
 
 TIMING-17#146 Critical Warning
 Non-clocked sequential cell  
-The clock pin mai/squat_2_reg/C is not reached by a timing clock
+The clock pin mai/jump_2_reg/C is not reached by a timing clock
 Related violations: <none>
 
 TIMING-17#147 Critical Warning
 Non-clocked sequential cell  
-The clock pin mai/start_reg/C is not reached by a timing clock
+The clock pin mai/kick_1_reg/C is not reached by a timing clock
+Related violations: <none>
+
+TIMING-17#148 Critical Warning
+Non-clocked sequential cell  
+The clock pin mai/kick_2_reg/C is not reached by a timing clock
+Related violations: <none>
+
+TIMING-17#149 Critical Warning
+Non-clocked sequential cell  
+The clock pin mai/punch_1_reg/C is not reached by a timing clock
+Related violations: <none>
+
+TIMING-17#150 Critical Warning
+Non-clocked sequential cell  
+The clock pin mai/punch_2_reg/C is not reached by a timing clock
+Related violations: <none>
+
+TIMING-17#151 Critical Warning
+Non-clocked sequential cell  
+The clock pin mai/squat_1_reg/C is not reached by a timing clock
+Related violations: <none>
+
+TIMING-17#152 Critical Warning
+Non-clocked sequential cell  
+The clock pin mai/squat_2_reg/C is not reached by a timing clock
+Related violations: <none>
+
+TIMING-17#153 Critical Warning
+Non-clocked sequential cell  
+The clock pin mai/start_reg_inv/C is not reached by a timing clock
 Related violations: <none>
 
 TIMING-27#1 Critical Warning
@@ -966,62 +996,62 @@ Related violations: <none>
 
 TIMING-16#1 Warning
 Large setup violation  
-There is a large setup violation of -5.773 ns between hp/char2_hp_reg[2]/C (clocked by clk_100) and vga_to_hdmi/inst/srldly_0/srl[22].srl16_i_srlopt/D (clocked by clk_out1_clk_wiz_0). Large setup violations at the end of those stages might be difficult to fix during the post-placement implementation flow and could be the result of non-optimal XDC constraints or non-optimal design architecture
+There is a large setup violation of -6.134 ns between hp/char1_hp_reg[0]/C (clocked by clk_100) and vga_to_hdmi/inst/srldly_0/srl[20].srl16_i_srlopt/D (clocked by clk_out1_clk_wiz_0). Large setup violations at the end of those stages might be difficult to fix during the post-placement implementation flow and could be the result of non-optimal XDC constraints or non-optimal design architecture
 Related violations: <none>
 
 TIMING-16#2 Warning
 Large setup violation  
-There is a large setup violation of -5.799 ns between hp/char2_hp_reg[2]/C (clocked by clk_100) and vga_to_hdmi/inst/srldly_0/srl[39].srl16_i_srlopt/D (clocked by clk_out1_clk_wiz_0). Large setup violations at the end of those stages might be difficult to fix during the post-placement implementation flow and could be the result of non-optimal XDC constraints or non-optimal design architecture
+There is a large setup violation of -6.169 ns between hp/char1_hp_reg[0]/C (clocked by clk_100) and vga_to_hdmi/inst/srldly_0/srl[22].srl16_i_srlopt/D (clocked by clk_out1_clk_wiz_0). Large setup violations at the end of those stages might be difficult to fix during the post-placement implementation flow and could be the result of non-optimal XDC constraints or non-optimal design architecture
 Related violations: <none>
 
 TIMING-16#3 Warning
 Large setup violation  
-There is a large setup violation of -5.877 ns between hp/char2_hp_reg[2]/C (clocked by clk_100) and vga_to_hdmi/inst/srldly_0/srl[31].srl16_i_srlopt/D (clocked by clk_out1_clk_wiz_0). Large setup violations at the end of those stages might be difficult to fix during the post-placement implementation flow and could be the result of non-optimal XDC constraints or non-optimal design architecture
+There is a large setup violation of -6.246 ns between t/seconds_reg[2]/C (clocked by clk_100) and vga_to_hdmi/inst/srldly_0/srl[31].srl16_i_srlopt/D (clocked by clk_out1_clk_wiz_0). Large setup violations at the end of those stages might be difficult to fix during the post-placement implementation flow and could be the result of non-optimal XDC constraints or non-optimal design architecture
 Related violations: <none>
 
 TIMING-16#4 Warning
 Large setup violation  
-There is a large setup violation of -5.948 ns between hp/char2_hp_reg[2]/C (clocked by clk_100) and vga_to_hdmi/inst/srldly_0/srl[20].srl16_i_srlopt/D (clocked by clk_out1_clk_wiz_0). Large setup violations at the end of those stages might be difficult to fix during the post-placement implementation flow and could be the result of non-optimal XDC constraints or non-optimal design architecture
+There is a large setup violation of -6.309 ns between t/seconds_reg[2]/C (clocked by clk_100) and vga_to_hdmi/inst/srldly_0/srl[38].srl16_i_srlopt/D (clocked by clk_out1_clk_wiz_0). Large setup violations at the end of those stages might be difficult to fix during the post-placement implementation flow and could be the result of non-optimal XDC constraints or non-optimal design architecture
 Related violations: <none>
 
 TIMING-16#5 Warning
 Large setup violation  
-There is a large setup violation of -5.961 ns between hp/char2_hp_reg[2]/C (clocked by clk_100) and vga_to_hdmi/inst/srldly_0/srl[21].srl16_i_srlopt/D (clocked by clk_out1_clk_wiz_0). Large setup violations at the end of those stages might be difficult to fix during the post-placement implementation flow and could be the result of non-optimal XDC constraints or non-optimal design architecture
+There is a large setup violation of -6.408 ns between t/seconds_reg[2]/C (clocked by clk_100) and vga_to_hdmi/inst/srldly_0/srl[37].srl16_i_srlopt/D (clocked by clk_out1_clk_wiz_0). Large setup violations at the end of those stages might be difficult to fix during the post-placement implementation flow and could be the result of non-optimal XDC constraints or non-optimal design architecture
 Related violations: <none>
 
 TIMING-16#6 Warning
 Large setup violation  
-There is a large setup violation of -5.995 ns between hp/char2_hp_reg[2]/C (clocked by clk_100) and vga_to_hdmi/inst/srldly_0/srl[36].srl16_i_srlopt/D (clocked by clk_out1_clk_wiz_0). Large setup violations at the end of those stages might be difficult to fix during the post-placement implementation flow and could be the result of non-optimal XDC constraints or non-optimal design architecture
+There is a large setup violation of -6.495 ns between t/seconds_reg[2]/C (clocked by clk_100) and vga_to_hdmi/inst/srldly_0/srl[21].srl16_i_srlopt/D (clocked by clk_out1_clk_wiz_0). Large setup violations at the end of those stages might be difficult to fix during the post-placement implementation flow and could be the result of non-optimal XDC constraints or non-optimal design architecture
 Related violations: <none>
 
 TIMING-16#7 Warning
 Large setup violation  
-There is a large setup violation of -6.049 ns between hp/char2_hp_reg[2]/C (clocked by clk_100) and vga_to_hdmi/inst/srldly_0/srl[38].srl16_i_srlopt/D (clocked by clk_out1_clk_wiz_0). Large setup violations at the end of those stages might be difficult to fix during the post-placement implementation flow and could be the result of non-optimal XDC constraints or non-optimal design architecture
+There is a large setup violation of -6.668 ns between t/seconds_reg[2]/C (clocked by clk_100) and vga_to_hdmi/inst/srldly_0/srl[30].srl16_i_srlopt/D (clocked by clk_out1_clk_wiz_0). Large setup violations at the end of those stages might be difficult to fix during the post-placement implementation flow and could be the result of non-optimal XDC constraints or non-optimal design architecture
 Related violations: <none>
 
 TIMING-16#8 Warning
 Large setup violation  
-There is a large setup violation of -6.088 ns between hp/char2_hp_reg[2]/C (clocked by clk_100) and vga_to_hdmi/inst/srldly_0/srl[30].srl16_i_srlopt/D (clocked by clk_out1_clk_wiz_0). Large setup violations at the end of those stages might be difficult to fix during the post-placement implementation flow and could be the result of non-optimal XDC constraints or non-optimal design architecture
+There is a large setup violation of -6.707 ns between t/seconds_reg[2]/C (clocked by clk_100) and vga_to_hdmi/inst/srldly_0/srl[39].srl16_i_srlopt/D (clocked by clk_out1_clk_wiz_0). Large setup violations at the end of those stages might be difficult to fix during the post-placement implementation flow and could be the result of non-optimal XDC constraints or non-optimal design architecture
 Related violations: <none>
 
 TIMING-16#9 Warning
 Large setup violation  
-There is a large setup violation of -6.224 ns between hp/char2_hp_reg[2]/C (clocked by clk_100) and vga_to_hdmi/inst/srldly_0/srl[28].srl16_i_srlopt/D (clocked by clk_out1_clk_wiz_0). Large setup violations at the end of those stages might be difficult to fix during the post-placement implementation flow and could be the result of non-optimal XDC constraints or non-optimal design architecture
+There is a large setup violation of -6.725 ns between t/seconds_reg[2]/C (clocked by clk_100) and vga_to_hdmi/inst/srldly_0/srl[23].srl16_i_srlopt/D (clocked by clk_out1_clk_wiz_0). Large setup violations at the end of those stages might be difficult to fix during the post-placement implementation flow and could be the result of non-optimal XDC constraints or non-optimal design architecture
 Related violations: <none>
 
 TIMING-16#10 Warning
 Large setup violation  
-There is a large setup violation of -6.258 ns between hp/char2_hp_reg[2]/C (clocked by clk_100) and vga_to_hdmi/inst/srldly_0/srl[29].srl16_i_srlopt/D (clocked by clk_out1_clk_wiz_0). Large setup violations at the end of those stages might be difficult to fix during the post-placement implementation flow and could be the result of non-optimal XDC constraints or non-optimal design architecture
+There is a large setup violation of -6.817 ns between t/seconds_reg[2]/C (clocked by clk_100) and vga_to_hdmi/inst/srldly_0/srl[29].srl16_i_srlopt/D (clocked by clk_out1_clk_wiz_0). Large setup violations at the end of those stages might be difficult to fix during the post-placement implementation flow and could be the result of non-optimal XDC constraints or non-optimal design architecture
 Related violations: <none>
 
 TIMING-16#11 Warning
 Large setup violation  
-There is a large setup violation of -6.274 ns between hp/char2_hp_reg[2]/C (clocked by clk_100) and vga_to_hdmi/inst/srldly_0/srl[23].srl16_i_srlopt/D (clocked by clk_out1_clk_wiz_0). Large setup violations at the end of those stages might be difficult to fix during the post-placement implementation flow and could be the result of non-optimal XDC constraints or non-optimal design architecture
+There is a large setup violation of -6.824 ns between t/seconds_reg[2]/C (clocked by clk_100) and vga_to_hdmi/inst/srldly_0/srl[28].srl16_i_srlopt/D (clocked by clk_out1_clk_wiz_0). Large setup violations at the end of those stages might be difficult to fix during the post-placement implementation flow and could be the result of non-optimal XDC constraints or non-optimal design architecture
 Related violations: <none>
 
 TIMING-16#12 Warning
 Large setup violation  
-There is a large setup violation of -6.325 ns between hp/char2_hp_reg[2]/C (clocked by clk_100) and vga_to_hdmi/inst/srldly_0/srl[37].srl16_i/D (clocked by clk_out1_clk_wiz_0). Large setup violations at the end of those stages might be difficult to fix during the post-placement implementation flow and could be the result of non-optimal XDC constraints or non-optimal design architecture
+There is a large setup violation of -6.900 ns between t/seconds_reg[2]/C (clocked by clk_100) and vga_to_hdmi/inst/srldly_0/srl[36].srl16_i_srlopt/D (clocked by clk_out1_clk_wiz_0). Large setup violations at the end of those stages might be difficult to fix during the post-placement implementation flow and could be the result of non-optimal XDC constraints or non-optimal design architecture
 Related violations: <none>
 
 TIMING-18#1 Warning

@@ -87,7 +87,7 @@ module  color_mapper ( input  logic [9:0] DrawX, DrawY,
     logic [3:0] char2_r,char2_g,char2_b, char2_stand_r, char2_stand_g, char2_stand_b,char2_fwd_r,char2_fwd_g,char2_fwd_b,char2_head_r,char2_head_g,char2_head_b,char2_hit_r,char2_hit_g,char2_hit_b;
     logic [3:0] char2_back_r,char2_back_g,char2_back_b,char2_punch_r,char2_punch_g,char2_punch_b, char2_squat_r,char2_squat_g,char2_squat_b,char2_kick_r,char2_kick_g,char2_kick_b,char2_jump_r,char2_jump_g,char2_jump_b;
     logic char1_on,char2_on,stand_1,stand_2,s_on,hp1_on,hp2_on,name_on,time_on,head1_on,head2_on,win_on,start1_on,start2_on,start3_on,press_on,hit_1,hit_2,start5,start6,start5_on,start6_on,show_on;
-    logic [5:0] char1_cnt,char2_cnt,bg_cnt,press_cnt;  
+    logic [5:0] char1_cnt,char2_cnt,bg_cnt,press_cnt,ko_cnt;  
     logic [6:0] start_cnt;
     logic [5:0] char1_fwd_cnt,char1_back_cnt,char1_punch_cnt,char1_kick_cnt,char1_jump_cnt;
     logic [5:0] char2_fwd_cnt,char2_back_cnt,char2_punch_cnt,char2_kick_cnt,char2_jump_cnt;
@@ -95,6 +95,7 @@ module  color_mapper ( input  logic [9:0] DrawX, DrawY,
     logic [8*12-1:0] char1_array= {"MAI SHIRANUI"};
     logic [8*12-1:0] char2_array = {"KYO KUSANAGI"};
     logic [8*10-1:0] win_array = {"Winner is "};
+    logic [8*4-1:0] win2_array = {"K.O."};
     logic [8*5-1:0] draw_array = {"Draw!"};
     logic [8*11-1:0] start1_array = {"THE KING OF"};
     logic [8*8-1:0] start2_array = {"FIGHTERS"};
@@ -189,23 +190,31 @@ module  color_mapper ( input  logic [9:0] DrawX, DrawY,
                         end
                 end
                 else begin
-                    if((DrawX-44)/24<10)begin
-                        char_to_display=win_array[8*(10-(DrawX-44)/24)-1 -: 8];
-                        win_on=sprite_data[7-((DrawX-44)/3)%8];
+                    if(ko_cnt<60)begin
+                        if(DrawX>=272&&DrawX<368)begin
+                            char_to_display=win2_array[8*(4-(DrawX-272)/24)-1 -: 8];
+                            win_on=sprite_data[7-((DrawX-272)/3)%8];
+                        end
                     end
-                    else if((DrawX-44)/24==22)begin
-                        char_to_display=exc;
-                        win_on=sprite_data[7-((DrawX-572)/3)%8];
-                    end  
                     else begin
-                        win_on=sprite_data[7-((DrawX-284)/3)%8];
-                        if(char1_hp>char2_hp)begin  
-                            char_to_display=char1_array[8*(12-(DrawX-284)/24)-1 -: 8];
+                        if((DrawX-44)/24<10)begin
+                            char_to_display=win_array[8*(10-(DrawX-44)/24)-1 -: 8];
+                            win_on=sprite_data[7-((DrawX-44)/3)%8];
                         end
-                        else begin  
-                            char_to_display=char2_array[8*(12-(DrawX-284)/24)-1 -: 8];
+                        else if((DrawX-44)/24==22)begin
+                            char_to_display=exc;
+                            win_on=sprite_data[7-((DrawX-572)/3)%8];
+                        end  
+                        else begin
+                            win_on=sprite_data[7-((DrawX-284)/3)%8];
+                            if(char1_hp>char2_hp)begin  
+                                char_to_display=char1_array[8*(12-(DrawX-284)/24)-1 -: 8];
+                            end
+                            else begin  
+                                char_to_display=char2_array[8*(12-(DrawX-284)/24)-1 -: 8];
+                            end
                         end
-                    end
+                     end
                 end
                 sprite_addr=char_to_display*16 +((DrawY-100)/3)%16;
             end
@@ -279,6 +288,14 @@ module  color_mapper ( input  logic [9:0] DrawX, DrawY,
         end
         else if(start&&(seconds==64||seconds==63))begin
             start_cnt <= start_cnt + 1'b1;
+        end
+    end
+    always_ff @(posedge vsync or posedge reset) begin
+        if (reset) begin
+            ko_cnt <= 0;
+        end
+        else if(stop1&&ko_cnt<=60)begin
+            ko_cnt <= ko_cnt + 1'b1;
         end
     end
     always_ff @(posedge vsync or posedge reset) begin
