@@ -277,7 +277,7 @@ module  color_mapper ( input  logic [9:0] DrawX, DrawY,
         if (reset) begin
             start_cnt <= 0;
         end
-        else if(seconds==64||seconds==63)begin
+        else if(start&&(seconds==64||seconds==63))begin
             start_cnt <= start_cnt + 1'b1;
         end
     end
