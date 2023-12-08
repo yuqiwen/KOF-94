@@ -135,7 +135,7 @@ module  color_mapper ( input  logic [9:0] DrawX, DrawY,
             second_ascii=(seconds%10)+8'h30;
             if(seconds==64||seconds==63)begin
                 second_ascii=8'h30;
-                if(DrawX<320-start_cnt*4||DrawX>320+start_cnt*4)
+                if(start_cnt<=80&&DrawX<320-start_cnt*4||DrawX>320+start_cnt*4)
                     show_on=1;
             end
             if(seconds==62)begin
